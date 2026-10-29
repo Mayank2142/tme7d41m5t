@@ -62,9 +62,9 @@ Populate this register during implementation; an empty entry means the check is 
 | Accepted real-data release and manifest | Seed/archive and data-quality report | Verified Phase 2; same release used for Phase 3 calculations |
 | Domain, integration, and browser results | CI run and local verification record | Phase 6: 90 backend and 43 frontend tests, independent service/CSV checks, actual browser journey/downloads, keyboard and narrow-layout checks pass; remote CI awaits publication |
 | Source data attribution confirmed | README and attribution file | Verified Phase 2 and included in source/analysis artifacts |
-| Application commit and image digest | Release notes | Planned |
+| Application commit and image digest | Release notes | Local source commit and tested image recorded in local-readiness evidence; public release remains later work |
 | Public application and restart check | Deployment record | Planned |
-| Fresh Docker startup | Handoff verification record | See Phase 6 status for clean-source image, seed and persistence evidence; a fresh committed checkout remains a publication check |
+| Fresh Docker startup | Handoff verification record | Verified from actual committed clone in local-readiness evidence, including real seed, browser/CSV, replay/restart and Desktop recovery; remote CI remains a publication check |
 | Public repository and actual README links | Submission checklist | Planned |
 | Unlisted video and duration | Submission checklist | Planned |
 | Incognito access and form confirmation | Submission checklist | Planned |

@@ -8,6 +8,8 @@ Use Vercel's FastAPI framework support with the root `app.py` exporting `app`. `
 
 The Python runtime resolves the root `pyproject.toml` and `uv.lock`, with Python constrained to 3.12. Node 24 is recommended for the React build. Function exclusions and `.vercelignore` omit local environments, tools, caches, source assignment material, research documents, and test artifacts. The frontend dependencies are installed at build time; local `node_modules` is not uploaded.
 
+The local-readiness check verified a staged upload and locked frontend build. Frontend test fixtures stay in the build input because the full TypeScript check includes test modules. `functions.excludeFiles` then omits frontend source/test files and operator helpers from the runtime bundle, retaining compiled `frontend/dist`. Do not exclude only the fixtures from the upload while leaving their importing TypeScript tests behind. Actual Vercel account/runtime/bundle behavior still requires the preview check below.
+
 Official references: [FastAPI on Vercel](https://vercel.com/docs/frameworks/backend/fastapi), [Python runtime](https://vercel.com/docs/functions/runtimes/python), and [FastAPI deployment guide](https://vercel.com/kb/guide/ship-a-fastapi-app-on-vercel).
 
 ## Prerequisites still to verify

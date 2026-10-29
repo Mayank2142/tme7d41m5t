@@ -46,7 +46,7 @@ In the prepared Windows workspace, `.tools\uv.exe` is a local portable uv execut
 
 The complete container entry point is `docker compose up --build`. Compose waits for PostgreSQL, runs a one-off migration/seed service, and then starts the web service. Seeding is idempotent and uses the bundled archive without an external download. Readiness is 200 only when the database and an accepted release are available. Container startup/image execution still requires a working Docker Linux engine; see the status record for checks actually run.
 
-On this prepared Windows workspace, portable PostgreSQL 17.11 provides the local database because Docker Desktop's Linux engine needs repair. Phase 6 verified the image using a separate disposable Ubuntu test engine. The portable database lives under `.tools` and `.cache`, binds only to `127.0.0.1:5432`, and installs no Windows service. Use `scripts/local-postgres.ps1 -Action Status`, `-Action Stop`, or `-Action Start` to control that cluster. Stop it before starting Docker PostgreSQL on the same port, or select alternate Compose ports as in the verification guide. This helper does not install or initialize PostgreSQL for a fresh checkout; use Compose or an explicitly configured PostgreSQL server there.
+The prepared Windows workspace now runs the application and PostgreSQL through Docker Desktop 4.97 on ports 8000/5432. Its normal shutdown/restart was verified with unchanged data and results. The earlier portable PostgreSQL 17.11 cluster is retained under `.tools`/`.cache` and is stopped. For optional native development, stop this project's Docker services before using `scripts/local-postgres.ps1 -Action Start`; stop the portable cluster before returning to Docker on the same port. The portable helper does not install or initialize PostgreSQL for a fresh checkout.
 
 ## Data operations
 
@@ -100,6 +100,8 @@ uv run pytest
 
 Without this variable, PostgreSQL integration checks are explicitly skipped. Phase 6 passed **90 backend tests with no skips**, including five real PostgreSQL integration tests, and **43 frontend tests**, lint, type checking and the production build. Independent HTTP checks and the real Chrome journey verify cutoff selection, metrics, provenance, guarded downloads and narrow layouts. Frontend tests use attributed frozen fixtures. See [Phase 6 status](docs/PHASE_6_STATUS.md) for actual execution evidence and outstanding remote checks.
 
+The subsequent [local-readiness verification](docs/LOCAL_READINESS.md) repeated all 90 backend and 43 frontend tests from a real committed clone, using Docker PostgreSQL and Node 24. It also verified the complete container runner, the standard local helper, database dump/restore into a separate database, and Docker Desktop restart persistence. A clean-checkout pytest temporary-directory bug was found and fixed. The locked Python production dependency audit reported no known advisories across 31 packages; the fresh npm install also reported zero known vulnerabilities.
+
 The [verification guide](docs/VERIFICATION.md) includes the running-service, browser, packaging, publication-input and isolated-container commands. The [CI workflow](.github/workflows/ci.yml) runs quality checks before image, seed, browser and restart gates, without live Elexon calls. Its remote execution requires the later public repository. The local request quota is a per-process backstop; shared host quotas and trusted proxy identity must be verified during deployment.
 
 ## Source and analysis policy
@@ -143,6 +145,9 @@ The real raw-response archive and manifest are bundled under `data/snapshots`. T
 | `docs/PHASE_5_STATUS.md` | Frontend tests, real-browser verification, download proof, and remaining release checks |
 | `docs/PHASE_6_STATUS.md` | Integrated verification evidence, container checks and remote CI status |
 | `docs/VERIFICATION.md` | Reproduction commands, release gates and security boundaries |
+| `docs/LOCAL_READINESS.md` | Verified local handoff, Docker repair, startup and remaining external actions |
+| `docs/local-readiness-evidence.json` | Committed-checkout, test, recovery and Desktop-restart evidence |
+| `docs/DEMO_SCRIPT.md` | Customer/technical recording script and video checks |
 | `docs/WORKBENCH.md` | Analyst controls, interpretation, sharing, refresh, and downloads |
 
 See the [implementation plan](IMPLEMENTATION_PLAN.md) and [phase breakdown](docs/PROJECT_PHASES.md) for the complete scope. The supplied assignment DOCX, local secrets, environments, caches, generated output, and dependencies are excluded from Git.

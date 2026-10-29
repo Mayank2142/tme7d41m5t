@@ -1,16 +1,173 @@
 {
-  "status": "in_progress",
+  "status": "local_technical_readiness_verified_external_release_actions_pending",
+  "recorded_at_utc": "2026-10-29T19:46:03.162351+00:00",
   "client_date": "2026-10-30",
   "timezone": "Asia/Calcutta",
-  "docker_desktop": "updated_to_4.97.0_and_first_linux_engine_start_verified",
-  "existing_docker_workloads": "preserved",
-  "disk_backup": "verified_private_offline_copies_and_installer_preserved_original_bytes",
-  "python_dependency_audit": "no_known_vulnerabilities_in_locked_production_dependencies",
-  "remaining_local_gates": [
-    "Local source commit and clean Git clone",
-    "Docker Desktop container verifier from committed checkout",
-    "Standard local Start/Status/Stop helper",
-    "Docker Desktop normal shutdown/restart with application persistence"
+  "measured_followup_window": {
+    "first_recorded_clock_utc": "2026-10-29T18:43:14+00:00",
+    "elapsed_wall_minutes": 62.82,
+    "qualification": "First clock sample followed initial probes. Includes Docker repair/update, backups, cold-clone failure and fix, verification and documentation. Earlier exact cumulative assignment effort is unknown."
+  },
+  "verified_code_commit": "c1afaa1490e179c36bd9ee0cb878a4ca587df7f6",
+  "branch": "codex/local-readiness",
+  "published_or_pushed": false,
+  "real_git_clone": true,
+  "clone_clean_after_checks": true,
+  "docker_repair": {
+    "initial_version": "4.91.0",
+    "reported_error": "Ingest runtime socket rename failed with Windows error 1920",
+    "one_time_runtime_quarantine": "preserved_two_socket_only_parent_folders",
+    "old_version_recurrence_after_normal_restart": true,
+    "installer": {
+      "version": "4.97.0",
+      "source": "https://desktop.docker.com/win/main/amd64/244584/Docker%20Desktop%20Installer.exe",
+      "sha256": "2668273f82b342a058a28f9ab53ea7bddde10bb6d51307ce2ec54c2d36459744",
+      "bytes": 620496816
+    },
+    "authenticode_signer": "Docker Inc",
+    "signature_status": "Valid",
+    "installer_exit_code": 0,
+    "private_disk_backups_verified": 2,
+    "original_disk_bytes_preserved_by_installer": true,
+    "factory_reset_or_wsl_unregister": false,
+    "normal_restart": {
+      "normal_stop": true,
+      "restart_without_runtime_folder_repair": true,
+      "application_returned_automatically": true,
+      "engine": "29.9.2",
+      "desktop": "Docker Desktop 4.97.0 (244584)",
+      "os": "linux",
+      "original_workloads_preserved": true,
+      "dataset_json_csv_fingerprint_unchanged": true,
+      "stable_fingerprint": "21606f1c1110cee6446adb71289bc34ec99af9c1bf1b9fdc08ea09b61a0305b5",
+      "verified_at_utc": "2026-10-29T19:32:59.179642+00:00"
+    }
+  },
+  "cold_checkout_correction": {
+    "initial_result": "48 passed, 42 setup errors",
+    "cause": "pytest basetemp .cache/pytest required an absent parent directory in a fresh clone",
+    "fix": "Directly creatable .pytest-tmp; ignored and excluded from Docker/Vercel/publication inputs",
+    "interpreter": "CPython 3.12.14 explicitly selected after an unrelated broken global uv managed-Python link"
+  },
+  "backend": {
+    "passed": 90,
+    "errors": 0,
+    "failures": 0,
+    "skipped": 0,
+    "postgresql_integration_tests": 5,
+    "junit_seconds": 221.628,
+    "console_seconds": 221.64,
+    "database": "isolated Docker PostgreSQL"
+  },
+  "frontend": {
+    "passed": 43,
+    "errors": 0,
+    "failures": 0,
+    "skipped": 0,
+    "files": 5,
+    "console_seconds": 7.54,
+    "node": "24.22.1",
+    "locked_install": "passed",
+    "lint_types_and_production_build": "passed"
+  },
+  "container_gate": {
+    "project": "winddesk-ci-checkout-v2",
+    "release_id": "f61cecb1c14d91cfc32f10c74a9945fd2cf7f1851abd8ca6b0eb3f3e8975b052",
+    "build_sha": "c1afaa1490e179c36bd9ee0cb878a4ca587df7f6",
+    "image_id": "sha256:6466c1f3f634a024dd73bab9e8bb7f77f906a7d60425b8f617da532e79fc94dc",
+    "non_root": true,
+    "read_only_root": true,
+    "capabilities_dropped": true,
+    "seed_replay": "passed",
+    "database_and_web_restart": "passed",
+    "stable_fingerprint": "fc64d29abe15f01805c5bb2ac5f4ed79fb1f902fb175022d5cf961d14cdf0518"
+  },
+  "canonical_local_runtime": {
+    "url": "http://127.0.0.1:8000/",
+    "postgresql_port": 5432,
+    "project": "winddesk-local",
+    "image_id": "sha256:6f55f0825e7c4f324b1e3f1e12d3a1460b5d08a39a03e23ed9a4fab1718f3292",
+    "build_sha": "c1afaa1490e179c36bd9ee0cb878a4ca587df7f6",
+    "user": "app",
+    "read_only_root": true,
+    "restart_policy": "unless-stopped",
+    "standard_start_status_stop": "passed",
+    "other_checkout_guard": "passed",
+    "native_database": "retained_stopped"
+  },
+  "final_browser": {
+    "passed": true,
+    "base_url": "http://127.0.0.1:8000/",
+    "release_id": "f61cecb1c14d91cfc32f10c74a9945fd2cf7f1851abd8ca6b0eb3f3e8975b052",
+    "downloads": [
+      {
+        "filename": "winddesk-decision-2026-01-31-2026-01-31-44d1ec7fde4e.csv",
+        "bytes": 17524,
+        "sha256": "04a7a40f4bc9537a253b8b586dfd10a160bcecb205bc6ef181b1112bd37c89ae",
+        "context_id": "44d1ec7fde4ecc249b58b55144395dc10f40fef5dc2d51bbc082862b65027b05"
+      },
+      {
+        "filename": "winddesk-accuracy-2026-01-01-2026-01-31-eef6b048d31f.csv",
+        "bytes": 1272473,
+        "sha256": "daa359c0a95d55c593480e537546156374e0f4b60276f05f62ae89e78e28e3bf",
+        "context_id": "eef6b048d31f46f40acd7268b2c4894cb1319f8849a573cb529dae080d830a6f"
+      }
+    ],
+    "console_errors": [],
+    "viewports": [
+      1440,
+      390,
+      320
+    ],
+    "checks": [
+      "cutoff draft/apply and source eligibility",
+      "forecast-only decision requests",
+      "keyboard chart inspection",
+      "exact browser CSV bytes",
+      "four API-derived metrics",
+      "daily drill-down",
+      "pinned provenance and reload",
+      "narrow layout and keyboard table focus"
+    ]
+  },
+  "database_restore": {
+    "passed": true,
+    "source_build_sha": "c1afaa1490e179c36bd9ee0cb878a4ca587df7f6",
+    "release_id": "f61cecb1c14d91cfc32f10c74a9945fd2cf7f1851abd8ca6b0eb3f3e8975b052",
+    "backup_bytes": 2878592,
+    "backup_sha256": "7bba61465c87ddfa457d02c53a3cce030fd61b19579bb88e3d8f2949e52cf6a4",
+    "restore_to_separate_database": true,
+    "same_service_json_csv_and_metrics": true,
+    "stable_fingerprint": "21606f1c1110cee6446adb71289bc34ec99af9c1bf1b9fdc08ea09b61a0305b5"
+  },
+  "dependency_audits": {
+    "python_tool": "pip-audit 2.10.1",
+    "production_python_packages": 31,
+    "known_python_advisories": 0,
+    "fresh_npm_install_known_vulnerabilities": 0,
+    "qualification": "Point-in-time advisory checks, not a penetration test or operational certification"
+  },
+  "local_remaining_technical_gates": [],
+  "external_remaining": [
+    "Vercel access/plan, approved costs and external PostgreSQL",
+    "Hosted secrets, proxy identity/quotas, HTTPS and durability verification",
+    "Anonymous-name public GitHub repository and successful remote CI",
+    "Final demo recording, unlisted upload, logged-out playback and real README links",
+    "Final artifact checks and company submission"
   ],
-  "external_publication": "not_performed"
+  "operational_acceptance": "Phases 9-11 remain separately scoped client-dependent work",
+  "evidence_privacy": "Existing unrelated workload names, IDs, private backup paths and disk fingerprints are retained only in ignored/private local records.",
+  "deployment_packaging_commit": "e64e79df0e6166b658cbd4fab87fd2dd100cea78",
+  "vercel_upload_build": {
+    "files": 99,
+    "fixtures_present_for_typecheck": true,
+    "private_env_absent": true,
+    "backend_tests_absent": true,
+    "method": "Git ignore matching using .vercelignore and tracked inputs; local staging simulation, not a hosted Vercel build",
+    "locked_frontend_install": "passed",
+    "typescript_and_production_build": "passed",
+    "node": "24.22.1",
+    "hosted_vercel_build": "not_run",
+    "application_bundle_sha256": "ebbd145e24e58a42990e7d625d9e5bc89c3276296b871420094d1453914d1ad3"
+  }
 }
