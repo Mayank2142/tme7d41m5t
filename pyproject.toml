@@ -33,7 +33,7 @@ exclude = ["backend/tests/**"]
 
 [tool.pytest.ini_options]
 testpaths = ["backend/tests"]
-addopts = "-q --basetemp=.cache/pytest --tb=short"
+addopts = "-q --basetemp=.pytest-tmp --tb=short"
 
 [tool.ruff]
 target-version = "py312"

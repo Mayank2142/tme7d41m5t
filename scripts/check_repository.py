@@ -24,6 +24,7 @@ FORBIDDEN = {
     "output",
     "coverage",
     ".pytest_cache",
+    ".pytest-tmp",
     ".ruff_cache",
 }
 PATTERNS = {
