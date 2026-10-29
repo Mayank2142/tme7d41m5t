@@ -12,7 +12,7 @@
     "app.py": {
       "maxDuration": 30,
       "includeFiles": "frontend/dist/**",
-      "excludeFiles": "{frontend/node_modules/**,backend/tests/**,docs/**,output/**,*.docx}"
+      "excludeFiles": "{frontend/node_modules/**,frontend/src/**,frontend/scripts/**,backend/tests/**,scripts/**,docs/**,output/**,*.docx}"
     }
   }
 }
