@@ -1,0 +1,34 @@
+{
+  "application": "Wind Desk",
+  "version": "0.1.0",
+  "stage": "data_ready",
+  "policy": {
+    "policy_version": "january_decisions_v1",
+    "timezone": "Europe/London",
+    "decision_from": "2026-01-01",
+    "decision_to": "2026-01-31",
+    "delivery_from": "2026-01-02",
+    "delivery_to": "2026-02-01",
+    "comparison_policy": "source_timestamp_v1",
+    "availability_model": "source_publication_time",
+    "forecast_cadence_minutes": 60,
+    "actual_interval_minutes": 30,
+    "cutoff_is_illustrative": true
+  },
+  "default_cutoff_local": "09:00",
+  "dataset": {
+    "status": "available",
+    "release_id": "f61cecb1c14d91cfc32f10c74a9945fd2cf7f1851abd8ca6b0eb3f3e8975b052",
+    "forecast_versions": 19856,
+    "actual_versions": 1488,
+    "quality_status": "complete",
+    "code": "OK"
+  },
+  "build_sha": "local",
+  "data_attribution": "Contains BMRS data © Elexon Limited copyright and database right 2026.",
+  "data_licence_url": "https://www.elexon.co.uk/bsc/data/balancing-mechanism-reporting-agent/copyright-licence-bmrs-data/",
+  "supported_comparison_policies": ["source_timestamp_v1"],
+  "selection_policy": "latest_source_key_v1",
+  "metrics_version": "metrics_v1",
+  "analysis_context_version": "analysis_context_v1"
+}

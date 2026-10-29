@@ -1,0 +1,53 @@
+x-application: &application
+  build:
+    context: .
+    args:
+      GRID_BUILD_SHA: ${GRID_BUILD_SHA:-local}
+  image: winddesk:${GRID_IMAGE_TAG:-local}
+  read_only: true
+  tmpfs:
+    - /tmp:size=32m,mode=1777
+  cap_drop: [ALL]
+  security_opt:
+    - no-new-privileges:true
+  environment:
+    GRID_ENVIRONMENT: development
+    GRID_DATABASE_URL: postgresql+psycopg://${POSTGRES_USER:-winddesk}:${POSTGRES_PASSWORD:-winddesk_local}@postgres:5432/${POSTGRES_DB:-winddesk}
+    GRID_DEFAULT_CUTOFF_LOCAL: ${GRID_DEFAULT_CUTOFF_LOCAL:-09:00}
+    GRID_BUILD_SHA: ${GRID_BUILD_SHA:-local}
+    GRID_API_RATE_LIMIT_ENABLED: ${GRID_API_RATE_LIMIT_ENABLED:-true}
+    GRID_API_RATE_LIMIT_PER_MINUTE: ${GRID_API_RATE_LIMIT_PER_MINUTE:-120}
+
+services:
+  postgres:
+    image: postgres:17-bookworm@sha256:839fbb5a4942a7758dd93e18b42ea5649807491a0545b5eeeb8f0b8bb11857a5
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: ${POSTGRES_DB:-winddesk}
+      POSTGRES_USER: ${POSTGRES_USER:-winddesk}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-winddesk_local}
+    ports:
+      - "127.0.0.1:${GRID_POSTGRES_PORT:-5432}:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U $$POSTGRES_USER -d $$POSTGRES_DB"]
+      interval: 5s
+      timeout: 3s
+      retries: 12
+  initialize:
+    <<: *application
+    command: ["winddesk", "seed"]
+    depends_on:
+      postgres:
+        condition: service_healthy
+  web:
+    <<: *application
+    restart: unless-stopped
+    ports:
+      - "127.0.0.1:${GRID_HTTP_PORT:-8000}:8000"
+    depends_on:
+      initialize:
+        condition: service_completed_successfully
+volumes:
+  postgres_data:

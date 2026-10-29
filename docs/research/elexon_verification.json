@@ -1,0 +1,830 @@
+{
+  "verified_at_utc": "2026-10-28T19:57:57.583573+00:00",
+  "purpose": "Planning research only; not application acceptance evidence",
+  "source": "Elexon public stream APIs",
+  "requests": [
+    {
+      "dataset": "WINDFOR",
+      "url": "https://data.elexon.co.uk/bmrs/api/v1/datasets/WINDFOR/stream?publishDateTimeFrom=2025-12-29T00%3A00%3A00Z&publishDateTimeTo=2026-01-05T00%3A00%3A00Z",
+      "sha256": "10ee1d4137ed5d6fabe7ff4478b6d6baf9beb9aac67a5890b55a3a26447829da",
+      "bytes": 460813,
+      "row_count": 4088
+    },
+    {
+      "dataset": "WINDFOR",
+      "url": "https://data.elexon.co.uk/bmrs/api/v1/datasets/WINDFOR/stream?publishDateTimeFrom=2026-01-05T00%3A00%3A00Z&publishDateTimeTo=2026-01-12T00%3A00%3A00Z",
+      "sha256": "cf38c0cc6d0b33ea659444d4a483b87964b570f8d82d1e9dfff00659f300ca60",
+      "bytes": 460413,
+      "row_count": 4088
+    },
+    {
+      "dataset": "WINDFOR",
+      "url": "https://data.elexon.co.uk/bmrs/api/v1/datasets/WINDFOR/stream?publishDateTimeFrom=2026-01-12T00%3A00%3A00Z&publishDateTimeTo=2026-01-19T00%3A00%3A00Z",
+      "sha256": "05aba769ba3703987090414e800c008f92d6fda878c7d214174386d0ca6bcff7",
+      "bytes": 459181,
+      "row_count": 4088
+    },
+    {
+      "dataset": "WINDFOR",
+      "url": "https://data.elexon.co.uk/bmrs/api/v1/datasets/WINDFOR/stream?publishDateTimeFrom=2026-01-19T00%3A00%3A00Z&publishDateTimeTo=2026-01-26T00%3A00%3A00Z",
+      "sha256": "f73146b52460da61fe44a3e79419d83bff0bfd1549475ae2dc70bc435d9400a1",
+      "bytes": 461646,
+      "row_count": 4088
+    },
+    {
+      "dataset": "WINDFOR",
+      "url": "https://data.elexon.co.uk/bmrs/api/v1/datasets/WINDFOR/stream?publishDateTimeFrom=2026-01-26T00%3A00%3A00Z&publishDateTimeTo=2026-02-01T00%3A00%3A00Z",
+      "sha256": "6b2f958442e9a90866fab339351044a24d14e032e9ebd78f23ebc32b2e1c2ae7",
+      "bytes": 394951,
+      "row_count": 3504
+    },
+    {
+      "dataset": "FUELHH",
+      "url": "https://data.elexon.co.uk/bmrs/api/v1/datasets/FUELHH/stream?settlementDateFrom=2026-01-02&settlementDateTo=2026-01-08&fuelType=WIND",
+      "sha256": "0bf7c482ce69cdc4faebb10291bdcd9fe74e7ee0ca15d866c51abcf26f05ef3f",
+      "bytes": 60983,
+      "row_count": 336
+    },
+    {
+      "dataset": "FUELHH",
+      "url": "https://data.elexon.co.uk/bmrs/api/v1/datasets/FUELHH/stream?settlementDateFrom=2026-01-09&settlementDateTo=2026-01-15&fuelType=WIND",
+      "sha256": "46391a390e131da228d3b2880fb1404b75a5965e1a9c31bcffa4ad6f7b6ae155",
+      "bytes": 60952,
+      "row_count": 336
+    },
+    {
+      "dataset": "FUELHH",
+      "url": "https://data.elexon.co.uk/bmrs/api/v1/datasets/FUELHH/stream?settlementDateFrom=2026-01-16&settlementDateTo=2026-01-22&fuelType=WIND",
+      "sha256": "2749197d975d5fc29d013ceafd74e3e7a3e9593fd749e311b3aab39ad83e2e66",
+      "bytes": 60902,
+      "row_count": 336
+    },
+    {
+      "dataset": "FUELHH",
+      "url": "https://data.elexon.co.uk/bmrs/api/v1/datasets/FUELHH/stream?settlementDateFrom=2026-01-23&settlementDateTo=2026-01-29&fuelType=WIND",
+      "sha256": "01c0930ff462ab56fb1cc51077b9ebadb6270cdfcdf06bca4278de551ed923d7",
+      "bytes": 60984,
+      "row_count": 336
+    },
+    {
+      "dataset": "FUELHH",
+      "url": "https://data.elexon.co.uk/bmrs/api/v1/datasets/FUELHH/stream?settlementDateFrom=2026-01-30&settlementDateTo=2026-02-01&fuelType=WIND",
+      "sha256": "6bc46b198ef7b5d2537a5d3849b63521246fd09beac0427d44acfb149068e2ee",
+      "bytes": 26106,
+      "row_count": 144
+    }
+  ],
+  "complete_request_success": true,
+  "WINDFOR": {
+    "response_rows": 19856,
+    "unique_rows": 19856,
+    "exact_duplicate_rows": 0,
+    "conflicting_business_keys": 0,
+    "null_generation_rows": 0,
+    "negative_generation_rows": 0,
+    "target_minutes": [
+      0
+    ]
+  },
+  "FUELHH": {
+    "response_rows": 1488,
+    "unique_rows": 1488,
+    "exact_duplicate_rows": 0,
+    "conflicting_business_keys": 0,
+    "null_generation_rows": 0,
+    "negative_generation_rows": 0,
+    "target_minutes": [
+      0,
+      30
+    ]
+  },
+  "decision_coverage": [
+    {
+      "decision_date": "2026-01-01",
+      "delivery_date": "2026-01-02",
+      "actual_half_hours": 48,
+      "cutoffs": {
+        "09:00": {
+          "selected_targets": 24,
+          "publication_times": [
+            "2026-01-01T07:30:00Z"
+          ],
+          "missing_targets": [],
+          "direct_timestamp_pairs": 24
+        },
+        "09:45": {
+          "selected_targets": 24,
+          "publication_times": [
+            "2026-01-01T09:30:00Z"
+          ],
+          "missing_targets": [],
+          "direct_timestamp_pairs": 24
+        }
+      }
+    },
+    {
+      "decision_date": "2026-01-02",
+      "delivery_date": "2026-01-03",
+      "actual_half_hours": 48,
+      "cutoffs": {
+        "09:00": {
+          "selected_targets": 24,
+          "publication_times": [
+            "2026-01-02T07:30:00Z"
+          ],
+          "missing_targets": [],
+          "direct_timestamp_pairs": 24
+        },
+        "09:45": {
+          "selected_targets": 24,
+          "publication_times": [
+            "2026-01-02T09:30:00Z"
+          ],
+          "missing_targets": [],
+          "direct_timestamp_pairs": 24
+        }
+      }
+    },
+    {
+      "decision_date": "2026-01-03",
+      "delivery_date": "2026-01-04",
+      "actual_half_hours": 48,
+      "cutoffs": {
+        "09:00": {
+          "selected_targets": 24,
+          "publication_times": [
+            "2026-01-03T07:30:00Z"
+          ],
+          "missing_targets": [],
+          "direct_timestamp_pairs": 24
+        },
+        "09:45": {
+          "selected_targets": 24,
+          "publication_times": [
+            "2026-01-03T09:30:00Z"
+          ],
+          "missing_targets": [],
+          "direct_timestamp_pairs": 24
+        }
+      }
+    },
+    {
+      "decision_date": "2026-01-04",
+      "delivery_date": "2026-01-05",
+      "actual_half_hours": 48,
+      "cutoffs": {
+        "09:00": {
+          "selected_targets": 24,
+          "publication_times": [
+            "2026-01-04T07:30:00Z"
+          ],
+          "missing_targets": [],
+          "direct_timestamp_pairs": 24
+        },
+        "09:45": {
+          "selected_targets": 24,
+          "publication_times": [
+            "2026-01-04T09:30:00Z"
+          ],
+          "missing_targets": [],
+          "direct_timestamp_pairs": 24
+        }
+      }
+    },
+    {
+      "decision_date": "2026-01-05",
+      "delivery_date": "2026-01-06",
+      "actual_half_hours": 48,
+      "cutoffs": {
+        "09:00": {
+          "selected_targets": 24,
+          "publication_times": [
+            "2026-01-05T07:30:00Z"
+          ],
+          "missing_targets": [],
+          "direct_timestamp_pairs": 24
+        },
+        "09:45": {
+          "selected_targets": 24,
+          "publication_times": [
+            "2026-01-05T09:30:00Z"
+          ],
+          "missing_targets": [],
+          "direct_timestamp_pairs": 24
+        }
+      }
+    },
+    {
+      "decision_date": "2026-01-06",
+      "delivery_date": "2026-01-07",
+      "actual_half_hours": 48,
+      "cutoffs": {
+        "09:00": {
+          "selected_targets": 24,
+          "publication_times": [
+            "2026-01-06T07:30:00Z"
+          ],
+          "missing_targets": [],
+          "direct_timestamp_pairs": 24
+        },
+        "09:45": {
+          "selected_targets": 24,
+          "publication_times": [
+            "2026-01-06T09:30:00Z"
+          ],
+          "missing_targets": [],
+          "direct_timestamp_pairs": 24
+        }
+      }
+    },
+    {
+      "decision_date": "2026-01-07",
+      "delivery_date": "2026-01-08",
+      "actual_half_hours": 48,
+      "cutoffs": {
+        "09:00": {
+          "selected_targets": 24,
+          "publication_times": [
+            "2026-01-07T07:30:00Z"
+          ],
+          "missing_targets": [],
+          "direct_timestamp_pairs": 24
+        },
+        "09:45": {
+          "selected_targets": 24,
+          "publication_times": [
+            "2026-01-07T09:30:00Z"
+          ],
+          "missing_targets": [],
+          "direct_timestamp_pairs": 24
+        }
+      }
+    },
+    {
+      "decision_date": "2026-01-08",
+      "delivery_date": "2026-01-09",
+      "actual_half_hours": 48,
+      "cutoffs": {
+        "09:00": {
+          "selected_targets": 24,
+          "publication_times": [
+            "2026-01-08T07:30:00Z"
+          ],
+          "missing_targets": [],
+          "direct_timestamp_pairs": 24
+        },
+        "09:45": {
+          "selected_targets": 24,
+          "publication_times": [
+            "2026-01-08T09:30:00Z"
+          ],
+          "missing_targets": [],
+          "direct_timestamp_pairs": 24
+        }
+      }
+    },
+    {
+      "decision_date": "2026-01-09",
+      "delivery_date": "2026-01-10",
+      "actual_half_hours": 48,
+      "cutoffs": {
+        "09:00": {
+          "selected_targets": 24,
+          "publication_times": [
+            "2026-01-09T07:30:00Z"
+          ],
+          "missing_targets": [],
+          "direct_timestamp_pairs": 24
+        },
+        "09:45": {
+          "selected_targets": 24,
+          "publication_times": [
+            "2026-01-09T09:30:00Z"
+          ],
+          "missing_targets": [],
+          "direct_timestamp_pairs": 24
+        }
+      }
+    },
+    {
+      "decision_date": "2026-01-10",
+      "delivery_date": "2026-01-11",
+      "actual_half_hours": 48,
+      "cutoffs": {
+        "09:00": {
+          "selected_targets": 24,
+          "publication_times": [
+            "2026-01-10T07:30:00Z"
+          ],
+          "missing_targets": [],
+          "direct_timestamp_pairs": 24
+        },
+        "09:45": {
+          "selected_targets": 24,
+          "publication_times": [
+            "2026-01-10T09:30:00Z"
+          ],
+          "missing_targets": [],
+          "direct_timestamp_pairs": 24
+        }
+      }
+    },
+    {
+      "decision_date": "2026-01-11",
+      "delivery_date": "2026-01-12",
+      "actual_half_hours": 48,
+      "cutoffs": {
+        "09:00": {
+          "selected_targets": 24,
+          "publication_times": [
+            "2026-01-11T07:30:00Z"
+          ],
+          "missing_targets": [],
+          "direct_timestamp_pairs": 24
+        },
+        "09:45": {
+          "selected_targets": 24,
+          "publication_times": [
+            "2026-01-11T09:30:00Z"
+          ],
+          "missing_targets": [],
+          "direct_timestamp_pairs": 24
+        }
+      }
+    },
+    {
+      "decision_date": "2026-01-12",
+      "delivery_date": "2026-01-13",
+      "actual_half_hours": 48,
+      "cutoffs": {
+        "09:00": {
+          "selected_targets": 24,
+          "publication_times": [
+            "2026-01-12T07:30:00Z"
+          ],
+          "missing_targets": [],
+          "direct_timestamp_pairs": 24
+        },
+        "09:45": {
+          "selected_targets": 24,
+          "publication_times": [
+            "2026-01-12T09:30:00Z"
+          ],
+          "missing_targets": [],
+          "direct_timestamp_pairs": 24
+        }
+      }
+    },
+    {
+      "decision_date": "2026-01-13",
+      "delivery_date": "2026-01-14",
+      "actual_half_hours": 48,
+      "cutoffs": {
+        "09:00": {
+          "selected_targets": 24,
+          "publication_times": [
+            "2026-01-13T07:30:00Z"
+          ],
+          "missing_targets": [],
+          "direct_timestamp_pairs": 24
+        },
+        "09:45": {
+          "selected_targets": 24,
+          "publication_times": [
+            "2026-01-13T09:30:00Z"
+          ],
+          "missing_targets": [],
+          "direct_timestamp_pairs": 24
+        }
+      }
+    },
+    {
+      "decision_date": "2026-01-14",
+      "delivery_date": "2026-01-15",
+      "actual_half_hours": 48,
+      "cutoffs": {
+        "09:00": {
+          "selected_targets": 24,
+          "publication_times": [
+            "2026-01-14T07:30:00Z"
+          ],
+          "missing_targets": [],
+          "direct_timestamp_pairs": 24
+        },
+        "09:45": {
+          "selected_targets": 24,
+          "publication_times": [
+            "2026-01-14T09:30:00Z"
+          ],
+          "missing_targets": [],
+          "direct_timestamp_pairs": 24
+        }
+      }
+    },
+    {
+      "decision_date": "2026-01-15",
+      "delivery_date": "2026-01-16",
+      "actual_half_hours": 48,
+      "cutoffs": {
+        "09:00": {
+          "selected_targets": 24,
+          "publication_times": [
+            "2026-01-15T07:30:00Z"
+          ],
+          "missing_targets": [],
+          "direct_timestamp_pairs": 24
+        },
+        "09:45": {
+          "selected_targets": 24,
+          "publication_times": [
+            "2026-01-15T09:30:00Z"
+          ],
+          "missing_targets": [],
+          "direct_timestamp_pairs": 24
+        }
+      }
+    },
+    {
+      "decision_date": "2026-01-16",
+      "delivery_date": "2026-01-17",
+      "actual_half_hours": 48,
+      "cutoffs": {
+        "09:00": {
+          "selected_targets": 24,
+          "publication_times": [
+            "2026-01-16T07:30:00Z"
+          ],
+          "missing_targets": [],
+          "direct_timestamp_pairs": 24
+        },
+        "09:45": {
+          "selected_targets": 24,
+          "publication_times": [
+            "2026-01-16T09:30:00Z"
+          ],
+          "missing_targets": [],
+          "direct_timestamp_pairs": 24
+        }
+      }
+    },
+    {
+      "decision_date": "2026-01-17",
+      "delivery_date": "2026-01-18",
+      "actual_half_hours": 48,
+      "cutoffs": {
+        "09:00": {
+          "selected_targets": 24,
+          "publication_times": [
+            "2026-01-17T07:30:00Z"
+          ],
+          "missing_targets": [],
+          "direct_timestamp_pairs": 24
+        },
+        "09:45": {
+          "selected_targets": 24,
+          "publication_times": [
+            "2026-01-17T09:30:00Z"
+          ],
+          "missing_targets": [],
+          "direct_timestamp_pairs": 24
+        }
+      }
+    },
+    {
+      "decision_date": "2026-01-18",
+      "delivery_date": "2026-01-19",
+      "actual_half_hours": 48,
+      "cutoffs": {
+        "09:00": {
+          "selected_targets": 24,
+          "publication_times": [
+            "2026-01-18T07:30:00Z"
+          ],
+          "missing_targets": [],
+          "direct_timestamp_pairs": 24
+        },
+        "09:45": {
+          "selected_targets": 24,
+          "publication_times": [
+            "2026-01-18T09:30:00Z"
+          ],
+          "missing_targets": [],
+          "direct_timestamp_pairs": 24
+        }
+      }
+    },
+    {
+      "decision_date": "2026-01-19",
+      "delivery_date": "2026-01-20",
+      "actual_half_hours": 48,
+      "cutoffs": {
+        "09:00": {
+          "selected_targets": 24,
+          "publication_times": [
+            "2026-01-19T07:30:00Z"
+          ],
+          "missing_targets": [],
+          "direct_timestamp_pairs": 24
+        },
+        "09:45": {
+          "selected_targets": 24,
+          "publication_times": [
+            "2026-01-19T09:30:00Z"
+          ],
+          "missing_targets": [],
+          "direct_timestamp_pairs": 24
+        }
+      }
+    },
+    {
+      "decision_date": "2026-01-20",
+      "delivery_date": "2026-01-21",
+      "actual_half_hours": 48,
+      "cutoffs": {
+        "09:00": {
+          "selected_targets": 24,
+          "publication_times": [
+            "2026-01-20T07:30:00Z"
+          ],
+          "missing_targets": [],
+          "direct_timestamp_pairs": 24
+        },
+        "09:45": {
+          "selected_targets": 24,
+          "publication_times": [
+            "2026-01-20T09:30:00Z"
+          ],
+          "missing_targets": [],
+          "direct_timestamp_pairs": 24
+        }
+      }
+    },
+    {
+      "decision_date": "2026-01-21",
+      "delivery_date": "2026-01-22",
+      "actual_half_hours": 48,
+      "cutoffs": {
+        "09:00": {
+          "selected_targets": 24,
+          "publication_times": [
+            "2026-01-21T07:30:00Z"
+          ],
+          "missing_targets": [],
+          "direct_timestamp_pairs": 24
+        },
+        "09:45": {
+          "selected_targets": 24,
+          "publication_times": [
+            "2026-01-21T09:30:00Z"
+          ],
+          "missing_targets": [],
+          "direct_timestamp_pairs": 24
+        }
+      }
+    },
+    {
+      "decision_date": "2026-01-22",
+      "delivery_date": "2026-01-23",
+      "actual_half_hours": 48,
+      "cutoffs": {
+        "09:00": {
+          "selected_targets": 24,
+          "publication_times": [
+            "2026-01-22T07:30:00Z"
+          ],
+          "missing_targets": [],
+          "direct_timestamp_pairs": 24
+        },
+        "09:45": {
+          "selected_targets": 24,
+          "publication_times": [
+            "2026-01-22T09:30:00Z"
+          ],
+          "missing_targets": [],
+          "direct_timestamp_pairs": 24
+        }
+      }
+    },
+    {
+      "decision_date": "2026-01-23",
+      "delivery_date": "2026-01-24",
+      "actual_half_hours": 48,
+      "cutoffs": {
+        "09:00": {
+          "selected_targets": 24,
+          "publication_times": [
+            "2026-01-23T07:30:00Z"
+          ],
+          "missing_targets": [],
+          "direct_timestamp_pairs": 24
+        },
+        "09:45": {
+          "selected_targets": 24,
+          "publication_times": [
+            "2026-01-23T09:30:00Z"
+          ],
+          "missing_targets": [],
+          "direct_timestamp_pairs": 24
+        }
+      }
+    },
+    {
+      "decision_date": "2026-01-24",
+      "delivery_date": "2026-01-25",
+      "actual_half_hours": 48,
+      "cutoffs": {
+        "09:00": {
+          "selected_targets": 24,
+          "publication_times": [
+            "2026-01-24T07:30:00Z"
+          ],
+          "missing_targets": [],
+          "direct_timestamp_pairs": 24
+        },
+        "09:45": {
+          "selected_targets": 24,
+          "publication_times": [
+            "2026-01-24T09:30:00Z"
+          ],
+          "missing_targets": [],
+          "direct_timestamp_pairs": 24
+        }
+      }
+    },
+    {
+      "decision_date": "2026-01-25",
+      "delivery_date": "2026-01-26",
+      "actual_half_hours": 48,
+      "cutoffs": {
+        "09:00": {
+          "selected_targets": 24,
+          "publication_times": [
+            "2026-01-25T07:30:00Z"
+          ],
+          "missing_targets": [],
+          "direct_timestamp_pairs": 24
+        },
+        "09:45": {
+          "selected_targets": 24,
+          "publication_times": [
+            "2026-01-25T09:30:00Z"
+          ],
+          "missing_targets": [],
+          "direct_timestamp_pairs": 24
+        }
+      }
+    },
+    {
+      "decision_date": "2026-01-26",
+      "delivery_date": "2026-01-27",
+      "actual_half_hours": 48,
+      "cutoffs": {
+        "09:00": {
+          "selected_targets": 24,
+          "publication_times": [
+            "2026-01-26T07:30:00Z"
+          ],
+          "missing_targets": [],
+          "direct_timestamp_pairs": 24
+        },
+        "09:45": {
+          "selected_targets": 24,
+          "publication_times": [
+            "2026-01-26T09:30:00Z"
+          ],
+          "missing_targets": [],
+          "direct_timestamp_pairs": 24
+        }
+      }
+    },
+    {
+      "decision_date": "2026-01-27",
+      "delivery_date": "2026-01-28",
+      "actual_half_hours": 48,
+      "cutoffs": {
+        "09:00": {
+          "selected_targets": 24,
+          "publication_times": [
+            "2026-01-27T07:30:00Z"
+          ],
+          "missing_targets": [],
+          "direct_timestamp_pairs": 24
+        },
+        "09:45": {
+          "selected_targets": 24,
+          "publication_times": [
+            "2026-01-27T09:30:00Z"
+          ],
+          "missing_targets": [],
+          "direct_timestamp_pairs": 24
+        }
+      }
+    },
+    {
+      "decision_date": "2026-01-28",
+      "delivery_date": "2026-01-29",
+      "actual_half_hours": 48,
+      "cutoffs": {
+        "09:00": {
+          "selected_targets": 24,
+          "publication_times": [
+            "2026-01-28T07:30:00Z"
+          ],
+          "missing_targets": [],
+          "direct_timestamp_pairs": 24
+        },
+        "09:45": {
+          "selected_targets": 24,
+          "publication_times": [
+            "2026-01-28T09:30:00Z"
+          ],
+          "missing_targets": [],
+          "direct_timestamp_pairs": 24
+        }
+      }
+    },
+    {
+      "decision_date": "2026-01-29",
+      "delivery_date": "2026-01-30",
+      "actual_half_hours": 48,
+      "cutoffs": {
+        "09:00": {
+          "selected_targets": 24,
+          "publication_times": [
+            "2026-01-29T07:30:00Z"
+          ],
+          "missing_targets": [],
+          "direct_timestamp_pairs": 24
+        },
+        "09:45": {
+          "selected_targets": 24,
+          "publication_times": [
+            "2026-01-29T09:30:00Z"
+          ],
+          "missing_targets": [],
+          "direct_timestamp_pairs": 24
+        }
+      }
+    },
+    {
+      "decision_date": "2026-01-30",
+      "delivery_date": "2026-01-31",
+      "actual_half_hours": 48,
+      "cutoffs": {
+        "09:00": {
+          "selected_targets": 24,
+          "publication_times": [
+            "2026-01-30T07:30:00Z"
+          ],
+          "missing_targets": [],
+          "direct_timestamp_pairs": 24
+        },
+        "09:45": {
+          "selected_targets": 24,
+          "publication_times": [
+            "2026-01-30T09:30:00Z"
+          ],
+          "missing_targets": [],
+          "direct_timestamp_pairs": 24
+        }
+      }
+    },
+    {
+      "decision_date": "2026-01-31",
+      "delivery_date": "2026-02-01",
+      "actual_half_hours": 48,
+      "cutoffs": {
+        "09:00": {
+          "selected_targets": 24,
+          "publication_times": [
+            "2026-01-31T07:30:00Z"
+          ],
+          "missing_targets": [],
+          "direct_timestamp_pairs": 24
+        },
+        "09:45": {
+          "selected_targets": 24,
+          "publication_times": [
+            "2026-01-31T09:30:00Z"
+          ],
+          "missing_targets": [],
+          "direct_timestamp_pairs": 24
+        }
+      }
+    }
+  ],
+  "summary": {
+    "decisions": 31,
+    "expected_forecast_targets_per_cutoff": 744,
+    "expected_actual_half_hours": 1488,
+    "actual_half_hours_present": 1488,
+    "selected_targets_by_cutoff": {
+      "09:00": 744,
+      "09:45": 744
+    },
+    "direct_pairs_by_cutoff": {
+      "09:00": 744,
+      "09:45": 744
+    }
+  }
+}

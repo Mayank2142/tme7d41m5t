@@ -1,0 +1,43 @@
+[build-system]
+requires = ["hatchling==1.33.0"]
+build-backend = "hatchling.build"
+
+[project]
+name = "wind-desk"
+version = "0.1.0"
+description = "Historical GB wind forecast decision support"
+readme = "README.md"
+requires-python = ">=3.12,<3.13"
+dependencies = [
+  "fastapi>=0.115,<1",
+  "pydantic-settings>=2.7,<3",
+  "psycopg[binary]>=3.2,<4",
+  "sqlalchemy>=2.0,<2.1",
+  "uvicorn[standard]>=0.34,<1",
+  "alembic>=1.16,<2",
+  "httpx2>=2.16,<3",
+]
+
+[dependency-groups]
+dev = [
+  "pytest>=8.3,<10",
+  "ruff>=0.11,<1",
+]
+
+[project.scripts]
+winddesk = "backend.app.cli:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["backend"]
+exclude = ["backend/tests/**"]
+
+[tool.pytest.ini_options]
+testpaths = ["backend/tests"]
+addopts = "-q --basetemp=.cache/pytest --tb=short"
+
+[tool.ruff]
+target-version = "py312"
+line-length = 100
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B"]

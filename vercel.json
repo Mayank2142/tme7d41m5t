@@ -1,0 +1,18 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "framework": "fastapi",
+  "buildCommand": "npm --prefix frontend ci && npm --prefix frontend run build",
+  "env": {
+    "GRID_ENVIRONMENT": "production",
+    "GRID_FRONTEND_DIST": "frontend/dist",
+    "GRID_DB_POOL_SIZE": "1",
+    "GRID_DB_MAX_OVERFLOW": "0"
+  },
+  "functions": {
+    "app.py": {
+      "maxDuration": 30,
+      "includeFiles": "frontend/dist/**",
+      "excludeFiles": "{frontend/node_modules/**,backend/tests/**,docs/**,output/**,*.docx}"
+    }
+  }
+}

@@ -1,0 +1,395 @@
+{
+  "phase": 6,
+  "status": "implemented_and_verified_locally_remote_publication_gates_pending",
+  "measured_window": {
+    "first_recorded_clock_utc": "2026-10-29T17:39:43+00:00",
+    "verification_recorded_at_utc": "2026-10-29T18:38:08.266582+00:00",
+    "elapsed_wall_minutes": 58.42,
+    "qualification": "Includes environment recovery, failed/repaired checks, implementation, native and container verification and documentation. Earlier assignment effort is incompletely recorded; no exact cumulative sixteen-hour compliance is asserted."
+  },
+  "release_id": "f61cecb1c14d91cfc32f10c74a9945fd2cf7f1851abd8ca6b0eb3f3e8975b052",
+  "production_code_and_locked_inputs": {
+    "files": 63,
+    "fingerprint_sha256": "afd5ba1591d045ae1f080cffecc2efdfb011b27dad4e74466d5f0b6c2bfaa7b7",
+    "clean_source_copy_matches": true,
+    "scope": "Application Python/migrations, production TS/TSX/CSS, locks, image/Compose configuration, frontend entries and real seed; excludes evolving handoff documentation and verification helpers."
+  },
+  "backend_suite": {
+    "tests": 90,
+    "errors": 0,
+    "failures": 0,
+    "skipped": 0,
+    "passed": 90,
+    "junit_duration_seconds": 209.845,
+    "console_duration_seconds": 209.86,
+    "postgresql_tests": 5
+  },
+  "frontend_suite": {
+    "tests": 43,
+    "errors": 0,
+    "failures": 0,
+    "passed": 43,
+    "skipped": 0,
+    "files": 5,
+    "console_duration_seconds": 54.66
+  },
+  "checks": {
+    "python_lint": "passed",
+    "python_format": "passed",
+    "frontend_lint": "passed",
+    "typescript_and_production_build": "passed",
+    "offline_uv_lock": "passed_41_packages",
+    "wheel_build_and_migrations": "passed_hatchling_1.33.0",
+    "compose_config": "passed",
+    "publication_scan": "passed",
+    "npm_audit": {
+      "vulnerabilities": {
+        "info": 0,
+        "low": 0,
+        "moderate": 0,
+        "high": 0,
+        "critical": 0,
+        "total": 0
+      },
+      "dependencies": {
+        "prod": 8,
+        "dev": 159,
+        "optional": 57,
+        "peer": 11,
+        "peerOptional": 0,
+        "total": 166
+      }
+    },
+    "ci_static_validation": {
+      "version": "v1.7.12",
+      "source": "https://github.com/rhysd/actionlint/releases/tag/v1.7.12",
+      "asset": "actionlint_1.7.12_windows_amd64.zip",
+      "archive_sha256": "6e7241b51e6817ea6a047693d8e6fed13b31819c9a0dd6c5a726e1592d22f6e9"
+    }
+  },
+  "native_service": {
+    "base_url": "http://127.0.0.1:8000",
+    "release_id": "f61cecb1c14d91cfc32f10c74a9945fd2cf7f1851abd8ca6b0eb3f3e8975b052",
+    "build_sha": "local",
+    "checks": [
+      "readiness, accepted seed and safe response headers",
+      "January boundaries, cutoff publication eligibility and forecast-only CSV",
+      "1,488 CSV rows per cutoff and four independently recomputed metrics",
+      "pinned raw-response provenance",
+      "safe validation, stale-download guard and read-only public routes",
+      "real built assets, CSP and cache boundaries"
+    ],
+    "stable_fingerprint": "cf6bcb96ca815ccf30494b8be2a33019d6d2d32f2daa59dd71a3029483ae1599",
+    "fingerprints": {
+      "/api/v1/decision-view?decision_date=2026-01-01&cutoff_local=09:00": "ba6f416e6166541af7e72f5d2ba685a53e2409a79a139edd4af54c93aa998ef1",
+      "/api/v1/export.csv?mode=decision&release_id=f61cecb1c14d91cfc32f10c74a9945fd2cf7f1851abd8ca6b0eb3f3e8975b052&cutoff_local=09%3A00&expected_context_id=77221785beaff8e972d8f5735f6f6c58e7529fcd26f7d4e8249c9ee3108cd9b2&decision_date=2026-01-01": "df9077f57414dc8e542b2638877dba816292903b3a2d34e095c7182119dae7f5",
+      "/api/v1/decision-view?decision_date=2026-01-31&cutoff_local=09:00": "ae3a087c9a1501453c6eaff11576b831da2e2d55724ce6884536ec2410a9a142",
+      "/api/v1/export.csv?mode=decision&release_id=f61cecb1c14d91cfc32f10c74a9945fd2cf7f1851abd8ca6b0eb3f3e8975b052&cutoff_local=09%3A00&expected_context_id=d45167560542439c12f20435a71577bd28c0b40142692c48705733d00eba3d26&decision_date=2026-01-31": "1aa7303a709ff49848ba5f8a8d36d246ce0855dc915d6fdb0c0747af92ec289d",
+      "/api/v1/decision-view?decision_date=2026-01-31&cutoff_local=09:45": "cbb4cd62ff807d547ac094a0a792f3e7e631a0e76a8a674f6f10557aa6d3a928",
+      "/api/v1/export.csv?mode=decision&release_id=f61cecb1c14d91cfc32f10c74a9945fd2cf7f1851abd8ca6b0eb3f3e8975b052&cutoff_local=09%3A45&expected_context_id=3e99fdfbcb8c4060207e342f67d2bd2f35e1490a1ebbf2ffb28f66d6f640b321&decision_date=2026-01-31": "fe2be2059487881da49f715f7a2f3f54f692e6277137bee043328c0fb0c290e4",
+      "/api/v1/accuracy?decision_from=2026-01-01&decision_to=2026-01-31&cutoff_local=09:00": "c19070a51d7ee336dd661c3ba39a0583d156d153427e479dc71afa3ce45c7698",
+      "/api/v1/export.csv?mode=accuracy&release_id=f61cecb1c14d91cfc32f10c74a9945fd2cf7f1851abd8ca6b0eb3f3e8975b052&cutoff_local=09%3A00&expected_context_id=52ad55dc24f4e9cf6e92cbf0aed5706f5d16de2412f31e3ec2a6a8e284db13e0&decision_from=2026-01-01&decision_to=2026-01-31&comparison_policy=source_timestamp_v1": "6df3528019fce179333051144617a62587a4dbd357f507a857ae1edcb28b7304",
+      "/api/v1/accuracy?decision_from=2026-01-01&decision_to=2026-01-31&cutoff_local=09:45": "a46c9e47d7dfc0a74af4ded82f0e7243f6e1f5337e97c3981dbe84351c303c4d",
+      "/api/v1/export.csv?mode=accuracy&release_id=f61cecb1c14d91cfc32f10c74a9945fd2cf7f1851abd8ca6b0eb3f3e8975b052&cutoff_local=09%3A45&expected_context_id=9365356d0553e0483a11dee23c586342a99e918a5b7c191c91b6693d82cd4c34&decision_from=2026-01-01&decision_to=2026-01-31&comparison_policy=source_timestamp_v1": "80b887b6126aaf581192fbd6695e53e0ac18b38c3e992719bbe92cedac2585dc",
+      "quality": "581947db2e9cbba8462c5ac36ff9c3ccca3b2ef2f149700ef158f40681a772d7"
+    }
+  },
+  "native_browser": {
+    "passed": true,
+    "base_url": "http://127.0.0.1:8000/",
+    "release_id": "f61cecb1c14d91cfc32f10c74a9945fd2cf7f1851abd8ca6b0eb3f3e8975b052",
+    "downloads": [
+      {
+        "filename": "winddesk-decision-2026-01-31-2026-01-31-3e99fdfbcb8c.csv",
+        "bytes": 16684,
+        "sha256": "fe2be2059487881da49f715f7a2f3f54f692e6277137bee043328c0fb0c290e4",
+        "context_id": "3e99fdfbcb8c4060207e342f67d2bd2f35e1490a1ebbf2ffb28f66d6f640b321"
+      },
+      {
+        "filename": "winddesk-accuracy-2026-01-01-2026-01-31-9365356d0553.csv",
+        "bytes": 1220393,
+        "sha256": "80b887b6126aaf581192fbd6695e53e0ac18b38c3e992719bbe92cedac2585dc",
+        "context_id": "9365356d0553e0483a11dee23c586342a99e918a5b7c191c91b6693d82cd4c34"
+      }
+    ],
+    "console_errors": [],
+    "viewports": [
+      1440,
+      390,
+      320
+    ],
+    "checks": [
+      "cutoff draft/apply and source eligibility",
+      "forecast-only decision requests",
+      "keyboard chart inspection",
+      "exact browser CSV bytes",
+      "four API-derived metrics",
+      "daily drill-down",
+      "pinned provenance and reload",
+      "narrow layout and keyboard table focus"
+    ]
+  },
+  "clean_source_container": {
+    "source_copy_files": 133,
+    "is_git_clone": false,
+    "runtime": {
+      "image_id": "sha256:8e88e751bc38cc5fb43c0037b8b47e72f1ac23fe802d0af6718165a81e625e7b",
+      "repository_digests": [
+        "winddesk@sha256:8e88e751bc38cc5fb43c0037b8b47e72f1ac23fe802d0af6718165a81e625e7b"
+      ],
+      "image_size_bytes": 283881202,
+      "build_sha": "phase6-local",
+      "user": "app",
+      "read_only_root": true,
+      "tmpfs": {
+        "/tmp": "size=32m,mode=1777"
+      },
+      "cap_drop": [
+        "ALL"
+      ],
+      "security_options": [
+        "no-new-privileges:true"
+      ],
+      "state": "healthy",
+      "engine": "29.8.0"
+    },
+    "before": {
+      "base_url": "http://127.0.0.1:18000",
+      "release_id": "f61cecb1c14d91cfc32f10c74a9945fd2cf7f1851abd8ca6b0eb3f3e8975b052",
+      "build_sha": "phase6-local",
+      "checks": [
+        "readiness, accepted seed and safe response headers",
+        "January boundaries, cutoff publication eligibility and forecast-only CSV",
+        "1,488 CSV rows per cutoff and four independently recomputed metrics",
+        "pinned raw-response provenance",
+        "safe validation, stale-download guard and read-only public routes",
+        "real built assets, CSP and cache boundaries"
+      ],
+      "stable_fingerprint": "54c9e04926ac299c8b104d2022fbbcac136a9c7e86fda93a4f3cdb9a4c71fe3b",
+      "fingerprints": {
+        "/api/v1/decision-view?decision_date=2026-01-01&cutoff_local=09:00": "f2e7d234a65ae23deef096cab87a969a6314caa181c97838b54414106c7f3b7b",
+        "/api/v1/export.csv?mode=decision&release_id=f61cecb1c14d91cfc32f10c74a9945fd2cf7f1851abd8ca6b0eb3f3e8975b052&cutoff_local=09%3A00&expected_context_id=634f97f381daff58b04c02cb48bd841e3110e8d9deeabd9421a64b95fc14889d&decision_date=2026-01-01": "741ebdedcfd243750e64fc14ab34513842d4728781dde331b269685b219b6d8b",
+        "/api/v1/decision-view?decision_date=2026-01-31&cutoff_local=09:00": "b008c8603726557fb93db0577b9d95406479a7bd634d1bc4b62d3ced02f73f48",
+        "/api/v1/export.csv?mode=decision&release_id=f61cecb1c14d91cfc32f10c74a9945fd2cf7f1851abd8ca6b0eb3f3e8975b052&cutoff_local=09%3A00&expected_context_id=9ade7842b2ff41c3df4dadd3a468300f0e9fc73e066493c4754955463ae1a1f8&decision_date=2026-01-31": "4510c44ca95bc0894e69139357a9660a279aeaa7d0d330d4156f47f4be995607",
+        "/api/v1/decision-view?decision_date=2026-01-31&cutoff_local=09:45": "5692e766061ceb17a915a0523488d528654f5e0e52dc8ae173fdab17915e4b36",
+        "/api/v1/export.csv?mode=decision&release_id=f61cecb1c14d91cfc32f10c74a9945fd2cf7f1851abd8ca6b0eb3f3e8975b052&cutoff_local=09%3A45&expected_context_id=9deba7f04bfa5bf4138e127dfffc56a282c3a60d59b91329529dfb1a5df9d78d&decision_date=2026-01-31": "edff1d30c493387d785f0eed5db5e6e9cad4ccb4f5cec843bab1606f6d1c0958",
+        "/api/v1/accuracy?decision_from=2026-01-01&decision_to=2026-01-31&cutoff_local=09:00": "256825f1880d9bcde33dc34e65bb608c5509ef21c74c992ae620b49476f6ded6",
+        "/api/v1/export.csv?mode=accuracy&release_id=f61cecb1c14d91cfc32f10c74a9945fd2cf7f1851abd8ca6b0eb3f3e8975b052&cutoff_local=09%3A00&expected_context_id=085fe8332f0d08bb6b2265ecafa675c98ebe203438b58fa13bfa1d02ca6b6cba&decision_from=2026-01-01&decision_to=2026-01-31&comparison_policy=source_timestamp_v1": "d79d6e66206c903b3e26fc8dece42afa049e46079db4b8de33c6105928f98796",
+        "/api/v1/accuracy?decision_from=2026-01-01&decision_to=2026-01-31&cutoff_local=09:45": "a36524737355d9266be9377caa82d11700095303d5749b0b042842043369ef94",
+        "/api/v1/export.csv?mode=accuracy&release_id=f61cecb1c14d91cfc32f10c74a9945fd2cf7f1851abd8ca6b0eb3f3e8975b052&cutoff_local=09%3A45&expected_context_id=1b7a324eedea810c152e1a1c8f071a86000e383ecb24908d0214613dc1e94036&decision_from=2026-01-01&decision_to=2026-01-31&comparison_policy=source_timestamp_v1": "3315614cff39f2a3af71a456e4841045369466524a5116d107036db6dda45194",
+        "quality": "fda71099a661a9b77e22dffa748ad28e7d38063f93b704beee56932b6253194f"
+      }
+    },
+    "after": {
+      "base_url": "http://127.0.0.1:18000",
+      "release_id": "f61cecb1c14d91cfc32f10c74a9945fd2cf7f1851abd8ca6b0eb3f3e8975b052",
+      "build_sha": "phase6-local",
+      "checks": [
+        "readiness, accepted seed and safe response headers",
+        "January boundaries, cutoff publication eligibility and forecast-only CSV",
+        "1,488 CSV rows per cutoff and four independently recomputed metrics",
+        "pinned raw-response provenance",
+        "safe validation, stale-download guard and read-only public routes",
+        "real built assets, CSP and cache boundaries"
+      ],
+      "stable_fingerprint": "54c9e04926ac299c8b104d2022fbbcac136a9c7e86fda93a4f3cdb9a4c71fe3b",
+      "fingerprints": {
+        "/api/v1/decision-view?decision_date=2026-01-01&cutoff_local=09:00": "f2e7d234a65ae23deef096cab87a969a6314caa181c97838b54414106c7f3b7b",
+        "/api/v1/export.csv?mode=decision&release_id=f61cecb1c14d91cfc32f10c74a9945fd2cf7f1851abd8ca6b0eb3f3e8975b052&cutoff_local=09%3A00&expected_context_id=634f97f381daff58b04c02cb48bd841e3110e8d9deeabd9421a64b95fc14889d&decision_date=2026-01-01": "741ebdedcfd243750e64fc14ab34513842d4728781dde331b269685b219b6d8b",
+        "/api/v1/decision-view?decision_date=2026-01-31&cutoff_local=09:00": "b008c8603726557fb93db0577b9d95406479a7bd634d1bc4b62d3ced02f73f48",
+        "/api/v1/export.csv?mode=decision&release_id=f61cecb1c14d91cfc32f10c74a9945fd2cf7f1851abd8ca6b0eb3f3e8975b052&cutoff_local=09%3A00&expected_context_id=9ade7842b2ff41c3df4dadd3a468300f0e9fc73e066493c4754955463ae1a1f8&decision_date=2026-01-31": "4510c44ca95bc0894e69139357a9660a279aeaa7d0d330d4156f47f4be995607",
+        "/api/v1/decision-view?decision_date=2026-01-31&cutoff_local=09:45": "5692e766061ceb17a915a0523488d528654f5e0e52dc8ae173fdab17915e4b36",
+        "/api/v1/export.csv?mode=decision&release_id=f61cecb1c14d91cfc32f10c74a9945fd2cf7f1851abd8ca6b0eb3f3e8975b052&cutoff_local=09%3A45&expected_context_id=9deba7f04bfa5bf4138e127dfffc56a282c3a60d59b91329529dfb1a5df9d78d&decision_date=2026-01-31": "edff1d30c493387d785f0eed5db5e6e9cad4ccb4f5cec843bab1606f6d1c0958",
+        "/api/v1/accuracy?decision_from=2026-01-01&decision_to=2026-01-31&cutoff_local=09:00": "256825f1880d9bcde33dc34e65bb608c5509ef21c74c992ae620b49476f6ded6",
+        "/api/v1/export.csv?mode=accuracy&release_id=f61cecb1c14d91cfc32f10c74a9945fd2cf7f1851abd8ca6b0eb3f3e8975b052&cutoff_local=09%3A00&expected_context_id=085fe8332f0d08bb6b2265ecafa675c98ebe203438b58fa13bfa1d02ca6b6cba&decision_from=2026-01-01&decision_to=2026-01-31&comparison_policy=source_timestamp_v1": "d79d6e66206c903b3e26fc8dece42afa049e46079db4b8de33c6105928f98796",
+        "/api/v1/accuracy?decision_from=2026-01-01&decision_to=2026-01-31&cutoff_local=09:45": "a36524737355d9266be9377caa82d11700095303d5749b0b042842043369ef94",
+        "/api/v1/export.csv?mode=accuracy&release_id=f61cecb1c14d91cfc32f10c74a9945fd2cf7f1851abd8ca6b0eb3f3e8975b052&cutoff_local=09%3A45&expected_context_id=1b7a324eedea810c152e1a1c8f071a86000e383ecb24908d0214613dc1e94036&decision_from=2026-01-01&decision_to=2026-01-31&comparison_policy=source_timestamp_v1": "3315614cff39f2a3af71a456e4841045369466524a5116d107036db6dda45194",
+        "quality": "fda71099a661a9b77e22dffa748ad28e7d38063f93b704beee56932b6253194f"
+      }
+    },
+    "browser": {
+      "passed": true,
+      "base_url": "http://127.0.0.1:18000/",
+      "release_id": "f61cecb1c14d91cfc32f10c74a9945fd2cf7f1851abd8ca6b0eb3f3e8975b052",
+      "downloads": [
+        {
+          "filename": "winddesk-decision-2026-01-31-2026-01-31-9deba7f04bfa.csv",
+          "bytes": 16852,
+          "sha256": "edff1d30c493387d785f0eed5db5e6e9cad4ccb4f5cec843bab1606f6d1c0958",
+          "context_id": "9deba7f04bfa5bf4138e127dfffc56a282c3a60d59b91329529dfb1a5df9d78d"
+        },
+        {
+          "filename": "winddesk-accuracy-2026-01-01-2026-01-31-1b7a324eedea.csv",
+          "bytes": 1230809,
+          "sha256": "3315614cff39f2a3af71a456e4841045369466524a5116d107036db6dda45194",
+          "context_id": "1b7a324eedea810c152e1a1c8f071a86000e383ecb24908d0214613dc1e94036"
+        }
+      ],
+      "console_errors": [],
+      "viewports": [
+        1440,
+        390,
+        320
+      ],
+      "checks": [
+        "cutoff draft/apply and source eligibility",
+        "forecast-only decision requests",
+        "keyboard chart inspection",
+        "exact browser CSV bytes",
+        "four API-derived metrics",
+        "daily drill-down",
+        "pinned provenance and reload",
+        "narrow layout and keyboard table focus"
+      ]
+    }
+  },
+  "complete_container_cli": {
+    "exit_code": 0,
+    "report": {
+      "project": "winddesk-ci-local",
+      "release_id": "f61cecb1c14d91cfc32f10c74a9945fd2cf7f1851abd8ca6b0eb3f3e8975b052",
+      "build_sha": "phase6-local",
+      "image_id": "sha256:90a959cf922642d1437c50022c71de8a5a2807655d7a27ebd2f1b3e884eb4429",
+      "non_root": true,
+      "read_only_root": true,
+      "capabilities_dropped": true,
+      "seed_replay": "passed",
+      "database_and_web_restart": "passed",
+      "stable_fingerprint": "f2ea37e3d747d480916aafb1f7a610aaec81d7da0ec7a9c414b008f9189df86d"
+    },
+    "image": {
+      "image_id": "sha256:90a959cf922642d1437c50022c71de8a5a2807655d7a27ebd2f1b3e884eb4429",
+      "repository_digests": [
+        "winddesk@sha256:90a959cf922642d1437c50022c71de8a5a2807655d7a27ebd2f1b3e884eb4429"
+      ],
+      "size_bytes": 283882304,
+      "revision": "phase6-local",
+      "user": "app"
+    },
+    "before_after_fingerprints_equal": true,
+    "browser": {
+      "passed": true,
+      "base_url": "http://127.0.0.1:18001/",
+      "release_id": "f61cecb1c14d91cfc32f10c74a9945fd2cf7f1851abd8ca6b0eb3f3e8975b052",
+      "downloads": [
+        {
+          "filename": "winddesk-decision-2026-01-31-2026-01-31-9deba7f04bfa.csv",
+          "bytes": 16852,
+          "sha256": "edff1d30c493387d785f0eed5db5e6e9cad4ccb4f5cec843bab1606f6d1c0958",
+          "context_id": "9deba7f04bfa5bf4138e127dfffc56a282c3a60d59b91329529dfb1a5df9d78d"
+        },
+        {
+          "filename": "winddesk-accuracy-2026-01-01-2026-01-31-1b7a324eedea.csv",
+          "bytes": 1230809,
+          "sha256": "3315614cff39f2a3af71a456e4841045369466524a5116d107036db6dda45194",
+          "context_id": "1b7a324eedea810c152e1a1c8f071a86000e383ecb24908d0214613dc1e94036"
+        }
+      ],
+      "console_errors": [],
+      "viewports": [
+        1440,
+        390,
+        320
+      ],
+      "checks": [
+        "cutoff draft/apply and source eligibility",
+        "forecast-only decision requests",
+        "keyboard chart inspection",
+        "exact browser CSV bytes",
+        "four API-derived metrics",
+        "daily drill-down",
+        "pinned provenance and reload",
+        "narrow layout and keyboard table focus"
+      ]
+    },
+    "qualification": "Linux orchestration with private Ubuntu Docker; temporary npm adapter invoked the real Windows Chrome runner. Native Linux Chromium remote CI is not yet run."
+  },
+  "cleanup_guards": {
+    "running_project_refused_and_preserved": true,
+    "orphaned_volume_refused_and_preserved": true
+  },
+  "cleanup": {
+    "projects_removed": [
+      "winddesk-phase6",
+      "winddesk-ci-local"
+    ],
+    "remaining_test_containers": 0,
+    "remaining_test_volumes": 0,
+    "engine_stopped": true,
+    "native_services_preserved": true
+  },
+  "ci": {
+    "workflow": ".github/workflows/ci.yml",
+    "workflow_sha256": "48ec25361fd120a507512fced3041efbec49340e0771fa71622af90bbde3a649",
+    "action_refs": [
+      {
+        "repository": "actions/checkout",
+        "tag": "v6",
+        "commit": "d23441a48e516b6c34aea4fa41551a30e30af803",
+        "source": "https://api.github.com/repos/actions/checkout/git/ref/tags/v6"
+      },
+      {
+        "repository": "actions/setup-python",
+        "tag": "v6",
+        "commit": "ece7cb06caefa5fff74198d8649806c4678c61a1",
+        "source": "https://api.github.com/repos/actions/setup-python/git/ref/tags/v6"
+      },
+      {
+        "repository": "actions/setup-node",
+        "tag": "v6",
+        "commit": "249970729cb0ef3589644e2896645e5dc5ba9c38",
+        "source": "https://api.github.com/repos/actions/setup-node/git/ref/tags/v6"
+      },
+      {
+        "repository": "astral-sh/setup-uv",
+        "tag": "v6",
+        "commit": "d0cc045d04ccac9d8b7881df0226f9e82c39688e",
+        "source": "https://api.github.com/repos/astral-sh/setup-uv/git/ref/tags/v6"
+      },
+      {
+        "repository": "actions/upload-artifact",
+        "tag": "v4",
+        "commit": "ea165f8d65b6e75b540449e92b4886f43607fa02",
+        "source": "https://api.github.com/repos/actions/upload-artifact/git/ref/tags/v4"
+      }
+    ],
+    "remote_run": "not_run_no_public_repository_yet",
+    "requires_live_elexon": false,
+    "requires_account_secrets": false
+  },
+  "container_bases": [
+    {
+      "image": "node",
+      "tag": "24-bookworm-slim",
+      "digest": "sha256:c86ecead9e55a5210ac1727de38a4ca840bf03dcaf34dc9749addbf383b1920c",
+      "registry_manifest": "https://registry-1.docker.io/v2/library/node/manifests/24-bookworm-slim"
+    },
+    {
+      "image": "python",
+      "tag": "3.12-slim-bookworm",
+      "digest": "sha256:e697c81897302a4c4333bade000d98038fbb21eb064f8ee1fd42d02ebcd9d337",
+      "registry_manifest": "https://registry-1.docker.io/v2/library/python/manifests/3.12-slim-bookworm"
+    },
+    {
+      "image": "postgres",
+      "tag": "17-bookworm",
+      "digest": "sha256:839fbb5a4942a7758dd93e18b42ea5649807491a0545b5eeeb8f0b8bb11857a5",
+      "registry_manifest": "https://registry-1.docker.io/v2/library/postgres/manifests/17-bookworm"
+    },
+    {
+      "image": "ghcr.io/astral-sh/uv",
+      "tag": "0.13.6",
+      "digest": "sha256:af22a52f5eafef3d78e551599d405c02df61919d18028f0cea8eda93bc9986d0",
+      "registry_manifest": "https://ghcr.io/v2/astral-sh/uv/manifests/0.13.6"
+    }
+  ],
+  "publication_inputs_at_recording": 138,
+  "open_gates": [
+    "Initial commit, actual fresh committed checkout and remote CI run",
+    "Vercel account/plan access, external PostgreSQL, cost ownership and public deployment",
+    "Host-level quota and trusted proxy identity",
+    "Public repository, unlisted video and final submission",
+    "Operational acceptance/security/recovery/performance phases"
+  ],
+  "environment_note": "Docker Desktop remained blocked by an existing inaccessible sailor-ingest.sock (Windows error 1920). Verified via a separate disposable Ubuntu 24.04 WSL2 Docker Engine 29.8.0, private Unix socket and temporary data root; no Desktop reset, Windows service or paid resource. Native preview and PostgreSQL remain available."
+}

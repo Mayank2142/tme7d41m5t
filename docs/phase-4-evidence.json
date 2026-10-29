@@ -1,0 +1,127 @@
+{
+  "phase": 4,
+  "status": "implemented_and_verified_locally",
+  "measured_window": {
+    "first_recorded_clock_utc": "2026-10-29T15:08:42+00:00",
+    "verification_recorded_at_utc": "2026-10-29T15:41:23.664231+00:00",
+    "elapsed_wall_minutes": 32.69,
+    "qualification": "First sample followed initial inspection. Earlier turn-start overhead and total prior assignment effort are unknown. Includes permission-review timeout, repairs, and reruns."
+  },
+  "release_id": "f61cecb1c14d91cfc32f10c74a9945fd2cf7f1851abd8ca6b0eb3f3e8975b052",
+  "parser_version": "elexon_streams_v2",
+  "application_version": "0.1.0",
+  "build_sha": "local",
+  "source_fingerprint_sha256": "141d577633e77e64b170b2b9fc0f145070e991fd8f1dd138d56a34b33601f7c1",
+  "source_fingerprint_definition": "SHA-256 of compact sorted JSON mapping backend/app Python relative paths to file-byte SHA-256 hashes; a verification fingerprint, not a Git commit.",
+  "backend_suite": {
+    "tests": 85,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "passed": 85,
+    "postgresql_tests": 4,
+    "duration_seconds": 154.374
+  },
+  "frontend_suite": {
+    "passed": 8,
+    "lint": "passed",
+    "type_check": "passed",
+    "production_build": "passed"
+  },
+  "quality_checks": {
+    "python_lint": "passed",
+    "python_format": "passed",
+    "dependency_lock": "passed_offline_with_workspace_cache"
+  },
+  "live_http": {
+    "decision": {
+      "status_code": 200,
+      "release_id": "f61cecb1c14d91cfc32f10c74a9945fd2cf7f1851abd8ca6b0eb3f3e8975b052",
+      "analysis_context_id": "d45167560542439c12f20435a71577bd28c0b40142692c48705733d00eba3d26",
+      "csv_rows": 24,
+      "json_sha256": "a57dc14674aa7841bffcb5aeddcc0b184b6302ccd7569d160feabf1ebd9db977",
+      "csv_sha256": "1aa7303a709ff49848ba5f8a8d36d246ce0855dc915d6fdb0c0747af92ec289d",
+      "pinned_quality_status": 200
+    },
+    "recomputed_metrics": {
+      "mae_mw": 2022.470430107527,
+      "rmse_mw": 2497.407157584179,
+      "bias_mw": 1745.9381720430108,
+      "p90_absolute_error_mw": 4154.4
+    },
+    "accuracy_coverage": {
+      "expected": 744,
+      "forecast_missing": 0,
+      "forecast_invalid": 0,
+      "actual_missing": 0,
+      "actual_invalid": 0,
+      "paired": 744,
+      "paired_percent": 100.0
+    },
+    "accuracy": {
+      "status_code": 200,
+      "release_id": "f61cecb1c14d91cfc32f10c74a9945fd2cf7f1851abd8ca6b0eb3f3e8975b052",
+      "analysis_context_id": "52ad55dc24f4e9cf6e92cbf0aed5706f5d16de2412f31e3ec2a6a8e284db13e0",
+      "csv_rows": 1488,
+      "json_sha256": "7b08d712ccd7a820f4a3ba3f71a36169c90ab6b105799ce1ec8a340c93b21889",
+      "csv_sha256": "6df3528019fce179333051144617a62587a4dbd357f507a857ae1edcb28b7304",
+      "pinned_quality_status": 200
+    },
+    "error_checks": [
+      {
+        "status": 422,
+        "code": "INVALID_FILTERS"
+      },
+      {
+        "status": 422,
+        "code": "INVALID_FILTERS"
+      },
+      {
+        "status": 404,
+        "code": "RELEASE_NOT_FOUND"
+      },
+      {
+        "status": 422,
+        "code": "DUPLICATE_FILTER"
+      },
+      {
+        "status": 409,
+        "code": "ANALYSIS_CONTEXT_MISMATCH"
+      },
+      {
+        "status": 404,
+        "code": "NOT_FOUND"
+      }
+    ]
+  },
+  "openapi_sha256": "10815c46f921cff1adc2aaae783e23f1d74b63cf39ba08df9aeb04403873cd3f",
+  "scope": {
+    "context_version": "analysis_context_v1",
+    "comparison_policy": "source_timestamp_v1",
+    "new_routes": [
+      "/api/v1/decision-view",
+      "/api/v1/accuracy",
+      "/api/v1/export.csv"
+    ],
+    "expanded_routes": [
+      "/api/v1/config",
+      "/api/v1/data-quality"
+    ],
+    "decision_loads_actuals": false,
+    "ordinary_reads_download_from_source": false
+  },
+  "repairs_before_final_pass": [
+    "Typed provenance changed to retain established payload_sha256 API field; archive manifest uses sha256.",
+    "Raw-body exclusion assertion narrowed to payload_gzip and payload_base64 so public digest metadata remains valid."
+  ],
+  "attribution": "Contains BMRS data © Elexon Limited copyright and database right 2026.",
+  "licence_url": "https://www.elexon.co.uk/bsc/data/balancing-mechanism-reporting-agent/copyright-licence-bmrs-data/",
+  "remaining": [
+    "Phase 5 analyst UI and browser journey",
+    "Docker image/Compose execution and CI",
+    "Ingress limits and concurrent load verification",
+    "Vercel account, external PostgreSQL and public deployment",
+    "Verified deployed Git commit, video and submission",
+    "Operational client acceptance"
+  ]
+}

@@ -1,0 +1,26 @@
+[
+  {
+    "image": "node",
+    "tag": "24-bookworm-slim",
+    "digest": "sha256:c86ecead9e55a5210ac1727de38a4ca840bf03dcaf34dc9749addbf383b1920c",
+    "registry_manifest": "https://registry-1.docker.io/v2/library/node/manifests/24-bookworm-slim"
+  },
+  {
+    "image": "python",
+    "tag": "3.12-slim-bookworm",
+    "digest": "sha256:e697c81897302a4c4333bade000d98038fbb21eb064f8ee1fd42d02ebcd9d337",
+    "registry_manifest": "https://registry-1.docker.io/v2/library/python/manifests/3.12-slim-bookworm"
+  },
+  {
+    "image": "postgres",
+    "tag": "17-bookworm",
+    "digest": "sha256:839fbb5a4942a7758dd93e18b42ea5649807491a0545b5eeeb8f0b8bb11857a5",
+    "registry_manifest": "https://registry-1.docker.io/v2/library/postgres/manifests/17-bookworm"
+  },
+  {
+    "image": "ghcr.io/astral-sh/uv",
+    "tag": "0.13.6",
+    "digest": "sha256:af22a52f5eafef3d78e551599d405c02df61919d18028f0cea8eda93bc9986d0",
+    "registry_manifest": "https://ghcr.io/v2/astral-sh/uv/manifests/0.13.6"
+  }
+]

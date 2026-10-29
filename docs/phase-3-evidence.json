@@ -1,0 +1,152 @@
+{
+  "phase": 3,
+  "status": "implemented_and_verified_locally",
+  "measured_window": {
+    "first_recorded_clock_utc": "2026-10-29T11:00:41+00:00",
+    "verification_recorded_at_utc": "2026-10-29T11:16:19.144270+00:00",
+    "elapsed_wall_minutes": 15.64,
+    "qualification": "First sample followed initial file inspection; exact earlier turn-start overhead and prior total assignment effort are unknown."
+  },
+  "release_id": "f61cecb1c14d91cfc32f10c74a9945fd2cf7f1851abd8ca6b0eb3f3e8975b052",
+  "parser_version": "elexon_streams_v2",
+  "build_sha": "local",
+  "seed_sha256": "67f55bdeff2a690c81aec23c9814d2f1d4c78695c455350072863a3d74fd16e1",
+  "analysis_record_sha256": "cec241a5e5d160f750b0361f7037903ca5b77e7db5adb8430a65b936232cca68",
+  "policy_versions": {
+    "comparison_policy": "source_timestamp_v1",
+    "selection_policy": "latest_source_key_v1",
+    "actual_vintage_policy": "latest_publication_in_release_v1",
+    "availability_model": "source_publication_time"
+  },
+  "backend_suite": {
+    "tests": 55,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "passed": 55,
+    "duration_seconds": 212.668
+  },
+  "checks": {
+    "python_lint": "passed",
+    "python_format": "passed",
+    "offline_dependency_lock": "passed_with_workspace_uv_cache",
+    "independent_raw_json_cutoffs": [
+      "00:00",
+      "09:00",
+      "09:45",
+      "23:59"
+    ],
+    "database_adapter": "passed_in_real_postgresql_isolated_schemas",
+    "old_release_source_identities": "passed_while_reparsed_release_active",
+    "invalid_cli_cutoff": "rejected",
+    "live_metadata_and_reports": {
+      "/health/ready": {
+        "status_code": 200,
+        "release_id": "f61cecb1c14d91cfc32f10c74a9945fd2cf7f1851abd8ca6b0eb3f3e8975b052"
+      },
+      "/api/v1/config": {
+        "status_code": 200,
+        "release_id": "f61cecb1c14d91cfc32f10c74a9945fd2cf7f1851abd8ca6b0eb3f3e8975b052"
+      },
+      "/api/v1/data-quality": {
+        "status_code": 200,
+        "release_id": "f61cecb1c14d91cfc32f10c74a9945fd2cf7f1851abd8ca6b0eb3f3e8975b052"
+      },
+      "analysis_0900": {
+        "sha256": "977391f91c9b8042fb70793370a0db829630e6b95edde9d21487686d9ef10a09",
+        "metrics": {
+          "paired_targets": 744,
+          "mae_mw": 2022.470430107527,
+          "rmse_mw": 2497.407157584179,
+          "bias_mw": 1745.9381720430108,
+          "p90_absolute_error_mw": 4154.4,
+          "reason": null,
+          "version": "metrics_v1",
+          "unit": "MW"
+        }
+      },
+      "analysis_0945": {
+        "sha256": "16f2e61487c947cabe1c4ef13cf52c322b777122bd6352b4fbce8c234c571c0f",
+        "metrics": {
+          "paired_targets": 744,
+          "mae_mw": 1995.5685483870968,
+          "rmse_mw": 2498.8245110107187,
+          "bias_mw": 1727.9825268817203,
+          "p90_absolute_error_mw": 4183.9,
+          "reason": null,
+          "version": "metrics_v1",
+          "unit": "MW"
+        }
+      }
+    }
+  },
+  "observed_reports": [
+    {
+      "cutoff_local": "09:00",
+      "metrics": {
+        "paired_targets": 744,
+        "mae_mw": 2022.470430107527,
+        "rmse_mw": 2497.407157584179,
+        "bias_mw": 1745.9381720430108,
+        "p90_absolute_error_mw": 4154.4,
+        "reason": null,
+        "version": "metrics_v1",
+        "unit": "MW"
+      },
+      "coverage": {
+        "expected": 744,
+        "forecast_missing": 0,
+        "forecast_invalid": 0,
+        "actual_missing": 0,
+        "actual_invalid": 0,
+        "paired": 744,
+        "paired_percent": 100.0
+      },
+      "actual_source_coverage": {
+        "expected": 1488,
+        "valid": 1488,
+        "missing": 0,
+        "invalid": 0,
+        "valid_percent": 100.0
+      }
+    },
+    {
+      "cutoff_local": "09:45",
+      "metrics": {
+        "paired_targets": 744,
+        "mae_mw": 1995.5685483870968,
+        "rmse_mw": 2498.8245110107187,
+        "bias_mw": 1727.9825268817203,
+        "p90_absolute_error_mw": 4183.9,
+        "reason": null,
+        "version": "metrics_v1",
+        "unit": "MW"
+      },
+      "coverage": {
+        "expected": 744,
+        "forecast_missing": 0,
+        "forecast_invalid": 0,
+        "actual_missing": 0,
+        "actual_invalid": 0,
+        "paired": 744,
+        "paired_percent": 100.0
+      },
+      "actual_source_coverage": {
+        "expected": 1488,
+        "valid": 1488,
+        "missing": 0,
+        "invalid": 0,
+        "valid_percent": 100.0
+      }
+    }
+  ],
+  "attribution": "Contains BMRS data © Elexon Limited copyright and database right 2026.",
+  "licence_url": "https://www.elexon.co.uk/bsc/data/balancing-mechanism-reporting-agent/copyright-licence-bmrs-data/",
+  "remaining": [
+    "Phase 4 public analysis APIs, context and CSV",
+    "Phase 5 analyst interface",
+    "Docker image/Compose execution",
+    "Vercel account, external database and deployment verification",
+    "Production operational acceptance"
+  ]
+}

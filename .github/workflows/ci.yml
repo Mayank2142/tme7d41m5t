@@ -1,0 +1,115 @@
+name: Verify Wind Desk
+
+on:
+  pull_request:
+  push:
+    branches: [main, 'codex/**']
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: verify-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  quality:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    services:
+      postgres:
+        image: postgres:17-bookworm@sha256:839fbb5a4942a7758dd93e18b42ea5649807491a0545b5eeeb8f0b8bb11857a5
+        env:
+          POSTGRES_USER: winddesk
+          POSTGRES_PASSWORD: winddesk_local
+          POSTGRES_DB: winddesk
+        ports: ['5432:5432']
+        options: >-
+          --health-cmd "pg_isready -U winddesk -d winddesk"
+          --health-interval 5s --health-timeout 3s --health-retries 12
+    env:
+      GRID_TEST_DATABASE_URL: postgresql+psycopg://winddesk:winddesk_local@127.0.0.1:5432/winddesk
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1 # v6
+        with:
+          python-version: '3.12'
+      - uses: astral-sh/setup-uv@d0cc045d04ccac9d8b7881df0226f9e82c39688e # v6
+        with:
+          version: '0.13.6'
+          enable-cache: true
+          cache-dependency-glob: uv.lock
+      - uses: actions/setup-node@249970729cb0ef3589644e2896645e5dc5ba9c38 # v6
+        with:
+          node-version: '24'
+          cache: npm
+          cache-dependency-path: frontend/package-lock.json
+      - run: uv sync --frozen
+      - name: Validate PowerShell helper syntax
+        shell: pwsh
+        run: |
+          Get-ChildItem scripts -Filter *.ps1 | ForEach-Object {
+            $parseTokens = $null
+            $parseErrors = $null
+            [System.Management.Automation.Language.Parser]::ParseFile($_.FullName, [ref]$parseTokens, [ref]$parseErrors) | Out-Null
+            if ($parseErrors.Count) { throw ($parseErrors | Out-String) }
+          }
+      - name: Source and Python checks
+        run: |
+          uv lock --check
+          uv run --frozen python scripts/check_repository.py
+          uv run --frozen ruff check backend scripts
+          uv run --frozen ruff format --check backend scripts
+          uv run --frozen pytest --junitxml=output/pytest.xml
+      - name: Frontend checks
+        run: |
+          npm ci --prefix frontend
+          npm run lint --prefix frontend
+          npm run build --prefix frontend
+          npm test --prefix frontend -- --reporter=default --reporter=junit --outputFile=../output/vitest.xml
+      - name: Wheel resources
+        run: |
+          uv build --wheel --out-dir output/dist
+          uv run --frozen python scripts/verify_wheel.py output/dist/wind_desk-0.1.0-py3-none-any.whl
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        if: always()
+        with:
+          name: quality-evidence
+          path: output/
+          if-no-files-found: ignore
+          retention-days: 7
+
+  container:
+    needs: quality
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    env:
+      GRID_BUILD_SHA: ${{ github.sha }}
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1 # v6
+        with:
+          python-version: '3.12'
+      - uses: actions/setup-node@249970729cb0ef3589644e2896645e5dc5ba9c38 # v6
+        with:
+          node-version: '24'
+          cache: npm
+          cache-dependency-path: frontend/package-lock.json
+      - run: npm ci --prefix frontend
+      - name: Install pinned Playwright Chromium
+        working-directory: frontend
+        run: npx playwright install --with-deps chromium
+      - name: Clean image, real seed, browser and persistence gates
+        run: python scripts/verify_containers.py --project winddesk-ci --output output/containers
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        if: always()
+        with:
+          name: container-evidence
+          path: output/
+          if-no-files-found: ignore
+          retention-days: 7

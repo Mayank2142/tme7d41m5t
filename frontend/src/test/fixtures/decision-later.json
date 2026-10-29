@@ -1,0 +1,362 @@
+{
+  "analysis_context_id": "3e99fdfbcb8c4060207e342f67d2bd2f35e1490a1ebbf2ffb28f66d6f640b321",
+  "context": {
+    "context_version": "analysis_context_v1",
+    "mode": "decision",
+    "release_id": "f61cecb1c14d91cfc32f10c74a9945fd2cf7f1851abd8ca6b0eb3f3e8975b052",
+    "source_parser": "elexon_streams_v2",
+    "application_version": "0.1.0",
+    "build_sha": "local",
+    "decision_from": "2026-01-31",
+    "decision_to": "2026-01-31",
+    "cutoff_local": "09:45",
+    "timezone": "Europe/London",
+    "calendar_policy": "january_decisions_v1",
+    "selection_policy": "latest_source_key_v1",
+    "availability_model": "source_publication_time",
+    "forecast_cadence_minutes": 60
+  },
+  "analysis": {
+    "window": {
+      "decision_date": "2026-01-31",
+      "delivery_date": "2026-02-01",
+      "cutoff_local": "09:45",
+      "cutoff_utc": "2026-01-31T09:45:00Z",
+      "delivery_start_utc": "2026-02-01T00:00:00Z",
+      "delivery_end_utc": "2026-02-02T00:00:00Z",
+      "timezone": "Europe/London"
+    },
+    "points": [
+      {
+        "target_start_utc": "2026-02-01T00:00:00Z",
+        "forecast": {
+          "state": "valid",
+          "publication_utc": "2026-01-31T09:30:00Z",
+          "generation_mw": 10474,
+          "source_version_ids": [
+            "e2d1facccc917f73b0158ba614392b73a73dc0cf18376aa48c5fd2aabfc93098"
+          ],
+          "reason": null
+        },
+        "age_at_cutoff_seconds": 900
+      },
+      {
+        "target_start_utc": "2026-02-01T01:00:00Z",
+        "forecast": {
+          "state": "valid",
+          "publication_utc": "2026-01-31T09:30:00Z",
+          "generation_mw": 10117,
+          "source_version_ids": [
+            "13e8eca764e866ab39183ef7dd4a841c0b807e60e10945eb15e8a4e8781200bf"
+          ],
+          "reason": null
+        },
+        "age_at_cutoff_seconds": 900
+      },
+      {
+        "target_start_utc": "2026-02-01T02:00:00Z",
+        "forecast": {
+          "state": "valid",
+          "publication_utc": "2026-01-31T09:30:00Z",
+          "generation_mw": 9685,
+          "source_version_ids": [
+            "b43a69cbdfb4a4e76459d8ba6ee4bfb83d3e5c0d5654d2a4f4db236812cddce9"
+          ],
+          "reason": null
+        },
+        "age_at_cutoff_seconds": 900
+      },
+      {
+        "target_start_utc": "2026-02-01T03:00:00Z",
+        "forecast": {
+          "state": "valid",
+          "publication_utc": "2026-01-31T09:30:00Z",
+          "generation_mw": 9291,
+          "source_version_ids": [
+            "81bddfda5dbcdb6616da1f87355be108dbeab9e8face68677c59e3a553a92bc3"
+          ],
+          "reason": null
+        },
+        "age_at_cutoff_seconds": 900
+      },
+      {
+        "target_start_utc": "2026-02-01T04:00:00Z",
+        "forecast": {
+          "state": "valid",
+          "publication_utc": "2026-01-31T09:30:00Z",
+          "generation_mw": 9004,
+          "source_version_ids": [
+            "fa0a636118d5cf702059d0d3b350d7712da335625e48dbe01afd6b08e28620f3"
+          ],
+          "reason": null
+        },
+        "age_at_cutoff_seconds": 900
+      },
+      {
+        "target_start_utc": "2026-02-01T05:00:00Z",
+        "forecast": {
+          "state": "valid",
+          "publication_utc": "2026-01-31T09:30:00Z",
+          "generation_mw": 8739,
+          "source_version_ids": [
+            "2171cfe2a08635396a7dbf1005eb6784d60ac604b161606cfeaa5ab28c201045"
+          ],
+          "reason": null
+        },
+        "age_at_cutoff_seconds": 900
+      },
+      {
+        "target_start_utc": "2026-02-01T06:00:00Z",
+        "forecast": {
+          "state": "valid",
+          "publication_utc": "2026-01-31T09:30:00Z",
+          "generation_mw": 8443,
+          "source_version_ids": [
+            "f9dd81b3f9d48e8485c7cefb319632a4bfc24404ee810b360e7d03376e2569fc"
+          ],
+          "reason": null
+        },
+        "age_at_cutoff_seconds": 900
+      },
+      {
+        "target_start_utc": "2026-02-01T07:00:00Z",
+        "forecast": {
+          "state": "valid",
+          "publication_utc": "2026-01-31T09:30:00Z",
+          "generation_mw": 8077,
+          "source_version_ids": [
+            "e20a50191e35b0cbf915d04fc9482d9150badf4a4b33ff93cfc1b271adc18e30"
+          ],
+          "reason": null
+        },
+        "age_at_cutoff_seconds": 900
+      },
+      {
+        "target_start_utc": "2026-02-01T08:00:00Z",
+        "forecast": {
+          "state": "valid",
+          "publication_utc": "2026-01-31T09:30:00Z",
+          "generation_mw": 7707,
+          "source_version_ids": [
+            "fcb611e75d7bd4445ccafc1ebda2c95278040b4510c0fd6b1d5971b1e0678452"
+          ],
+          "reason": null
+        },
+        "age_at_cutoff_seconds": 900
+      },
+      {
+        "target_start_utc": "2026-02-01T09:00:00Z",
+        "forecast": {
+          "state": "valid",
+          "publication_utc": "2026-01-31T09:30:00Z",
+          "generation_mw": 7349,
+          "source_version_ids": [
+            "e18e4abe1a4a5d89f94f2c921a3ea89deaabcb45a8f17329f969e2598324c06d"
+          ],
+          "reason": null
+        },
+        "age_at_cutoff_seconds": 900
+      },
+      {
+        "target_start_utc": "2026-02-01T10:00:00Z",
+        "forecast": {
+          "state": "valid",
+          "publication_utc": "2026-01-31T09:30:00Z",
+          "generation_mw": 6963,
+          "source_version_ids": [
+            "05aa1203a30fc1c37a39e0dbcb1dd2a62b30c130dae0ba623322dd4b9c4dc45f"
+          ],
+          "reason": null
+        },
+        "age_at_cutoff_seconds": 900
+      },
+      {
+        "target_start_utc": "2026-02-01T11:00:00Z",
+        "forecast": {
+          "state": "valid",
+          "publication_utc": "2026-01-31T09:30:00Z",
+          "generation_mw": 6592,
+          "source_version_ids": [
+            "d2c057b10bb98b88a59230e5e726df97a5e521cfae785baddf832c2aa2dc7f6e"
+          ],
+          "reason": null
+        },
+        "age_at_cutoff_seconds": 900
+      },
+      {
+        "target_start_utc": "2026-02-01T12:00:00Z",
+        "forecast": {
+          "state": "valid",
+          "publication_utc": "2026-01-31T09:30:00Z",
+          "generation_mw": 6246,
+          "source_version_ids": [
+            "c4f79501cbe6590d80fcee93e50a7dee521db9381ecdbcb4a3ad722fa0fc1609"
+          ],
+          "reason": null
+        },
+        "age_at_cutoff_seconds": 900
+      },
+      {
+        "target_start_utc": "2026-02-01T13:00:00Z",
+        "forecast": {
+          "state": "valid",
+          "publication_utc": "2026-01-31T09:30:00Z",
+          "generation_mw": 5844,
+          "source_version_ids": [
+            "0027f7cb3a17421b0b5f00fa5cf4bcf5a8c732ea062e2e0faa39e7844daa13e0"
+          ],
+          "reason": null
+        },
+        "age_at_cutoff_seconds": 900
+      },
+      {
+        "target_start_utc": "2026-02-01T14:00:00Z",
+        "forecast": {
+          "state": "valid",
+          "publication_utc": "2026-01-31T09:30:00Z",
+          "generation_mw": 5413,
+          "source_version_ids": [
+            "b4f0067154b8b7f27fe078a1f87aad94453ecf709cde2e3a2a5cb037f8c34b6f"
+          ],
+          "reason": null
+        },
+        "age_at_cutoff_seconds": 900
+      },
+      {
+        "target_start_utc": "2026-02-01T15:00:00Z",
+        "forecast": {
+          "state": "valid",
+          "publication_utc": "2026-01-31T09:30:00Z",
+          "generation_mw": 5263,
+          "source_version_ids": [
+            "85458e089c8c8ad5e0056321a6618b75aefbf5ce8831c78b8df37fe81a10d137"
+          ],
+          "reason": null
+        },
+        "age_at_cutoff_seconds": 900
+      },
+      {
+        "target_start_utc": "2026-02-01T16:00:00Z",
+        "forecast": {
+          "state": "valid",
+          "publication_utc": "2026-01-31T09:30:00Z",
+          "generation_mw": 5282,
+          "source_version_ids": [
+            "984009983f46458fc37d7cac5d2b966e5eb7302d5a03f5f25d9a93e484b499e5"
+          ],
+          "reason": null
+        },
+        "age_at_cutoff_seconds": 900
+      },
+      {
+        "target_start_utc": "2026-02-01T17:00:00Z",
+        "forecast": {
+          "state": "valid",
+          "publication_utc": "2026-01-31T09:30:00Z",
+          "generation_mw": 5357,
+          "source_version_ids": [
+            "258eff3319917fbf52c7cf95971ea9e4cd3a0a659be5f1a45e56eec624f80bbb"
+          ],
+          "reason": null
+        },
+        "age_at_cutoff_seconds": 900
+      },
+      {
+        "target_start_utc": "2026-02-01T18:00:00Z",
+        "forecast": {
+          "state": "valid",
+          "publication_utc": "2026-01-31T09:30:00Z",
+          "generation_mw": 5579,
+          "source_version_ids": [
+            "566dd05a392b103e0c959be83875556c01b4b89fbc7bd253500522cad3bea932"
+          ],
+          "reason": null
+        },
+        "age_at_cutoff_seconds": 900
+      },
+      {
+        "target_start_utc": "2026-02-01T19:00:00Z",
+        "forecast": {
+          "state": "valid",
+          "publication_utc": "2026-01-31T09:30:00Z",
+          "generation_mw": 5644,
+          "source_version_ids": [
+            "91bd1055235c6d897da1b7f60d693f7efd03ea5b6ffc7e3a1d3eac5bca281530"
+          ],
+          "reason": null
+        },
+        "age_at_cutoff_seconds": 900
+      },
+      {
+        "target_start_utc": "2026-02-01T20:00:00Z",
+        "forecast": {
+          "state": "valid",
+          "publication_utc": "2026-01-31T09:30:00Z",
+          "generation_mw": 5394,
+          "source_version_ids": [
+            "4d2773fd276fb9c56f9f808953ff23a9394edd4d5d226d9e1a05ccde5f0e7887"
+          ],
+          "reason": null
+        },
+        "age_at_cutoff_seconds": 900
+      },
+      {
+        "target_start_utc": "2026-02-01T21:00:00Z",
+        "forecast": {
+          "state": "valid",
+          "publication_utc": "2026-01-31T09:30:00Z",
+          "generation_mw": 5273,
+          "source_version_ids": [
+            "71720b8c67c58973735f51b98306223c82cfb863797b5dbc0749894d3ae9fefb"
+          ],
+          "reason": null
+        },
+        "age_at_cutoff_seconds": 900
+      },
+      {
+        "target_start_utc": "2026-02-01T22:00:00Z",
+        "forecast": {
+          "state": "valid",
+          "publication_utc": "2026-01-31T09:30:00Z",
+          "generation_mw": 5168,
+          "source_version_ids": [
+            "e05d2109a48cfe87efbb946dd1405ee7891f88d8a1bd01085342bfb64937bb0e"
+          ],
+          "reason": null
+        },
+        "age_at_cutoff_seconds": 900
+      },
+      {
+        "target_start_utc": "2026-02-01T23:00:00Z",
+        "forecast": {
+          "state": "valid",
+          "publication_utc": "2026-01-31T09:30:00Z",
+          "generation_mw": 5007,
+          "source_version_ids": [
+            "cdd3bff90ece2795b07a8111edb77c4da8dce2e5fad8fa843f0099ca56000122"
+          ],
+          "reason": null
+        },
+        "age_at_cutoff_seconds": 900
+      }
+    ],
+    "coverage": { "expected": 24, "valid": 24, "missing": 0, "invalid": 0, "valid_percent": 100.0 },
+    "summary": {
+      "mean_reported_mw": 6996.291666666667,
+      "minimum_reported_mw": 5007,
+      "maximum_reported_mw": 10474,
+      "earliest_publication_utc": "2026-01-31T09:30:00Z",
+      "latest_publication_utc": "2026-01-31T09:30:00Z"
+    },
+    "selection_policy": "latest_source_key_v1",
+    "availability_model": "source_publication_time"
+  },
+  "source": {
+    "forecast_dataset": "WINDFOR",
+    "forecast_endpoint": "https://data.elexon.co.uk/bmrs/api/v1/datasets/WINDFOR/stream",
+    "data_quality_url": "/api/v1/data-quality?release_id=f61cecb1c14d91cfc32f10c74a9945fd2cf7f1851abd8ca6b0eb3f3e8975b052",
+    "attribution": "Contains BMRS data © Elexon Limited copyright and database right 2026.",
+    "licence_url": "https://www.elexon.co.uk/bsc/data/balancing-mechanism-reporting-agent/copyright-licence-bmrs-data/"
+  },
+  "export_url": "/api/v1/export.csv?mode=decision&release_id=f61cecb1c14d91cfc32f10c74a9945fd2cf7f1851abd8ca6b0eb3f3e8975b052&cutoff_local=09%3A45&expected_context_id=3e99fdfbcb8c4060207e342f67d2bd2f35e1490a1ebbf2ffb28f66d6f640b321&decision_date=2026-01-31"
+}

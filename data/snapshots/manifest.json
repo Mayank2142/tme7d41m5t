@@ -1,0 +1,697 @@
+{
+  "release_id": "f61cecb1c14d91cfc32f10c74a9945fd2cf7f1851abd8ca6b0eb3f3e8975b052",
+  "quality": {
+    "normalized_versions_sha256": "86225eb21a06357c6bac8957001d2828523b34741db783283139c08d9d7621e2",
+    "acceptance_policy": "strict_v1",
+    "validation_version": "january_coverage_v1",
+    "parser_version": "elexon_streams_v2",
+    "status": "complete",
+    "forecast_versions": 19856,
+    "actual_versions": 1488,
+    "exact_duplicate_rows": 0,
+    "conflicting_source_keys": 0,
+    "invalid_source_versions": 0,
+    "expected_actual_half_hours": 1488,
+    "valid_actual_half_hours": 1488,
+    "expected_forecast_targets_per_cutoff": 744,
+    "valid_forecast_targets_by_cutoff": {
+      "09:00": 744,
+      "09:45": 744
+    },
+    "decisions": [
+      {
+        "decision_date": "2026-01-01",
+        "delivery_date": "2026-01-02",
+        "actual_expected": 48,
+        "actual_valid": 48,
+        "actual_issues": [],
+        "forecast_cutoffs": {
+          "09:00": {
+            "expected": 24,
+            "valid": 24,
+            "issues": []
+          },
+          "09:45": {
+            "expected": 24,
+            "valid": 24,
+            "issues": []
+          }
+        }
+      },
+      {
+        "decision_date": "2026-01-02",
+        "delivery_date": "2026-01-03",
+        "actual_expected": 48,
+        "actual_valid": 48,
+        "actual_issues": [],
+        "forecast_cutoffs": {
+          "09:00": {
+            "expected": 24,
+            "valid": 24,
+            "issues": []
+          },
+          "09:45": {
+            "expected": 24,
+            "valid": 24,
+            "issues": []
+          }
+        }
+      },
+      {
+        "decision_date": "2026-01-03",
+        "delivery_date": "2026-01-04",
+        "actual_expected": 48,
+        "actual_valid": 48,
+        "actual_issues": [],
+        "forecast_cutoffs": {
+          "09:00": {
+            "expected": 24,
+            "valid": 24,
+            "issues": []
+          },
+          "09:45": {
+            "expected": 24,
+            "valid": 24,
+            "issues": []
+          }
+        }
+      },
+      {
+        "decision_date": "2026-01-04",
+        "delivery_date": "2026-01-05",
+        "actual_expected": 48,
+        "actual_valid": 48,
+        "actual_issues": [],
+        "forecast_cutoffs": {
+          "09:00": {
+            "expected": 24,
+            "valid": 24,
+            "issues": []
+          },
+          "09:45": {
+            "expected": 24,
+            "valid": 24,
+            "issues": []
+          }
+        }
+      },
+      {
+        "decision_date": "2026-01-05",
+        "delivery_date": "2026-01-06",
+        "actual_expected": 48,
+        "actual_valid": 48,
+        "actual_issues": [],
+        "forecast_cutoffs": {
+          "09:00": {
+            "expected": 24,
+            "valid": 24,
+            "issues": []
+          },
+          "09:45": {
+            "expected": 24,
+            "valid": 24,
+            "issues": []
+          }
+        }
+      },
+      {
+        "decision_date": "2026-01-06",
+        "delivery_date": "2026-01-07",
+        "actual_expected": 48,
+        "actual_valid": 48,
+        "actual_issues": [],
+        "forecast_cutoffs": {
+          "09:00": {
+            "expected": 24,
+            "valid": 24,
+            "issues": []
+          },
+          "09:45": {
+            "expected": 24,
+            "valid": 24,
+            "issues": []
+          }
+        }
+      },
+      {
+        "decision_date": "2026-01-07",
+        "delivery_date": "2026-01-08",
+        "actual_expected": 48,
+        "actual_valid": 48,
+        "actual_issues": [],
+        "forecast_cutoffs": {
+          "09:00": {
+            "expected": 24,
+            "valid": 24,
+            "issues": []
+          },
+          "09:45": {
+            "expected": 24,
+            "valid": 24,
+            "issues": []
+          }
+        }
+      },
+      {
+        "decision_date": "2026-01-08",
+        "delivery_date": "2026-01-09",
+        "actual_expected": 48,
+        "actual_valid": 48,
+        "actual_issues": [],
+        "forecast_cutoffs": {
+          "09:00": {
+            "expected": 24,
+            "valid": 24,
+            "issues": []
+          },
+          "09:45": {
+            "expected": 24,
+            "valid": 24,
+            "issues": []
+          }
+        }
+      },
+      {
+        "decision_date": "2026-01-09",
+        "delivery_date": "2026-01-10",
+        "actual_expected": 48,
+        "actual_valid": 48,
+        "actual_issues": [],
+        "forecast_cutoffs": {
+          "09:00": {
+            "expected": 24,
+            "valid": 24,
+            "issues": []
+          },
+          "09:45": {
+            "expected": 24,
+            "valid": 24,
+            "issues": []
+          }
+        }
+      },
+      {
+        "decision_date": "2026-01-10",
+        "delivery_date": "2026-01-11",
+        "actual_expected": 48,
+        "actual_valid": 48,
+        "actual_issues": [],
+        "forecast_cutoffs": {
+          "09:00": {
+            "expected": 24,
+            "valid": 24,
+            "issues": []
+          },
+          "09:45": {
+            "expected": 24,
+            "valid": 24,
+            "issues": []
+          }
+        }
+      },
+      {
+        "decision_date": "2026-01-11",
+        "delivery_date": "2026-01-12",
+        "actual_expected": 48,
+        "actual_valid": 48,
+        "actual_issues": [],
+        "forecast_cutoffs": {
+          "09:00": {
+            "expected": 24,
+            "valid": 24,
+            "issues": []
+          },
+          "09:45": {
+            "expected": 24,
+            "valid": 24,
+            "issues": []
+          }
+        }
+      },
+      {
+        "decision_date": "2026-01-12",
+        "delivery_date": "2026-01-13",
+        "actual_expected": 48,
+        "actual_valid": 48,
+        "actual_issues": [],
+        "forecast_cutoffs": {
+          "09:00": {
+            "expected": 24,
+            "valid": 24,
+            "issues": []
+          },
+          "09:45": {
+            "expected": 24,
+            "valid": 24,
+            "issues": []
+          }
+        }
+      },
+      {
+        "decision_date": "2026-01-13",
+        "delivery_date": "2026-01-14",
+        "actual_expected": 48,
+        "actual_valid": 48,
+        "actual_issues": [],
+        "forecast_cutoffs": {
+          "09:00": {
+            "expected": 24,
+            "valid": 24,
+            "issues": []
+          },
+          "09:45": {
+            "expected": 24,
+            "valid": 24,
+            "issues": []
+          }
+        }
+      },
+      {
+        "decision_date": "2026-01-14",
+        "delivery_date": "2026-01-15",
+        "actual_expected": 48,
+        "actual_valid": 48,
+        "actual_issues": [],
+        "forecast_cutoffs": {
+          "09:00": {
+            "expected": 24,
+            "valid": 24,
+            "issues": []
+          },
+          "09:45": {
+            "expected": 24,
+            "valid": 24,
+            "issues": []
+          }
+        }
+      },
+      {
+        "decision_date": "2026-01-15",
+        "delivery_date": "2026-01-16",
+        "actual_expected": 48,
+        "actual_valid": 48,
+        "actual_issues": [],
+        "forecast_cutoffs": {
+          "09:00": {
+            "expected": 24,
+            "valid": 24,
+            "issues": []
+          },
+          "09:45": {
+            "expected": 24,
+            "valid": 24,
+            "issues": []
+          }
+        }
+      },
+      {
+        "decision_date": "2026-01-16",
+        "delivery_date": "2026-01-17",
+        "actual_expected": 48,
+        "actual_valid": 48,
+        "actual_issues": [],
+        "forecast_cutoffs": {
+          "09:00": {
+            "expected": 24,
+            "valid": 24,
+            "issues": []
+          },
+          "09:45": {
+            "expected": 24,
+            "valid": 24,
+            "issues": []
+          }
+        }
+      },
+      {
+        "decision_date": "2026-01-17",
+        "delivery_date": "2026-01-18",
+        "actual_expected": 48,
+        "actual_valid": 48,
+        "actual_issues": [],
+        "forecast_cutoffs": {
+          "09:00": {
+            "expected": 24,
+            "valid": 24,
+            "issues": []
+          },
+          "09:45": {
+            "expected": 24,
+            "valid": 24,
+            "issues": []
+          }
+        }
+      },
+      {
+        "decision_date": "2026-01-18",
+        "delivery_date": "2026-01-19",
+        "actual_expected": 48,
+        "actual_valid": 48,
+        "actual_issues": [],
+        "forecast_cutoffs": {
+          "09:00": {
+            "expected": 24,
+            "valid": 24,
+            "issues": []
+          },
+          "09:45": {
+            "expected": 24,
+            "valid": 24,
+            "issues": []
+          }
+        }
+      },
+      {
+        "decision_date": "2026-01-19",
+        "delivery_date": "2026-01-20",
+        "actual_expected": 48,
+        "actual_valid": 48,
+        "actual_issues": [],
+        "forecast_cutoffs": {
+          "09:00": {
+            "expected": 24,
+            "valid": 24,
+            "issues": []
+          },
+          "09:45": {
+            "expected": 24,
+            "valid": 24,
+            "issues": []
+          }
+        }
+      },
+      {
+        "decision_date": "2026-01-20",
+        "delivery_date": "2026-01-21",
+        "actual_expected": 48,
+        "actual_valid": 48,
+        "actual_issues": [],
+        "forecast_cutoffs": {
+          "09:00": {
+            "expected": 24,
+            "valid": 24,
+            "issues": []
+          },
+          "09:45": {
+            "expected": 24,
+            "valid": 24,
+            "issues": []
+          }
+        }
+      },
+      {
+        "decision_date": "2026-01-21",
+        "delivery_date": "2026-01-22",
+        "actual_expected": 48,
+        "actual_valid": 48,
+        "actual_issues": [],
+        "forecast_cutoffs": {
+          "09:00": {
+            "expected": 24,
+            "valid": 24,
+            "issues": []
+          },
+          "09:45": {
+            "expected": 24,
+            "valid": 24,
+            "issues": []
+          }
+        }
+      },
+      {
+        "decision_date": "2026-01-22",
+        "delivery_date": "2026-01-23",
+        "actual_expected": 48,
+        "actual_valid": 48,
+        "actual_issues": [],
+        "forecast_cutoffs": {
+          "09:00": {
+            "expected": 24,
+            "valid": 24,
+            "issues": []
+          },
+          "09:45": {
+            "expected": 24,
+            "valid": 24,
+            "issues": []
+          }
+        }
+      },
+      {
+        "decision_date": "2026-01-23",
+        "delivery_date": "2026-01-24",
+        "actual_expected": 48,
+        "actual_valid": 48,
+        "actual_issues": [],
+        "forecast_cutoffs": {
+          "09:00": {
+            "expected": 24,
+            "valid": 24,
+            "issues": []
+          },
+          "09:45": {
+            "expected": 24,
+            "valid": 24,
+            "issues": []
+          }
+        }
+      },
+      {
+        "decision_date": "2026-01-24",
+        "delivery_date": "2026-01-25",
+        "actual_expected": 48,
+        "actual_valid": 48,
+        "actual_issues": [],
+        "forecast_cutoffs": {
+          "09:00": {
+            "expected": 24,
+            "valid": 24,
+            "issues": []
+          },
+          "09:45": {
+            "expected": 24,
+            "valid": 24,
+            "issues": []
+          }
+        }
+      },
+      {
+        "decision_date": "2026-01-25",
+        "delivery_date": "2026-01-26",
+        "actual_expected": 48,
+        "actual_valid": 48,
+        "actual_issues": [],
+        "forecast_cutoffs": {
+          "09:00": {
+            "expected": 24,
+            "valid": 24,
+            "issues": []
+          },
+          "09:45": {
+            "expected": 24,
+            "valid": 24,
+            "issues": []
+          }
+        }
+      },
+      {
+        "decision_date": "2026-01-26",
+        "delivery_date": "2026-01-27",
+        "actual_expected": 48,
+        "actual_valid": 48,
+        "actual_issues": [],
+        "forecast_cutoffs": {
+          "09:00": {
+            "expected": 24,
+            "valid": 24,
+            "issues": []
+          },
+          "09:45": {
+            "expected": 24,
+            "valid": 24,
+            "issues": []
+          }
+        }
+      },
+      {
+        "decision_date": "2026-01-27",
+        "delivery_date": "2026-01-28",
+        "actual_expected": 48,
+        "actual_valid": 48,
+        "actual_issues": [],
+        "forecast_cutoffs": {
+          "09:00": {
+            "expected": 24,
+            "valid": 24,
+            "issues": []
+          },
+          "09:45": {
+            "expected": 24,
+            "valid": 24,
+            "issues": []
+          }
+        }
+      },
+      {
+        "decision_date": "2026-01-28",
+        "delivery_date": "2026-01-29",
+        "actual_expected": 48,
+        "actual_valid": 48,
+        "actual_issues": [],
+        "forecast_cutoffs": {
+          "09:00": {
+            "expected": 24,
+            "valid": 24,
+            "issues": []
+          },
+          "09:45": {
+            "expected": 24,
+            "valid": 24,
+            "issues": []
+          }
+        }
+      },
+      {
+        "decision_date": "2026-01-29",
+        "delivery_date": "2026-01-30",
+        "actual_expected": 48,
+        "actual_valid": 48,
+        "actual_issues": [],
+        "forecast_cutoffs": {
+          "09:00": {
+            "expected": 24,
+            "valid": 24,
+            "issues": []
+          },
+          "09:45": {
+            "expected": 24,
+            "valid": 24,
+            "issues": []
+          }
+        }
+      },
+      {
+        "decision_date": "2026-01-30",
+        "delivery_date": "2026-01-31",
+        "actual_expected": 48,
+        "actual_valid": 48,
+        "actual_issues": [],
+        "forecast_cutoffs": {
+          "09:00": {
+            "expected": 24,
+            "valid": 24,
+            "issues": []
+          },
+          "09:45": {
+            "expected": 24,
+            "valid": 24,
+            "issues": []
+          }
+        }
+      },
+      {
+        "decision_date": "2026-01-31",
+        "delivery_date": "2026-02-01",
+        "actual_expected": 48,
+        "actual_valid": 48,
+        "actual_issues": [],
+        "forecast_cutoffs": {
+          "09:00": {
+            "expected": 24,
+            "valid": 24,
+            "issues": []
+          },
+          "09:45": {
+            "expected": 24,
+            "valid": 24,
+            "issues": []
+          }
+        }
+      }
+    ]
+  },
+  "attribution": "Contains BMRS data \u00a9 Elexon Limited copyright and database right 2026.",
+  "licence_url": "https://www.elexon.co.uk/bsc/data/balancing-mechanism-reporting-agent/copyright-licence-bmrs-data/",
+  "raw_batches": [
+    {
+      "id": "3ba03416fbe56e7b612be829008efc7a441696fb8fb72d736ce063a3e88ddebd",
+      "dataset": "WINDFOR",
+      "source_url": "https://data.elexon.co.uk/bmrs/api/v1/datasets/WINDFOR/stream?publishDateTimeFrom=2026-01-26T00%3A00%3A00Z&publishDateTimeTo=2026-02-01T00%3A00%3A00Z",
+      "received_at": "2026-10-28T20:46:12.272245Z",
+      "sha256": "6b2f958442e9a90866fab339351044a24d14e032e9ebd78f23ebc32b2e1c2ae7",
+      "bytes": 394951
+    },
+    {
+      "id": "3ecd3da9764327fdba6846cdef89a9538188af5f0031fafee8ec6e45e730d6da",
+      "dataset": "WINDFOR",
+      "source_url": "https://data.elexon.co.uk/bmrs/api/v1/datasets/WINDFOR/stream?publishDateTimeFrom=2025-12-29T00%3A00%3A00Z&publishDateTimeTo=2026-01-05T00%3A00%3A00Z",
+      "received_at": "2026-10-28T20:46:10.680261Z",
+      "sha256": "10ee1d4137ed5d6fabe7ff4478b6d6baf9beb9aac67a5890b55a3a26447829da",
+      "bytes": 460813
+    },
+    {
+      "id": "48dfe4547a45c3b68f6a84c982e70875756249a3eb0e9221c79a4350bc87d051",
+      "dataset": "FUELHH",
+      "source_url": "https://data.elexon.co.uk/bmrs/api/v1/datasets/FUELHH/stream?fuelType=WIND&settlementDateFrom=2026-01-16&settlementDateTo=2026-01-22",
+      "received_at": "2026-10-28T20:46:13.683400Z",
+      "sha256": "2749197d975d5fc29d013ceafd74e3e7a3e9593fd749e311b3aab39ad83e2e66",
+      "bytes": 60902
+    },
+    {
+      "id": "50affc69dc9146d7e268f5d1146c01d952c694f67fd50de14685bbd8e73afaff",
+      "dataset": "WINDFOR",
+      "source_url": "https://data.elexon.co.uk/bmrs/api/v1/datasets/WINDFOR/stream?publishDateTimeFrom=2026-01-12T00%3A00%3A00Z&publishDateTimeTo=2026-01-19T00%3A00%3A00Z",
+      "received_at": "2026-10-28T20:46:11.336835Z",
+      "sha256": "05aba769ba3703987090414e800c008f92d6fda878c7d214174386d0ca6bcff7",
+      "bytes": 459181
+    },
+    {
+      "id": "99edd0605a1074f13d30c91e2a67173aa0c8d8b7d615adbafd3f0e1ce68f919a",
+      "dataset": "FUELHH",
+      "source_url": "https://data.elexon.co.uk/bmrs/api/v1/datasets/FUELHH/stream?fuelType=WIND&settlementDateFrom=2026-01-09&settlementDateTo=2026-01-15",
+      "received_at": "2026-10-28T20:46:13.284032Z",
+      "sha256": "46391a390e131da228d3b2880fb1404b75a5965e1a9c31bcffa4ad6f7b6ae155",
+      "bytes": 60952
+    },
+    {
+      "id": "b0e6a9c4259f6e1e3901c2e6374ee93b1f055b11b8fbf2bbbc35388c8a8de575",
+      "dataset": "FUELHH",
+      "source_url": "https://data.elexon.co.uk/bmrs/api/v1/datasets/FUELHH/stream?fuelType=WIND&settlementDateFrom=2026-01-23&settlementDateTo=2026-01-29",
+      "received_at": "2026-10-28T20:46:14.170862Z",
+      "sha256": "01c0930ff462ab56fb1cc51077b9ebadb6270cdfcdf06bca4278de551ed923d7",
+      "bytes": 60984
+    },
+    {
+      "id": "c61bdaec0c9a02d5633de266c09b7b447260c079fe3fa71a8ff757d61b4268e5",
+      "dataset": "FUELHH",
+      "source_url": "https://data.elexon.co.uk/bmrs/api/v1/datasets/FUELHH/stream?fuelType=WIND&settlementDateFrom=2026-01-02&settlementDateTo=2026-01-08",
+      "received_at": "2026-10-28T20:46:12.690101Z",
+      "sha256": "0bf7c482ce69cdc4faebb10291bdcd9fe74e7ee0ca15d866c51abcf26f05ef3f",
+      "bytes": 60983
+    },
+    {
+      "id": "d448bf58bb7fc8572cb60945d557ccfa30a9f74689a5d91f6785d908ca122638",
+      "dataset": "WINDFOR",
+      "source_url": "https://data.elexon.co.uk/bmrs/api/v1/datasets/WINDFOR/stream?publishDateTimeFrom=2026-01-05T00%3A00%3A00Z&publishDateTimeTo=2026-01-12T00%3A00%3A00Z",
+      "received_at": "2026-10-28T20:46:11.004474Z",
+      "sha256": "cf38c0cc6d0b33ea659444d4a483b87964b570f8d82d1e9dfff00659f300ca60",
+      "bytes": 460413
+    },
+    {
+      "id": "e1eb7c9d420a9b90e9654db02a71a9756a8dee4b149ff6a9ee649f9f93326318",
+      "dataset": "FUELHH",
+      "source_url": "https://data.elexon.co.uk/bmrs/api/v1/datasets/FUELHH/stream?fuelType=WIND&settlementDateFrom=2026-01-30&settlementDateTo=2026-02-01",
+      "received_at": "2026-10-28T20:46:14.550028Z",
+      "sha256": "6bc46b198ef7b5d2537a5d3849b63521246fd09beac0427d44acfb149068e2ee",
+      "bytes": 26106
+    },
+    {
+      "id": "e76705635aea2a9193bc9108a50504e26b2fe8b3f0180e8236ae7b1d90a9ff6a",
+      "dataset": "WINDFOR",
+      "source_url": "https://data.elexon.co.uk/bmrs/api/v1/datasets/WINDFOR/stream?publishDateTimeFrom=2026-01-19T00%3A00%3A00Z&publishDateTimeTo=2026-01-26T00%3A00%3A00Z",
+      "received_at": "2026-10-28T20:46:11.822460Z",
+      "sha256": "f73146b52460da61fe44a3e79419d83bff0bfd1549475ae2dc70bc435d9400a1",
+      "bytes": 461646
+    }
+  ]
+}

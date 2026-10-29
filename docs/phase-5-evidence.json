@@ -1,0 +1,192 @@
+{
+  "phase": 5,
+  "status": "implemented_and_verified_locally",
+  "measured_window": {
+    "first_recorded_clock_utc": "2026-10-29T15:42:07+00:00",
+    "verification_recorded_at_utc": "2026-10-29T16:36:50.933988+00:00",
+    "elapsed_wall_minutes": 54.73,
+    "qualification": "First sample followed initial source inspection. Earlier overhead and cumulative prior assignment effort are unknown. Includes implementation, failed/repaired checks, browser/layout corrections and documentation."
+  },
+  "release_id": "f61cecb1c14d91cfc32f10c74a9945fd2cf7f1851abd8ca6b0eb3f3e8975b052",
+  "application_build_marker": "local",
+  "frontend_source_and_tests_fingerprint_sha256": "cdb81590d376798ea29432be3447db0ab8bf1b6a193b5f0a1a50598ecd2294d7",
+  "frontend_suite": {
+    "tests": 43,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "passed": 43,
+    "files": 5,
+    "duration_seconds": 9.15
+  },
+  "checks": {
+    "frontend_lint": "passed",
+    "typescript": "passed_in_production_build",
+    "production_build": "passed",
+    "fixture_imports": "test_only",
+    "new_dependencies": 0
+  },
+  "backend_evidence": {
+    "source_unchanged_since_phase": 4,
+    "source_fingerprint_sha256": "141d577633e77e64b170b2b9fc0f145070e991fd8f1dd138d56a34b33601f7c1",
+    "previous_passed_tests": 85,
+    "previous_postgresql_tests": 4,
+    "rerun_in_phase_5": false
+  },
+  "browser": {
+    "driver": "Playwright CLI",
+    "browser": "Chrome",
+    "origin": "http://127.0.0.1:8000",
+    "real_stored_data": true,
+    "production_synthetic_fallback": false,
+    "checked_views": [
+      "Decision",
+      "Accuracy",
+      "Data & Methodology"
+    ],
+    "draft_cutoff_blocks_export": true,
+    "applied_cutoff_updates_url_values_publication_age": true,
+    "cutoff_example": {
+      "decision_date": "2026-01-31",
+      "delivery_date": "2026-02-01",
+      "at_0900": {
+        "first_forecast_mw": 10099,
+        "age_seconds": 5400
+      },
+      "at_0945": {
+        "first_forecast_mw": 10474,
+        "age_seconds": 900
+      }
+    },
+    "keyboard": {
+      "keys": [
+        "Home",
+        "ArrowRight"
+      ],
+      "selected_target": "2026-02-01T01:00:00Z",
+      "forecast_mw": 10117,
+      "cutoff_local": "09:45"
+    },
+    "daily_drilldown": {
+      "decision_from": "2026-01-01",
+      "decision_to": "2026-01-01",
+      "paired_targets": 24
+    },
+    "reload_and_tab_dates_preserved": true,
+    "methodology_source_links": 10,
+    "desktop_viewport": {
+      "width": 1440,
+      "height": 1100
+    },
+    "narrow_width_checks": [
+      {
+        "viewport": 390,
+        "document_width": 390
+      },
+      {
+        "viewport": 320,
+        "document_width": 320,
+        "metric_value_overflow_after_fix": false
+      }
+    ],
+    "final_console": {
+      "errors": 0,
+      "warnings": 0
+    },
+    "screenshots": {
+      "decision-desktop": {
+        "path": "output/playwright/phase-5-decision-desktop.png",
+        "sha256": "1c8b0cf60cecda99db4660caaeca816a253d54b5676833a6caf17a37db2635b7",
+        "width": 1440,
+        "height": 1408
+      },
+      "decision-mobile": {
+        "path": "output/playwright/phase-5-decision-mobile.png",
+        "sha256": "cbcc9522f4540b1e848cd6f4c2332e9fc2ec561515e544f07a38b0dd8be010a8",
+        "width": 390,
+        "height": 2093
+      },
+      "accuracy-desktop": {
+        "path": "output/playwright/phase-5-accuracy-desktop.png",
+        "sha256": "e15f068e641e0cce81c690fb20fbf5ab74c5a4fd25f8a8d57c5811b92990be06",
+        "width": 1440,
+        "height": 2593
+      },
+      "accuracy-mobile": {
+        "path": "output/playwright/phase-5-accuracy-mobile.png",
+        "sha256": "b1eb8e1940437ce272821c28e136d9f31e838efe10da28998e0b05b6178543a5",
+        "width": 390,
+        "height": 3591
+      },
+      "methodology-mobile": {
+        "path": "output/playwright/phase-5-methodology-mobile.png",
+        "sha256": "30ed75c315210cf75b0f5b58676065aa558bd03f37a07225d5f77f86b9fcae8f",
+        "width": 390,
+        "height": 3411
+      }
+    }
+  },
+  "actual_browser_downloads": {
+    "decision": {
+      "file": ".playwright-cli\\winddesk-decision-2026-01-31-2026-01-31-3e99fdfbcb8c.csv",
+      "rows": 24,
+      "sha256": "fe2be2059487881da49f715f7a2f3f54f692e6277137bee043328c0fb0c290e4",
+      "analysis_context_id": "3e99fdfbcb8c4060207e342f67d2bd2f35e1490a1ebbf2ffb28f66d6f640b321",
+      "release_id": "f61cecb1c14d91cfc32f10c74a9945fd2cf7f1851abd8ca6b0eb3f3e8975b052",
+      "first_forecast_mw": 10474,
+      "cutoff_local": "09:45"
+    },
+    "accuracy": {
+      "file": ".playwright-cli\\winddesk-accuracy-2026-01-01-2026-01-31-9365356d0553.csv",
+      "rows": 1488,
+      "sha256": "80b887b6126aaf581192fbd6695e53e0ac18b38c3e992719bbe92cedac2585dc",
+      "analysis_context_id": "9365356d0553e0483a11dee23c586342a99e918a5b7c191c91b6693d82cd4c34",
+      "release_id": "f61cecb1c14d91cfc32f10c74a9945fd2cf7f1851abd8ca6b0eb3f3e8975b052",
+      "paired_targets": 744,
+      "recomputed_metrics": {
+        "mae_mw": 1995.5685483870968,
+        "rmse_mw": 2498.8245110107187,
+        "bias_mw": 1727.9825268817203,
+        "p90_absolute_error_mw": 4183.9
+      }
+    }
+  },
+  "build_files": {
+    "frontend/dist/assets/index-CGHdWGIa.css": {
+      "bytes": 22455,
+      "sha256": "c896b1dae05695425ab8abfb668cc15cb33a549e28fd408402729d6dd2f5709c"
+    },
+    "frontend/dist/assets/index-Dp4YG9wB.js": {
+      "bytes": 311156,
+      "sha256": "ebbd145e24e58a42990e7d625d9e5bc89c3276296b871420094d1453914d1ad3"
+    },
+    "frontend/dist/index.html": {
+      "bytes": 905,
+      "sha256": "fdbcfd73a039d943c4a0c533d023fd5efb805ad2b6ef3fa38d1e6452a083a4ce"
+    }
+  },
+  "offline_fixture_sha256": {
+    "accuracy-month.json.gz": "e6a6b12f32cd754eb62c2880c03e2a2c26593a5227e00400e363422d22ebbd99",
+    "accuracy.json": "3fd395a1f2c7791a9d94c659747dc62899a8457a293f6b5474e70a47be35b8d7",
+    "configuration.json": "d9f85d33e6574eb969791f014b603fbc3c098642e03b66ec375dea7287d3c620",
+    "decision-january-1.json": "d38f0361b5ba7f193de5aba17b63a67972f29ed00002c342208c772216312dba",
+    "decision-later.json": "0b2facfd46a521cb750e726c60c279c00ef07d19e868b293abd89d508b772a70",
+    "decision.json": "f78a180d187c804ba9b82c9705f040b7743a4032212f4516a24aba1600423ec0",
+    "quality.json": "87e3d9fe3486bfa5debbce0d4615649b3f9dcf538f76f383a287b3a1da4ce328"
+  },
+  "repairs_before_completion": [
+    "Initial type/lint issues and navigation/source-value test expectations corrected.",
+    "Muted text contrast improved; named scroll containers retain one documented keyboard-focus lint exception.",
+    "Error-chart aspect ratio corrected after visual inspection.",
+    "Signed metric width corrected and verified at 320 pixels.",
+    "All saved dates now survive cross-view navigation; only active filters reach the API."
+  ],
+  "attribution": "Contains BMRS data © Elexon Limited copyright and database right 2026.",
+  "licence_url": "https://www.elexon.co.uk/bsc/data/balancing-mechanism-reporting-agent/copyright-licence-bmrs-data/",
+  "remaining": [
+    "Phase 6 integrated quality gate, CI and Docker/Compose execution",
+    "Vercel authentication, external PostgreSQL and public deployment",
+    "Verified deployed Git commit and final video/submission",
+    "Broader assistive-technology audit and measured operational acceptance"
+  ]
+}

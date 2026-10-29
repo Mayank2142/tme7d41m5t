@@ -1,0 +1,362 @@
+{
+  "analysis_context_id": "d45167560542439c12f20435a71577bd28c0b40142692c48705733d00eba3d26",
+  "context": {
+    "context_version": "analysis_context_v1",
+    "mode": "decision",
+    "release_id": "f61cecb1c14d91cfc32f10c74a9945fd2cf7f1851abd8ca6b0eb3f3e8975b052",
+    "source_parser": "elexon_streams_v2",
+    "application_version": "0.1.0",
+    "build_sha": "local",
+    "decision_from": "2026-01-31",
+    "decision_to": "2026-01-31",
+    "cutoff_local": "09:00",
+    "timezone": "Europe/London",
+    "calendar_policy": "january_decisions_v1",
+    "selection_policy": "latest_source_key_v1",
+    "availability_model": "source_publication_time",
+    "forecast_cadence_minutes": 60
+  },
+  "analysis": {
+    "window": {
+      "decision_date": "2026-01-31",
+      "delivery_date": "2026-02-01",
+      "cutoff_local": "09:00",
+      "cutoff_utc": "2026-01-31T09:00:00Z",
+      "delivery_start_utc": "2026-02-01T00:00:00Z",
+      "delivery_end_utc": "2026-02-02T00:00:00Z",
+      "timezone": "Europe/London"
+    },
+    "points": [
+      {
+        "target_start_utc": "2026-02-01T00:00:00Z",
+        "forecast": {
+          "state": "valid",
+          "publication_utc": "2026-01-31T07:30:00Z",
+          "generation_mw": 10099,
+          "source_version_ids": [
+            "3eef5e15a8e0f366e0a855e1f9c52784117e1e551c8e8b41435a95df884d295d"
+          ],
+          "reason": null
+        },
+        "age_at_cutoff_seconds": 5400
+      },
+      {
+        "target_start_utc": "2026-02-01T01:00:00Z",
+        "forecast": {
+          "state": "valid",
+          "publication_utc": "2026-01-31T07:30:00Z",
+          "generation_mw": 9860,
+          "source_version_ids": [
+            "37da8d8c65ff624ab39c8ee40804e3a672ff9e49895627418aaaf981a5cf5ae2"
+          ],
+          "reason": null
+        },
+        "age_at_cutoff_seconds": 5400
+      },
+      {
+        "target_start_utc": "2026-02-01T02:00:00Z",
+        "forecast": {
+          "state": "valid",
+          "publication_utc": "2026-01-31T07:30:00Z",
+          "generation_mw": 9606,
+          "source_version_ids": [
+            "fa42df867355a9ac8f5b09b0bd0042e141e696d3f853124363f454b54ef19b00"
+          ],
+          "reason": null
+        },
+        "age_at_cutoff_seconds": 5400
+      },
+      {
+        "target_start_utc": "2026-02-01T03:00:00Z",
+        "forecast": {
+          "state": "valid",
+          "publication_utc": "2026-01-31T07:30:00Z",
+          "generation_mw": 9315,
+          "source_version_ids": [
+            "c0a4f7dccf7946da1139d3c266230f4dfd03c1a44f9d7da4468e7fcec836f10c"
+          ],
+          "reason": null
+        },
+        "age_at_cutoff_seconds": 5400
+      },
+      {
+        "target_start_utc": "2026-02-01T04:00:00Z",
+        "forecast": {
+          "state": "valid",
+          "publication_utc": "2026-01-31T07:30:00Z",
+          "generation_mw": 9007,
+          "source_version_ids": [
+            "20505326b1956204e6db2f6c8e42e3b42f5b4fd6d386b7ff3fa3e052ecfe2ef5"
+          ],
+          "reason": null
+        },
+        "age_at_cutoff_seconds": 5400
+      },
+      {
+        "target_start_utc": "2026-02-01T05:00:00Z",
+        "forecast": {
+          "state": "valid",
+          "publication_utc": "2026-01-31T07:30:00Z",
+          "generation_mw": 8668,
+          "source_version_ids": [
+            "8e2074887201d27458d32c58469a12154ef033fd4e0093a57609e15da5da7afc"
+          ],
+          "reason": null
+        },
+        "age_at_cutoff_seconds": 5400
+      },
+      {
+        "target_start_utc": "2026-02-01T06:00:00Z",
+        "forecast": {
+          "state": "valid",
+          "publication_utc": "2026-01-31T07:30:00Z",
+          "generation_mw": 8307,
+          "source_version_ids": [
+            "b1049f27128dd6237949fe55d9f3e740ea44055bf8490b77270c5c6743a37147"
+          ],
+          "reason": null
+        },
+        "age_at_cutoff_seconds": 5400
+      },
+      {
+        "target_start_utc": "2026-02-01T07:00:00Z",
+        "forecast": {
+          "state": "valid",
+          "publication_utc": "2026-01-31T07:30:00Z",
+          "generation_mw": 7979,
+          "source_version_ids": [
+            "e5f049b1d7ff796ae6bd77f8d694af99688f1522f14e6703da629724f2040d12"
+          ],
+          "reason": null
+        },
+        "age_at_cutoff_seconds": 5400
+      },
+      {
+        "target_start_utc": "2026-02-01T08:00:00Z",
+        "forecast": {
+          "state": "valid",
+          "publication_utc": "2026-01-31T07:30:00Z",
+          "generation_mw": 7772,
+          "source_version_ids": [
+            "6f868617d02ee9f2a13fb88b79a162e28228c3d55720722634f2605bcb7c935b"
+          ],
+          "reason": null
+        },
+        "age_at_cutoff_seconds": 5400
+      },
+      {
+        "target_start_utc": "2026-02-01T09:00:00Z",
+        "forecast": {
+          "state": "valid",
+          "publication_utc": "2026-01-31T07:30:00Z",
+          "generation_mw": 7527,
+          "source_version_ids": [
+            "fdbb3e63b53594e0e059fd091c361980fc794915fe133d4c7106bc7896edadf6"
+          ],
+          "reason": null
+        },
+        "age_at_cutoff_seconds": 5400
+      },
+      {
+        "target_start_utc": "2026-02-01T10:00:00Z",
+        "forecast": {
+          "state": "valid",
+          "publication_utc": "2026-01-31T07:30:00Z",
+          "generation_mw": 7223,
+          "source_version_ids": [
+            "72bd63be0cd3dc8a6a0a44ea356505493de820db8ab525f865e92720d51e887a"
+          ],
+          "reason": null
+        },
+        "age_at_cutoff_seconds": 5400
+      },
+      {
+        "target_start_utc": "2026-02-01T11:00:00Z",
+        "forecast": {
+          "state": "valid",
+          "publication_utc": "2026-01-31T07:30:00Z",
+          "generation_mw": 7005,
+          "source_version_ids": [
+            "55e55ccadb50b405a08784012e052a57815bf9ac02727aecff2e287c72e3d5b3"
+          ],
+          "reason": null
+        },
+        "age_at_cutoff_seconds": 5400
+      },
+      {
+        "target_start_utc": "2026-02-01T12:00:00Z",
+        "forecast": {
+          "state": "valid",
+          "publication_utc": "2026-01-31T07:30:00Z",
+          "generation_mw": 6720,
+          "source_version_ids": [
+            "6d560dd4d3a3dd5767dbcfe34fd0b0783c6a7a5db2b8060cd641815a231c88d6"
+          ],
+          "reason": null
+        },
+        "age_at_cutoff_seconds": 5400
+      },
+      {
+        "target_start_utc": "2026-02-01T13:00:00Z",
+        "forecast": {
+          "state": "valid",
+          "publication_utc": "2026-01-31T07:30:00Z",
+          "generation_mw": 6274,
+          "source_version_ids": [
+            "d79071a520ab9c1a2ca9ce8540772513143e6fe2e9aca829f73b7232d398b141"
+          ],
+          "reason": null
+        },
+        "age_at_cutoff_seconds": 5400
+      },
+      {
+        "target_start_utc": "2026-02-01T14:00:00Z",
+        "forecast": {
+          "state": "valid",
+          "publication_utc": "2026-01-31T07:30:00Z",
+          "generation_mw": 5870,
+          "source_version_ids": [
+            "c7495f6898780ddc13e98ad30ff49efec84ce3dfd6ef579e768de6469a6f23c0"
+          ],
+          "reason": null
+        },
+        "age_at_cutoff_seconds": 5400
+      },
+      {
+        "target_start_utc": "2026-02-01T15:00:00Z",
+        "forecast": {
+          "state": "valid",
+          "publication_utc": "2026-01-31T07:30:00Z",
+          "generation_mw": 5725,
+          "source_version_ids": [
+            "4b53a9502bd6154b97224cfa9ebded26656cca6dfd20016ca73ae9717be64611"
+          ],
+          "reason": null
+        },
+        "age_at_cutoff_seconds": 5400
+      },
+      {
+        "target_start_utc": "2026-02-01T16:00:00Z",
+        "forecast": {
+          "state": "valid",
+          "publication_utc": "2026-01-31T07:30:00Z",
+          "generation_mw": 5727,
+          "source_version_ids": [
+            "05973fc866f8718040481b09ace5f849cdcc0890fc645ec25e22089b306b20a2"
+          ],
+          "reason": null
+        },
+        "age_at_cutoff_seconds": 5400
+      },
+      {
+        "target_start_utc": "2026-02-01T17:00:00Z",
+        "forecast": {
+          "state": "valid",
+          "publication_utc": "2026-01-31T07:30:00Z",
+          "generation_mw": 5755,
+          "source_version_ids": [
+            "9af5340f923c30aad1eeb8d382f2f7bf768293bd66225e856989cbe7d2e16cf5"
+          ],
+          "reason": null
+        },
+        "age_at_cutoff_seconds": 5400
+      },
+      {
+        "target_start_utc": "2026-02-01T18:00:00Z",
+        "forecast": {
+          "state": "valid",
+          "publication_utc": "2026-01-31T07:30:00Z",
+          "generation_mw": 5897,
+          "source_version_ids": [
+            "267c32eb5e56077809b1c7361b2b4466288444279a54b2ea116ef6f0c8171488"
+          ],
+          "reason": null
+        },
+        "age_at_cutoff_seconds": 5400
+      },
+      {
+        "target_start_utc": "2026-02-01T19:00:00Z",
+        "forecast": {
+          "state": "valid",
+          "publication_utc": "2026-01-31T07:30:00Z",
+          "generation_mw": 5900,
+          "source_version_ids": [
+            "b3b9bc32aadff373d85c5cf6a9e11d217667ce7f04771e60ec5c133b7ca439b5"
+          ],
+          "reason": null
+        },
+        "age_at_cutoff_seconds": 5400
+      },
+      {
+        "target_start_utc": "2026-02-01T20:00:00Z",
+        "forecast": {
+          "state": "valid",
+          "publication_utc": "2026-01-31T07:30:00Z",
+          "generation_mw": 5620,
+          "source_version_ids": [
+            "17fb88b3bf1ca5811934d664eb22e6e54bfead1ba59f332e353780082fc4a037"
+          ],
+          "reason": null
+        },
+        "age_at_cutoff_seconds": 5400
+      },
+      {
+        "target_start_utc": "2026-02-01T21:00:00Z",
+        "forecast": {
+          "state": "valid",
+          "publication_utc": "2026-01-31T07:30:00Z",
+          "generation_mw": 5421,
+          "source_version_ids": [
+            "1fe932d91e1a2443561b5df9c1b862697f1425b047d32e6d0a67041bd105cf5b"
+          ],
+          "reason": null
+        },
+        "age_at_cutoff_seconds": 5400
+      },
+      {
+        "target_start_utc": "2026-02-01T22:00:00Z",
+        "forecast": {
+          "state": "valid",
+          "publication_utc": "2026-01-31T07:30:00Z",
+          "generation_mw": 5226,
+          "source_version_ids": [
+            "ce9bf226893e20fdf395d84b945112c3b6b9f3468beb926be6d2affae76518ed"
+          ],
+          "reason": null
+        },
+        "age_at_cutoff_seconds": 5400
+      },
+      {
+        "target_start_utc": "2026-02-01T23:00:00Z",
+        "forecast": {
+          "state": "valid",
+          "publication_utc": "2026-01-31T07:30:00Z",
+          "generation_mw": 4915,
+          "source_version_ids": [
+            "8c8ca52656be87656239f157a605a7e24bb01947f5bcf094c02d4a0157825e6f"
+          ],
+          "reason": null
+        },
+        "age_at_cutoff_seconds": 5400
+      }
+    ],
+    "coverage": { "expected": 24, "valid": 24, "missing": 0, "invalid": 0, "valid_percent": 100.0 },
+    "summary": {
+      "mean_reported_mw": 7142.416666666667,
+      "minimum_reported_mw": 4915,
+      "maximum_reported_mw": 10099,
+      "earliest_publication_utc": "2026-01-31T07:30:00Z",
+      "latest_publication_utc": "2026-01-31T07:30:00Z"
+    },
+    "selection_policy": "latest_source_key_v1",
+    "availability_model": "source_publication_time"
+  },
+  "source": {
+    "forecast_dataset": "WINDFOR",
+    "forecast_endpoint": "https://data.elexon.co.uk/bmrs/api/v1/datasets/WINDFOR/stream",
+    "data_quality_url": "/api/v1/data-quality?release_id=f61cecb1c14d91cfc32f10c74a9945fd2cf7f1851abd8ca6b0eb3f3e8975b052",
+    "attribution": "Contains BMRS data © Elexon Limited copyright and database right 2026.",
+    "licence_url": "https://www.elexon.co.uk/bsc/data/balancing-mechanism-reporting-agent/copyright-licence-bmrs-data/"
+  },
+  "export_url": "/api/v1/export.csv?mode=decision&release_id=f61cecb1c14d91cfc32f10c74a9945fd2cf7f1851abd8ca6b0eb3f3e8975b052&cutoff_local=09%3A00&expected_context_id=d45167560542439c12f20435a71577bd28c0b40142692c48705733d00eba3d26&decision_date=2026-01-31"
+}

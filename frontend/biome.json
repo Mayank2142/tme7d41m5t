@@ -1,0 +1,9 @@
+{
+  "files": {
+    "ignoreUnknown": true,
+    "includes": ["**", "!package-lock.json", "!dist", "!node_modules"]
+  },
+  "formatter": { "enabled": true, "indentStyle": "space", "lineWidth": 100 },
+  "linter": { "enabled": true },
+  "assist": { "actions": { "source": { "organizeImports": "on" } } }
+}

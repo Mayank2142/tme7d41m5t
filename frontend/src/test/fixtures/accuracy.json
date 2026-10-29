@@ -1,0 +1,1312 @@
+{
+  "analysis_context_id": "26dfe0aab7d0ef341e731e99b8e71a7540567d8d1ff4d119b51165df514de32b",
+  "context": {
+    "context_version": "analysis_context_v1",
+    "mode": "accuracy",
+    "release_id": "f61cecb1c14d91cfc32f10c74a9945fd2cf7f1851abd8ca6b0eb3f3e8975b052",
+    "source_parser": "elexon_streams_v2",
+    "application_version": "0.1.0",
+    "build_sha": "local",
+    "decision_from": "2026-01-01",
+    "decision_to": "2026-01-01",
+    "cutoff_local": "09:00",
+    "timezone": "Europe/London",
+    "calendar_policy": "january_decisions_v1",
+    "selection_policy": "latest_source_key_v1",
+    "availability_model": "source_publication_time",
+    "forecast_cadence_minutes": 60,
+    "comparison_policy": "source_timestamp_v1",
+    "actual_vintage_policy": "latest_publication_in_release_v1",
+    "metrics_version": "metrics_v1",
+    "actual_interval_minutes": 30
+  },
+  "analysis": {
+    "decision_from": "2026-01-01",
+    "decision_to": "2026-01-01",
+    "cutoff_local": "09:00",
+    "days": [
+      {
+        "window": {
+          "decision_date": "2026-01-01",
+          "delivery_date": "2026-01-02",
+          "cutoff_local": "09:00",
+          "cutoff_utc": "2026-01-01T09:00:00Z",
+          "delivery_start_utc": "2026-01-02T00:00:00Z",
+          "delivery_end_utc": "2026-01-03T00:00:00Z",
+          "timezone": "Europe/London"
+        },
+        "points": [
+          {
+            "target_start_utc": "2026-01-02T00:00:00Z",
+            "forecast": {
+              "state": "valid",
+              "publication_utc": "2026-01-01T07:30:00Z",
+              "generation_mw": 18781,
+              "source_version_ids": [
+                "9ddb4e4c15d15eba2b787cbcfdfc574e127100251ce00930eca6f515c9b35d71"
+              ],
+              "reason": null
+            },
+            "actual": {
+              "state": "valid",
+              "publication_utc": "2026-01-02T00:30:00Z",
+              "generation_mw": 15228,
+              "source_version_ids": [
+                "091de3f4c3944465f3c4a8d94bb6a91891b00404f0e80dc3b1ead08b2fc1bceb"
+              ],
+              "reason": null
+            },
+            "state": "paired",
+            "reason": null,
+            "error_mw": 3553
+          },
+          {
+            "target_start_utc": "2026-01-02T01:00:00Z",
+            "forecast": {
+              "state": "valid",
+              "publication_utc": "2026-01-01T07:30:00Z",
+              "generation_mw": 18793,
+              "source_version_ids": [
+                "1dae7b85bc8d01f24c07956b4bace2643d87a0e501a7e0e971efc0b4ce4cb425"
+              ],
+              "reason": null
+            },
+            "actual": {
+              "state": "valid",
+              "publication_utc": "2026-01-02T01:30:00Z",
+              "generation_mw": 15599,
+              "source_version_ids": [
+                "6784cca7e8583f4923a6d20b48d6480f41617df8f387278c44b2f09f105bd564"
+              ],
+              "reason": null
+            },
+            "state": "paired",
+            "reason": null,
+            "error_mw": 3194
+          },
+          {
+            "target_start_utc": "2026-01-02T02:00:00Z",
+            "forecast": {
+              "state": "valid",
+              "publication_utc": "2026-01-01T07:30:00Z",
+              "generation_mw": 18802,
+              "source_version_ids": [
+                "8c4f82317374c69c863c971994eea013bd56a32d5e6bdb8412f8d8379a44f6e8"
+              ],
+              "reason": null
+            },
+            "actual": {
+              "state": "valid",
+              "publication_utc": "2026-01-02T02:30:00Z",
+              "generation_mw": 15807,
+              "source_version_ids": [
+                "2560ba631baddb5e0bb7aff08e0fe95aee698462a6a05f4b92f67df10679670e"
+              ],
+              "reason": null
+            },
+            "state": "paired",
+            "reason": null,
+            "error_mw": 2995
+          },
+          {
+            "target_start_utc": "2026-01-02T03:00:00Z",
+            "forecast": {
+              "state": "valid",
+              "publication_utc": "2026-01-01T07:30:00Z",
+              "generation_mw": 18847,
+              "source_version_ids": [
+                "d70f24fd3c3ddec4b7847ce3a186c5a7e53a832e0d8d428b9bb4eb86c4157f1a"
+              ],
+              "reason": null
+            },
+            "actual": {
+              "state": "valid",
+              "publication_utc": "2026-01-02T03:30:00Z",
+              "generation_mw": 16096,
+              "source_version_ids": [
+                "711ccaf6a0feceefbc4219a8180f88a8eeaeefaa4317d41b8bb87366442d1ddc"
+              ],
+              "reason": null
+            },
+            "state": "paired",
+            "reason": null,
+            "error_mw": 2751
+          },
+          {
+            "target_start_utc": "2026-01-02T04:00:00Z",
+            "forecast": {
+              "state": "valid",
+              "publication_utc": "2026-01-01T07:30:00Z",
+              "generation_mw": 18895,
+              "source_version_ids": [
+                "ecd462e3d09f82f2cfce9766c3433cc74b813d343d91b898cb6eb4d460b595d2"
+              ],
+              "reason": null
+            },
+            "actual": {
+              "state": "valid",
+              "publication_utc": "2026-01-02T04:30:00Z",
+              "generation_mw": 16050,
+              "source_version_ids": [
+                "d26d7846685b165cb606a916e1fdf78ecfee019cf9eada9ab03ba85c608ed75c"
+              ],
+              "reason": null
+            },
+            "state": "paired",
+            "reason": null,
+            "error_mw": 2845
+          },
+          {
+            "target_start_utc": "2026-01-02T05:00:00Z",
+            "forecast": {
+              "state": "valid",
+              "publication_utc": "2026-01-01T07:30:00Z",
+              "generation_mw": 18869,
+              "source_version_ids": [
+                "1de27147ed993e7230acaf6c3d66c8ed68add62da475266897dbdc730476c011"
+              ],
+              "reason": null
+            },
+            "actual": {
+              "state": "valid",
+              "publication_utc": "2026-01-02T05:30:00Z",
+              "generation_mw": 15900,
+              "source_version_ids": [
+                "5694d1024442a9ca4a466582ba6332f72193e5247c3f592a11e6105b42f247ca"
+              ],
+              "reason": null
+            },
+            "state": "paired",
+            "reason": null,
+            "error_mw": 2969
+          },
+          {
+            "target_start_utc": "2026-01-02T06:00:00Z",
+            "forecast": {
+              "state": "valid",
+              "publication_utc": "2026-01-01T07:30:00Z",
+              "generation_mw": 18803,
+              "source_version_ids": [
+                "80ea6ba4129de59c8a0dee2ee3d7eaabbb569af39fa9aabf73ce453c403a85d6"
+              ],
+              "reason": null
+            },
+            "actual": {
+              "state": "valid",
+              "publication_utc": "2026-01-02T06:30:00Z",
+              "generation_mw": 15328,
+              "source_version_ids": [
+                "8f963d70e663a5f439617ad5506dfc72f273980af10e08a1ab90c2211d0f2aee"
+              ],
+              "reason": null
+            },
+            "state": "paired",
+            "reason": null,
+            "error_mw": 3475
+          },
+          {
+            "target_start_utc": "2026-01-02T07:00:00Z",
+            "forecast": {
+              "state": "valid",
+              "publication_utc": "2026-01-01T07:30:00Z",
+              "generation_mw": 18654,
+              "source_version_ids": [
+                "05fa0e79dd58306ac9a5600f42c24c2302234d9f69b7e2f2d81e93bef719d766"
+              ],
+              "reason": null
+            },
+            "actual": {
+              "state": "valid",
+              "publication_utc": "2026-01-02T07:30:00Z",
+              "generation_mw": 15121,
+              "source_version_ids": [
+                "cade1c4c67a7af9de119f38d084514681ab51c0aff60c822eb3bea5dc1d956b7"
+              ],
+              "reason": null
+            },
+            "state": "paired",
+            "reason": null,
+            "error_mw": 3533
+          },
+          {
+            "target_start_utc": "2026-01-02T08:00:00Z",
+            "forecast": {
+              "state": "valid",
+              "publication_utc": "2026-01-01T07:30:00Z",
+              "generation_mw": 18338,
+              "source_version_ids": [
+                "4805bcb68b9be5f97e29dd4bfe322461c6ce320a20296f071faeead0c37605ce"
+              ],
+              "reason": null
+            },
+            "actual": {
+              "state": "valid",
+              "publication_utc": "2026-01-02T08:30:00Z",
+              "generation_mw": 15590,
+              "source_version_ids": [
+                "15f1ae81198ebad4b767a1cd80f22d980977a5aba1658a23ebea44aac6f7fa32"
+              ],
+              "reason": null
+            },
+            "state": "paired",
+            "reason": null,
+            "error_mw": 2748
+          },
+          {
+            "target_start_utc": "2026-01-02T09:00:00Z",
+            "forecast": {
+              "state": "valid",
+              "publication_utc": "2026-01-01T07:30:00Z",
+              "generation_mw": 18148,
+              "source_version_ids": [
+                "2d94d7c69d8be546679548c5a1bad4c5615e4c70f9974594768504d95ae0900d"
+              ],
+              "reason": null
+            },
+            "actual": {
+              "state": "valid",
+              "publication_utc": "2026-01-02T09:30:00Z",
+              "generation_mw": 15745,
+              "source_version_ids": [
+                "7f8ae8c62c8b799105842bdfaa5d36dfb6419de67773e299e8aafe33ab2f1fb8"
+              ],
+              "reason": null
+            },
+            "state": "paired",
+            "reason": null,
+            "error_mw": 2403
+          },
+          {
+            "target_start_utc": "2026-01-02T10:00:00Z",
+            "forecast": {
+              "state": "valid",
+              "publication_utc": "2026-01-01T07:30:00Z",
+              "generation_mw": 17948,
+              "source_version_ids": [
+                "b86f57f4cf265c6b913f2e5358fa6c3faa6c70634786a9780e4abdba851324e8"
+              ],
+              "reason": null
+            },
+            "actual": {
+              "state": "valid",
+              "publication_utc": "2026-01-02T10:30:00Z",
+              "generation_mw": 15394,
+              "source_version_ids": [
+                "29b44dde1dfae8b0fc0b151e2dcd3217714e39e10ff5aa32f77e4075b5c8b9ab"
+              ],
+              "reason": null
+            },
+            "state": "paired",
+            "reason": null,
+            "error_mw": 2554
+          },
+          {
+            "target_start_utc": "2026-01-02T11:00:00Z",
+            "forecast": {
+              "state": "valid",
+              "publication_utc": "2026-01-01T07:30:00Z",
+              "generation_mw": 17629,
+              "source_version_ids": [
+                "b7ded10ac675aba5fca2c16098e0d0b183a79e42a345f2197d11c0dec4d9c205"
+              ],
+              "reason": null
+            },
+            "actual": {
+              "state": "valid",
+              "publication_utc": "2026-01-02T11:30:00Z",
+              "generation_mw": 15488,
+              "source_version_ids": [
+                "5020a6e83913e517aacd93737c4e8fe09ca3a6979bfd45670fb1b76f62c67153"
+              ],
+              "reason": null
+            },
+            "state": "paired",
+            "reason": null,
+            "error_mw": 2141
+          },
+          {
+            "target_start_utc": "2026-01-02T12:00:00Z",
+            "forecast": {
+              "state": "valid",
+              "publication_utc": "2026-01-01T07:30:00Z",
+              "generation_mw": 17541,
+              "source_version_ids": [
+                "088cbbcfbba8b86bd0166ce864b0eac9a642b959a8216903a196d7699f38a029"
+              ],
+              "reason": null
+            },
+            "actual": {
+              "state": "valid",
+              "publication_utc": "2026-01-02T12:30:00Z",
+              "generation_mw": 15023,
+              "source_version_ids": [
+                "8308642c9aa171a46815eb68df4d08046354628ef0101c534b5caac30d9c5ca7"
+              ],
+              "reason": null
+            },
+            "state": "paired",
+            "reason": null,
+            "error_mw": 2518
+          },
+          {
+            "target_start_utc": "2026-01-02T13:00:00Z",
+            "forecast": {
+              "state": "valid",
+              "publication_utc": "2026-01-01T07:30:00Z",
+              "generation_mw": 17605,
+              "source_version_ids": [
+                "9b60775fbc1608f78065a7d4405b0f20cdf7f215f570b169e5a5f6e6b737d86e"
+              ],
+              "reason": null
+            },
+            "actual": {
+              "state": "valid",
+              "publication_utc": "2026-01-02T13:30:00Z",
+              "generation_mw": 15559,
+              "source_version_ids": [
+                "efc72339d6552b55495ef9276967abf0646a6dcd3b8a18533cca3302eed1d30f"
+              ],
+              "reason": null
+            },
+            "state": "paired",
+            "reason": null,
+            "error_mw": 2046
+          },
+          {
+            "target_start_utc": "2026-01-02T14:00:00Z",
+            "forecast": {
+              "state": "valid",
+              "publication_utc": "2026-01-01T07:30:00Z",
+              "generation_mw": 17712,
+              "source_version_ids": [
+                "0c342b9a77d4d6c56ac5c769b6912703c867073b4ffd5617d2650a8267789401"
+              ],
+              "reason": null
+            },
+            "actual": {
+              "state": "valid",
+              "publication_utc": "2026-01-02T14:30:00Z",
+              "generation_mw": 15230,
+              "source_version_ids": [
+                "b110207f5c9bb6d1342564c53397fc42ac683146b5ea862b96306a9b3570132f"
+              ],
+              "reason": null
+            },
+            "state": "paired",
+            "reason": null,
+            "error_mw": 2482
+          },
+          {
+            "target_start_utc": "2026-01-02T15:00:00Z",
+            "forecast": {
+              "state": "valid",
+              "publication_utc": "2026-01-01T07:30:00Z",
+              "generation_mw": 17776,
+              "source_version_ids": [
+                "cbdcb26ca4650847edc81dcdee1e258d418a76ae7aac7a410673ae0ea8b44b48"
+              ],
+              "reason": null
+            },
+            "actual": {
+              "state": "valid",
+              "publication_utc": "2026-01-02T15:30:00Z",
+              "generation_mw": 15997,
+              "source_version_ids": [
+                "68abda79f4e6a24fc88ed18dbbe4b59bcb21eac601490ab8f2d46828366d66c0"
+              ],
+              "reason": null
+            },
+            "state": "paired",
+            "reason": null,
+            "error_mw": 1779
+          },
+          {
+            "target_start_utc": "2026-01-02T16:00:00Z",
+            "forecast": {
+              "state": "valid",
+              "publication_utc": "2026-01-01T07:30:00Z",
+              "generation_mw": 17859,
+              "source_version_ids": [
+                "c4fc3aaf8e0c17708750f0f34be84607a8151cafb91066764f9844a09d0323a2"
+              ],
+              "reason": null
+            },
+            "actual": {
+              "state": "valid",
+              "publication_utc": "2026-01-02T16:30:00Z",
+              "generation_mw": 14528,
+              "source_version_ids": [
+                "ab84807de3f8dad14cf0d581815772e9c67450a700f914f6b6ed2ea4ad34e27c"
+              ],
+              "reason": null
+            },
+            "state": "paired",
+            "reason": null,
+            "error_mw": 3331
+          },
+          {
+            "target_start_utc": "2026-01-02T17:00:00Z",
+            "forecast": {
+              "state": "valid",
+              "publication_utc": "2026-01-01T07:30:00Z",
+              "generation_mw": 18097,
+              "source_version_ids": [
+                "cdb65c9cef5c868d8c399c7943f147c4e984c48b56f87df21f67b7fea10f4cb5"
+              ],
+              "reason": null
+            },
+            "actual": {
+              "state": "valid",
+              "publication_utc": "2026-01-02T17:30:00Z",
+              "generation_mw": 14951,
+              "source_version_ids": [
+                "9abe5793a10958187bb533d4cd8ff6366b0e5f24594586ccfd5d994807d37cb0"
+              ],
+              "reason": null
+            },
+            "state": "paired",
+            "reason": null,
+            "error_mw": 3146
+          },
+          {
+            "target_start_utc": "2026-01-02T18:00:00Z",
+            "forecast": {
+              "state": "valid",
+              "publication_utc": "2026-01-01T07:30:00Z",
+              "generation_mw": 18281,
+              "source_version_ids": [
+                "31bf7dd64576c408eb9d3bb753341b39994ff38f7075b8c515b0d1f0ac3b7795"
+              ],
+              "reason": null
+            },
+            "actual": {
+              "state": "valid",
+              "publication_utc": "2026-01-02T18:30:00Z",
+              "generation_mw": 14637,
+              "source_version_ids": [
+                "583dc9944ddf251fd876d61aefcadae8b1c5c58d83648260a4522aa274b4109c"
+              ],
+              "reason": null
+            },
+            "state": "paired",
+            "reason": null,
+            "error_mw": 3644
+          },
+          {
+            "target_start_utc": "2026-01-02T19:00:00Z",
+            "forecast": {
+              "state": "valid",
+              "publication_utc": "2026-01-01T07:30:00Z",
+              "generation_mw": 18269,
+              "source_version_ids": [
+                "e00438a15fcf7ed90052e052a86d9475d03d1db63a9b606d8ec7d4dc6d4e609d"
+              ],
+              "reason": null
+            },
+            "actual": {
+              "state": "valid",
+              "publication_utc": "2026-01-02T19:30:00Z",
+              "generation_mw": 14649,
+              "source_version_ids": [
+                "55bf135326603ee0ff4bdd1de0504442a3aa4fff4aae1c982103af8d4a3bb189"
+              ],
+              "reason": null
+            },
+            "state": "paired",
+            "reason": null,
+            "error_mw": 3620
+          },
+          {
+            "target_start_utc": "2026-01-02T20:00:00Z",
+            "forecast": {
+              "state": "valid",
+              "publication_utc": "2026-01-01T07:30:00Z",
+              "generation_mw": 18202,
+              "source_version_ids": [
+                "da0ed4010530c9c33d280d10863eb543f51c0893849ffebeaf8e73f0f8b6d6fd"
+              ],
+              "reason": null
+            },
+            "actual": {
+              "state": "valid",
+              "publication_utc": "2026-01-02T20:30:00Z",
+              "generation_mw": 14341,
+              "source_version_ids": [
+                "33456d0e9cb415cc5ae71736184431462303e58697863207dd7aa60cf6618a20"
+              ],
+              "reason": null
+            },
+            "state": "paired",
+            "reason": null,
+            "error_mw": 3861
+          },
+          {
+            "target_start_utc": "2026-01-02T21:00:00Z",
+            "forecast": {
+              "state": "valid",
+              "publication_utc": "2026-01-01T07:30:00Z",
+              "generation_mw": 18241,
+              "source_version_ids": [
+                "914338431bdedd65403ab38dae0a80a6a49e3a2ba80f4a4b341fa2ecbb91cd15"
+              ],
+              "reason": null
+            },
+            "actual": {
+              "state": "valid",
+              "publication_utc": "2026-01-02T21:30:00Z",
+              "generation_mw": 14655,
+              "source_version_ids": [
+                "87ab227abee9362d0f93d9782a0172c39e0e85fc7f4d18f410adb19eb90c8bcb"
+              ],
+              "reason": null
+            },
+            "state": "paired",
+            "reason": null,
+            "error_mw": 3586
+          },
+          {
+            "target_start_utc": "2026-01-02T22:00:00Z",
+            "forecast": {
+              "state": "valid",
+              "publication_utc": "2026-01-01T07:30:00Z",
+              "generation_mw": 18293,
+              "source_version_ids": [
+                "b2a846e014cb3801194742221bb00165151d49ba681f06efcd61c38cf1d642c3"
+              ],
+              "reason": null
+            },
+            "actual": {
+              "state": "valid",
+              "publication_utc": "2026-01-02T22:30:00Z",
+              "generation_mw": 13958,
+              "source_version_ids": [
+                "43ce72c4834d2d496a0aaed69f61a2dff17dc87963953bb3ea8032b125fa3a14"
+              ],
+              "reason": null
+            },
+            "state": "paired",
+            "reason": null,
+            "error_mw": 4335
+          },
+          {
+            "target_start_utc": "2026-01-02T23:00:00Z",
+            "forecast": {
+              "state": "valid",
+              "publication_utc": "2026-01-01T07:30:00Z",
+              "generation_mw": 18313,
+              "source_version_ids": [
+                "30b229e53b5ff6eac621de5bbbda3860fed4e0bf1c2c45576b9a7b83af5d2353"
+              ],
+              "reason": null
+            },
+            "actual": {
+              "state": "valid",
+              "publication_utc": "2026-01-02T23:30:00Z",
+              "generation_mw": 14133,
+              "source_version_ids": [
+                "e702e57cbd5254fe6a821a282b2d70e196e850af4664dc9535d9a8462219f3b0"
+              ],
+              "reason": null
+            },
+            "state": "paired",
+            "reason": null,
+            "error_mw": 4180
+          }
+        ],
+        "actual_half_hours": [
+          {
+            "target_start_utc": "2026-01-02T00:00:00Z",
+            "actual": {
+              "state": "valid",
+              "publication_utc": "2026-01-02T00:30:00Z",
+              "generation_mw": 15228,
+              "source_version_ids": [
+                "091de3f4c3944465f3c4a8d94bb6a91891b00404f0e80dc3b1ead08b2fc1bceb"
+              ],
+              "reason": null
+            },
+            "used_in_metrics": true
+          },
+          {
+            "target_start_utc": "2026-01-02T00:30:00Z",
+            "actual": {
+              "state": "valid",
+              "publication_utc": "2026-01-02T01:00:00Z",
+              "generation_mw": 15505,
+              "source_version_ids": [
+                "5cdf6d29ef90097b44ffc209434eb79a35889b226a2f1e70f8a032f16af057b8"
+              ],
+              "reason": null
+            },
+            "used_in_metrics": false
+          },
+          {
+            "target_start_utc": "2026-01-02T01:00:00Z",
+            "actual": {
+              "state": "valid",
+              "publication_utc": "2026-01-02T01:30:00Z",
+              "generation_mw": 15599,
+              "source_version_ids": [
+                "6784cca7e8583f4923a6d20b48d6480f41617df8f387278c44b2f09f105bd564"
+              ],
+              "reason": null
+            },
+            "used_in_metrics": true
+          },
+          {
+            "target_start_utc": "2026-01-02T01:30:00Z",
+            "actual": {
+              "state": "valid",
+              "publication_utc": "2026-01-02T02:00:00Z",
+              "generation_mw": 15763,
+              "source_version_ids": [
+                "e5a7fbcf19222987907ce9d9f07f6620706ea109a515515efc4264bff901c0a2"
+              ],
+              "reason": null
+            },
+            "used_in_metrics": false
+          },
+          {
+            "target_start_utc": "2026-01-02T02:00:00Z",
+            "actual": {
+              "state": "valid",
+              "publication_utc": "2026-01-02T02:30:00Z",
+              "generation_mw": 15807,
+              "source_version_ids": [
+                "2560ba631baddb5e0bb7aff08e0fe95aee698462a6a05f4b92f67df10679670e"
+              ],
+              "reason": null
+            },
+            "used_in_metrics": true
+          },
+          {
+            "target_start_utc": "2026-01-02T02:30:00Z",
+            "actual": {
+              "state": "valid",
+              "publication_utc": "2026-01-02T03:00:00Z",
+              "generation_mw": 15943,
+              "source_version_ids": [
+                "962ff4ed6350ec1ec87efc348d842bf07a159672bb6e2be0699c8efd2b59fd7b"
+              ],
+              "reason": null
+            },
+            "used_in_metrics": false
+          },
+          {
+            "target_start_utc": "2026-01-02T03:00:00Z",
+            "actual": {
+              "state": "valid",
+              "publication_utc": "2026-01-02T03:30:00Z",
+              "generation_mw": 16096,
+              "source_version_ids": [
+                "711ccaf6a0feceefbc4219a8180f88a8eeaeefaa4317d41b8bb87366442d1ddc"
+              ],
+              "reason": null
+            },
+            "used_in_metrics": true
+          },
+          {
+            "target_start_utc": "2026-01-02T03:30:00Z",
+            "actual": {
+              "state": "valid",
+              "publication_utc": "2026-01-02T04:00:00Z",
+              "generation_mw": 16125,
+              "source_version_ids": [
+                "9cbb589bf25f097ba02259458f3ceebe452acc389ea3de5e1609797524b050fb"
+              ],
+              "reason": null
+            },
+            "used_in_metrics": false
+          },
+          {
+            "target_start_utc": "2026-01-02T04:00:00Z",
+            "actual": {
+              "state": "valid",
+              "publication_utc": "2026-01-02T04:30:00Z",
+              "generation_mw": 16050,
+              "source_version_ids": [
+                "d26d7846685b165cb606a916e1fdf78ecfee019cf9eada9ab03ba85c608ed75c"
+              ],
+              "reason": null
+            },
+            "used_in_metrics": true
+          },
+          {
+            "target_start_utc": "2026-01-02T04:30:00Z",
+            "actual": {
+              "state": "valid",
+              "publication_utc": "2026-01-02T05:00:00Z",
+              "generation_mw": 16072,
+              "source_version_ids": [
+                "4593d23fc8db24bc0378e122031527eeb548adc3415b8409ae101b77576fe92e"
+              ],
+              "reason": null
+            },
+            "used_in_metrics": false
+          },
+          {
+            "target_start_utc": "2026-01-02T05:00:00Z",
+            "actual": {
+              "state": "valid",
+              "publication_utc": "2026-01-02T05:30:00Z",
+              "generation_mw": 15900,
+              "source_version_ids": [
+                "5694d1024442a9ca4a466582ba6332f72193e5247c3f592a11e6105b42f247ca"
+              ],
+              "reason": null
+            },
+            "used_in_metrics": true
+          },
+          {
+            "target_start_utc": "2026-01-02T05:30:00Z",
+            "actual": {
+              "state": "valid",
+              "publication_utc": "2026-01-02T06:00:00Z",
+              "generation_mw": 15876,
+              "source_version_ids": [
+                "a3e380bcada97ee7571805d6650388137e32d21b5507542209a8a5657ac2112c"
+              ],
+              "reason": null
+            },
+            "used_in_metrics": false
+          },
+          {
+            "target_start_utc": "2026-01-02T06:00:00Z",
+            "actual": {
+              "state": "valid",
+              "publication_utc": "2026-01-02T06:30:00Z",
+              "generation_mw": 15328,
+              "source_version_ids": [
+                "8f963d70e663a5f439617ad5506dfc72f273980af10e08a1ab90c2211d0f2aee"
+              ],
+              "reason": null
+            },
+            "used_in_metrics": true
+          },
+          {
+            "target_start_utc": "2026-01-02T06:30:00Z",
+            "actual": {
+              "state": "valid",
+              "publication_utc": "2026-01-02T07:00:00Z",
+              "generation_mw": 14980,
+              "source_version_ids": [
+                "0768a0192cfff25eb51f983460112fddb9cc3d472b6960558da71dae86677f14"
+              ],
+              "reason": null
+            },
+            "used_in_metrics": false
+          },
+          {
+            "target_start_utc": "2026-01-02T07:00:00Z",
+            "actual": {
+              "state": "valid",
+              "publication_utc": "2026-01-02T07:30:00Z",
+              "generation_mw": 15121,
+              "source_version_ids": [
+                "cade1c4c67a7af9de119f38d084514681ab51c0aff60c822eb3bea5dc1d956b7"
+              ],
+              "reason": null
+            },
+            "used_in_metrics": true
+          },
+          {
+            "target_start_utc": "2026-01-02T07:30:00Z",
+            "actual": {
+              "state": "valid",
+              "publication_utc": "2026-01-02T08:00:00Z",
+              "generation_mw": 15055,
+              "source_version_ids": [
+                "ef3c6a8081abd86176994508f113a7cdc5843588fd24ecc46d9d2e14c163766f"
+              ],
+              "reason": null
+            },
+            "used_in_metrics": false
+          },
+          {
+            "target_start_utc": "2026-01-02T08:00:00Z",
+            "actual": {
+              "state": "valid",
+              "publication_utc": "2026-01-02T08:30:00Z",
+              "generation_mw": 15590,
+              "source_version_ids": [
+                "15f1ae81198ebad4b767a1cd80f22d980977a5aba1658a23ebea44aac6f7fa32"
+              ],
+              "reason": null
+            },
+            "used_in_metrics": true
+          },
+          {
+            "target_start_utc": "2026-01-02T08:30:00Z",
+            "actual": {
+              "state": "valid",
+              "publication_utc": "2026-01-02T09:00:00Z",
+              "generation_mw": 15733,
+              "source_version_ids": [
+                "221ffb3478068bc9ffc5f5f1d64531188a4616492e31915e18ce9128c5afe459"
+              ],
+              "reason": null
+            },
+            "used_in_metrics": false
+          },
+          {
+            "target_start_utc": "2026-01-02T09:00:00Z",
+            "actual": {
+              "state": "valid",
+              "publication_utc": "2026-01-02T09:30:00Z",
+              "generation_mw": 15745,
+              "source_version_ids": [
+                "7f8ae8c62c8b799105842bdfaa5d36dfb6419de67773e299e8aafe33ab2f1fb8"
+              ],
+              "reason": null
+            },
+            "used_in_metrics": true
+          },
+          {
+            "target_start_utc": "2026-01-02T09:30:00Z",
+            "actual": {
+              "state": "valid",
+              "publication_utc": "2026-01-02T10:00:00Z",
+              "generation_mw": 15344,
+              "source_version_ids": [
+                "800161bb679c29ab363a78e4b73ed553b5c1b0425c15f05f29b312cce2461190"
+              ],
+              "reason": null
+            },
+            "used_in_metrics": false
+          },
+          {
+            "target_start_utc": "2026-01-02T10:00:00Z",
+            "actual": {
+              "state": "valid",
+              "publication_utc": "2026-01-02T10:30:00Z",
+              "generation_mw": 15394,
+              "source_version_ids": [
+                "29b44dde1dfae8b0fc0b151e2dcd3217714e39e10ff5aa32f77e4075b5c8b9ab"
+              ],
+              "reason": null
+            },
+            "used_in_metrics": true
+          },
+          {
+            "target_start_utc": "2026-01-02T10:30:00Z",
+            "actual": {
+              "state": "valid",
+              "publication_utc": "2026-01-02T11:00:00Z",
+              "generation_mw": 15326,
+              "source_version_ids": [
+                "87558dfa61bfad2eed83152c909f519976bd8158de6fad03aeac75d42119da45"
+              ],
+              "reason": null
+            },
+            "used_in_metrics": false
+          },
+          {
+            "target_start_utc": "2026-01-02T11:00:00Z",
+            "actual": {
+              "state": "valid",
+              "publication_utc": "2026-01-02T11:30:00Z",
+              "generation_mw": 15488,
+              "source_version_ids": [
+                "5020a6e83913e517aacd93737c4e8fe09ca3a6979bfd45670fb1b76f62c67153"
+              ],
+              "reason": null
+            },
+            "used_in_metrics": true
+          },
+          {
+            "target_start_utc": "2026-01-02T11:30:00Z",
+            "actual": {
+              "state": "valid",
+              "publication_utc": "2026-01-02T12:00:00Z",
+              "generation_mw": 15444,
+              "source_version_ids": [
+                "789593fbff95cb9c13da6717dff8d4bd6738123e4682dd970c7e9c7de1883f62"
+              ],
+              "reason": null
+            },
+            "used_in_metrics": false
+          },
+          {
+            "target_start_utc": "2026-01-02T12:00:00Z",
+            "actual": {
+              "state": "valid",
+              "publication_utc": "2026-01-02T12:30:00Z",
+              "generation_mw": 15023,
+              "source_version_ids": [
+                "8308642c9aa171a46815eb68df4d08046354628ef0101c534b5caac30d9c5ca7"
+              ],
+              "reason": null
+            },
+            "used_in_metrics": true
+          },
+          {
+            "target_start_utc": "2026-01-02T12:30:00Z",
+            "actual": {
+              "state": "valid",
+              "publication_utc": "2026-01-02T13:00:00Z",
+              "generation_mw": 14492,
+              "source_version_ids": [
+                "20f948e27fca6718c8c0bb22f81b6b131eb774772033ce28507f6d43d6c04cd0"
+              ],
+              "reason": null
+            },
+            "used_in_metrics": false
+          },
+          {
+            "target_start_utc": "2026-01-02T13:00:00Z",
+            "actual": {
+              "state": "valid",
+              "publication_utc": "2026-01-02T13:30:00Z",
+              "generation_mw": 15559,
+              "source_version_ids": [
+                "efc72339d6552b55495ef9276967abf0646a6dcd3b8a18533cca3302eed1d30f"
+              ],
+              "reason": null
+            },
+            "used_in_metrics": true
+          },
+          {
+            "target_start_utc": "2026-01-02T13:30:00Z",
+            "actual": {
+              "state": "valid",
+              "publication_utc": "2026-01-02T14:00:00Z",
+              "generation_mw": 15119,
+              "source_version_ids": [
+                "834bd13509516e5036852de863c609d22994eda9d8504ee125d4854fb40d798d"
+              ],
+              "reason": null
+            },
+            "used_in_metrics": false
+          },
+          {
+            "target_start_utc": "2026-01-02T14:00:00Z",
+            "actual": {
+              "state": "valid",
+              "publication_utc": "2026-01-02T14:30:00Z",
+              "generation_mw": 15230,
+              "source_version_ids": [
+                "b110207f5c9bb6d1342564c53397fc42ac683146b5ea862b96306a9b3570132f"
+              ],
+              "reason": null
+            },
+            "used_in_metrics": true
+          },
+          {
+            "target_start_utc": "2026-01-02T14:30:00Z",
+            "actual": {
+              "state": "valid",
+              "publication_utc": "2026-01-02T15:00:00Z",
+              "generation_mw": 15796,
+              "source_version_ids": [
+                "30ceb74587b08be1d2aef3c54cb03d4f806f55b935026d2fd5a8d90e2633ca2c"
+              ],
+              "reason": null
+            },
+            "used_in_metrics": false
+          },
+          {
+            "target_start_utc": "2026-01-02T15:00:00Z",
+            "actual": {
+              "state": "valid",
+              "publication_utc": "2026-01-02T15:30:00Z",
+              "generation_mw": 15997,
+              "source_version_ids": [
+                "68abda79f4e6a24fc88ed18dbbe4b59bcb21eac601490ab8f2d46828366d66c0"
+              ],
+              "reason": null
+            },
+            "used_in_metrics": true
+          },
+          {
+            "target_start_utc": "2026-01-02T15:30:00Z",
+            "actual": {
+              "state": "valid",
+              "publication_utc": "2026-01-02T16:00:00Z",
+              "generation_mw": 15140,
+              "source_version_ids": [
+                "8b4d90cd9a2a55af141976db47fd505454cc9ec78f4aff59919c1b35e67e4888"
+              ],
+              "reason": null
+            },
+            "used_in_metrics": false
+          },
+          {
+            "target_start_utc": "2026-01-02T16:00:00Z",
+            "actual": {
+              "state": "valid",
+              "publication_utc": "2026-01-02T16:30:00Z",
+              "generation_mw": 14528,
+              "source_version_ids": [
+                "ab84807de3f8dad14cf0d581815772e9c67450a700f914f6b6ed2ea4ad34e27c"
+              ],
+              "reason": null
+            },
+            "used_in_metrics": true
+          },
+          {
+            "target_start_utc": "2026-01-02T16:30:00Z",
+            "actual": {
+              "state": "valid",
+              "publication_utc": "2026-01-02T17:00:00Z",
+              "generation_mw": 14662,
+              "source_version_ids": [
+                "d30df6d378a1b1368dfb7a253733366bd0b0c8ff446f3c98fb4f9dc6846a69b1"
+              ],
+              "reason": null
+            },
+            "used_in_metrics": false
+          },
+          {
+            "target_start_utc": "2026-01-02T17:00:00Z",
+            "actual": {
+              "state": "valid",
+              "publication_utc": "2026-01-02T17:30:00Z",
+              "generation_mw": 14951,
+              "source_version_ids": [
+                "9abe5793a10958187bb533d4cd8ff6366b0e5f24594586ccfd5d994807d37cb0"
+              ],
+              "reason": null
+            },
+            "used_in_metrics": true
+          },
+          {
+            "target_start_utc": "2026-01-02T17:30:00Z",
+            "actual": {
+              "state": "valid",
+              "publication_utc": "2026-01-02T18:00:00Z",
+              "generation_mw": 14954,
+              "source_version_ids": [
+                "ab3d962119db90f3b332d207de3739bae90cfa4313a7344a6065ae739708925b"
+              ],
+              "reason": null
+            },
+            "used_in_metrics": false
+          },
+          {
+            "target_start_utc": "2026-01-02T18:00:00Z",
+            "actual": {
+              "state": "valid",
+              "publication_utc": "2026-01-02T18:30:00Z",
+              "generation_mw": 14637,
+              "source_version_ids": [
+                "583dc9944ddf251fd876d61aefcadae8b1c5c58d83648260a4522aa274b4109c"
+              ],
+              "reason": null
+            },
+            "used_in_metrics": true
+          },
+          {
+            "target_start_utc": "2026-01-02T18:30:00Z",
+            "actual": {
+              "state": "valid",
+              "publication_utc": "2026-01-02T19:00:00Z",
+              "generation_mw": 14312,
+              "source_version_ids": [
+                "e90ec608679ad917c431ccab971cbaaf7d84d5fcf75f2f359da2633dbe9b4c6c"
+              ],
+              "reason": null
+            },
+            "used_in_metrics": false
+          },
+          {
+            "target_start_utc": "2026-01-02T19:00:00Z",
+            "actual": {
+              "state": "valid",
+              "publication_utc": "2026-01-02T19:30:00Z",
+              "generation_mw": 14649,
+              "source_version_ids": [
+                "55bf135326603ee0ff4bdd1de0504442a3aa4fff4aae1c982103af8d4a3bb189"
+              ],
+              "reason": null
+            },
+            "used_in_metrics": true
+          },
+          {
+            "target_start_utc": "2026-01-02T19:30:00Z",
+            "actual": {
+              "state": "valid",
+              "publication_utc": "2026-01-02T20:00:00Z",
+              "generation_mw": 14677,
+              "source_version_ids": [
+                "5243fd6b0d5f08bd3393eeafa4111c70fa715d9dce117528d9ae1a58895af381"
+              ],
+              "reason": null
+            },
+            "used_in_metrics": false
+          },
+          {
+            "target_start_utc": "2026-01-02T20:00:00Z",
+            "actual": {
+              "state": "valid",
+              "publication_utc": "2026-01-02T20:30:00Z",
+              "generation_mw": 14341,
+              "source_version_ids": [
+                "33456d0e9cb415cc5ae71736184431462303e58697863207dd7aa60cf6618a20"
+              ],
+              "reason": null
+            },
+            "used_in_metrics": true
+          },
+          {
+            "target_start_utc": "2026-01-02T20:30:00Z",
+            "actual": {
+              "state": "valid",
+              "publication_utc": "2026-01-02T21:00:00Z",
+              "generation_mw": 14212,
+              "source_version_ids": [
+                "a7b23a26a3430d2018fcf91b8171d47124b798bb6ccb0f1689e6826a01af9a5a"
+              ],
+              "reason": null
+            },
+            "used_in_metrics": false
+          },
+          {
+            "target_start_utc": "2026-01-02T21:00:00Z",
+            "actual": {
+              "state": "valid",
+              "publication_utc": "2026-01-02T21:30:00Z",
+              "generation_mw": 14655,
+              "source_version_ids": [
+                "87ab227abee9362d0f93d9782a0172c39e0e85fc7f4d18f410adb19eb90c8bcb"
+              ],
+              "reason": null
+            },
+            "used_in_metrics": true
+          },
+          {
+            "target_start_utc": "2026-01-02T21:30:00Z",
+            "actual": {
+              "state": "valid",
+              "publication_utc": "2026-01-02T22:00:00Z",
+              "generation_mw": 14394,
+              "source_version_ids": [
+                "be55682f3cc586354264856e4a66200eb9333e5a91a18c17b49cf41bda201c50"
+              ],
+              "reason": null
+            },
+            "used_in_metrics": false
+          },
+          {
+            "target_start_utc": "2026-01-02T22:00:00Z",
+            "actual": {
+              "state": "valid",
+              "publication_utc": "2026-01-02T22:30:00Z",
+              "generation_mw": 13958,
+              "source_version_ids": [
+                "43ce72c4834d2d496a0aaed69f61a2dff17dc87963953bb3ea8032b125fa3a14"
+              ],
+              "reason": null
+            },
+            "used_in_metrics": true
+          },
+          {
+            "target_start_utc": "2026-01-02T22:30:00Z",
+            "actual": {
+              "state": "valid",
+              "publication_utc": "2026-01-02T23:00:00Z",
+              "generation_mw": 13983,
+              "source_version_ids": [
+                "2146dfafab462752488c6512c98301593ce5d6488ad5759a94352501e9f55974"
+              ],
+              "reason": null
+            },
+            "used_in_metrics": false
+          },
+          {
+            "target_start_utc": "2026-01-02T23:00:00Z",
+            "actual": {
+              "state": "valid",
+              "publication_utc": "2026-01-02T23:30:00Z",
+              "generation_mw": 14133,
+              "source_version_ids": [
+                "e702e57cbd5254fe6a821a282b2d70e196e850af4664dc9535d9a8462219f3b0"
+              ],
+              "reason": null
+            },
+            "used_in_metrics": true
+          },
+          {
+            "target_start_utc": "2026-01-02T23:30:00Z",
+            "actual": {
+              "state": "valid",
+              "publication_utc": "2026-01-03T00:00:00Z",
+              "generation_mw": 14202,
+              "source_version_ids": [
+                "53f82ca6d5ca32ea62674c0fca9fb6502fb03a74ade82397233bdd910889eb1d"
+              ],
+              "reason": null
+            },
+            "used_in_metrics": false
+          }
+        ],
+        "metrics": {
+          "paired_targets": 24,
+          "mae_mw": 3070.375,
+          "rmse_mw": 3139.279647997823,
+          "bias_mw": 3070.375,
+          "p90_absolute_error_mw": 3795.9,
+          "reason": null,
+          "version": "metrics_v1",
+          "unit": "MW"
+        },
+        "coverage": {
+          "expected": 24,
+          "forecast_missing": 0,
+          "forecast_invalid": 0,
+          "actual_missing": 0,
+          "actual_invalid": 0,
+          "paired": 24,
+          "paired_percent": 100.0
+        },
+        "actual_source_coverage": {
+          "expected": 48,
+          "valid": 48,
+          "missing": 0,
+          "invalid": 0,
+          "valid_percent": 100.0
+        }
+      }
+    ],
+    "metrics": {
+      "paired_targets": 24,
+      "mae_mw": 3070.375,
+      "rmse_mw": 3139.279647997823,
+      "bias_mw": 3070.375,
+      "p90_absolute_error_mw": 3795.9,
+      "reason": null,
+      "version": "metrics_v1",
+      "unit": "MW"
+    },
+    "coverage": {
+      "expected": 24,
+      "forecast_missing": 0,
+      "forecast_invalid": 0,
+      "actual_missing": 0,
+      "actual_invalid": 0,
+      "paired": 24,
+      "paired_percent": 100.0
+    },
+    "actual_source_coverage": {
+      "expected": 48,
+      "valid": 48,
+      "missing": 0,
+      "invalid": 0,
+      "valid_percent": 100.0
+    },
+    "comparison_policy": "source_timestamp_v1",
+    "selection_policy": "latest_source_key_v1",
+    "actual_vintage_policy": "latest_publication_in_release_v1",
+    "availability_model": "source_publication_time",
+    "retrospective": true
+  },
+  "source": {
+    "forecast_dataset": "WINDFOR",
+    "forecast_endpoint": "https://data.elexon.co.uk/bmrs/api/v1/datasets/WINDFOR/stream",
+    "data_quality_url": "/api/v1/data-quality?release_id=f61cecb1c14d91cfc32f10c74a9945fd2cf7f1851abd8ca6b0eb3f3e8975b052",
+    "attribution": "Contains BMRS data © Elexon Limited copyright and database right 2026.",
+    "licence_url": "https://www.elexon.co.uk/bsc/data/balancing-mechanism-reporting-agent/copyright-licence-bmrs-data/",
+    "actual_dataset": "FUELHH_WIND",
+    "actual_endpoint": "https://data.elexon.co.uk/bmrs/api/v1/datasets/FUELHH/stream?fuelType=WIND"
+  },
+  "export_url": "/api/v1/export.csv?mode=accuracy&release_id=f61cecb1c14d91cfc32f10c74a9945fd2cf7f1851abd8ca6b0eb3f3e8975b052&cutoff_local=09%3A00&expected_context_id=26dfe0aab7d0ef341e731e99b8e71a7540567d8d1ff4d119b51165df514de32b&decision_from=2026-01-01&decision_to=2026-01-01&comparison_policy=source_timestamp_v1"
+}

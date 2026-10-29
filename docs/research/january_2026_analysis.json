@@ -1,0 +1,2678 @@
+{
+  "release_id": "f61cecb1c14d91cfc32f10c74a9945fd2cf7f1851abd8ca6b0eb3f3e8975b052",
+  "source_parser": "elexon_streams_v2",
+  "build_sha": "local",
+  "attribution": "Contains BMRS data © Elexon Limited copyright and database right 2026.",
+  "licence_url": "https://www.elexon.co.uk/bsc/data/balancing-mechanism-reporting-agent/copyright-licence-bmrs-data/",
+  "decision_from": "2026-01-01",
+  "decision_to": "2026-01-31",
+  "retrospective": true,
+  "reports": [
+    {
+      "cutoff_local": "09:00",
+      "comparison_policy": "source_timestamp_v1",
+      "selection_policy": "latest_source_key_v1",
+      "actual_vintage_policy": "latest_publication_in_release_v1",
+      "availability_model": "source_publication_time",
+      "metrics": {
+        "paired_targets": 744,
+        "mae_mw": 2022.470430107527,
+        "rmse_mw": 2497.407157584179,
+        "bias_mw": 1745.9381720430108,
+        "p90_absolute_error_mw": 4154.4,
+        "reason": null,
+        "version": "metrics_v1",
+        "unit": "MW"
+      },
+      "coverage": {
+        "expected": 744,
+        "forecast_missing": 0,
+        "forecast_invalid": 0,
+        "actual_missing": 0,
+        "actual_invalid": 0,
+        "paired": 744,
+        "paired_percent": 100.0
+      },
+      "actual_source_coverage": {
+        "expected": 1488,
+        "valid": 1488,
+        "missing": 0,
+        "invalid": 0,
+        "valid_percent": 100.0
+      },
+      "documented_example": {
+        "target_start_utc": "2026-01-02T00:00:00Z",
+        "forecast": {
+          "state": "valid",
+          "publication_utc": "2026-01-01T07:30:00Z",
+          "generation_mw": 18781,
+          "source_version_ids": [
+            "9ddb4e4c15d15eba2b787cbcfdfc574e127100251ce00930eca6f515c9b35d71"
+          ],
+          "reason": null
+        },
+        "actual": {
+          "state": "valid",
+          "publication_utc": "2026-01-02T00:30:00Z",
+          "generation_mw": 15228,
+          "source_version_ids": [
+            "091de3f4c3944465f3c4a8d94bb6a91891b00404f0e80dc3b1ead08b2fc1bceb"
+          ],
+          "reason": null
+        },
+        "state": "paired",
+        "reason": null,
+        "error_mw": 3553
+      },
+      "largest_absolute_misses": [
+        {
+          "target_start_utc": "2026-01-12T01:00:00Z",
+          "forecast": {
+            "state": "valid",
+            "publication_utc": "2026-01-11T07:30:00Z",
+            "generation_mw": 20942,
+            "source_version_ids": [
+              "525bfceefa05775347591ddabec808b18a6056b3caf68f93d03faedaf1f57d4d"
+            ],
+            "reason": null
+          },
+          "actual": {
+            "state": "valid",
+            "publication_utc": "2026-01-12T01:30:00Z",
+            "generation_mw": 14048,
+            "source_version_ids": [
+              "93912cc025b499291caf777aac3d3256e1499b54619ff1578f8efb8072e165fa"
+            ],
+            "reason": null
+          },
+          "state": "paired",
+          "reason": null,
+          "error_mw": 6894,
+          "decision_date": "2026-01-11"
+        },
+        {
+          "target_start_utc": "2026-01-12T00:00:00Z",
+          "forecast": {
+            "state": "valid",
+            "publication_utc": "2026-01-11T07:30:00Z",
+            "generation_mw": 20790,
+            "source_version_ids": [
+              "034c7b658d79db5d702da83af0123ffaf2285f27c14d8c463bfe4ea8ed94c4f4"
+            ],
+            "reason": null
+          },
+          "actual": {
+            "state": "valid",
+            "publication_utc": "2026-01-12T00:30:00Z",
+            "generation_mw": 13954,
+            "source_version_ids": [
+              "5170e2d9156e20cfbf66fa2db4f527847e84bd862ccefab870d97c26c53ac4cf"
+            ],
+            "reason": null
+          },
+          "state": "paired",
+          "reason": null,
+          "error_mw": 6836,
+          "decision_date": "2026-01-11"
+        },
+        {
+          "target_start_utc": "2026-01-12T02:00:00Z",
+          "forecast": {
+            "state": "valid",
+            "publication_utc": "2026-01-11T07:30:00Z",
+            "generation_mw": 20876,
+            "source_version_ids": [
+              "0f19919ba1a104a0753245c5107a88cfd9371e711ae13b01d1b3dd156986eb27"
+            ],
+            "reason": null
+          },
+          "actual": {
+            "state": "valid",
+            "publication_utc": "2026-01-12T02:30:00Z",
+            "generation_mw": 14123,
+            "source_version_ids": [
+              "58ebc5db8729a3e7a095cf8d70d3ba1cc93cad2cab05ee19c9dd84d3e4269bcf"
+            ],
+            "reason": null
+          },
+          "state": "paired",
+          "reason": null,
+          "error_mw": 6753,
+          "decision_date": "2026-01-11"
+        },
+        {
+          "target_start_utc": "2026-01-12T03:00:00Z",
+          "forecast": {
+            "state": "valid",
+            "publication_utc": "2026-01-11T07:30:00Z",
+            "generation_mw": 20809,
+            "source_version_ids": [
+              "d5b9694ea0e6e67fe8f8b3f0b12ffdf9fa21259d52ea6020986b843692008c49"
+            ],
+            "reason": null
+          },
+          "actual": {
+            "state": "valid",
+            "publication_utc": "2026-01-12T03:30:00Z",
+            "generation_mw": 14171,
+            "source_version_ids": [
+              "d5db977e1bb3706dc8577d446835d839bea34db02085decf17fadd52078bb826"
+            ],
+            "reason": null
+          },
+          "state": "paired",
+          "reason": null,
+          "error_mw": 6638,
+          "decision_date": "2026-01-11"
+        },
+        {
+          "target_start_utc": "2026-01-12T04:00:00Z",
+          "forecast": {
+            "state": "valid",
+            "publication_utc": "2026-01-11T07:30:00Z",
+            "generation_mw": 20729,
+            "source_version_ids": [
+              "cd5a9bd4d94d93e8f419cfd1ee92fb8f573e4a2493f67d8460f613be64559de5"
+            ],
+            "reason": null
+          },
+          "actual": {
+            "state": "valid",
+            "publication_utc": "2026-01-12T04:30:00Z",
+            "generation_mw": 14193,
+            "source_version_ids": [
+              "2fddd4ddc49c80bf54e6787f2e7baf7d5803a92df3cf7b8da939d31f2b8037b6"
+            ],
+            "reason": null
+          },
+          "state": "paired",
+          "reason": null,
+          "error_mw": 6536,
+          "decision_date": "2026-01-11"
+        }
+      ],
+      "daily": [
+        {
+          "window": {
+            "decision_date": "2026-01-01",
+            "delivery_date": "2026-01-02",
+            "cutoff_local": "09:00",
+            "cutoff_utc": "2026-01-01T09:00:00Z",
+            "delivery_start_utc": "2026-01-02T00:00:00Z",
+            "delivery_end_utc": "2026-01-03T00:00:00Z",
+            "timezone": "Europe/London"
+          },
+          "metrics": {
+            "paired_targets": 24,
+            "mae_mw": 3070.375,
+            "rmse_mw": 3139.279647997823,
+            "bias_mw": 3070.375,
+            "p90_absolute_error_mw": 3795.9,
+            "reason": null,
+            "version": "metrics_v1",
+            "unit": "MW"
+          },
+          "coverage": {
+            "expected": 24,
+            "forecast_missing": 0,
+            "forecast_invalid": 0,
+            "actual_missing": 0,
+            "actual_invalid": 0,
+            "paired": 24,
+            "paired_percent": 100.0
+          },
+          "actual_source_coverage": {
+            "expected": 48,
+            "valid": 48,
+            "missing": 0,
+            "invalid": 0,
+            "valid_percent": 100.0
+          }
+        },
+        {
+          "window": {
+            "decision_date": "2026-01-02",
+            "delivery_date": "2026-01-03",
+            "cutoff_local": "09:00",
+            "cutoff_utc": "2026-01-02T09:00:00Z",
+            "delivery_start_utc": "2026-01-03T00:00:00Z",
+            "delivery_end_utc": "2026-01-04T00:00:00Z",
+            "timezone": "Europe/London"
+          },
+          "metrics": {
+            "paired_targets": 24,
+            "mae_mw": 2098.5,
+            "rmse_mw": 2467.101335575821,
+            "bias_mw": 2098.5,
+            "p90_absolute_error_mw": 4175.8,
+            "reason": null,
+            "version": "metrics_v1",
+            "unit": "MW"
+          },
+          "coverage": {
+            "expected": 24,
+            "forecast_missing": 0,
+            "forecast_invalid": 0,
+            "actual_missing": 0,
+            "actual_invalid": 0,
+            "paired": 24,
+            "paired_percent": 100.0
+          },
+          "actual_source_coverage": {
+            "expected": 48,
+            "valid": 48,
+            "missing": 0,
+            "invalid": 0,
+            "valid_percent": 100.0
+          }
+        },
+        {
+          "window": {
+            "decision_date": "2026-01-03",
+            "delivery_date": "2026-01-04",
+            "cutoff_local": "09:00",
+            "cutoff_utc": "2026-01-03T09:00:00Z",
+            "delivery_start_utc": "2026-01-04T00:00:00Z",
+            "delivery_end_utc": "2026-01-05T00:00:00Z",
+            "timezone": "Europe/London"
+          },
+          "metrics": {
+            "paired_targets": 24,
+            "mae_mw": 1102.5416666666667,
+            "rmse_mw": 1217.1380536597592,
+            "bias_mw": 1102.5416666666667,
+            "p90_absolute_error_mw": 1686.1,
+            "reason": null,
+            "version": "metrics_v1",
+            "unit": "MW"
+          },
+          "coverage": {
+            "expected": 24,
+            "forecast_missing": 0,
+            "forecast_invalid": 0,
+            "actual_missing": 0,
+            "actual_invalid": 0,
+            "paired": 24,
+            "paired_percent": 100.0
+          },
+          "actual_source_coverage": {
+            "expected": 48,
+            "valid": 48,
+            "missing": 0,
+            "invalid": 0,
+            "valid_percent": 100.0
+          }
+        },
+        {
+          "window": {
+            "decision_date": "2026-01-04",
+            "delivery_date": "2026-01-05",
+            "cutoff_local": "09:00",
+            "cutoff_utc": "2026-01-04T09:00:00Z",
+            "delivery_start_utc": "2026-01-05T00:00:00Z",
+            "delivery_end_utc": "2026-01-06T00:00:00Z",
+            "timezone": "Europe/London"
+          },
+          "metrics": {
+            "paired_targets": 24,
+            "mae_mw": 1294.2916666666667,
+            "rmse_mw": 1580.3584640833865,
+            "bias_mw": -115.29166666666667,
+            "p90_absolute_error_mw": 2472.4,
+            "reason": null,
+            "version": "metrics_v1",
+            "unit": "MW"
+          },
+          "coverage": {
+            "expected": 24,
+            "forecast_missing": 0,
+            "forecast_invalid": 0,
+            "actual_missing": 0,
+            "actual_invalid": 0,
+            "paired": 24,
+            "paired_percent": 100.0
+          },
+          "actual_source_coverage": {
+            "expected": 48,
+            "valid": 48,
+            "missing": 0,
+            "invalid": 0,
+            "valid_percent": 100.0
+          }
+        },
+        {
+          "window": {
+            "decision_date": "2026-01-05",
+            "delivery_date": "2026-01-06",
+            "cutoff_local": "09:00",
+            "cutoff_utc": "2026-01-05T09:00:00Z",
+            "delivery_start_utc": "2026-01-06T00:00:00Z",
+            "delivery_end_utc": "2026-01-07T00:00:00Z",
+            "timezone": "Europe/London"
+          },
+          "metrics": {
+            "paired_targets": 24,
+            "mae_mw": 2158.25,
+            "rmse_mw": 2531.174101742773,
+            "bias_mw": 1938.0833333333333,
+            "p90_absolute_error_mw": 3791.0,
+            "reason": null,
+            "version": "metrics_v1",
+            "unit": "MW"
+          },
+          "coverage": {
+            "expected": 24,
+            "forecast_missing": 0,
+            "forecast_invalid": 0,
+            "actual_missing": 0,
+            "actual_invalid": 0,
+            "paired": 24,
+            "paired_percent": 100.0
+          },
+          "actual_source_coverage": {
+            "expected": 48,
+            "valid": 48,
+            "missing": 0,
+            "invalid": 0,
+            "valid_percent": 100.0
+          }
+        },
+        {
+          "window": {
+            "decision_date": "2026-01-06",
+            "delivery_date": "2026-01-07",
+            "cutoff_local": "09:00",
+            "cutoff_utc": "2026-01-06T09:00:00Z",
+            "delivery_start_utc": "2026-01-07T00:00:00Z",
+            "delivery_end_utc": "2026-01-08T00:00:00Z",
+            "timezone": "Europe/London"
+          },
+          "metrics": {
+            "paired_targets": 24,
+            "mae_mw": 1406.5833333333333,
+            "rmse_mw": 1673.8536873534276,
+            "bias_mw": 1371.9166666666667,
+            "p90_absolute_error_mw": 2608.3,
+            "reason": null,
+            "version": "metrics_v1",
+            "unit": "MW"
+          },
+          "coverage": {
+            "expected": 24,
+            "forecast_missing": 0,
+            "forecast_invalid": 0,
+            "actual_missing": 0,
+            "actual_invalid": 0,
+            "paired": 24,
+            "paired_percent": 100.0
+          },
+          "actual_source_coverage": {
+            "expected": 48,
+            "valid": 48,
+            "missing": 0,
+            "invalid": 0,
+            "valid_percent": 100.0
+          }
+        },
+        {
+          "window": {
+            "decision_date": "2026-01-07",
+            "delivery_date": "2026-01-08",
+            "cutoff_local": "09:00",
+            "cutoff_utc": "2026-01-07T09:00:00Z",
+            "delivery_start_utc": "2026-01-08T00:00:00Z",
+            "delivery_end_utc": "2026-01-09T00:00:00Z",
+            "timezone": "Europe/London"
+          },
+          "metrics": {
+            "paired_targets": 24,
+            "mae_mw": 1852.7083333333333,
+            "rmse_mw": 2053.3340875269178,
+            "bias_mw": 875.9583333333334,
+            "p90_absolute_error_mw": 2854.4,
+            "reason": null,
+            "version": "metrics_v1",
+            "unit": "MW"
+          },
+          "coverage": {
+            "expected": 24,
+            "forecast_missing": 0,
+            "forecast_invalid": 0,
+            "actual_missing": 0,
+            "actual_invalid": 0,
+            "paired": 24,
+            "paired_percent": 100.0
+          },
+          "actual_source_coverage": {
+            "expected": 48,
+            "valid": 48,
+            "missing": 0,
+            "invalid": 0,
+            "valid_percent": 100.0
+          }
+        },
+        {
+          "window": {
+            "decision_date": "2026-01-08",
+            "delivery_date": "2026-01-09",
+            "cutoff_local": "09:00",
+            "cutoff_utc": "2026-01-08T09:00:00Z",
+            "delivery_start_utc": "2026-01-09T00:00:00Z",
+            "delivery_end_utc": "2026-01-10T00:00:00Z",
+            "timezone": "Europe/London"
+          },
+          "metrics": {
+            "paired_targets": 24,
+            "mae_mw": 876.7916666666666,
+            "rmse_mw": 1109.1032225781933,
+            "bias_mw": 816.375,
+            "p90_absolute_error_mw": 1844.8,
+            "reason": null,
+            "version": "metrics_v1",
+            "unit": "MW"
+          },
+          "coverage": {
+            "expected": 24,
+            "forecast_missing": 0,
+            "forecast_invalid": 0,
+            "actual_missing": 0,
+            "actual_invalid": 0,
+            "paired": 24,
+            "paired_percent": 100.0
+          },
+          "actual_source_coverage": {
+            "expected": 48,
+            "valid": 48,
+            "missing": 0,
+            "invalid": 0,
+            "valid_percent": 100.0
+          }
+        },
+        {
+          "window": {
+            "decision_date": "2026-01-09",
+            "delivery_date": "2026-01-10",
+            "cutoff_local": "09:00",
+            "cutoff_utc": "2026-01-09T09:00:00Z",
+            "delivery_start_utc": "2026-01-10T00:00:00Z",
+            "delivery_end_utc": "2026-01-11T00:00:00Z",
+            "timezone": "Europe/London"
+          },
+          "metrics": {
+            "paired_targets": 24,
+            "mae_mw": 1069.7916666666667,
+            "rmse_mw": 1208.1348055301335,
+            "bias_mw": -105.29166666666667,
+            "p90_absolute_error_mw": 1703.0,
+            "reason": null,
+            "version": "metrics_v1",
+            "unit": "MW"
+          },
+          "coverage": {
+            "expected": 24,
+            "forecast_missing": 0,
+            "forecast_invalid": 0,
+            "actual_missing": 0,
+            "actual_invalid": 0,
+            "paired": 24,
+            "paired_percent": 100.0
+          },
+          "actual_source_coverage": {
+            "expected": 48,
+            "valid": 48,
+            "missing": 0,
+            "invalid": 0,
+            "valid_percent": 100.0
+          }
+        },
+        {
+          "window": {
+            "decision_date": "2026-01-10",
+            "delivery_date": "2026-01-11",
+            "cutoff_local": "09:00",
+            "cutoff_utc": "2026-01-10T09:00:00Z",
+            "delivery_start_utc": "2026-01-11T00:00:00Z",
+            "delivery_end_utc": "2026-01-12T00:00:00Z",
+            "timezone": "Europe/London"
+          },
+          "metrics": {
+            "paired_targets": 24,
+            "mae_mw": 4853.0,
+            "rmse_mw": 4907.305752650837,
+            "bias_mw": 4853.0,
+            "p90_absolute_error_mw": 5774.2,
+            "reason": null,
+            "version": "metrics_v1",
+            "unit": "MW"
+          },
+          "coverage": {
+            "expected": 24,
+            "forecast_missing": 0,
+            "forecast_invalid": 0,
+            "actual_missing": 0,
+            "actual_invalid": 0,
+            "paired": 24,
+            "paired_percent": 100.0
+          },
+          "actual_source_coverage": {
+            "expected": 48,
+            "valid": 48,
+            "missing": 0,
+            "invalid": 0,
+            "valid_percent": 100.0
+          }
+        },
+        {
+          "window": {
+            "decision_date": "2026-01-11",
+            "delivery_date": "2026-01-12",
+            "cutoff_local": "09:00",
+            "cutoff_utc": "2026-01-11T09:00:00Z",
+            "delivery_start_utc": "2026-01-12T00:00:00Z",
+            "delivery_end_utc": "2026-01-13T00:00:00Z",
+            "timezone": "Europe/London"
+          },
+          "metrics": {
+            "paired_targets": 24,
+            "mae_mw": 4875.416666666667,
+            "rmse_mw": 5137.56061602521,
+            "bias_mw": 4875.416666666667,
+            "p90_absolute_error_mw": 6718.5,
+            "reason": null,
+            "version": "metrics_v1",
+            "unit": "MW"
+          },
+          "coverage": {
+            "expected": 24,
+            "forecast_missing": 0,
+            "forecast_invalid": 0,
+            "actual_missing": 0,
+            "actual_invalid": 0,
+            "paired": 24,
+            "paired_percent": 100.0
+          },
+          "actual_source_coverage": {
+            "expected": 48,
+            "valid": 48,
+            "missing": 0,
+            "invalid": 0,
+            "valid_percent": 100.0
+          }
+        },
+        {
+          "window": {
+            "decision_date": "2026-01-12",
+            "delivery_date": "2026-01-13",
+            "cutoff_local": "09:00",
+            "cutoff_utc": "2026-01-12T09:00:00Z",
+            "delivery_start_utc": "2026-01-13T00:00:00Z",
+            "delivery_end_utc": "2026-01-14T00:00:00Z",
+            "timezone": "Europe/London"
+          },
+          "metrics": {
+            "paired_targets": 24,
+            "mae_mw": 1355.5,
+            "rmse_mw": 1518.2383431683797,
+            "bias_mw": 110.25,
+            "p90_absolute_error_mw": 2196.9,
+            "reason": null,
+            "version": "metrics_v1",
+            "unit": "MW"
+          },
+          "coverage": {
+            "expected": 24,
+            "forecast_missing": 0,
+            "forecast_invalid": 0,
+            "actual_missing": 0,
+            "actual_invalid": 0,
+            "paired": 24,
+            "paired_percent": 100.0
+          },
+          "actual_source_coverage": {
+            "expected": 48,
+            "valid": 48,
+            "missing": 0,
+            "invalid": 0,
+            "valid_percent": 100.0
+          }
+        },
+        {
+          "window": {
+            "decision_date": "2026-01-13",
+            "delivery_date": "2026-01-14",
+            "cutoff_local": "09:00",
+            "cutoff_utc": "2026-01-13T09:00:00Z",
+            "delivery_start_utc": "2026-01-14T00:00:00Z",
+            "delivery_end_utc": "2026-01-15T00:00:00Z",
+            "timezone": "Europe/London"
+          },
+          "metrics": {
+            "paired_targets": 24,
+            "mae_mw": 1004.75,
+            "rmse_mw": 1142.2167044829978,
+            "bias_mw": -10.5,
+            "p90_absolute_error_mw": 1554.7,
+            "reason": null,
+            "version": "metrics_v1",
+            "unit": "MW"
+          },
+          "coverage": {
+            "expected": 24,
+            "forecast_missing": 0,
+            "forecast_invalid": 0,
+            "actual_missing": 0,
+            "actual_invalid": 0,
+            "paired": 24,
+            "paired_percent": 100.0
+          },
+          "actual_source_coverage": {
+            "expected": 48,
+            "valid": 48,
+            "missing": 0,
+            "invalid": 0,
+            "valid_percent": 100.0
+          }
+        },
+        {
+          "window": {
+            "decision_date": "2026-01-14",
+            "delivery_date": "2026-01-15",
+            "cutoff_local": "09:00",
+            "cutoff_utc": "2026-01-14T09:00:00Z",
+            "delivery_start_utc": "2026-01-15T00:00:00Z",
+            "delivery_end_utc": "2026-01-16T00:00:00Z",
+            "timezone": "Europe/London"
+          },
+          "metrics": {
+            "paired_targets": 24,
+            "mae_mw": 1025.2083333333333,
+            "rmse_mw": 1168.0608752686364,
+            "bias_mw": 1025.2083333333333,
+            "p90_absolute_error_mw": 1614.1,
+            "reason": null,
+            "version": "metrics_v1",
+            "unit": "MW"
+          },
+          "coverage": {
+            "expected": 24,
+            "forecast_missing": 0,
+            "forecast_invalid": 0,
+            "actual_missing": 0,
+            "actual_invalid": 0,
+            "paired": 24,
+            "paired_percent": 100.0
+          },
+          "actual_source_coverage": {
+            "expected": 48,
+            "valid": 48,
+            "missing": 0,
+            "invalid": 0,
+            "valid_percent": 100.0
+          }
+        },
+        {
+          "window": {
+            "decision_date": "2026-01-15",
+            "delivery_date": "2026-01-16",
+            "cutoff_local": "09:00",
+            "cutoff_utc": "2026-01-15T09:00:00Z",
+            "delivery_start_utc": "2026-01-16T00:00:00Z",
+            "delivery_end_utc": "2026-01-17T00:00:00Z",
+            "timezone": "Europe/London"
+          },
+          "metrics": {
+            "paired_targets": 24,
+            "mae_mw": 810.0,
+            "rmse_mw": 969.842770762354,
+            "bias_mw": 348.8333333333333,
+            "p90_absolute_error_mw": 1542.6,
+            "reason": null,
+            "version": "metrics_v1",
+            "unit": "MW"
+          },
+          "coverage": {
+            "expected": 24,
+            "forecast_missing": 0,
+            "forecast_invalid": 0,
+            "actual_missing": 0,
+            "actual_invalid": 0,
+            "paired": 24,
+            "paired_percent": 100.0
+          },
+          "actual_source_coverage": {
+            "expected": 48,
+            "valid": 48,
+            "missing": 0,
+            "invalid": 0,
+            "valid_percent": 100.0
+          }
+        },
+        {
+          "window": {
+            "decision_date": "2026-01-16",
+            "delivery_date": "2026-01-17",
+            "cutoff_local": "09:00",
+            "cutoff_utc": "2026-01-16T09:00:00Z",
+            "delivery_start_utc": "2026-01-17T00:00:00Z",
+            "delivery_end_utc": "2026-01-18T00:00:00Z",
+            "timezone": "Europe/London"
+          },
+          "metrics": {
+            "paired_targets": 24,
+            "mae_mw": 1659.4166666666667,
+            "rmse_mw": 1736.6202808904427,
+            "bias_mw": 1659.4166666666667,
+            "p90_absolute_error_mw": 2185.6,
+            "reason": null,
+            "version": "metrics_v1",
+            "unit": "MW"
+          },
+          "coverage": {
+            "expected": 24,
+            "forecast_missing": 0,
+            "forecast_invalid": 0,
+            "actual_missing": 0,
+            "actual_invalid": 0,
+            "paired": 24,
+            "paired_percent": 100.0
+          },
+          "actual_source_coverage": {
+            "expected": 48,
+            "valid": 48,
+            "missing": 0,
+            "invalid": 0,
+            "valid_percent": 100.0
+          }
+        },
+        {
+          "window": {
+            "decision_date": "2026-01-17",
+            "delivery_date": "2026-01-18",
+            "cutoff_local": "09:00",
+            "cutoff_utc": "2026-01-17T09:00:00Z",
+            "delivery_start_utc": "2026-01-18T00:00:00Z",
+            "delivery_end_utc": "2026-01-19T00:00:00Z",
+            "timezone": "Europe/London"
+          },
+          "metrics": {
+            "paired_targets": 24,
+            "mae_mw": 1594.5,
+            "rmse_mw": 1654.6661294653977,
+            "bias_mw": 1594.5,
+            "p90_absolute_error_mw": 2062.0,
+            "reason": null,
+            "version": "metrics_v1",
+            "unit": "MW"
+          },
+          "coverage": {
+            "expected": 24,
+            "forecast_missing": 0,
+            "forecast_invalid": 0,
+            "actual_missing": 0,
+            "actual_invalid": 0,
+            "paired": 24,
+            "paired_percent": 100.0
+          },
+          "actual_source_coverage": {
+            "expected": 48,
+            "valid": 48,
+            "missing": 0,
+            "invalid": 0,
+            "valid_percent": 100.0
+          }
+        },
+        {
+          "window": {
+            "decision_date": "2026-01-18",
+            "delivery_date": "2026-01-19",
+            "cutoff_local": "09:00",
+            "cutoff_utc": "2026-01-18T09:00:00Z",
+            "delivery_start_utc": "2026-01-19T00:00:00Z",
+            "delivery_end_utc": "2026-01-20T00:00:00Z",
+            "timezone": "Europe/London"
+          },
+          "metrics": {
+            "paired_targets": 24,
+            "mae_mw": 683.625,
+            "rmse_mw": 758.9830092520737,
+            "bias_mw": -683.625,
+            "p90_absolute_error_mw": 1068.8,
+            "reason": null,
+            "version": "metrics_v1",
+            "unit": "MW"
+          },
+          "coverage": {
+            "expected": 24,
+            "forecast_missing": 0,
+            "forecast_invalid": 0,
+            "actual_missing": 0,
+            "actual_invalid": 0,
+            "paired": 24,
+            "paired_percent": 100.0
+          },
+          "actual_source_coverage": {
+            "expected": 48,
+            "valid": 48,
+            "missing": 0,
+            "invalid": 0,
+            "valid_percent": 100.0
+          }
+        },
+        {
+          "window": {
+            "decision_date": "2026-01-19",
+            "delivery_date": "2026-01-20",
+            "cutoff_local": "09:00",
+            "cutoff_utc": "2026-01-19T09:00:00Z",
+            "delivery_start_utc": "2026-01-20T00:00:00Z",
+            "delivery_end_utc": "2026-01-21T00:00:00Z",
+            "timezone": "Europe/London"
+          },
+          "metrics": {
+            "paired_targets": 24,
+            "mae_mw": 992.5416666666666,
+            "rmse_mw": 1399.1521093147808,
+            "bias_mw": 414.7916666666667,
+            "p90_absolute_error_mw": 2674.7,
+            "reason": null,
+            "version": "metrics_v1",
+            "unit": "MW"
+          },
+          "coverage": {
+            "expected": 24,
+            "forecast_missing": 0,
+            "forecast_invalid": 0,
+            "actual_missing": 0,
+            "actual_invalid": 0,
+            "paired": 24,
+            "paired_percent": 100.0
+          },
+          "actual_source_coverage": {
+            "expected": 48,
+            "valid": 48,
+            "missing": 0,
+            "invalid": 0,
+            "valid_percent": 100.0
+          }
+        },
+        {
+          "window": {
+            "decision_date": "2026-01-20",
+            "delivery_date": "2026-01-21",
+            "cutoff_local": "09:00",
+            "cutoff_utc": "2026-01-20T09:00:00Z",
+            "delivery_start_utc": "2026-01-21T00:00:00Z",
+            "delivery_end_utc": "2026-01-22T00:00:00Z",
+            "timezone": "Europe/London"
+          },
+          "metrics": {
+            "paired_targets": 24,
+            "mae_mw": 3677.125,
+            "rmse_mw": 3775.482149121266,
+            "bias_mw": 3677.125,
+            "p90_absolute_error_mw": 4679.6,
+            "reason": null,
+            "version": "metrics_v1",
+            "unit": "MW"
+          },
+          "coverage": {
+            "expected": 24,
+            "forecast_missing": 0,
+            "forecast_invalid": 0,
+            "actual_missing": 0,
+            "actual_invalid": 0,
+            "paired": 24,
+            "paired_percent": 100.0
+          },
+          "actual_source_coverage": {
+            "expected": 48,
+            "valid": 48,
+            "missing": 0,
+            "invalid": 0,
+            "valid_percent": 100.0
+          }
+        },
+        {
+          "window": {
+            "decision_date": "2026-01-21",
+            "delivery_date": "2026-01-22",
+            "cutoff_local": "09:00",
+            "cutoff_utc": "2026-01-21T09:00:00Z",
+            "delivery_start_utc": "2026-01-22T00:00:00Z",
+            "delivery_end_utc": "2026-01-23T00:00:00Z",
+            "timezone": "Europe/London"
+          },
+          "metrics": {
+            "paired_targets": 24,
+            "mae_mw": 2646.7916666666665,
+            "rmse_mw": 2769.6124202374117,
+            "bias_mw": 2646.7916666666665,
+            "p90_absolute_error_mw": 3555.8,
+            "reason": null,
+            "version": "metrics_v1",
+            "unit": "MW"
+          },
+          "coverage": {
+            "expected": 24,
+            "forecast_missing": 0,
+            "forecast_invalid": 0,
+            "actual_missing": 0,
+            "actual_invalid": 0,
+            "paired": 24,
+            "paired_percent": 100.0
+          },
+          "actual_source_coverage": {
+            "expected": 48,
+            "valid": 48,
+            "missing": 0,
+            "invalid": 0,
+            "valid_percent": 100.0
+          }
+        },
+        {
+          "window": {
+            "decision_date": "2026-01-22",
+            "delivery_date": "2026-01-23",
+            "cutoff_local": "09:00",
+            "cutoff_utc": "2026-01-22T09:00:00Z",
+            "delivery_start_utc": "2026-01-23T00:00:00Z",
+            "delivery_end_utc": "2026-01-24T00:00:00Z",
+            "timezone": "Europe/London"
+          },
+          "metrics": {
+            "paired_targets": 24,
+            "mae_mw": 1541.5416666666667,
+            "rmse_mw": 1621.5867871727783,
+            "bias_mw": 1541.5416666666667,
+            "p90_absolute_error_mw": 2141.9,
+            "reason": null,
+            "version": "metrics_v1",
+            "unit": "MW"
+          },
+          "coverage": {
+            "expected": 24,
+            "forecast_missing": 0,
+            "forecast_invalid": 0,
+            "actual_missing": 0,
+            "actual_invalid": 0,
+            "paired": 24,
+            "paired_percent": 100.0
+          },
+          "actual_source_coverage": {
+            "expected": 48,
+            "valid": 48,
+            "missing": 0,
+            "invalid": 0,
+            "valid_percent": 100.0
+          }
+        },
+        {
+          "window": {
+            "decision_date": "2026-01-23",
+            "delivery_date": "2026-01-24",
+            "cutoff_local": "09:00",
+            "cutoff_utc": "2026-01-23T09:00:00Z",
+            "delivery_start_utc": "2026-01-24T00:00:00Z",
+            "delivery_end_utc": "2026-01-25T00:00:00Z",
+            "timezone": "Europe/London"
+          },
+          "metrics": {
+            "paired_targets": 24,
+            "mae_mw": 1946.9583333333333,
+            "rmse_mw": 2221.3998683262766,
+            "bias_mw": 1946.9583333333333,
+            "p90_absolute_error_mw": 3271.0,
+            "reason": null,
+            "version": "metrics_v1",
+            "unit": "MW"
+          },
+          "coverage": {
+            "expected": 24,
+            "forecast_missing": 0,
+            "forecast_invalid": 0,
+            "actual_missing": 0,
+            "actual_invalid": 0,
+            "paired": 24,
+            "paired_percent": 100.0
+          },
+          "actual_source_coverage": {
+            "expected": 48,
+            "valid": 48,
+            "missing": 0,
+            "invalid": 0,
+            "valid_percent": 100.0
+          }
+        },
+        {
+          "window": {
+            "decision_date": "2026-01-24",
+            "delivery_date": "2026-01-25",
+            "cutoff_local": "09:00",
+            "cutoff_utc": "2026-01-24T09:00:00Z",
+            "delivery_start_utc": "2026-01-25T00:00:00Z",
+            "delivery_end_utc": "2026-01-26T00:00:00Z",
+            "timezone": "Europe/London"
+          },
+          "metrics": {
+            "paired_targets": 24,
+            "mae_mw": 1794.5,
+            "rmse_mw": 1953.7155840432183,
+            "bias_mw": 1794.5,
+            "p90_absolute_error_mw": 2694.3,
+            "reason": null,
+            "version": "metrics_v1",
+            "unit": "MW"
+          },
+          "coverage": {
+            "expected": 24,
+            "forecast_missing": 0,
+            "forecast_invalid": 0,
+            "actual_missing": 0,
+            "actual_invalid": 0,
+            "paired": 24,
+            "paired_percent": 100.0
+          },
+          "actual_source_coverage": {
+            "expected": 48,
+            "valid": 48,
+            "missing": 0,
+            "invalid": 0,
+            "valid_percent": 100.0
+          }
+        },
+        {
+          "window": {
+            "decision_date": "2026-01-25",
+            "delivery_date": "2026-01-26",
+            "cutoff_local": "09:00",
+            "cutoff_utc": "2026-01-25T09:00:00Z",
+            "delivery_start_utc": "2026-01-26T00:00:00Z",
+            "delivery_end_utc": "2026-01-27T00:00:00Z",
+            "timezone": "Europe/London"
+          },
+          "metrics": {
+            "paired_targets": 24,
+            "mae_mw": 2070.75,
+            "rmse_mw": 2316.56347491998,
+            "bias_mw": 2070.75,
+            "p90_absolute_error_mw": 3312.1,
+            "reason": null,
+            "version": "metrics_v1",
+            "unit": "MW"
+          },
+          "coverage": {
+            "expected": 24,
+            "forecast_missing": 0,
+            "forecast_invalid": 0,
+            "actual_missing": 0,
+            "actual_invalid": 0,
+            "paired": 24,
+            "paired_percent": 100.0
+          },
+          "actual_source_coverage": {
+            "expected": 48,
+            "valid": 48,
+            "missing": 0,
+            "invalid": 0,
+            "valid_percent": 100.0
+          }
+        },
+        {
+          "window": {
+            "decision_date": "2026-01-26",
+            "delivery_date": "2026-01-27",
+            "cutoff_local": "09:00",
+            "cutoff_utc": "2026-01-26T09:00:00Z",
+            "delivery_start_utc": "2026-01-27T00:00:00Z",
+            "delivery_end_utc": "2026-01-28T00:00:00Z",
+            "timezone": "Europe/London"
+          },
+          "metrics": {
+            "paired_targets": 24,
+            "mae_mw": 3418.625,
+            "rmse_mw": 3505.4477305569208,
+            "bias_mw": 3418.625,
+            "p90_absolute_error_mw": 4095.8,
+            "reason": null,
+            "version": "metrics_v1",
+            "unit": "MW"
+          },
+          "coverage": {
+            "expected": 24,
+            "forecast_missing": 0,
+            "forecast_invalid": 0,
+            "actual_missing": 0,
+            "actual_invalid": 0,
+            "paired": 24,
+            "paired_percent": 100.0
+          },
+          "actual_source_coverage": {
+            "expected": 48,
+            "valid": 48,
+            "missing": 0,
+            "invalid": 0,
+            "valid_percent": 100.0
+          }
+        },
+        {
+          "window": {
+            "decision_date": "2026-01-27",
+            "delivery_date": "2026-01-28",
+            "cutoff_local": "09:00",
+            "cutoff_utc": "2026-01-27T09:00:00Z",
+            "delivery_start_utc": "2026-01-28T00:00:00Z",
+            "delivery_end_utc": "2026-01-29T00:00:00Z",
+            "timezone": "Europe/London"
+          },
+          "metrics": {
+            "paired_targets": 24,
+            "mae_mw": 5328.958333333333,
+            "rmse_mw": 5355.708624916035,
+            "bias_mw": 5328.958333333333,
+            "p90_absolute_error_mw": 5949.7,
+            "reason": null,
+            "version": "metrics_v1",
+            "unit": "MW"
+          },
+          "coverage": {
+            "expected": 24,
+            "forecast_missing": 0,
+            "forecast_invalid": 0,
+            "actual_missing": 0,
+            "actual_invalid": 0,
+            "paired": 24,
+            "paired_percent": 100.0
+          },
+          "actual_source_coverage": {
+            "expected": 48,
+            "valid": 48,
+            "missing": 0,
+            "invalid": 0,
+            "valid_percent": 100.0
+          }
+        },
+        {
+          "window": {
+            "decision_date": "2026-01-28",
+            "delivery_date": "2026-01-29",
+            "cutoff_local": "09:00",
+            "cutoff_utc": "2026-01-28T09:00:00Z",
+            "delivery_start_utc": "2026-01-29T00:00:00Z",
+            "delivery_end_utc": "2026-01-30T00:00:00Z",
+            "timezone": "Europe/London"
+          },
+          "metrics": {
+            "paired_targets": 24,
+            "mae_mw": 1799.9166666666667,
+            "rmse_mw": 1835.6466390167072,
+            "bias_mw": 1799.9166666666667,
+            "p90_absolute_error_mw": 2240.7,
+            "reason": null,
+            "version": "metrics_v1",
+            "unit": "MW"
+          },
+          "coverage": {
+            "expected": 24,
+            "forecast_missing": 0,
+            "forecast_invalid": 0,
+            "actual_missing": 0,
+            "actual_invalid": 0,
+            "paired": 24,
+            "paired_percent": 100.0
+          },
+          "actual_source_coverage": {
+            "expected": 48,
+            "valid": 48,
+            "missing": 0,
+            "invalid": 0,
+            "valid_percent": 100.0
+          }
+        },
+        {
+          "window": {
+            "decision_date": "2026-01-29",
+            "delivery_date": "2026-01-30",
+            "cutoff_local": "09:00",
+            "cutoff_utc": "2026-01-29T09:00:00Z",
+            "delivery_start_utc": "2026-01-30T00:00:00Z",
+            "delivery_end_utc": "2026-01-31T00:00:00Z",
+            "timezone": "Europe/London"
+          },
+          "metrics": {
+            "paired_targets": 24,
+            "mae_mw": 1404.6666666666667,
+            "rmse_mw": 1639.3100937081226,
+            "bias_mw": 1393.4166666666667,
+            "p90_absolute_error_mw": 2477.9,
+            "reason": null,
+            "version": "metrics_v1",
+            "unit": "MW"
+          },
+          "coverage": {
+            "expected": 24,
+            "forecast_missing": 0,
+            "forecast_invalid": 0,
+            "actual_missing": 0,
+            "actual_invalid": 0,
+            "paired": 24,
+            "paired_percent": 100.0
+          },
+          "actual_source_coverage": {
+            "expected": 48,
+            "valid": 48,
+            "missing": 0,
+            "invalid": 0,
+            "valid_percent": 100.0
+          }
+        },
+        {
+          "window": {
+            "decision_date": "2026-01-30",
+            "delivery_date": "2026-01-31",
+            "cutoff_local": "09:00",
+            "cutoff_utc": "2026-01-30T09:00:00Z",
+            "delivery_start_utc": "2026-01-31T00:00:00Z",
+            "delivery_end_utc": "2026-02-01T00:00:00Z",
+            "timezone": "Europe/London"
+          },
+          "metrics": {
+            "paired_targets": 24,
+            "mae_mw": 2315.0833333333335,
+            "rmse_mw": 2421.6584021423555,
+            "bias_mw": 2315.0833333333335,
+            "p90_absolute_error_mw": 3032.8,
+            "reason": null,
+            "version": "metrics_v1",
+            "unit": "MW"
+          },
+          "coverage": {
+            "expected": 24,
+            "forecast_missing": 0,
+            "forecast_invalid": 0,
+            "actual_missing": 0,
+            "actual_invalid": 0,
+            "paired": 24,
+            "paired_percent": 100.0
+          },
+          "actual_source_coverage": {
+            "expected": 48,
+            "valid": 48,
+            "missing": 0,
+            "invalid": 0,
+            "valid_percent": 100.0
+          }
+        },
+        {
+          "window": {
+            "decision_date": "2026-01-31",
+            "delivery_date": "2026-02-01",
+            "cutoff_local": "09:00",
+            "cutoff_utc": "2026-01-31T09:00:00Z",
+            "delivery_start_utc": "2026-02-01T00:00:00Z",
+            "delivery_end_utc": "2026-02-02T00:00:00Z",
+            "timezone": "Europe/London"
+          },
+          "metrics": {
+            "paired_targets": 24,
+            "mae_mw": 967.875,
+            "rmse_mw": 1033.969031612327,
+            "bias_mw": 949.9583333333334,
+            "p90_absolute_error_mw": 1354.0,
+            "reason": null,
+            "version": "metrics_v1",
+            "unit": "MW"
+          },
+          "coverage": {
+            "expected": 24,
+            "forecast_missing": 0,
+            "forecast_invalid": 0,
+            "actual_missing": 0,
+            "actual_invalid": 0,
+            "paired": 24,
+            "paired_percent": 100.0
+          },
+          "actual_source_coverage": {
+            "expected": 48,
+            "valid": 48,
+            "missing": 0,
+            "invalid": 0,
+            "valid_percent": 100.0
+          }
+        }
+      ]
+    },
+    {
+      "cutoff_local": "09:45",
+      "comparison_policy": "source_timestamp_v1",
+      "selection_policy": "latest_source_key_v1",
+      "actual_vintage_policy": "latest_publication_in_release_v1",
+      "availability_model": "source_publication_time",
+      "metrics": {
+        "paired_targets": 744,
+        "mae_mw": 1995.5685483870968,
+        "rmse_mw": 2498.8245110107187,
+        "bias_mw": 1727.9825268817203,
+        "p90_absolute_error_mw": 4183.9,
+        "reason": null,
+        "version": "metrics_v1",
+        "unit": "MW"
+      },
+      "coverage": {
+        "expected": 744,
+        "forecast_missing": 0,
+        "forecast_invalid": 0,
+        "actual_missing": 0,
+        "actual_invalid": 0,
+        "paired": 744,
+        "paired_percent": 100.0
+      },
+      "actual_source_coverage": {
+        "expected": 1488,
+        "valid": 1488,
+        "missing": 0,
+        "invalid": 0,
+        "valid_percent": 100.0
+      },
+      "documented_example": {
+        "target_start_utc": "2026-01-02T00:00:00Z",
+        "forecast": {
+          "state": "valid",
+          "publication_utc": "2026-01-01T09:30:00Z",
+          "generation_mw": 18699,
+          "source_version_ids": [
+            "21c6d3879f1b442ff40de5b891ab34ba545c30300445f56d4abf37d4dc103a3b"
+          ],
+          "reason": null
+        },
+        "actual": {
+          "state": "valid",
+          "publication_utc": "2026-01-02T00:30:00Z",
+          "generation_mw": 15228,
+          "source_version_ids": [
+            "091de3f4c3944465f3c4a8d94bb6a91891b00404f0e80dc3b1ead08b2fc1bceb"
+          ],
+          "reason": null
+        },
+        "state": "paired",
+        "reason": null,
+        "error_mw": 3471
+      },
+      "largest_absolute_misses": [
+        {
+          "target_start_utc": "2026-01-12T01:00:00Z",
+          "forecast": {
+            "state": "valid",
+            "publication_utc": "2026-01-11T09:30:00Z",
+            "generation_mw": 20905,
+            "source_version_ids": [
+              "d8586cf2e5dba7ff311e0bffe710f128270ebaa4ab6b0dd0ecdce94fed03d460"
+            ],
+            "reason": null
+          },
+          "actual": {
+            "state": "valid",
+            "publication_utc": "2026-01-12T01:30:00Z",
+            "generation_mw": 14048,
+            "source_version_ids": [
+              "93912cc025b499291caf777aac3d3256e1499b54619ff1578f8efb8072e165fa"
+            ],
+            "reason": null
+          },
+          "state": "paired",
+          "reason": null,
+          "error_mw": 6857,
+          "decision_date": "2026-01-11"
+        },
+        {
+          "target_start_utc": "2026-01-12T02:00:00Z",
+          "forecast": {
+            "state": "valid",
+            "publication_utc": "2026-01-11T09:30:00Z",
+            "generation_mw": 20886,
+            "source_version_ids": [
+              "f9d1393266aebbdbe0233e1f54cbae7f26b3c83ef111a75bc71593fe67bdc29f"
+            ],
+            "reason": null
+          },
+          "actual": {
+            "state": "valid",
+            "publication_utc": "2026-01-12T02:30:00Z",
+            "generation_mw": 14123,
+            "source_version_ids": [
+              "58ebc5db8729a3e7a095cf8d70d3ba1cc93cad2cab05ee19c9dd84d3e4269bcf"
+            ],
+            "reason": null
+          },
+          "state": "paired",
+          "reason": null,
+          "error_mw": 6763,
+          "decision_date": "2026-01-11"
+        },
+        {
+          "target_start_utc": "2026-01-12T00:00:00Z",
+          "forecast": {
+            "state": "valid",
+            "publication_utc": "2026-01-11T09:30:00Z",
+            "generation_mw": 20707,
+            "source_version_ids": [
+              "2517de9be4073696236eb92e974b3da04f298bcfa92a90a051b17c4ab1364338"
+            ],
+            "reason": null
+          },
+          "actual": {
+            "state": "valid",
+            "publication_utc": "2026-01-12T00:30:00Z",
+            "generation_mw": 13954,
+            "source_version_ids": [
+              "5170e2d9156e20cfbf66fa2db4f527847e84bd862ccefab870d97c26c53ac4cf"
+            ],
+            "reason": null
+          },
+          "state": "paired",
+          "reason": null,
+          "error_mw": 6753,
+          "decision_date": "2026-01-11"
+        },
+        {
+          "target_start_utc": "2026-01-12T03:00:00Z",
+          "forecast": {
+            "state": "valid",
+            "publication_utc": "2026-01-11T09:30:00Z",
+            "generation_mw": 20808,
+            "source_version_ids": [
+              "5039f3c15c7d76418c8d3b7e04b1b3340201c84e84c196781dc21d46b509cc03"
+            ],
+            "reason": null
+          },
+          "actual": {
+            "state": "valid",
+            "publication_utc": "2026-01-12T03:30:00Z",
+            "generation_mw": 14171,
+            "source_version_ids": [
+              "d5db977e1bb3706dc8577d446835d839bea34db02085decf17fadd52078bb826"
+            ],
+            "reason": null
+          },
+          "state": "paired",
+          "reason": null,
+          "error_mw": 6637,
+          "decision_date": "2026-01-11"
+        },
+        {
+          "target_start_utc": "2026-01-12T06:00:00Z",
+          "forecast": {
+            "state": "valid",
+            "publication_utc": "2026-01-11T09:30:00Z",
+            "generation_mw": 20616,
+            "source_version_ids": [
+              "1e348ec4e265833793368585a04b7bd1ae69d21c9c1bba5089cd45201e008033"
+            ],
+            "reason": null
+          },
+          "actual": {
+            "state": "valid",
+            "publication_utc": "2026-01-12T06:30:00Z",
+            "generation_mw": 13989,
+            "source_version_ids": [
+              "9513d222ca8a43f6f7fac20b0920a61e1fba0fe24c34f7f0d1439a50b9b7be8b"
+            ],
+            "reason": null
+          },
+          "state": "paired",
+          "reason": null,
+          "error_mw": 6627,
+          "decision_date": "2026-01-11"
+        }
+      ],
+      "daily": [
+        {
+          "window": {
+            "decision_date": "2026-01-01",
+            "delivery_date": "2026-01-02",
+            "cutoff_local": "09:45",
+            "cutoff_utc": "2026-01-01T09:45:00Z",
+            "delivery_start_utc": "2026-01-02T00:00:00Z",
+            "delivery_end_utc": "2026-01-03T00:00:00Z",
+            "timezone": "Europe/London"
+          },
+          "metrics": {
+            "paired_targets": 24,
+            "mae_mw": 3156.6666666666665,
+            "rmse_mw": 3212.853715935414,
+            "bias_mw": 3156.6666666666665,
+            "p90_absolute_error_mw": 3845.6,
+            "reason": null,
+            "version": "metrics_v1",
+            "unit": "MW"
+          },
+          "coverage": {
+            "expected": 24,
+            "forecast_missing": 0,
+            "forecast_invalid": 0,
+            "actual_missing": 0,
+            "actual_invalid": 0,
+            "paired": 24,
+            "paired_percent": 100.0
+          },
+          "actual_source_coverage": {
+            "expected": 48,
+            "valid": 48,
+            "missing": 0,
+            "invalid": 0,
+            "valid_percent": 100.0
+          }
+        },
+        {
+          "window": {
+            "decision_date": "2026-01-02",
+            "delivery_date": "2026-01-03",
+            "cutoff_local": "09:45",
+            "cutoff_utc": "2026-01-02T09:45:00Z",
+            "delivery_start_utc": "2026-01-03T00:00:00Z",
+            "delivery_end_utc": "2026-01-04T00:00:00Z",
+            "timezone": "Europe/London"
+          },
+          "metrics": {
+            "paired_targets": 24,
+            "mae_mw": 2098.5,
+            "rmse_mw": 2467.101335575821,
+            "bias_mw": 2098.5,
+            "p90_absolute_error_mw": 4175.8,
+            "reason": null,
+            "version": "metrics_v1",
+            "unit": "MW"
+          },
+          "coverage": {
+            "expected": 24,
+            "forecast_missing": 0,
+            "forecast_invalid": 0,
+            "actual_missing": 0,
+            "actual_invalid": 0,
+            "paired": 24,
+            "paired_percent": 100.0
+          },
+          "actual_source_coverage": {
+            "expected": 48,
+            "valid": 48,
+            "missing": 0,
+            "invalid": 0,
+            "valid_percent": 100.0
+          }
+        },
+        {
+          "window": {
+            "decision_date": "2026-01-03",
+            "delivery_date": "2026-01-04",
+            "cutoff_local": "09:45",
+            "cutoff_utc": "2026-01-03T09:45:00Z",
+            "delivery_start_utc": "2026-01-04T00:00:00Z",
+            "delivery_end_utc": "2026-01-05T00:00:00Z",
+            "timezone": "Europe/London"
+          },
+          "metrics": {
+            "paired_targets": 24,
+            "mae_mw": 852.9583333333334,
+            "rmse_mw": 966.7863216174848,
+            "bias_mw": 823.375,
+            "p90_absolute_error_mw": 1357.2,
+            "reason": null,
+            "version": "metrics_v1",
+            "unit": "MW"
+          },
+          "coverage": {
+            "expected": 24,
+            "forecast_missing": 0,
+            "forecast_invalid": 0,
+            "actual_missing": 0,
+            "actual_invalid": 0,
+            "paired": 24,
+            "paired_percent": 100.0
+          },
+          "actual_source_coverage": {
+            "expected": 48,
+            "valid": 48,
+            "missing": 0,
+            "invalid": 0,
+            "valid_percent": 100.0
+          }
+        },
+        {
+          "window": {
+            "decision_date": "2026-01-04",
+            "delivery_date": "2026-01-05",
+            "cutoff_local": "09:45",
+            "cutoff_utc": "2026-01-04T09:45:00Z",
+            "delivery_start_utc": "2026-01-05T00:00:00Z",
+            "delivery_end_utc": "2026-01-06T00:00:00Z",
+            "timezone": "Europe/London"
+          },
+          "metrics": {
+            "paired_targets": 24,
+            "mae_mw": 1031.0,
+            "rmse_mw": 1252.57774209827,
+            "bias_mw": -28.916666666666668,
+            "p90_absolute_error_mw": 2074.5,
+            "reason": null,
+            "version": "metrics_v1",
+            "unit": "MW"
+          },
+          "coverage": {
+            "expected": 24,
+            "forecast_missing": 0,
+            "forecast_invalid": 0,
+            "actual_missing": 0,
+            "actual_invalid": 0,
+            "paired": 24,
+            "paired_percent": 100.0
+          },
+          "actual_source_coverage": {
+            "expected": 48,
+            "valid": 48,
+            "missing": 0,
+            "invalid": 0,
+            "valid_percent": 100.0
+          }
+        },
+        {
+          "window": {
+            "decision_date": "2026-01-05",
+            "delivery_date": "2026-01-06",
+            "cutoff_local": "09:45",
+            "cutoff_utc": "2026-01-05T09:45:00Z",
+            "delivery_start_utc": "2026-01-06T00:00:00Z",
+            "delivery_end_utc": "2026-01-07T00:00:00Z",
+            "timezone": "Europe/London"
+          },
+          "metrics": {
+            "paired_targets": 24,
+            "mae_mw": 2205.3333333333335,
+            "rmse_mw": 2596.1712193150897,
+            "bias_mw": 2118.75,
+            "p90_absolute_error_mw": 3815.9,
+            "reason": null,
+            "version": "metrics_v1",
+            "unit": "MW"
+          },
+          "coverage": {
+            "expected": 24,
+            "forecast_missing": 0,
+            "forecast_invalid": 0,
+            "actual_missing": 0,
+            "actual_invalid": 0,
+            "paired": 24,
+            "paired_percent": 100.0
+          },
+          "actual_source_coverage": {
+            "expected": 48,
+            "valid": 48,
+            "missing": 0,
+            "invalid": 0,
+            "valid_percent": 100.0
+          }
+        },
+        {
+          "window": {
+            "decision_date": "2026-01-06",
+            "delivery_date": "2026-01-07",
+            "cutoff_local": "09:45",
+            "cutoff_utc": "2026-01-06T09:45:00Z",
+            "delivery_start_utc": "2026-01-07T00:00:00Z",
+            "delivery_end_utc": "2026-01-08T00:00:00Z",
+            "timezone": "Europe/London"
+          },
+          "metrics": {
+            "paired_targets": 24,
+            "mae_mw": 1359.1666666666667,
+            "rmse_mw": 1678.0981298283284,
+            "bias_mw": 1319.25,
+            "p90_absolute_error_mw": 2806.5,
+            "reason": null,
+            "version": "metrics_v1",
+            "unit": "MW"
+          },
+          "coverage": {
+            "expected": 24,
+            "forecast_missing": 0,
+            "forecast_invalid": 0,
+            "actual_missing": 0,
+            "actual_invalid": 0,
+            "paired": 24,
+            "paired_percent": 100.0
+          },
+          "actual_source_coverage": {
+            "expected": 48,
+            "valid": 48,
+            "missing": 0,
+            "invalid": 0,
+            "valid_percent": 100.0
+          }
+        },
+        {
+          "window": {
+            "decision_date": "2026-01-07",
+            "delivery_date": "2026-01-08",
+            "cutoff_local": "09:45",
+            "cutoff_utc": "2026-01-07T09:45:00Z",
+            "delivery_start_utc": "2026-01-08T00:00:00Z",
+            "delivery_end_utc": "2026-01-09T00:00:00Z",
+            "timezone": "Europe/London"
+          },
+          "metrics": {
+            "paired_targets": 24,
+            "mae_mw": 1951.25,
+            "rmse_mw": 2216.821128703592,
+            "bias_mw": 631.1666666666666,
+            "p90_absolute_error_mw": 3205.1,
+            "reason": null,
+            "version": "metrics_v1",
+            "unit": "MW"
+          },
+          "coverage": {
+            "expected": 24,
+            "forecast_missing": 0,
+            "forecast_invalid": 0,
+            "actual_missing": 0,
+            "actual_invalid": 0,
+            "paired": 24,
+            "paired_percent": 100.0
+          },
+          "actual_source_coverage": {
+            "expected": 48,
+            "valid": 48,
+            "missing": 0,
+            "invalid": 0,
+            "valid_percent": 100.0
+          }
+        },
+        {
+          "window": {
+            "decision_date": "2026-01-08",
+            "delivery_date": "2026-01-09",
+            "cutoff_local": "09:45",
+            "cutoff_utc": "2026-01-08T09:45:00Z",
+            "delivery_start_utc": "2026-01-09T00:00:00Z",
+            "delivery_end_utc": "2026-01-10T00:00:00Z",
+            "timezone": "Europe/London"
+          },
+          "metrics": {
+            "paired_targets": 24,
+            "mae_mw": 830.3333333333334,
+            "rmse_mw": 1059.913125370817,
+            "bias_mw": 754.6666666666666,
+            "p90_absolute_error_mw": 1610.4,
+            "reason": null,
+            "version": "metrics_v1",
+            "unit": "MW"
+          },
+          "coverage": {
+            "expected": 24,
+            "forecast_missing": 0,
+            "forecast_invalid": 0,
+            "actual_missing": 0,
+            "actual_invalid": 0,
+            "paired": 24,
+            "paired_percent": 100.0
+          },
+          "actual_source_coverage": {
+            "expected": 48,
+            "valid": 48,
+            "missing": 0,
+            "invalid": 0,
+            "valid_percent": 100.0
+          }
+        },
+        {
+          "window": {
+            "decision_date": "2026-01-09",
+            "delivery_date": "2026-01-10",
+            "cutoff_local": "09:45",
+            "cutoff_utc": "2026-01-09T09:45:00Z",
+            "delivery_start_utc": "2026-01-10T00:00:00Z",
+            "delivery_end_utc": "2026-01-11T00:00:00Z",
+            "timezone": "Europe/London"
+          },
+          "metrics": {
+            "paired_targets": 24,
+            "mae_mw": 1069.7916666666667,
+            "rmse_mw": 1208.1348055301335,
+            "bias_mw": -105.29166666666667,
+            "p90_absolute_error_mw": 1703.0,
+            "reason": null,
+            "version": "metrics_v1",
+            "unit": "MW"
+          },
+          "coverage": {
+            "expected": 24,
+            "forecast_missing": 0,
+            "forecast_invalid": 0,
+            "actual_missing": 0,
+            "actual_invalid": 0,
+            "paired": 24,
+            "paired_percent": 100.0
+          },
+          "actual_source_coverage": {
+            "expected": 48,
+            "valid": 48,
+            "missing": 0,
+            "invalid": 0,
+            "valid_percent": 100.0
+          }
+        },
+        {
+          "window": {
+            "decision_date": "2026-01-10",
+            "delivery_date": "2026-01-11",
+            "cutoff_local": "09:45",
+            "cutoff_utc": "2026-01-10T09:45:00Z",
+            "delivery_start_utc": "2026-01-11T00:00:00Z",
+            "delivery_end_utc": "2026-01-12T00:00:00Z",
+            "timezone": "Europe/London"
+          },
+          "metrics": {
+            "paired_targets": 24,
+            "mae_mw": 4948.458333333333,
+            "rmse_mw": 5020.451195692806,
+            "bias_mw": 4948.458333333333,
+            "p90_absolute_error_mw": 6031.1,
+            "reason": null,
+            "version": "metrics_v1",
+            "unit": "MW"
+          },
+          "coverage": {
+            "expected": 24,
+            "forecast_missing": 0,
+            "forecast_invalid": 0,
+            "actual_missing": 0,
+            "actual_invalid": 0,
+            "paired": 24,
+            "paired_percent": 100.0
+          },
+          "actual_source_coverage": {
+            "expected": 48,
+            "valid": 48,
+            "missing": 0,
+            "invalid": 0,
+            "valid_percent": 100.0
+          }
+        },
+        {
+          "window": {
+            "decision_date": "2026-01-11",
+            "delivery_date": "2026-01-12",
+            "cutoff_local": "09:45",
+            "cutoff_utc": "2026-01-11T09:45:00Z",
+            "delivery_start_utc": "2026-01-12T00:00:00Z",
+            "delivery_end_utc": "2026-01-13T00:00:00Z",
+            "timezone": "Europe/London"
+          },
+          "metrics": {
+            "paired_targets": 24,
+            "mae_mw": 4908.041666666667,
+            "rmse_mw": 5196.567709395629,
+            "bias_mw": 4908.041666666667,
+            "p90_absolute_error_mw": 6718.2,
+            "reason": null,
+            "version": "metrics_v1",
+            "unit": "MW"
+          },
+          "coverage": {
+            "expected": 24,
+            "forecast_missing": 0,
+            "forecast_invalid": 0,
+            "actual_missing": 0,
+            "actual_invalid": 0,
+            "paired": 24,
+            "paired_percent": 100.0
+          },
+          "actual_source_coverage": {
+            "expected": 48,
+            "valid": 48,
+            "missing": 0,
+            "invalid": 0,
+            "valid_percent": 100.0
+          }
+        },
+        {
+          "window": {
+            "decision_date": "2026-01-12",
+            "delivery_date": "2026-01-13",
+            "cutoff_local": "09:45",
+            "cutoff_utc": "2026-01-12T09:45:00Z",
+            "delivery_start_utc": "2026-01-13T00:00:00Z",
+            "delivery_end_utc": "2026-01-14T00:00:00Z",
+            "timezone": "Europe/London"
+          },
+          "metrics": {
+            "paired_targets": 24,
+            "mae_mw": 1213.4166666666667,
+            "rmse_mw": 1351.3110609083806,
+            "bias_mw": 527.4166666666666,
+            "p90_absolute_error_mw": 2208.2,
+            "reason": null,
+            "version": "metrics_v1",
+            "unit": "MW"
+          },
+          "coverage": {
+            "expected": 24,
+            "forecast_missing": 0,
+            "forecast_invalid": 0,
+            "actual_missing": 0,
+            "actual_invalid": 0,
+            "paired": 24,
+            "paired_percent": 100.0
+          },
+          "actual_source_coverage": {
+            "expected": 48,
+            "valid": 48,
+            "missing": 0,
+            "invalid": 0,
+            "valid_percent": 100.0
+          }
+        },
+        {
+          "window": {
+            "decision_date": "2026-01-13",
+            "delivery_date": "2026-01-14",
+            "cutoff_local": "09:45",
+            "cutoff_utc": "2026-01-13T09:45:00Z",
+            "delivery_start_utc": "2026-01-14T00:00:00Z",
+            "delivery_end_utc": "2026-01-15T00:00:00Z",
+            "timezone": "Europe/London"
+          },
+          "metrics": {
+            "paired_targets": 24,
+            "mae_mw": 937.6666666666666,
+            "rmse_mw": 1041.408981460534,
+            "bias_mw": -125.25,
+            "p90_absolute_error_mw": 1357.8,
+            "reason": null,
+            "version": "metrics_v1",
+            "unit": "MW"
+          },
+          "coverage": {
+            "expected": 24,
+            "forecast_missing": 0,
+            "forecast_invalid": 0,
+            "actual_missing": 0,
+            "actual_invalid": 0,
+            "paired": 24,
+            "paired_percent": 100.0
+          },
+          "actual_source_coverage": {
+            "expected": 48,
+            "valid": 48,
+            "missing": 0,
+            "invalid": 0,
+            "valid_percent": 100.0
+          }
+        },
+        {
+          "window": {
+            "decision_date": "2026-01-14",
+            "delivery_date": "2026-01-15",
+            "cutoff_local": "09:45",
+            "cutoff_utc": "2026-01-14T09:45:00Z",
+            "delivery_start_utc": "2026-01-15T00:00:00Z",
+            "delivery_end_utc": "2026-01-16T00:00:00Z",
+            "timezone": "Europe/London"
+          },
+          "metrics": {
+            "paired_targets": 24,
+            "mae_mw": 1093.625,
+            "rmse_mw": 1229.3976675591996,
+            "bias_mw": 1093.625,
+            "p90_absolute_error_mw": 1701.3,
+            "reason": null,
+            "version": "metrics_v1",
+            "unit": "MW"
+          },
+          "coverage": {
+            "expected": 24,
+            "forecast_missing": 0,
+            "forecast_invalid": 0,
+            "actual_missing": 0,
+            "actual_invalid": 0,
+            "paired": 24,
+            "paired_percent": 100.0
+          },
+          "actual_source_coverage": {
+            "expected": 48,
+            "valid": 48,
+            "missing": 0,
+            "invalid": 0,
+            "valid_percent": 100.0
+          }
+        },
+        {
+          "window": {
+            "decision_date": "2026-01-15",
+            "delivery_date": "2026-01-16",
+            "cutoff_local": "09:45",
+            "cutoff_utc": "2026-01-15T09:45:00Z",
+            "delivery_start_utc": "2026-01-16T00:00:00Z",
+            "delivery_end_utc": "2026-01-17T00:00:00Z",
+            "timezone": "Europe/London"
+          },
+          "metrics": {
+            "paired_targets": 24,
+            "mae_mw": 897.3333333333334,
+            "rmse_mw": 1124.3055263880308,
+            "bias_mw": 393.5,
+            "p90_absolute_error_mw": 1907.4,
+            "reason": null,
+            "version": "metrics_v1",
+            "unit": "MW"
+          },
+          "coverage": {
+            "expected": 24,
+            "forecast_missing": 0,
+            "forecast_invalid": 0,
+            "actual_missing": 0,
+            "actual_invalid": 0,
+            "paired": 24,
+            "paired_percent": 100.0
+          },
+          "actual_source_coverage": {
+            "expected": 48,
+            "valid": 48,
+            "missing": 0,
+            "invalid": 0,
+            "valid_percent": 100.0
+          }
+        },
+        {
+          "window": {
+            "decision_date": "2026-01-16",
+            "delivery_date": "2026-01-17",
+            "cutoff_local": "09:45",
+            "cutoff_utc": "2026-01-16T09:45:00Z",
+            "delivery_start_utc": "2026-01-17T00:00:00Z",
+            "delivery_end_utc": "2026-01-18T00:00:00Z",
+            "timezone": "Europe/London"
+          },
+          "metrics": {
+            "paired_targets": 24,
+            "mae_mw": 1856.75,
+            "rmse_mw": 1920.1465438866899,
+            "bias_mw": 1856.75,
+            "p90_absolute_error_mw": 2304.5,
+            "reason": null,
+            "version": "metrics_v1",
+            "unit": "MW"
+          },
+          "coverage": {
+            "expected": 24,
+            "forecast_missing": 0,
+            "forecast_invalid": 0,
+            "actual_missing": 0,
+            "actual_invalid": 0,
+            "paired": 24,
+            "paired_percent": 100.0
+          },
+          "actual_source_coverage": {
+            "expected": 48,
+            "valid": 48,
+            "missing": 0,
+            "invalid": 0,
+            "valid_percent": 100.0
+          }
+        },
+        {
+          "window": {
+            "decision_date": "2026-01-17",
+            "delivery_date": "2026-01-18",
+            "cutoff_local": "09:45",
+            "cutoff_utc": "2026-01-17T09:45:00Z",
+            "delivery_start_utc": "2026-01-18T00:00:00Z",
+            "delivery_end_utc": "2026-01-19T00:00:00Z",
+            "timezone": "Europe/London"
+          },
+          "metrics": {
+            "paired_targets": 24,
+            "mae_mw": 1425.4166666666667,
+            "rmse_mw": 1499.7624534127617,
+            "bias_mw": 1425.4166666666667,
+            "p90_absolute_error_mw": 2007.8,
+            "reason": null,
+            "version": "metrics_v1",
+            "unit": "MW"
+          },
+          "coverage": {
+            "expected": 24,
+            "forecast_missing": 0,
+            "forecast_invalid": 0,
+            "actual_missing": 0,
+            "actual_invalid": 0,
+            "paired": 24,
+            "paired_percent": 100.0
+          },
+          "actual_source_coverage": {
+            "expected": 48,
+            "valid": 48,
+            "missing": 0,
+            "invalid": 0,
+            "valid_percent": 100.0
+          }
+        },
+        {
+          "window": {
+            "decision_date": "2026-01-18",
+            "delivery_date": "2026-01-19",
+            "cutoff_local": "09:45",
+            "cutoff_utc": "2026-01-18T09:45:00Z",
+            "delivery_start_utc": "2026-01-19T00:00:00Z",
+            "delivery_end_utc": "2026-01-20T00:00:00Z",
+            "timezone": "Europe/London"
+          },
+          "metrics": {
+            "paired_targets": 24,
+            "mae_mw": 750.0416666666666,
+            "rmse_mw": 836.3654753355936,
+            "bias_mw": -744.375,
+            "p90_absolute_error_mw": 1200.2,
+            "reason": null,
+            "version": "metrics_v1",
+            "unit": "MW"
+          },
+          "coverage": {
+            "expected": 24,
+            "forecast_missing": 0,
+            "forecast_invalid": 0,
+            "actual_missing": 0,
+            "actual_invalid": 0,
+            "paired": 24,
+            "paired_percent": 100.0
+          },
+          "actual_source_coverage": {
+            "expected": 48,
+            "valid": 48,
+            "missing": 0,
+            "invalid": 0,
+            "valid_percent": 100.0
+          }
+        },
+        {
+          "window": {
+            "decision_date": "2026-01-19",
+            "delivery_date": "2026-01-20",
+            "cutoff_local": "09:45",
+            "cutoff_utc": "2026-01-19T09:45:00Z",
+            "delivery_start_utc": "2026-01-20T00:00:00Z",
+            "delivery_end_utc": "2026-01-21T00:00:00Z",
+            "timezone": "Europe/London"
+          },
+          "metrics": {
+            "paired_targets": 24,
+            "mae_mw": 925.75,
+            "rmse_mw": 1251.1578304381374,
+            "bias_mw": 210.25,
+            "p90_absolute_error_mw": 2223.4,
+            "reason": null,
+            "version": "metrics_v1",
+            "unit": "MW"
+          },
+          "coverage": {
+            "expected": 24,
+            "forecast_missing": 0,
+            "forecast_invalid": 0,
+            "actual_missing": 0,
+            "actual_invalid": 0,
+            "paired": 24,
+            "paired_percent": 100.0
+          },
+          "actual_source_coverage": {
+            "expected": 48,
+            "valid": 48,
+            "missing": 0,
+            "invalid": 0,
+            "valid_percent": 100.0
+          }
+        },
+        {
+          "window": {
+            "decision_date": "2026-01-20",
+            "delivery_date": "2026-01-21",
+            "cutoff_local": "09:45",
+            "cutoff_utc": "2026-01-20T09:45:00Z",
+            "delivery_start_utc": "2026-01-21T00:00:00Z",
+            "delivery_end_utc": "2026-01-22T00:00:00Z",
+            "timezone": "Europe/London"
+          },
+          "metrics": {
+            "paired_targets": 24,
+            "mae_mw": 3862.125,
+            "rmse_mw": 3933.9511679311254,
+            "bias_mw": 3862.125,
+            "p90_absolute_error_mw": 4661.0,
+            "reason": null,
+            "version": "metrics_v1",
+            "unit": "MW"
+          },
+          "coverage": {
+            "expected": 24,
+            "forecast_missing": 0,
+            "forecast_invalid": 0,
+            "actual_missing": 0,
+            "actual_invalid": 0,
+            "paired": 24,
+            "paired_percent": 100.0
+          },
+          "actual_source_coverage": {
+            "expected": 48,
+            "valid": 48,
+            "missing": 0,
+            "invalid": 0,
+            "valid_percent": 100.0
+          }
+        },
+        {
+          "window": {
+            "decision_date": "2026-01-21",
+            "delivery_date": "2026-01-22",
+            "cutoff_local": "09:45",
+            "cutoff_utc": "2026-01-21T09:45:00Z",
+            "delivery_start_utc": "2026-01-22T00:00:00Z",
+            "delivery_end_utc": "2026-01-23T00:00:00Z",
+            "timezone": "Europe/London"
+          },
+          "metrics": {
+            "paired_targets": 24,
+            "mae_mw": 2610.75,
+            "rmse_mw": 2734.2467884227276,
+            "bias_mw": 2610.75,
+            "p90_absolute_error_mw": 3542.4,
+            "reason": null,
+            "version": "metrics_v1",
+            "unit": "MW"
+          },
+          "coverage": {
+            "expected": 24,
+            "forecast_missing": 0,
+            "forecast_invalid": 0,
+            "actual_missing": 0,
+            "actual_invalid": 0,
+            "paired": 24,
+            "paired_percent": 100.0
+          },
+          "actual_source_coverage": {
+            "expected": 48,
+            "valid": 48,
+            "missing": 0,
+            "invalid": 0,
+            "valid_percent": 100.0
+          }
+        },
+        {
+          "window": {
+            "decision_date": "2026-01-22",
+            "delivery_date": "2026-01-23",
+            "cutoff_local": "09:45",
+            "cutoff_utc": "2026-01-22T09:45:00Z",
+            "delivery_start_utc": "2026-01-23T00:00:00Z",
+            "delivery_end_utc": "2026-01-24T00:00:00Z",
+            "timezone": "Europe/London"
+          },
+          "metrics": {
+            "paired_targets": 24,
+            "mae_mw": 1819.9166666666667,
+            "rmse_mw": 1910.1550111618342,
+            "bias_mw": 1819.9166666666667,
+            "p90_absolute_error_mw": 2631.5,
+            "reason": null,
+            "version": "metrics_v1",
+            "unit": "MW"
+          },
+          "coverage": {
+            "expected": 24,
+            "forecast_missing": 0,
+            "forecast_invalid": 0,
+            "actual_missing": 0,
+            "actual_invalid": 0,
+            "paired": 24,
+            "paired_percent": 100.0
+          },
+          "actual_source_coverage": {
+            "expected": 48,
+            "valid": 48,
+            "missing": 0,
+            "invalid": 0,
+            "valid_percent": 100.0
+          }
+        },
+        {
+          "window": {
+            "decision_date": "2026-01-23",
+            "delivery_date": "2026-01-24",
+            "cutoff_local": "09:45",
+            "cutoff_utc": "2026-01-23T09:45:00Z",
+            "delivery_start_utc": "2026-01-24T00:00:00Z",
+            "delivery_end_utc": "2026-01-25T00:00:00Z",
+            "timezone": "Europe/London"
+          },
+          "metrics": {
+            "paired_targets": 24,
+            "mae_mw": 1681.4583333333333,
+            "rmse_mw": 2001.5089203731602,
+            "bias_mw": 1655.375,
+            "p90_absolute_error_mw": 3030.3,
+            "reason": null,
+            "version": "metrics_v1",
+            "unit": "MW"
+          },
+          "coverage": {
+            "expected": 24,
+            "forecast_missing": 0,
+            "forecast_invalid": 0,
+            "actual_missing": 0,
+            "actual_invalid": 0,
+            "paired": 24,
+            "paired_percent": 100.0
+          },
+          "actual_source_coverage": {
+            "expected": 48,
+            "valid": 48,
+            "missing": 0,
+            "invalid": 0,
+            "valid_percent": 100.0
+          }
+        },
+        {
+          "window": {
+            "decision_date": "2026-01-24",
+            "delivery_date": "2026-01-25",
+            "cutoff_local": "09:45",
+            "cutoff_utc": "2026-01-24T09:45:00Z",
+            "delivery_start_utc": "2026-01-25T00:00:00Z",
+            "delivery_end_utc": "2026-01-26T00:00:00Z",
+            "timezone": "Europe/London"
+          },
+          "metrics": {
+            "paired_targets": 24,
+            "mae_mw": 1766.4583333333333,
+            "rmse_mw": 1952.0705780444175,
+            "bias_mw": 1766.4583333333333,
+            "p90_absolute_error_mw": 2787.9,
+            "reason": null,
+            "version": "metrics_v1",
+            "unit": "MW"
+          },
+          "coverage": {
+            "expected": 24,
+            "forecast_missing": 0,
+            "forecast_invalid": 0,
+            "actual_missing": 0,
+            "actual_invalid": 0,
+            "paired": 24,
+            "paired_percent": 100.0
+          },
+          "actual_source_coverage": {
+            "expected": 48,
+            "valid": 48,
+            "missing": 0,
+            "invalid": 0,
+            "valid_percent": 100.0
+          }
+        },
+        {
+          "window": {
+            "decision_date": "2026-01-25",
+            "delivery_date": "2026-01-26",
+            "cutoff_local": "09:45",
+            "cutoff_utc": "2026-01-25T09:45:00Z",
+            "delivery_start_utc": "2026-01-26T00:00:00Z",
+            "delivery_end_utc": "2026-01-27T00:00:00Z",
+            "timezone": "Europe/London"
+          },
+          "metrics": {
+            "paired_targets": 24,
+            "mae_mw": 2059.0,
+            "rmse_mw": 2459.350845921202,
+            "bias_mw": 2049.6666666666665,
+            "p90_absolute_error_mw": 3708.7,
+            "reason": null,
+            "version": "metrics_v1",
+            "unit": "MW"
+          },
+          "coverage": {
+            "expected": 24,
+            "forecast_missing": 0,
+            "forecast_invalid": 0,
+            "actual_missing": 0,
+            "actual_invalid": 0,
+            "paired": 24,
+            "paired_percent": 100.0
+          },
+          "actual_source_coverage": {
+            "expected": 48,
+            "valid": 48,
+            "missing": 0,
+            "invalid": 0,
+            "valid_percent": 100.0
+          }
+        },
+        {
+          "window": {
+            "decision_date": "2026-01-26",
+            "delivery_date": "2026-01-27",
+            "cutoff_local": "09:45",
+            "cutoff_utc": "2026-01-26T09:45:00Z",
+            "delivery_start_utc": "2026-01-27T00:00:00Z",
+            "delivery_end_utc": "2026-01-28T00:00:00Z",
+            "timezone": "Europe/London"
+          },
+          "metrics": {
+            "paired_targets": 24,
+            "mae_mw": 3417.0,
+            "rmse_mw": 3484.8811792273973,
+            "bias_mw": 3417.0,
+            "p90_absolute_error_mw": 3998.8,
+            "reason": null,
+            "version": "metrics_v1",
+            "unit": "MW"
+          },
+          "coverage": {
+            "expected": 24,
+            "forecast_missing": 0,
+            "forecast_invalid": 0,
+            "actual_missing": 0,
+            "actual_invalid": 0,
+            "paired": 24,
+            "paired_percent": 100.0
+          },
+          "actual_source_coverage": {
+            "expected": 48,
+            "valid": 48,
+            "missing": 0,
+            "invalid": 0,
+            "valid_percent": 100.0
+          }
+        },
+        {
+          "window": {
+            "decision_date": "2026-01-27",
+            "delivery_date": "2026-01-28",
+            "cutoff_local": "09:45",
+            "cutoff_utc": "2026-01-27T09:45:00Z",
+            "delivery_start_utc": "2026-01-28T00:00:00Z",
+            "delivery_end_utc": "2026-01-29T00:00:00Z",
+            "timezone": "Europe/London"
+          },
+          "metrics": {
+            "paired_targets": 24,
+            "mae_mw": 5328.958333333333,
+            "rmse_mw": 5355.708624916035,
+            "bias_mw": 5328.958333333333,
+            "p90_absolute_error_mw": 5949.7,
+            "reason": null,
+            "version": "metrics_v1",
+            "unit": "MW"
+          },
+          "coverage": {
+            "expected": 24,
+            "forecast_missing": 0,
+            "forecast_invalid": 0,
+            "actual_missing": 0,
+            "actual_invalid": 0,
+            "paired": 24,
+            "paired_percent": 100.0
+          },
+          "actual_source_coverage": {
+            "expected": 48,
+            "valid": 48,
+            "missing": 0,
+            "invalid": 0,
+            "valid_percent": 100.0
+          }
+        },
+        {
+          "window": {
+            "decision_date": "2026-01-28",
+            "delivery_date": "2026-01-29",
+            "cutoff_local": "09:45",
+            "cutoff_utc": "2026-01-28T09:45:00Z",
+            "delivery_start_utc": "2026-01-29T00:00:00Z",
+            "delivery_end_utc": "2026-01-30T00:00:00Z",
+            "timezone": "Europe/London"
+          },
+          "metrics": {
+            "paired_targets": 24,
+            "mae_mw": 1594.9583333333333,
+            "rmse_mw": 1637.9546061068563,
+            "bias_mw": 1594.9583333333333,
+            "p90_absolute_error_mw": 2070.1,
+            "reason": null,
+            "version": "metrics_v1",
+            "unit": "MW"
+          },
+          "coverage": {
+            "expected": 24,
+            "forecast_missing": 0,
+            "forecast_invalid": 0,
+            "actual_missing": 0,
+            "actual_invalid": 0,
+            "paired": 24,
+            "paired_percent": 100.0
+          },
+          "actual_source_coverage": {
+            "expected": 48,
+            "valid": 48,
+            "missing": 0,
+            "invalid": 0,
+            "valid_percent": 100.0
+          }
+        },
+        {
+          "window": {
+            "decision_date": "2026-01-29",
+            "delivery_date": "2026-01-30",
+            "cutoff_local": "09:45",
+            "cutoff_utc": "2026-01-29T09:45:00Z",
+            "delivery_start_utc": "2026-01-30T00:00:00Z",
+            "delivery_end_utc": "2026-01-31T00:00:00Z",
+            "timezone": "Europe/London"
+          },
+          "metrics": {
+            "paired_targets": 24,
+            "mae_mw": 1581.5416666666667,
+            "rmse_mw": 1704.4071672187565,
+            "bias_mw": 1581.5416666666667,
+            "p90_absolute_error_mw": 2312.4,
+            "reason": null,
+            "version": "metrics_v1",
+            "unit": "MW"
+          },
+          "coverage": {
+            "expected": 24,
+            "forecast_missing": 0,
+            "forecast_invalid": 0,
+            "actual_missing": 0,
+            "actual_invalid": 0,
+            "paired": 24,
+            "paired_percent": 100.0
+          },
+          "actual_source_coverage": {
+            "expected": 48,
+            "valid": 48,
+            "missing": 0,
+            "invalid": 0,
+            "valid_percent": 100.0
+          }
+        },
+        {
+          "window": {
+            "decision_date": "2026-01-30",
+            "delivery_date": "2026-01-31",
+            "cutoff_local": "09:45",
+            "cutoff_utc": "2026-01-30T09:45:00Z",
+            "delivery_start_utc": "2026-01-31T00:00:00Z",
+            "delivery_end_utc": "2026-02-01T00:00:00Z",
+            "timezone": "Europe/London"
+          },
+          "metrics": {
+            "paired_targets": 24,
+            "mae_mw": 1814.875,
+            "rmse_mw": 1942.965506212947,
+            "bias_mw": 1814.875,
+            "p90_absolute_error_mw": 2562.2,
+            "reason": null,
+            "version": "metrics_v1",
+            "unit": "MW"
+          },
+          "coverage": {
+            "expected": 24,
+            "forecast_missing": 0,
+            "forecast_invalid": 0,
+            "actual_missing": 0,
+            "actual_invalid": 0,
+            "paired": 24,
+            "paired_percent": 100.0
+          },
+          "actual_source_coverage": {
+            "expected": 48,
+            "valid": 48,
+            "missing": 0,
+            "invalid": 0,
+            "valid_percent": 100.0
+          }
+        },
+        {
+          "window": {
+            "decision_date": "2026-01-31",
+            "delivery_date": "2026-02-01",
+            "cutoff_local": "09:45",
+            "cutoff_utc": "2026-01-31T09:45:00Z",
+            "delivery_start_utc": "2026-02-01T00:00:00Z",
+            "delivery_end_utc": "2026-02-02T00:00:00Z",
+            "timezone": "Europe/London"
+          },
+          "metrics": {
+            "paired_targets": 24,
+            "mae_mw": 814.0833333333334,
+            "rmse_mw": 921.1421804839179,
+            "bias_mw": 803.8333333333334,
+            "p90_absolute_error_mw": 1535.8,
+            "reason": null,
+            "version": "metrics_v1",
+            "unit": "MW"
+          },
+          "coverage": {
+            "expected": 24,
+            "forecast_missing": 0,
+            "forecast_invalid": 0,
+            "actual_missing": 0,
+            "actual_invalid": 0,
+            "paired": 24,
+            "paired_percent": 100.0
+          },
+          "actual_source_coverage": {
+            "expected": 48,
+            "valid": 48,
+            "missing": 0,
+            "invalid": 0,
+            "valid_percent": 100.0
+          }
+        }
+      ]
+    }
+  ]
+}
