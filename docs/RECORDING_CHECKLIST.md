@@ -1,13 +1,13 @@
 # Record and publish the required demonstration
 
-The user will record their own voice. No video or YouTube URL exists yet. The assignment requires a playable unlisted video before submission; the script and screenshots do not replace it.
+This is the earlier own-voice recording option. On 31 October 2026, the user requested AI narration instead; the complete rendered MP4 and its verification are documented in the [video production record](VIDEO_PRODUCTION.md). A YouTube watch URL still requires upload and playback verification. This checklist remains available for an optional personal re-recording.
 
 ## Prepare once
 
 1. Use a clean browser window at roughly 1440 × 1000 and readable zoom. Hide personal bookmarks/notifications. Record only this window; exclude account administration, secrets, private terminals and unrelated applications.
 2. Open [Decision at January 31, 09:00](https://tme7d41m5t.vercel.app/decision?decision_date=2026-01-31&cutoff_local=09%3A00&release_id=f61cecb1c14d91cfc32f10c74a9945fd2cf7f1851abd8ca6b0eb3f3e8975b052&decision_from=2026-01-01&decision_to=2026-01-31). Let it load before recording. Keep the wind scene expanded initially.
 3. Open the [public README](https://github.com/Mayank2142/tme7d41m5t), [architecture map](https://github.com/Mayank2142/tme7d41m5t/blob/main/docs/ARCHITECTURE.md), [selector](https://github.com/Mayank2142/tme7d41m5t/blob/main/backend/app/domain/sources.py), [analysis service](https://github.com/Mayank2142/tme7d41m5t/blob/main/backend/app/services/analysis.py), [domain tests](https://github.com/Mayank2142/tme7d41m5t/blob/main/backend/tests/test_domain_analysis.py) and [Actions](https://github.com/Mayank2142/tme7d41m5t/actions) in prepared tabs. Confirm the latest CI result before describing it as successful.
-4. Make a short microphone test and listen to it. OBS Studio is already installed on this machine; use your preferred recorder. No webcam is required by the brief.
+4. Make a short microphone test and listen to it. Use an installed recorder of your choice; an earlier OBS directory is not evidence that a working recorder is available. No webcam is required by the brief.
 5. Keep [the spoken script](DEMO_SCRIPT.md) available outside the recorded window. Rehearse once against the live UI. Explain outcomes and the key integrity rules; avoid reading long hashes or every line of code.
 
 ## Nine-minute run of show

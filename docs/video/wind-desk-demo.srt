@@ -1,0 +1,707 @@
+1
+00:00:00,380 --> 00:00:04,575
+Welcome to Wind Desk, a historical wind intelligence workbench
+for electricity
+
+2
+00:00:04,595 --> 00:00:08,662
+procurement teams. This is a walkthrough of the real
+application and
+
+3
+00:00:08,682 --> 00:00:13,137
+its implementation. We will replay a January purchase decision,
+quantify
+
+4
+00:00:13,157 --> 00:00:17,169
+forecast error, and follow the data from Elexon through Python
+and Postgres
+
+5
+00:00:17,189 --> 00:00:18,351
+to the React dashboard.
+
+6
+00:00:19,814 --> 00:00:23,536
+A utility needs to buy electricity before the delivery day,
+while wind
+
+7
+00:00:23,556 --> 00:00:27,738
+generation depends on weather. The analyst needs the forecast
+available
+
+8
+00:00:27,758 --> 00:00:31,689
+at the decision deadline, together with a defensible view of
+its uncertainty.
+
+9
+00:00:32,233 --> 00:00:36,264
+Looking only at the latest number today cannot reconstruct what
+was known
+
+10
+00:00:36,284 --> 00:00:37,601
+at an earlier cutoff.
+
+11
+00:00:39,047 --> 00:00:41,261
+Wind Desk separates those two questions.
+
+12
+00:00:41,773 --> 00:00:44,633
+Decision outlook contains eligible forecasts only.
+
+13
+00:00:45,178 --> 00:00:48,241
+Accuracy compares them with later reported generation.
+
+14
+00:00:48,795 --> 00:00:52,369
+Both retain the selected release, cutoff and source references.
+
+15
+00:00:52,904 --> 00:00:55,822
+This pilot uses only Elexon national wind data.
+
+16
+00:00:56,328 --> 00:00:59,626
+It does not infer the amount a particular utility should buy
+without
+
+17
+00:00:59,646 --> 00:01:01,377
+demand and existing positions.
+
+18
+00:01:02,814 --> 00:01:04,940
+Here is the actual deployed Decision view.
+
+19
+00:01:05,511 --> 00:01:07,324
+January thirty-first at nine a.m.
+
+20
+00:01:07,344 --> 00:01:09,509
+concerns delivery on February first.
+
+21
+00:01:10,054 --> 00:01:12,904
+All twenty-four native forecast targets are available.
+
+22
+00:01:13,420 --> 00:01:16,618
+The midnight forecast is ten thousand and ninety-nine
+megawatts.
+
+23
+00:01:17,143 --> 00:01:20,595
+Its selected issue is seven thirty a.m., so the age at the
+
+24
+00:01:20,615 --> 00:01:22,819
+cutoff is one hour and thirty minutes.
+
+25
+00:01:24,280 --> 00:01:26,378
+Now the cutoff changes to nine forty-five.
+
+26
+00:01:26,891 --> 00:01:30,498
+The unapplied warning keeps the current analysis and download
+from being
+
+27
+00:01:30,518 --> 00:01:35,278
+confused with an edit. After Apply, the nine thirty issue
+becomes eligible.
+
+28
+00:01:35,803 --> 00:01:38,937
+The midnight forecast becomes ten thousand four hundred and
+seventy-four
+
+29
+00:01:38,957 --> 00:01:41,643
+megawatts, and its age becomes fifteen minutes.
+
+30
+00:01:42,178 --> 00:01:45,723
+The chart and publication ledger expose exact target values.
+
+31
+00:01:47,147 --> 00:01:50,431
+Accuracy evaluates the full January range at this cutoff.
+
+32
+00:01:50,973 --> 00:01:53,679
+All seven hundred and forty-four native targets pair.
+
+33
+00:01:54,214 --> 00:01:57,772
+Mean absolute error is about one thousand nine hundred and
+ninety-six
+
+34
+00:01:57,792 --> 00:02:01,804
+megawatts. Root mean square error is about two thousand four
+hundred
+
+35
+00:02:01,824 --> 00:02:05,735
+and ninety-nine. Positive bias shows average overforecasting.
+
+36
+00:02:06,289 --> 00:02:10,291
+P ninety absolute error is a historical statistic, not a
+guaranteed future
+
+37
+00:02:10,311 --> 00:02:10,808
+buffer.
+
+38
+00:02:12,247 --> 00:02:14,895
+Selecting a decision day narrows the historical review.
+
+39
+00:02:15,446 --> 00:02:19,174
+The chart, coverage, error summary and CSV follow that
+selection.
+
+40
+00:02:19,728 --> 00:02:23,663
+The export retains all actual half-hours and explicitly marks
+native
+
+41
+00:02:23,683 --> 00:02:27,768
+comparison targets. A saved view keeps its release when
+reopened.
+
+42
+00:02:28,332 --> 00:02:32,581
+Missing values remain gaps with reasons, rather than becoming
+zero generation.
+
+43
+00:02:34,047 --> 00:02:37,904
+Data and methodology shows nineteen thousand eight hundred and
+fifty-six
+
+44
+00:02:37,924 --> 00:02:41,348
+forecast versions and one thousand four hundred and eighty-
+eight actual
+
+45
+00:02:41,368 --> 00:02:45,710
+observations. Source rows open response references and
+checksums.
+
+46
+00:02:46,235 --> 00:02:50,098
+The analysis dialog exposes the full context and release
+identities.
+
+47
+00:02:50,624 --> 00:02:53,748
+These references let a reviewer trace a visible figure back to
+the
+
+48
+00:02:53,768 --> 00:02:55,152
+accepted source evidence.
+
+49
+00:02:56,580 --> 00:03:00,225
+For every delivery target, the selector first restricts
+publications
+
+50
+00:03:00,245 --> 00:03:02,035
+to those at or before the cutoff.
+
+51
+00:03:02,567 --> 00:03:06,025
+It chooses the latest eligible key, and only then checks
+quality.
+
+52
+00:03:06,560 --> 00:03:10,388
+A null or conflicting latest issue stays invalid; it does not
+silently
+
+53
+00:03:10,408 --> 00:03:12,496
+fall back to an older valid forecast.
+
+54
+00:03:13,032 --> 00:03:15,448
+Decision analysis does not load actuals.
+
+55
+00:03:16,880 --> 00:03:18,814
+Errors are forecast minus actual.
+
+56
+00:03:19,317 --> 00:03:23,393
+The metrics module calculates mean absolute error, root mean
+square error,
+
+57
+00:03:23,542 --> 00:03:26,498
+signed bias and an interpolated ninetieth percentile.
+
+58
+00:03:27,004 --> 00:03:29,411
+With no valid pairs, metrics are null.
+
+59
+00:03:29,937 --> 00:03:33,703
+Hourly forecast targets match actuals at equal source
+timestamps.
+
+60
+00:03:34,248 --> 00:03:38,395
+The intervening actual half-hours remain in exports; forecasts
+are not
+
+61
+00:03:38,415 --> 00:03:40,242
+invented between hourly targets.
+
+62
+00:03:41,680 --> 00:03:45,698
+The browser reaches the Vercel HTTPS endpoint and project
+firewall.
+
+63
+00:03:46,201 --> 00:03:50,502
+FastAPI serves both the compiled React assets and read APIs
+from that
+
+64
+00:03:50,522 --> 00:03:54,900
+origin. Analysis services use bounded caches and a restricted
+database
+
+65
+00:03:54,920 --> 00:03:58,127
+reader. Pure domain functions calculate the result.
+
+66
+00:03:58,681 --> 00:04:02,597
+The response includes an analysis identity and a matching
+guarded C S
+
+67
+00:04:02,617 --> 00:04:03,345
+V download.
+
+68
+00:04:04,814 --> 00:04:06,719
+Ingestion is separate from browsing.
+
+69
+00:04:07,270 --> 00:04:11,561
+The operator command fetches or replays original Elexon
+responses, validates
+
+70
+00:04:11,581 --> 00:04:13,988
+them, and publishes an accepted release.
+
+71
+00:04:14,523 --> 00:04:18,863
+Database tables retain raw batches, forecast and actual
+versions, immutable
+
+72
+00:04:18,883 --> 00:04:20,875
+membership, and an active-release pointer.
+
+73
+00:04:21,419 --> 00:04:24,221
+A failed candidate does not replace accepted data.
+
+74
+00:04:24,737 --> 00:04:27,819
+The web function receives only the restricted reader
+credential.
+
+75
+00:04:29,247 --> 00:04:32,670
+When the analyst edits a date or cutoff, React keeps the draft
+
+76
+00:04:32,690 --> 00:04:34,316
+distinct from the applied result.
+
+77
+00:04:34,857 --> 00:04:38,325
+Applying a valid selection updates the URL and query key.
+
+78
+00:04:38,879 --> 00:04:42,785
+Fetch sends the selected date, local cutoff and release to the
+decision-view
+
+79
+00:04:42,805 --> 00:04:47,607
+endpoint. FastAPI rejects invalid or duplicate filters before
+analysis
+
+80
+00:04:47,627 --> 00:04:48,172
+begins.
+
+81
+00:04:49,614 --> 00:04:51,538
+React builds the three analyst views.
+
+82
+00:04:52,089 --> 00:04:56,029
+TypeScript and runtime response validation help catch contract
+mismatches.
+
+83
+00:04:56,565 --> 00:04:59,116
+Vite provides development and production builds.
+
+84
+00:04:59,651 --> 00:05:03,707
+TanStack Query manages filter-specific requests, cancellation
+and refresh.
+
+85
+00:05:04,242 --> 00:05:08,476
+Native SVG charts and HTML dialogs keep exact values and
+
+86
+00:05:08,496 --> 00:05:12,170
+references keyboard-accessible, with responsive layouts and
+reduced-motion
+
+87
+00:05:12,190 --> 00:05:12,773
+support.
+
+88
+00:05:14,214 --> 00:05:18,457
+FastAPI exposes typed read routes, while Pydantic validates
+filters and
+
+89
+00:05:18,477 --> 00:05:22,861
+response contracts. Python domain functions contain selection
+and metric
+
+90
+00:05:22,881 --> 00:05:27,568
+rules independently of HTTP. SQLAlchemy and Psycopg connect to
+Postgres
+
+91
+00:05:27,588 --> 00:05:29,918
+using bound parameters and a small pool.
+
+92
+00:05:30,414 --> 00:05:34,320
+Alembic versions the schema. This separation makes the business
+rules
+
+93
+00:05:34,340 --> 00:05:35,570
+independently testable.
+
+94
+00:05:36,980 --> 00:05:39,647
+Elexon is the only analytical data integration.
+
+95
+00:05:40,199 --> 00:05:42,721
+Docker Compose reproduces the application locally.
+
+96
+00:05:43,266 --> 00:05:46,010
+GitHub Actions runs quality and container checks.
+
+97
+00:05:46,545 --> 00:05:50,119
+Vercel hosts the web application, and Neon hosts Postgres.
+
+98
+00:05:50,644 --> 00:05:54,878
+Pytest, Vitest, Testing Library, Playwright, Ruff and Biome
+verify the
+
+99
+00:05:54,898 --> 00:05:59,513
+implementation. Locked dependencies make those environments
+reproducible.
+
+100
+00:06:00,029 --> 00:06:02,889
+There is no predictive AI model in the application.
+
+101
+00:06:04,347 --> 00:06:07,718
+The service resolves the accepted release before using its
+cache.
+
+102
+00:06:08,279 --> 00:06:12,406
+Its context includes the release, parser, policies, applied
+filters and
+
+103
+00:06:12,426 --> 00:06:16,598
+build identifier. A canonical hash pins the analysis and
+export.
+
+104
+00:06:17,133 --> 00:06:20,730
+React checks the returned contract and displays values,
+coverage and
+
+105
+00:06:20,750 --> 00:06:24,993
+issue age. A stale export context is rejected instead of
+returning a
+
+106
+00:06:25,013 --> 00:06:26,118
+different analysis.
+
+107
+00:06:27,547 --> 00:06:31,018
+The repository separates frontend views and typed clients from
+Python
+
+108
+00:06:31,038 --> 00:06:34,361
+API routes, services, domain logic and persistence.
+
+109
+00:06:34,893 --> 00:06:38,120
+Migrations and operator ingestion have their own modules.
+
+110
+00:06:38,655 --> 00:06:42,151
+Source fixtures, tests and verification scripts are explicit.
+
+111
+00:06:42,706 --> 00:06:46,607
+The root README explains startup, the technology stack,
+methodology,
+
+112
+00:06:46,680 --> 00:06:48,835
+deployment evidence and AI assistance.
+
+113
+00:06:49,371 --> 00:06:52,404
+Local secrets and generated output stay outside Git.
+
+114
+00:06:53,880 --> 00:06:57,410
+In the decision service, the reader loads forecasts for the
+pinned release
+
+115
+00:06:57,430 --> 00:06:59,441
+and passes them to decision analysis.
+
+116
+00:06:59,963 --> 00:07:04,293
+It never loads actuals here. The source selector and metric
+functions
+
+117
+00:07:04,313 --> 00:07:08,967
+are separate modules. Tests cover cutoff equality, invalid
+latest keys,
+
+118
+00:07:09,087 --> 00:07:12,777
+revised actuals, missing data and the January to February
+boundary.
+
+119
+00:07:14,247 --> 00:07:18,664
+This is deliberately a public, read-only dashboard, with no
+user authentication
+
+120
+00:07:18,684 --> 00:07:23,325
+flow. Protection relies on request validation, restrictive
+browser headers,
+
+121
+00:07:23,368 --> 00:07:25,707
+safe errors and a separate database reader.
+
+122
+00:07:26,262 --> 00:07:30,076
+The reader cannot write, change schema, or access raw payload
+bytes.
+
+123
+00:07:30,611 --> 00:07:33,230
+Verified TLS protects the database connection.
+
+124
+00:07:33,775 --> 00:07:36,529
+Operator credentials are absent from the web runtime.
+
+125
+00:07:37,980 --> 00:07:41,799
+Caches have bounded size and lifetime, and concurrent requests
+for one
+
+126
+00:07:41,819 --> 00:07:46,136
+key share a calculation. Database pools and timeouts constrain
+resource
+
+127
+00:07:46,156 --> 00:07:50,631
+use. A local fifty-client test completed two hundred requests
+at roughly
+
+128
+00:07:50,651 --> 00:07:54,186
+four hundred and ninety-three milliseconds at the ninety-fifth
+percentile,
+
+129
+00:07:54,239 --> 00:07:58,829
+using a test-only quota. This is local API evidence, not a
+hosted
+
+130
+00:07:58,849 --> 00:08:00,822
+capacity or availability guarantee.
+
+131
+00:08:02,280 --> 00:08:05,376
+The published continuous-integration run passed one hundred and
+seven
+
+132
+00:08:05,396 --> 00:08:08,892
+backend tests with no skips and forty-seven frontend tests.
+
+133
+00:08:09,415 --> 00:08:13,494
+It also built Docker, replayed the real seed, exercised the
+browser and
+
+134
+00:08:13,514 --> 00:08:18,322
+exact downloads, restarted Postgres and web, and compared
+unchanged fingerprints.
+
+135
+00:08:18,847 --> 00:08:22,734
+The clean runner exposed database-reader isolation and
+clipboard-permission
+
+136
+00:08:22,754 --> 00:08:26,023
+test assumptions; both were corrected without changing the
+production
+
+137
+00:08:26,043 --> 00:08:26,742
+analysis.
+
+138
+00:08:28,180 --> 00:08:32,462
+Vercel imports the root FastAPI application, builds React, and
+bundles
+
+139
+00:08:32,482 --> 00:08:36,818
+its compiled assets. The function region is configured as
+London, with
+
+140
+00:08:36,838 --> 00:08:38,917
+external Neon Postgres in London.
+
+141
+00:08:39,462 --> 00:08:41,367
+The selected plans are free tiers.
+
+142
+00:08:41,912 --> 00:08:45,875
+The function uses verified TLS, one pooled connection per
+instance
+
+143
+00:08:45,895 --> 00:08:47,463
+and a reader-role connection cap.
+
+144
+00:08:47,998 --> 00:08:50,935
+Database initialization is a separate operator step.
+
+145
+00:08:52,380 --> 00:08:55,987
+GitHub Actions verifies changes; it does not automatically
+deploy this
+
+146
+00:08:56,007 --> 00:09:00,860
+project. An authorized Vercel CLI deployment publishes a
+reviewed revision.
+
+147
+00:09:01,415 --> 00:09:04,352
+The deployment record identifies the source and dataset.
+
+148
+00:09:04,906 --> 00:09:08,725
+Later documentation and test commits differ from the hosted
+build, while
+
+149
+00:09:08,745 --> 00:09:11,913
+a comparison verified eighty-nine identical runtime inputs.
+
+150
+00:09:12,449 --> 00:09:16,466
+Replacing the hosted application preserved its accepted data
+and results.
+
+151
+00:09:17,914 --> 00:09:21,510
+Wind Desk connects a practical analyst workflow with explicit
+temporal
+
+152
+00:09:21,530 --> 00:09:24,641
+rules, durable source evidence and repeatable verification.
+
+153
+00:09:25,192 --> 00:09:29,397
+Its next operational steps are agreed trading cutoffs,
+scheduled receipt-aware
+
+154
+00:09:29,417 --> 00:09:33,830
+data, distributed capacity controls, monitored recovery and
+client acceptance.
+
+155
+00:09:34,365 --> 00:09:37,350
+Explore the public application and repository shown here.
+
+156
+00:09:37,895 --> 00:09:39,424
+Thank you for reviewing the project.
+

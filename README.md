@@ -323,9 +323,11 @@ Secrets, assignment DOCX files, local environments, generated media/output, cach
 
 ## Demo video
 
-A narrated project explainer is in production, using the real deployed interface and source code. The planned edit includes a customer demonstration and technical walkthrough, AI-generated Indian English narration and synchronized subtitles, within the assignment's ten-minute limit.
+![Wind Desk product demo and technical review](docs/images/video-thumbnail.jpg)
 
-**Unlisted YouTube watch link: pending upload and playback verification.** The [demo script](docs/DEMO_SCRIPT.md) and [recording checklist](docs/RECORDING_CHECKLIST.md) remain available. The assignment has not been submitted. Cumulative actual effort against the original sixteen-hour limit has not been fully reconciled.
+The complete **9:40 Full HD video** has been rendered locally with AI-generated Indian English narration, real application demonstrations, architecture/code explanations, synchronized subtitles, quiet music and chapter markers. [Production record, storyboard and verification](docs/VIDEO_PRODUCTION.md) document the result.
+
+**Unlisted YouTube watch link: pending upload and playback verification.** The rendered MP4 is retained in the producing workspace under `output/video/wind-desk-demo.mp4`; large generated media is excluded from Git. The assignment has not been submitted. Cumulative actual effort against the original sixteen-hour limit has not been fully reconciled.
 
 ## Data attribution and AI assistance
 

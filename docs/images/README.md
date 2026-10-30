@@ -13,3 +13,7 @@ Public origin: https://tme7d41m5t.vercel.app
 Dataset release: `f61cecb1c14d91cfc32f10c74a9945fd2cf7f1851abd8ca6b0eb3f3e8975b052`.
 
 Screenshots retain the rendered interface. The interface's wind landscape imagery is illustrative; its AI provenance is recorded in [the asset guide](../../frontend/src/assets/README.md). Forecasts, actuals and metrics come exclusively from Elexon. Preserve the BMRS attribution when redistributing data.
+
+## Video thumbnail
+
+`video-thumbnail.jpg` is the 31 October 2026 rendered-video cover, using the project Wind Desk mark and its documented illustrative wind asset. It is a designed cover, not a dashboard screenshot. See the [production credits](../VIDEO_PRODUCTION.md).

@@ -1,0 +1,78 @@
+{
+  "verified_date": "2026-10-31",
+  "status": "rendered_local_mp4_verified_youtube_upload_pending",
+  "repository": "https://github.com/Mayank2142/tme7d41m5t",
+  "public_app": "https://tme7d41m5t.vercel.app",
+  "reviewed_runtime_source": "2e47480d22660ad6ca32581b48dc182a9c6d5388",
+  "readme_source": "51fc58c5ce7dfe118ae91d9ae259e30b78af6d28",
+  "hosted_build": "77f0793b4d7bdc4cf95e3c8363d1d13f82567363",
+  "dataset_release": "f61cecb1c14d91cfc32f10c74a9945fd2cf7f1851abd8ca6b0eb3f3e8975b052",
+  "media": {
+    "resolution": [
+      1920,
+      1080
+    ],
+    "fps": 29.99,
+    "nominal_fps": 30,
+    "duration_seconds": 580.5,
+    "video_codec": "H.264",
+    "audio_codec": "AAC",
+    "audio_sample_rate": 48000,
+    "channels": 2,
+    "part_1_seconds": 289.23333333333335,
+    "part_2_seconds": 291.26666666666665
+  },
+  "files": {
+    "wind-desk-demo.mp4": {
+      "bytes": 24040324,
+      "sha256": "44b2ef72c7b40158b09835d59d51052abba7f99be1c3e337e7bf52a4270de589"
+    },
+    "wind-desk-demo.srt": {
+      "bytes": 15188,
+      "sha256": "6329685c208971ab8d8261639bbae4311d9c8c0cdede3c50fcd46d7fd16cf092"
+    },
+    "wind-desk-thumbnail.png": {
+      "bytes": 775953,
+      "sha256": "f4976ac18d959e7c38dca7961aaa798a2dc7b136ee01aa6e6dd1f07027751523"
+    }
+  },
+  "checks": {
+    "complete_video_and_audio_decode": true,
+    "all_25_neural_speech_segments_non_silent": true,
+    "caption_cues": 156,
+    "caption_script_alignment": true,
+    "subtitle_track": "sidecar SRT",
+    "burned_in_subtitles": true,
+    "keyframes_extracted": 19
+  },
+  "audio_loudness": {
+    "input_i": "-15.60",
+    "input_tp": "-3.05",
+    "input_lra": "2.60",
+    "input_thresh": "-26.27",
+    "output_i": "-15.98",
+    "output_tp": "-2.67",
+    "output_lra": "2.60",
+    "output_thresh": "-26.65",
+    "normalization_type": "dynamic",
+    "target_offset": "-0.02"
+  },
+  "voice": {
+    "provider": "Microsoft Edge Read Aloud",
+    "client": "edge-tts 7.3.1",
+    "voice": "en-IN-PrabhatNeural",
+    "language": "Indian English",
+    "requested_rate": "+8%",
+    "pitch_preserving_post_tempo": 1.2
+  },
+  "soundtrack": "Original synthesized ambient chord score; no sampled or stock recording",
+  "ci_observed": "https://github.com/Mayank2142/tme7d41m5t/actions/runs/41129071765",
+  "youtube_watch_url": null,
+  "youtube_upload_verified": false,
+  "submission_completed": false,
+  "limitations": [
+    "Visual review uses selected extracted frames and captured UI state, not a human watch-through of all ten minutes.",
+    "No YouTube upload or watch URL has been created.",
+    "Application performance evidence is a short local burst, not a hosted capacity guarantee."
+  ]
+}

@@ -1,7 +1,7 @@
 {
   "phase": 8,
-  "verified_date": "2026-10-30",
-  "status": "public_source_and_full_remote_ci_verified_own_voice_video_and_submission_pending",
+  "verified_date": "2026-10-31",
+  "status": "public_source_remote_ci_and_local_ai_video_verified_youtube_and_submission_pending",
   "repository_url": "https://github.com/Mayank2142/tme7d41m5t",
   "repository_name_anonymous": true,
   "repository_visibility": "public",
@@ -166,14 +166,18 @@
     "qualifications": "Vercel is deployed from the recorded Phase 7 source. Phase 8 changed test setup and documentation only; the public-link record compares 89 identical runtime inputs."
   },
   "video": {
-    "narration_preference": "user_own_voice",
+    "narration_preference": "ai_generated_indian_english_latest_user_request",
     "script": "docs/DEMO_SCRIPT.md",
     "recording_checklist": "docs/RECORDING_CHECKLIST.md",
-    "target_minutes": 9,
+    "target_minutes": 10,
     "maximum_minutes": 10,
     "url": null,
-    "recorded": false,
-    "unlisted_upload_verified": false
+    "recorded": true,
+    "unlisted_upload_verified": false,
+    "rendered": true,
+    "local_artifact": "output/video/wind-desk-demo.mp4",
+    "production_evidence": "docs/video-production-evidence.json",
+    "duration_seconds": 580.5
   },
   "submission": {
     "complete": false,

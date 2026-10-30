@@ -1,5 +1,7 @@
 # Customer and technical demonstration
 
+The later AI-narrated rendered video and actual final edit are documented in the [video production record](VIDEO_PRODUCTION.md) and [final voiceover](video/VOICEOVER.md). The original own-voice alternative below is retained for reference.
+
 Prepared on 30 October 2026, Asia/Calcutta, for the user's own voice recording. This is a recording script, not a submitted video. Use the verified [public app](https://tme7d41m5t.vercel.app) and [repository](https://github.com/Mayank2142/tme7d41m5t). Keep the full recording under ten minutes, with each part under five minutes. Aim for about nine minutes including pauses and transitions. The [recording checklist](RECORDING_CHECKLIST.md) gives exact start links, code tabs, a timing budget and upload checks.
 
 Use a clean browser, 1440-pixel window and readable zoom. Start with January 31, the 09:00 cutoff and the accepted real release. Avoid showing private account pages, terminals containing credentials or Docker's unrelated workloads. Verify the spoken numbers against the displayed selection before recording.
