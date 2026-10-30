@@ -52,5 +52,86 @@
     "tests": 2,
     "default_app_engine_unreachable": true,
     "temporary_database_removed": true
+  },
+  "corrected_remote_run": {
+    "url": "https://github.com/Mayank2142/tme7d41m5t/actions/runs/41094635876",
+    "commit": "c19bc614c450403ea735b57b4d4a43e2db3f1d5d",
+    "quality": "success",
+    "backend_tests": 107,
+    "frontend_tests": 47,
+    "container": "clipboard_permission_test_setup_failure",
+    "correction": "Origin-scoped clipboard permission and exact clipboard readback in isolated browser test context"
+  },
+  "anonymous_clone": {
+    "passed": true,
+    "commit": "c19bc614c450403ea735b57b4d4a43e2db3f1d5d",
+    "credential_helpers_disabled": true,
+    "publication_input_check": "passed_167_files"
+  },
+  "public_links": {
+    "passed": true,
+    "cookies_or_authorization_used": false,
+    "public_checks": [
+      {
+        "url": "https://github.com/Mayank2142/tme7d41m5t",
+        "status": 200
+      },
+      {
+        "url": "https://github.com/Mayank2142/tme7d41m5t/blob/main/docs/RECORDING_CHECKLIST.md",
+        "status": 200
+      },
+      {
+        "url": "https://raw.githubusercontent.com/Mayank2142/tme7d41m5t/c19bc614c450403ea735b57b4d4a43e2db3f1d5d/README.md",
+        "status": 200
+      },
+      {
+        "url": "https://tme7d41m5t.vercel.app/health/ready",
+        "status": 200
+      }
+    ],
+    "public_source_commit": "c19bc614c450403ea735b57b4d4a43e2db3f1d5d",
+    "hosted_runtime_commit": "77f0793b4d7bdc4cf95e3c8363d1d13f82567363",
+    "runtime_inputs_compared": 89,
+    "runtime_inputs_identical": true,
+    "runtime_input_fingerprint": "642616ecadee82833f9d79928c7abeee6a32ff64011db7fb5d82bc6c447874dc"
+  },
+  "local_browser_regression": {
+    "passed": true,
+    "base_url": "http://127.0.0.1:8000/",
+    "release_id": "f61cecb1c14d91cfc32f10c74a9945fd2cf7f1851abd8ca6b0eb3f3e8975b052",
+    "downloads": [
+      {
+        "filename": "winddesk-decision-2026-01-31-2026-01-31-6ff371aba6d3.csv",
+        "bytes": 17524,
+        "sha256": "26f6d87118ddf87940dddd0bb0adf29de12971adc9549c53c239b05b5973ceb2",
+        "context_id": "6ff371aba6d33dc84c1fe1b2a53b5f67f267f131a43cfb6a98079bb1f52656ac"
+      },
+      {
+        "filename": "winddesk-accuracy-2026-01-01-2026-01-31-719332eb5dd9.csv",
+        "bytes": 1272473,
+        "sha256": "28d906c23461cff6b597a517c28fc7a2985e6848a14729a48e4af45738ce0f90",
+        "context_id": "719332eb5dd97ba248e8cd65f5ab84c6b41611e9b241ab6bcc46315be7867d7b"
+      }
+    ],
+    "console_errors": [],
+    "viewports": [
+      1440,
+      390,
+      320
+    ],
+    "checks": [
+      "cutoff draft/apply and source eligibility",
+      "forecast-only decision requests",
+      "self-hosted wind imagery loads and compact header preserves the analysis",
+      "keyboard chart inspection",
+      "exact browser CSV bytes",
+      "four API-derived metrics",
+      "daily drill-down",
+      "pinned provenance and reload",
+      "compact reference dialogs, exact IDs, copy controls, modal focus and Escape",
+      "reference dialogs fit 390/320-pixel screens",
+      "reduced motion disables photographic reveal and scroll decoration",
+      "narrow layout and keyboard table focus"
+    ]
   }
 }

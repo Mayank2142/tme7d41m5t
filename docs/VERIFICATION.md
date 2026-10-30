@@ -36,6 +36,8 @@ npm run test:browser
 
 The standalone [Playwright library](https://playwright.dev/docs/library) runner follows the actual Decision → cutoff draft/apply → CSV → Accuracy → daily drill-down → Methodology → reload journey. It checks chart keyboard controls, displayed metrics, cross-view state, exact downloaded bytes, 1440/390/320-pixel layouts, and console errors. Browser network requests outside the selected origin fail the check. This is a focused workflow gate, not a comprehensive accessibility or performance audit.
 
+The isolated browser context explicitly grants clipboard permissions to the selected origin for successful-copy checks and reads back the exact copied analysis ID. It does not change permissions in a user's normal browser. The reference component tests separately cover permission denial and the manual-copy fallback.
+
 Set `GRID_BROWSER_BASE_URL` to another running origin and `GRID_BROWSER_OUTPUT` to an evidence directory. On a prepared Windows machine with Chrome, set `$env:GRID_BROWSER_CHANNEL='chrome'`; CI uses pinned Playwright Chromium. Browser output includes screenshots, download hashes and a JSON report; failures retain a trace. Generated artifacts are ignored by Git.
 
 ## Container gate

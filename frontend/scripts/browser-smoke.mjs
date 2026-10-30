@@ -13,6 +13,10 @@ const context = await browser.newContext({
   viewport: { width: 1440, height: 1000 },
   acceptDownloads: true,
 });
+// Headless Chromium may deny clipboard access by default. This journey tests
+// successful copying with explicit, origin-scoped permission; denied copying
+// and its manual fallback are covered by References.test.tsx.
+await context.grantPermissions(["clipboard-read", "clipboard-write"], { origin: base.origin });
 await context.tracing.start({ screenshots: true, snapshots: true });
 const page = await context.newPage();
 page.setDefaultTimeout(20_000);
@@ -114,6 +118,10 @@ try {
   );
   await referenceDialog.getByRole("button", { name: "Copy analysis id" }).click();
   await referenceDialog.getByText("Analysis ID copied", { exact: true }).waitFor();
+  assert.equal(
+    await page.evaluate(() => navigator.clipboard.readText()),
+    first.analysis_context_id,
+  );
   await referenceDialog.getByRole("button", { name: "Close references" }).focus();
   await page.keyboard.press("Shift+Tab");
   assert.equal(

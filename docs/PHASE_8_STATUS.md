@@ -29,6 +29,8 @@ The corrected fixture binds both the health/metadata database and the analysis/p
 
 The [machine evidence](phase-8-evidence.json) records publication review, regression and actual remote results as they become available. A pending workflow is not a successful CI gate.
 
+The corrected run's quality job passed all 107 backend and 47 frontend tests, lint, builds, dependency audits and wheel verification. Its container browser journey exposed a second test-environment assumption: headless Chromium denied clipboard access by default, while the application correctly offered manual copying. The browser gate now grants clipboard read/write permission only to its isolated test origin and verifies the actual copied analysis ID. The denied-permission/manual-copy behavior remains covered by the existing component test. This changes test setup, not the public site's permissions or application code; the complete container gate is being rerun.
+
 ## Final handoff and submission gate
 
 Use the recording checklist to demonstrate the customer workflow for about 4½ minutes, then architecture, code and verification for about 4½ minutes. Keep each part below five minutes and the whole video at or below ten. The figures in the script require the applied 09:45 cutoff and full January range; daily drill-down changes the metrics.
