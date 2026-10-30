@@ -13,6 +13,7 @@ from sqlalchemy.exc import ProgrammingError, SQLAlchemyError
 from backend.app.ingestion.archive import RawBatch, digest, read_archive
 from backend.app.ingestion.normalize import PARSER_VERSION
 from backend.app.ingestion.validation import inspect_batches, release_identity
+from backend.app.persistence.database import report_database_failure
 from backend.app.persistence.models import (
     ActiveRelease,
     ActualBatchMember,
@@ -198,7 +199,8 @@ def dataset_state(engine: Engine) -> DatasetState:
         if getattr(exc.orig, "sqlstate", None) == "42P01":
             return DatasetState(True, False)
         return DatasetState(True, False, error="DATASET_QUERY_FAILED")
-    except SQLAlchemyError:
+    except SQLAlchemyError as exc:
+        report_database_failure(exc)
         return DatasetState(False, False)
 
 

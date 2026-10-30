@@ -16,6 +16,7 @@ dependencies = [
   "uvicorn[standard]>=0.34,<1",
   "alembic>=1.16,<2",
   "httpx2>=2.16,<3",
+  "certifi>=2026.10.23,<2027",
 ]
 
 [dependency-groups]
