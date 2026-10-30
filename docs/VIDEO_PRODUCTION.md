@@ -1,6 +1,6 @@
 # Wind Desk video production record
 
-Verified 31 October 2026. The complete **9:40.5, 1920 × 1080, nominal 30 fps MP4** has been rendered locally with AI-generated Indian English narration, burned-in subtitles, a separate English SRT file, background music and chapter markers. The final video is an actual rendered artifact; the materials here document it.
+Verified 31 October 2026. The complete **9:40.5, 1920 × 1080, 30 fps MP4** has been rendered locally with AI-generated Indian English narration, burned-in subtitles, a separate English SRT file, background music and chapter markers. The final video is an actual rendered artifact; the materials here document it.
 
 **YouTube upload and logged-out playback verification remain pending. No watch URL or completed submission is claimed.** The user's later request for AI narration supersedes the earlier own-voice recording preference.
 
@@ -20,10 +20,10 @@ The files are in the producing workspace's ignored `output/video/` directory. La
 | `storyboard.json`, `timeline.json`, `narration.md` | Editable local production source |
 | `recorded/`, `audio/`, `frames/`, `subtitles/`, `segments/` | Retained actual browser captures, neural speech and composition assets |
 
-MP4 size: **24,040,324 bytes**. SHA-256:
+MP4 size: **24,952,358 bytes**. SHA-256:
 
 ```text
-44b2ef72c7b40158b09835d59d51052abba7f99be1c3e337e7bf52a4270de589
+dbb67bd74d333009f4d3d0dcfc57cbbd7043e663268c1cd4f131fb1fa6e20e1c
 ```
 
 The [voiceover/storyboard](video/VOICEOVER.md) follows the final edit. The [machine evidence](video-production-evidence.json) records the checks and exact source identities. The MP4 must be transferred separately or uploaded before a public playback link can be added to README.
@@ -76,7 +76,7 @@ The walkthrough uses the [real public deployment](https://tme7d41m5t.vercel.app)
 | Context-pinned JSON/CSV and bounded caching | `backend/app/services/`, `backend/app/cache.py`, [API contract](API.md) |
 | Restricted reader, verified TLS, safe web responses | `permissions.py`, `database.py`, [security/scaling evidence](SECURITY_AND_SCALING.md) |
 | Reproducible local Docker and actual Vercel configuration | `Dockerfile`, `compose.yaml`, `app.py`, `vercel.json` |
-| CI, container/browser/download/restart proof | `.github/workflows/ci.yml`, [observed successful public run](https://github.com/Mayank2142/tme7d41m5t/actions/runs/41129071765) |
+| CI, container/browser/download/restart proof | `.github/workflows/ci.yml`, [observed successful public run](https://github.com/Mayank2142/tme7d41m5t/actions/runs/41134705128) |
 
 The narration explicitly identifies public read-only access with no sign-in, no predictive AI model, manual CLI deployment after CI, native hourly forecasts against half-hour actuals, and the limits of national wind data. No demand, prices, portfolios, purchase-quantity recommendation, live ingestion scheduler or guaranteed hosted capacity is invented.
 
@@ -94,10 +94,10 @@ Technology logos come from the [Devicon project](https://github.com/devicons/dev
 
 ## Verification and practical limits
 
-- Full video and audio decoding completed without errors; H.264, AAC, 1920 × 1080, nominal 30 fps (29.99 average) and duration were checked from the rendered file.
+- Full video and audio decoding completed without errors; H.264, AAC, 1920 × 1080, 30 fps and duration were checked from the rendered file.
 - All 25 neural narration segments are non-silent. Measured final audio is -15.60 LUFS integrated, with a -3.05 dBTP true peak. Music stays beneath the narration.
 - All 156 subtitle cues are ordered, within the timeline, and aligned to the preserved script. The burned-in captions and matching separate SRT are included.
-- 19 final-file frames were extracted for visual review, including actual results and both source/context dialogs. Technical values were compared with captured UI state and source evidence.
+- 20 final-file frames were extracted for visual review, including actual results and both source/context dialogs. Technical values were compared with captured UI state and source evidence.
 - This is automated media verification plus selected-frame visual review, not an independent human listen-through or watch-through of the entire video. The original assignment effort limit has not been reconciled.
 
 Before assignment submission, upload the MP4 as **Unlisted**, supply the thumbnail/SRT, verify playback, audio and duration in a logged-out browser, then add the actual watch URL to README and Phase 8 status. The earlier [own-voice script](DEMO_SCRIPT.md) and [recording checklist](RECORDING_CHECKLIST.md) remain an optional alternative.

@@ -12,7 +12,7 @@
       1920,
       1080
     ],
-    "fps": 29.99,
+    "fps": 30.0,
     "nominal_fps": 30,
     "duration_seconds": 580.5,
     "video_codec": "H.264",
@@ -24,8 +24,8 @@
   },
   "files": {
     "wind-desk-demo.mp4": {
-      "bytes": 24040324,
-      "sha256": "44b2ef72c7b40158b09835d59d51052abba7f99be1c3e337e7bf52a4270de589"
+      "bytes": 24952358,
+      "sha256": "dbb67bd74d333009f4d3d0dcfc57cbbd7043e663268c1cd4f131fb1fa6e20e1c"
     },
     "wind-desk-demo.srt": {
       "bytes": 15188,
@@ -43,7 +43,8 @@
     "caption_script_alignment": true,
     "subtitle_track": "sidecar SRT",
     "burned_in_subtitles": true,
-    "keyframes_extracted": 19
+    "keyframes_extracted": 20,
+    "technology_card_layout_review": true
   },
   "audio_loudness": {
     "input_i": "-15.60",
@@ -66,7 +67,7 @@
     "pitch_preserving_post_tempo": 1.2
   },
   "soundtrack": "Original synthesized ambient chord score; no sampled or stock recording",
-  "ci_observed": "https://github.com/Mayank2142/tme7d41m5t/actions/runs/41129071765",
+  "ci_observed": "https://github.com/Mayank2142/tme7d41m5t/actions/runs/41134705128",
   "youtube_watch_url": null,
   "youtube_upload_verified": false,
   "submission_completed": false,
