@@ -2,7 +2,7 @@
 
 Proposed assignment delivery · 29 October 2026
 
-Implementation update: the real-data pipeline, calculation engine, typed APIs/CSV and three-view React interface are implemented and deployed at [Wind Desk](https://tme7d41m5t.vercel.app). The [public source](https://github.com/Mayank2142/tme7d41m5t) has an anonymous repository name. [Phase 7 evidence](PHASE_7_STATUS.md) records 107 backend and 47 frontend tests, PostgreSQL checks, independent CSV arithmetic, logged-out browser journeys and hosted replacement persistence. At 09:00, all 744 source-time targets pair, with MAE 2,022.47 MW. Pinned links preserve dates, cutoff, release and download context. Remote CI is being verified. The required own-voice unlisted video and final submission remain outstanding; this is not operational utility acceptance.
+Implementation update: the real-data pipeline, calculation engine, typed APIs/CSV and three-view React interface are implemented and deployed at [Wind Desk](https://tme7d41m5t.vercel.app). The [public source](https://github.com/Mayank2142/tme7d41m5t) has an anonymous repository name. [Phase 7 evidence](PHASE_7_STATUS.md) and [full Linux CI](PHASE_8_STATUS.md) record 107 backend and 47 frontend tests, PostgreSQL checks, independent CSV arithmetic, browser journeys and container/hosted replacement persistence. At 09:00, all 744 source-time targets pair, with MAE 2,022.47 MW. Pinned links preserve dates, cutoff, release and download context. The required own-voice unlisted video and final submission remain outstanding; this is not operational utility acceptance.
 
 This project gives a UK utility's procurement team a clear view of the Elexon wind forecast available before a day-ahead purchase decision and a reproducible assessment of its historical error. The assignment requires a deployed React/Python application, Docker setup, public source and a short customer/technical demonstration. The original sixteen-hour total-effort limit remains part of the brief; cumulative actual effort has not been fully reconciled.
 
@@ -36,7 +36,7 @@ The submission will demonstrate:
 - A fresh Docker startup, passing critical tests, working public HTTPS application, and persistence after restart.
 - A readable public repository, precise README with AI disclosure, and a playable unlisted video under ten minutes.
 
-Application, data, local/container and hosted verification evidence exist. Repository publication is complete, remote CI is being verified, and the recording is prepared in the [script](DEMO_SCRIPT.md) and [checklist](RECORDING_CHECKLIST.md). The mandatory video and final submission are incomplete until actual artifacts and confirmation exist.
+Application, data, local/container and hosted verification evidence exist. Repository publication and full remote CI are verified, and the recording is prepared in the [script](DEMO_SCRIPT.md) and [checklist](RECORDING_CHECKLIST.md). The mandatory video and final submission are incomplete until actual artifacts and confirmation exist.
 
 ## Delivery and production path
 

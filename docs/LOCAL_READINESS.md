@@ -2,7 +2,7 @@
 
 Prepared 30 October 2026, Asia/Calcutta. This supplements the historical phase records; it does not rewrite their original verification results.
 
-**Later release update:** [Phase 7](PHASE_7_STATUS.md) has now deployed and verified the [public evaluation app](https://tme7d41m5t.vercel.app). Hosting items listed as pending in this earlier local handoff are superseded by that record; GitHub/remote CI and the video/submission remain Phase 8 work.
+**Later release update:** [Phase 7](PHASE_7_STATUS.md) deployed and verified the [public evaluation app](https://tme7d41m5t.vercel.app). [Phase 8](PHASE_8_STATUS.md) published the source and passed full Linux CI. Those records supersede hosting/publication items listed as pending in this earlier local handoff. The own-voice video and final submission remain outstanding.
 
 **Status: local technical handoff verified.** Docker Desktop 4.97.0 / Linux Engine 29.9.2 now runs the application at [127.0.0.1:8000](http://127.0.0.1:8000/). All 90 backend and 43 frontend tests passed from the repaired committed checkout. The complete container verifier, local helper, separate-database restore and normal Desktop restart checks passed. [Machine evidence](local-readiness-evidence.json) records the exact source and image identifiers.
 

@@ -2,6 +2,8 @@
 
 Verified on 30 October 2026. **Complete for the public evaluation pilot.** Open [Wind Desk](https://tme7d41m5t.vercel.app) without an account. The application retains the real January Elexon dataset in managed PostgreSQL. GitHub publication, remote CI, the required video and submission remain Phase 8 work.
 
+**Subsequent publication update:** [Phase 8](PHASE_8_STATUS.md) has now published the source and verified full remote CI. The video/submission remain pending. The deployment/source identifiers below retain their original Phase 7 meaning.
+
 ## Deployed release
 
 | Item | Verified value |

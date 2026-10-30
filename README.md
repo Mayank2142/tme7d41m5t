@@ -2,13 +2,13 @@
 
 Historical GB wind forecast decision support for January 2026. React and TypeScript frontend, Python FastAPI backend, PostgreSQL, Docker for reproducible local execution, and a verified Vercel deployment.
 
-**Live application: [Wind Desk](https://tme7d41m5t.vercel.app). Phase 7 is complete for the public evaluation pilot.** Decision, Accuracy, and Data & Methodology use the accepted Elexon release in a separate managed PostgreSQL database. Inspect eligible forecasts, publication age, retrospective metrics, coverage, and provenance; share the pinned selection or download matching CSV. The seed contains 19,856 forecast versions and 1,488 WIND actuals. At 09:00, all 744 expected targets pair, with MAE 2,022.47 MW. See [deployment evidence](docs/PHASE_7_STATUS.md), [verification commands](docs/VERIFICATION.md), and the [workbench guide](docs/WORKBENCH.md).
+**Live application: [Wind Desk](https://tme7d41m5t.vercel.app).** Decision, Accuracy, and Data & Methodology use the accepted Elexon release in a separate managed PostgreSQL database. Inspect eligible forecasts, publication age, retrospective metrics, coverage, and provenance; share the pinned selection or download matching CSV. The seed contains 19,856 forecast versions and 1,488 WIND actuals. At 09:00, all 744 expected targets pair, with MAE 2,022.47 MW. See [deployment evidence](docs/PHASE_7_STATUS.md), [verification commands](docs/VERIFICATION.md), and the [workbench guide](docs/WORKBENCH.md).
 
 **Public source: [Mayank2142/tme7d41m5t](https://github.com/Mayank2142/tme7d41m5t)** · [GitHub Actions](https://github.com/Mayank2142/tme7d41m5t/actions) · [Recording checklist](docs/RECORDING_CHECKLIST.md).
 
 [![Verify Wind Desk](https://github.com/Mayank2142/tme7d41m5t/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/Mayank2142/tme7d41m5t/actions/workflows/ci.yml)
 
-Phase 8 publication is in progress. The user will record the required customer and technical demonstration in their own voice; no video has been published or assignment submitted yet. Do not submit before the unlisted video exists and its playback has been checked.
+The [full Linux CI run](https://github.com/Mayank2142/tme7d41m5t/actions/runs/41096413755) passed quality and Docker/browser/restart checks. [Publication evidence](docs/PHASE_8_STATUS.md) records the exact verified source and results. **Demonstration video: pending own-voice recording and unlisted upload.** No assignment has been submitted; the required video must exist and its playback must be checked before submission.
 
 The [local handoff](docs/LOCAL_READINESS.md) covers the Docker Desktop repair, standard startup helper, committed-checkout verification and remaining external release work. The [demo script](docs/DEMO_SCRIPT.md) prepares the customer and technical recording.
 
@@ -107,7 +107,7 @@ Without this variable, PostgreSQL integration checks are explicitly skipped. The
 
 The subsequent [local-readiness verification](docs/LOCAL_READINESS.md) repeated all 90 backend and 43 frontend tests from a real committed clone, using Docker PostgreSQL and Node 24. It also verified the complete container runner, the standard local helper, database dump/restore into a separate database, and Docker Desktop restart persistence. A clean-checkout pytest temporary-directory bug was found and fixed. The locked Python production dependency audit reported no known advisories across 31 packages; the fresh npm install also reported zero known vulnerabilities.
 
-The [verification guide](docs/VERIFICATION.md) includes the running-service, browser, packaging, publication-input and isolated-container commands. The [CI workflow](.github/workflows/ci.yml) runs quality checks before image, seed, browser and restart gates, without live Elexon calls. Its remote execution requires the later public repository. The request quota is a per-process backstop; a distributed request limit and verified hosting proxy identity remain operational scaling work.
+The [verification guide](docs/VERIFICATION.md) includes the running-service, browser, packaging, publication-input and isolated-container commands. The [CI workflow](.github/workflows/ci.yml) runs quality checks before image, seed, browser and restart gates, without live Elexon calls. [Phase 8](docs/PHASE_8_STATUS.md) records actual Linux CI execution in the public repository. The request quota is a per-process backstop; a distributed request limit and verified hosting proxy identity remain operational scaling work.
 
 ## Concurrency and security
 

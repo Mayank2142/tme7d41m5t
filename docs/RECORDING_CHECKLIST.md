@@ -33,7 +33,7 @@ For the figures above, **apply 09:45 and restore the full January accuracy range
 ## Review and upload
 
 - Watch the exported file from beginning to end with audio. Check text readability, both parts, absence of secrets, exact visible values and duration ≤10:00. Do not submit an unfinished/inaudible recording.
-- Upload to your YouTube channel and choose **Unlisted** visibility. Suggested title: **Wind Desk — Customer Pilot and Technical Review**. No invented customer name, financial claim or real-time service claim is needed.
+- Upload to your YouTube channel and choose **Unlisted** visibility. Reviewers can watch with the link without a Google account; see [YouTube's visibility guidance](https://support.google.com/youtube/answer/157177?hl=en). Suggested title: **Wind Desk — Customer Pilot and Technical Review**. No invented customer name, financial claim or real-time service claim is needed.
 - Suggested description: “Historical GB wind forecast decision-support pilot using public Elexon WINDFOR and FUELHH WIND data. Part 1: customer demonstration. Part 2: architecture, correctness, testing and deployment. App: https://tme7d41m5t.vercel.app · Source: https://github.com/Mayank2142/tme7d41m5t”. Add chapter timestamps matching the final edit.
 - Verify the final watch link in a logged-out/private window, including audio and the final seconds. Confirm it is unlisted rather than private.
 - Add the **actual** video link and measured duration to README and the submission record. Keep the original file outside Git; generated recordings belong under ignored `output/` or another chosen private recording folder.

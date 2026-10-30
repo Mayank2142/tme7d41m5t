@@ -58,7 +58,7 @@ All base images use verified registry manifest digests; [container metadata](res
 
 `check_repository.py` examines tracked and non-ignored untracked publication inputs, rejects local/private artifacts and recognizes several high-confidence credential formats without printing their values. It supplements human review and the eventual GitHub secret scanner; it is not a proof that arbitrary secrets cannot exist. Lockfiles are committed; exact Playwright and the pinned wheel build backend are included. Update dependencies and base digests deliberately, then rerun the gates.
 
-Workflow validation and local tests are recorded separately from a real GitHub Actions run. The [public repository](https://github.com/Mayank2142/tme7d41m5t) is now published; [its Actions page](https://github.com/Mayank2142/tme7d41m5t/actions) shows actual remote execution. Phase 8 records the verified result once both jobs succeed. Phase 6 used an explicitly labeled clean source copy; the subsequent [local-readiness record](LOCAL_READINESS.md) tracks verification from an actual committed Git clone.
+Workflow validation and local tests are recorded separately from a real GitHub Actions run. The [public repository](https://github.com/Mayank2142/tme7d41m5t) is published; [the full Linux run](https://github.com/Mayank2142/tme7d41m5t/actions/runs/41096413755) passed quality and container jobs. [Phase 8 evidence](PHASE_8_STATUS.md) records the commit, artifacts, test counts and persistence result. The Actions page/badge reports subsequent runs independently. Phase 6 used an explicitly labeled clean source copy; the subsequent [local-readiness record](LOCAL_READINESS.md) tracks verification from an actual committed Git clone.
 
 ## Public request protection
 

@@ -1,7 +1,7 @@
 {
   "phase": 8,
   "verified_date": "2026-10-30",
-  "status": "source_published_ci_verification_in_progress_video_and_submission_pending",
+  "status": "public_source_and_full_remote_ci_verified_own_voice_video_and_submission_pending",
   "repository_url": "https://github.com/Mayank2142/tme7d41m5t",
   "repository_name_anonymous": true,
   "repository_visibility": "public",
@@ -23,7 +23,147 @@
     "correction": "Bind database and DatasetReader to the isolated test engine; deliberately make the unused default engine unreachable."
   },
   "remote_ci": {
-    "status": "pending_verification"
+    "status": "completed",
+    "conclusion": "success",
+    "url": "https://github.com/Mayank2142/tme7d41m5t/actions/runs/41096413755",
+    "run_id": 41096413755,
+    "source_commit": "ebf51c3e05e73d60a5418835d25d53641634f86e",
+    "jobs": [
+      {
+        "name": "quality",
+        "conclusion": "success",
+        "id": 124203233321
+      },
+      {
+        "name": "container",
+        "conclusion": "success",
+        "id": 124204683154
+      }
+    ],
+    "backend_suite": {
+      "tests": 107,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    "frontend_suite": {
+      "tests": 47,
+      "failures": 0,
+      "errors": 0
+    },
+    "python_production_audit": {
+      "audited_packages": 41,
+      "vulnerabilities": 0,
+      "adverse_statuses": 0
+    },
+    "npm_advisories": {
+      "info": 0,
+      "low": 0,
+      "moderate": 0,
+      "high": 0,
+      "critical": 0,
+      "total": 0
+    },
+    "container": {
+      "project": "winddesk-ci",
+      "release_id": "f61cecb1c14d91cfc32f10c74a9945fd2cf7f1851abd8ca6b0eb3f3e8975b052",
+      "build_sha": "ebf51c3e05e73d60a5418835d25d53641634f86e",
+      "image_id": "sha256:838ba99cf94b4c403d1baae495c5f0dc7e01d3e2d72292fffb8256a703048978",
+      "non_root": true,
+      "read_only_root": true,
+      "capabilities_dropped": true,
+      "seed_replay": "passed",
+      "database_and_web_restart": "passed",
+      "stable_fingerprint": "5e7a3edc44a364269f26a956d2ce49191df4690315f5aa969ee1bd34f157dbaa"
+    },
+    "browser": {
+      "passed": true,
+      "base_url": "http://127.0.0.1:18000/",
+      "release_id": "f61cecb1c14d91cfc32f10c74a9945fd2cf7f1851abd8ca6b0eb3f3e8975b052",
+      "downloads": [
+        {
+          "filename": "winddesk-decision-2026-01-31-2026-01-31-e00706c0e6a3.csv",
+          "bytes": 17524,
+          "sha256": "92d762fd91f02e5c4b156ce65d3c4d0eacad134b12690426a73f2b2c5f565b11",
+          "context_id": "e00706c0e6a322059f5d4130a34fac8626df9e6f8ab6a60d110122f84252dbe1"
+        },
+        {
+          "filename": "winddesk-accuracy-2026-01-01-2026-01-31-040ca4dc18b4.csv",
+          "bytes": 1272473,
+          "sha256": "661691a0b6ad9a3723ecdfa7bbe0f32a33f1bfc3ea6e1654cf6f678c618f32d1",
+          "context_id": "040ca4dc18b4c5b357d1fe3ec351aaf4affb10759e713ef043d75873edd67ae1"
+        }
+      ],
+      "console_errors": [],
+      "viewports": [
+        1440,
+        390,
+        320
+      ],
+      "checks": [
+        "cutoff draft/apply and source eligibility",
+        "forecast-only decision requests",
+        "self-hosted wind imagery loads and compact header preserves the analysis",
+        "keyboard chart inspection",
+        "exact browser CSV bytes",
+        "four API-derived metrics",
+        "daily drill-down",
+        "pinned provenance and reload",
+        "compact reference dialogs, exact IDs, copy controls, modal focus and Escape",
+        "reference dialogs fit 390/320-pixel screens",
+        "reduced motion disables photographic reveal and scroll decoration",
+        "narrow layout and keyboard table focus"
+      ]
+    },
+    "security_http": {
+      "base_url": "http://127.0.0.1:18000",
+      "checks": [
+        {
+          "check": "untrusted host",
+          "status": 400
+        },
+        {
+          "check": "cross-site browser fetch",
+          "status": 403
+        },
+        {
+          "check": "oversized URI",
+          "status": 414
+        },
+        {
+          "check": "unwanted request body",
+          "status": 413
+        },
+        {
+          "check": "write method",
+          "status": 405
+        },
+        {
+          "check": "private environment file",
+          "status": 404
+        },
+        {
+          "check": "source map",
+          "status": 404
+        },
+        {
+          "check": "path traversal",
+          "status": 404
+        },
+        {
+          "check": "SQL injection",
+          "status": 422
+        },
+        {
+          "check": "script injection",
+          "status": 422
+        }
+      ],
+      "passed": 10
+    },
+    "before_and_after_fingerprint": "5e7a3edc44a364269f26a956d2ce49191df4690315f5aa969ee1bd34f157dbaa",
+    "artifact_retention_days": 7,
+    "qualifications": "Vercel is deployed from the recorded Phase 7 source. Phase 8 changed test setup and documentation only; the public-link record compares 89 identical runtime inputs."
   },
   "video": {
     "narration_preference": "user_own_voice",

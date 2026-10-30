@@ -1,6 +1,6 @@
 # Implementation Backlog and Acceptance Evidence
 
-Use this backlog with the [implementation plan](../IMPLEMENTATION_PLAN.md). Phases 1–5 are implemented locally; Phase 6 consolidates the real-data journey, tests, packaging, image checks and CI. [Phase 6 status](PHASE_6_STATUS.md) distinguishes local verification from pending remote gates. The research report does not substitute for application checks. Record real elapsed effort, including research, against the sixteen-hour assignment limit.
+Use this backlog with the [implementation plan](../IMPLEMENTATION_PLAN.md). Phases 1–7 are implemented and verified for the public historical pilot; Phase 8 has published the anonymous-name source repository and records actual remote execution in [its status/evidence](PHASE_8_STATUS.md). The required own-voice unlisted video and final submission remain outstanding. The research report does not substitute for application checks. Actual cumulative effort against the sixteen-hour assignment limit has not been fully reconciled.
 
 Follow [Project phases](PROJECT_PHASES.md) for the execution order, effort allocations, and phase completion gates. The P0 identifiers below map to those phases.
 
@@ -8,8 +8,8 @@ Follow [Project phases](PROJECT_PHASES.md) for the execution order, effort alloc
 
 | ID | Work item | Depends on | Completion evidence |
 | --- | --- | --- | --- |
-| P0-01 | Confirm source schema, January mapping, comparison policy, and hosting route | None | Policies recorded; user selected Vercel; account, database, and budget verification outstanding |
-| P0-02 | Bootstrap API, React, database, and quality tools | P0-01 policies | Local browser/API connection, configuration, tools, and live PostgreSQL verified; external hosting remains separate |
+| P0-01 | Confirm source schema, January mapping, comparison policy, and hosting route | None | Pilot policies recorded; Vercel account and separate Neon Free database verified; no paid upgrade enabled; operational commercial use requires separate approval |
+| P0-02 | Bootstrap API, React, database, and quality tools | P0-01 policies | Local and hosted browser/API connections, configuration and PostgreSQL verified; see Phase 7 |
 | P0-03 | Implement raw archive and versioned persistence | P0-02 | Verified in Phase 2: PostgreSQL migrations, immutable evidence, duplicate-safe import, frozen membership, archive recovery |
 | P0-04 | Backfill required January decision data and produce seed | P0-03 | Verified in Phase 2: real seed, accepted release, full coverage, source manifest, and persisted readiness |
 | P0-05 | Implement calendar and latest eligible source-key selection | P0-03 | Verified in Phase 3: local calendar, inclusive cutoff, mixed issues, latest invalid/conflict, no later decision evidence |
@@ -17,12 +17,12 @@ Follow [Project phases](PROJECT_PHASES.md) for the execution order, effort alloc
 | P0-07 | Implement read APIs, analysis context, and export | P0-04, P0-06 | Verified in Phase 4: typed filters/results, forecast-only Decision, canonical contexts, pinned quality/CSV, independent export metric recomputation, real PostgreSQL reads |
 | P0-08 | Implement Decision view | P0-07 | Verified Phase 5: real native forecasts, January/February boundary, draft/applied cutoff, publication/age/coverage, keyboard inspection and exact source table |
 | P0-09 | Implement Accuracy and Methodology views | P0-07 | Verified Phase 5: metrics/coverage, original half-hour actuals, signed errors, daily/large-miss review, method/provenance, shared filters, guarded downloads |
-| P0-10 | Complete integration and browser verification | P0-08, P0-09 | Verified Phase 6: 90 backend tests including five PostgreSQL tests; 43 frontend tests; independent CSV arithmetic and real-browser journey/downloads; keyboard and narrow-layout checks |
-| P0-11 | Finish Docker startup and CI | P0-02, P0-10 | Pinned image and isolated image/seed/browser/restart gate; local outcome in Phase 6 status; workflow passes actionlint; remote run awaits the public committed repository |
-| P0-12 | Deploy accepted release and verify durability | P0-11 | HTTPS, readiness, source context, export, and restart persistence checked |
-| P0-13 | Complete README, attribution, architecture and operations handoff | P0-12 | Another developer follows startup; source rights checked; AI tools disclosed |
-| P0-14 | Record customer and technical demonstration | P0-12, P0-13 | Unlisted video below ten minutes; each part below five; audio and links checked |
-| P0-15 | Verify public artifacts and submit | P0-14 | Incognito checks, exact release commit, actual form confirmation |
+| P0-10 | Complete integration and browser verification | P0-08, P0-09 | Latest 107 backend/47 frontend tests, independent CSV arithmetic and actual logged-out browser journeys, keyboard and 320/390/1440-pixel layouts; Phase 8 corrects clean-runner test isolation assumptions |
+| P0-11 | Finish Docker startup and CI | P0-02, P0-10 | Local startup and isolated image/seed/browser/restart gates verified; actual Linux job results and immutable commit links recorded in Phase 8 |
+| P0-12 | Deploy accepted release and verify durability | P0-11 | Verified public HTTPS, readiness, context/export and accepted-release persistence across application replacement; see Phase 7 |
+| P0-13 | Complete README, attribution, architecture and operations handoff | P0-12 | Startup and directory map, source attribution, AI disclosure, architecture/code map and operator guide included; actual video link depends on P0-14 |
+| P0-14 | Record customer and technical demonstration | P0-12, P0-13 | **Pending user recording:** own-voice script/checklist prepared; final unlisted video, ≤10-minute duration and audio/playback checks required |
+| P0-15 | Verify public artifacts and submit | P0-14 | Public app/source and anonymous clone checked; **pending** video, final link checks and actual company submission confirmation |
 
 At roughly four hours, require P0-04 through P0-06 as a working data/domain spike. At eight hours, require a working analyst journey through the core APIs and UI. At twelve hours, stop optional work and require the core deployment so the remaining time protects fixes and submission artifacts. Resolve hosting access during P0-01, not at P0-12.
 
@@ -60,13 +60,13 @@ Populate this register during implementation; an empty entry means the check is 
 | Final decision and comparison policies | Methodology and decision records | Implemented pilot rules in `METHODOLOGY.md`; operational client approval outstanding |
 | Actual-effort log | Repository work log | Recorded work windows; earlier exact effort remains unknown and is not invented |
 | Accepted real-data release and manifest | Seed/archive and data-quality report | Verified Phase 2; same release used for Phase 3 calculations |
-| Domain, integration, and browser results | CI run and local verification record | Phase 6: 90 backend and 43 frontend tests, independent service/CSV checks, actual browser journey/downloads, keyboard and narrow-layout checks pass; remote CI awaits publication |
+| Domain, integration, and browser results | CI run and local verification record | Latest 107 backend/47 frontend tests; source-independent CSV checks and actual browser journeys; public Linux execution recorded in Phase 8 |
 | Source data attribution confirmed | README and attribution file | Verified Phase 2 and included in source/analysis artifacts |
-| Application commit and image digest | Release notes | Local source commit and tested image recorded in local-readiness evidence; public release remains later work |
-| Public application and restart check | Deployment record | Planned |
-| Fresh Docker startup | Handoff verification record | Verified from actual committed clone in local-readiness evidence, including real seed, browser/CSV, replay/restart and Desktop recovery; remote CI remains a publication check |
-| Public repository and actual README links | Submission checklist | Planned |
-| Unlisted video and duration | Submission checklist | Planned |
-| Incognito access and form confirmation | Submission checklist | Planned |
+| Application commit and image digest | Release notes | Local image evidence retained; Phase 7 records actual Vercel source/deployment IDs (Vercel builds from source); CI records its image revision and persistence checks |
+| Public application and restart check | Deployment record | Verified in Phase 7; accepted release and fingerprints unchanged across replacement deployment |
+| Fresh Docker startup | Handoff verification record | Verified from committed checkout and retained local evidence, including seed, browser/CSV, replay/restart, separate-database restore and Desktop recovery |
+| Public repository and actual README links | Submission checklist | Published and anonymously cloned; app/source/guide links checked without cookies or Authorization |
+| Unlisted video and duration | Submission checklist | Pending own-voice recording, upload and measured duration |
+| Incognito access and form confirmation | Submission checklist | App/source access verified; video and final company confirmation pending |
 
 No URL, test pass, deployment identifier, or completion status should be invented to fill the register. The final handoff explains any outstanding item and its practical effect.
