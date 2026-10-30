@@ -2,9 +2,9 @@
 
 Proposed assignment delivery · 29 October 2026
 
-Implementation update: the real-data pipeline, calculation engine, typed APIs/CSV and three-view React interface are implemented. [Phase 6 evidence](PHASE_6_STATUS.md) records 90 backend and 43 frontend tests, real PostgreSQL checks, independent CSV arithmetic, browser journeys and container seed/restart verification. At 09:00, all 744 source-time targets pair, with MAE 2,022.47 MW. Pinned links preserve dates, cutoff, release and download context. [Local readiness](LOCAL_READINESS.md) tracks the Docker Desktop repair and committed-checkout handoff. Public deployment, remote CI, repository publication and the final video remain release actions; this is not operational utility acceptance.
+Implementation update: the real-data pipeline, calculation engine, typed APIs/CSV and three-view React interface are implemented and deployed at [Wind Desk](https://tme7d41m5t.vercel.app). The [public source](https://github.com/Mayank2142/tme7d41m5t) has an anonymous repository name. [Phase 7 evidence](PHASE_7_STATUS.md) records 107 backend and 47 frontend tests, PostgreSQL checks, independent CSV arithmetic, logged-out browser journeys and hosted replacement persistence. At 09:00, all 744 source-time targets pair, with MAE 2,022.47 MW. Pinned links preserve dates, cutoff, release and download context. Remote CI is being verified. The required own-voice unlisted video and final submission remain outstanding; this is not operational utility acceptance.
 
-This project will give a UK utility's procurement team a clear view of the Elexon wind forecast available before a day-ahead purchase decision and a reproducible assessment of its historical error. The assignment delivery is a deployed React and Python application, Docker setup, public source repository, and a short customer and technical demonstration within the sixteen-hour effort limit.
+This project gives a UK utility's procurement team a clear view of the Elexon wind forecast available before a day-ahead purchase decision and a reproducible assessment of its historical error. The assignment requires a deployed React/Python application, Docker setup, public source and a short customer/technical demonstration. The original sixteen-hour total-effort limit remains part of the brief; cumulative actual effort has not been fully reconciled.
 
 ## Business value
 
@@ -22,7 +22,7 @@ January is interpreted as the month of purchase decisions. Consequently, require
 
 ## Proposed implementation
 
-Use React with TypeScript for the portal and FastAPI for the Python service, with PostgreSQL storing source revisions and immutable dataset releases. Docker provides a reproducible local application. The user selected an existing Vercel account during Phase 1; the prepared Vercel route serves compiled React through FastAPI from one origin with external PostgreSQL. Account authentication, plan eligibility, database availability, and cost remain to be verified before deployment.
+React with TypeScript provides the portal and FastAPI provides the Python service, with PostgreSQL storing source revisions and immutable dataset releases. Docker provides a reproducible local application. The verified Vercel deployment serves compiled React and the API from one origin, backed by a separate Neon Free PostgreSQL database in London. The function uses a restricted reader and verified TLS; the selected free plans have no paid upgrade enabled. [Deployment status](PHASE_7_STATUS.md) records the scope, cost ownership and operational limits.
 
 Source ingestion runs separately from user requests. Forecasts are selected by publication time for each target, and all results include release, policy, and source provenance. A failed refresh preserves the previous accepted release. The public pilot has read-only routes and public source data; administrative ingestion remains an operator command.
 
@@ -36,7 +36,7 @@ The submission will demonstrate:
 - A fresh Docker startup, passing critical tests, working public HTTPS application, and persistence after restart.
 - A readable public repository, precise README with AI disclosure, and a playable unlisted video under ten minutes.
 
-These are proposed acceptance criteria. They will be marked complete only when the associated build and evidence exist.
+Application, data, local/container and hosted verification evidence exist. Repository publication is complete, remote CI is being verified, and the recording is prepared in the [script](DEMO_SCRIPT.md) and [checklist](RECORDING_CHECKLIST.md). The mandatory video and final submission are incomplete until actual artifacts and confirmation exist.
 
 ## Delivery and production path
 

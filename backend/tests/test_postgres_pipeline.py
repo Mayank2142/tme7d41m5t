@@ -27,6 +27,7 @@ from backend.app.persistence.database import create_database_engine
 from backend.app.persistence.migrate import migrate
 from backend.app.persistence.models import Base, ForecastVersion, IngestionRun
 from backend.app.persistence.permissions import configure_reader
+from backend.app.persistence.reader import DatasetReader
 from backend.app.persistence.releases import (
     dataset_state,
     export_archive,
@@ -189,17 +190,34 @@ def test_seed_retry_immutability_failed_candidate_and_replay(database, tmp_path,
         )
 
 
-def test_readiness_and_metadata_follow_the_active_release(database, tmp_path):
-    app = create_app(Settings(_env_file=None, environment="test", frontend_dist=tmp_path))
+@pytest.fixture
+def database_api(database, tmp_path):
+    # The default engine is deliberately unreachable: a reader accidentally
+    # retaining it must fail even when a developer has a seeded local database.
+    app = create_app(
+        Settings(
+            _env_file=None,
+            environment="test",
+            frontend_dist=tmp_path,
+            database_url=database.url.set(port=1).render_as_string(hide_password=False),
+        )
+    )
     unused = app.state.database
+    unused_reader = app.state.dataset_reader
     with TestClient(app) as client:
         app.state.database = database
+        app.state.dataset_reader = DatasetReader(database)
         try:
-            ready = client.get("/health/ready")
-            config = client.get("/api/v1/config")
-            quality = client.get("/api/v1/data-quality")
+            yield client
         finally:
             app.state.database = unused
+            app.state.dataset_reader = unused_reader
+
+
+def test_readiness_and_metadata_follow_the_active_release(database_api):
+    ready = database_api.get("/health/ready")
+    config = database_api.get("/api/v1/config")
+    quality = database_api.get("/api/v1/data-quality")
     assert ready.status_code == 200
     assert config.json()["stage"] == "data_ready"
     assert config.json()["dataset"]["forecast_versions"] == 19856
@@ -223,47 +241,36 @@ def test_analysis_adapter_loads_only_accepted_release_members(database):
         resolve_release(database, "abbreviated-id")
 
 
-def test_public_analysis_json_csv_quality_and_read_only_behavior(database, tmp_path):
-    app = create_app(Settings(_env_file=None, environment="test", frontend_dist=tmp_path))
-    unused = app.state.database
+def test_public_analysis_json_csv_quality_and_read_only_behavior(database, database_api):
     with database.connect() as connection:
         before = connection.scalar(select(func.count()).select_from(IngestionRun))
-    with TestClient(app) as client:
-        app.state.database = database
-        try:
-            decision = client.get("/api/v1/decision-view?decision_date=2026-01-31")
-            assert decision.status_code == 200, decision.text
-            assert "actual" not in decision.text
-            assert decision.json()["analysis"]["window"]["delivery_date"] == "2026-02-01"
-            accuracy = client.get(
-                "/api/v1/accuracy?decision_from=2026-01-01&decision_to=2026-01-31"
-            )
-            assert accuracy.status_code == 200, accuracy.text
-            body = accuracy.json()
-            export = client.get(body["export_url"])
-            assert export.status_code == 200
-            rows = list(csv.DictReader(io.StringIO(export.text)))
-            paired = [row for row in rows if row["used_in_metrics"] == "true"]
-            assert len(rows) == 1488 and len(paired) == 744
-            assert sum(abs(int(row["error_mw"])) for row in paired) / 744 == pytest.approx(
-                body["analysis"]["metrics"]["mae_mw"]
-            )
-            assert export.headers["x-analysis-context-id"] == body["analysis_context_id"]
-            quality = client.get(body["source"]["data_quality_url"])
-            assert quality.status_code == 200
-            assert quality.json()["release_id"] == body["context"]["release_id"]
-            assert len(quality.json()["raw_batches"]) == 10
-            with database.connect() as connection:
-                rejected_id = connection.scalar(
-                    text("SELECT id FROM dataset_release WHERE status='rejected' LIMIT 1")
-                )
-            if rejected_id is not None:
-                rejected = client.get("/api/v1/data-quality?release_id=" + rejected_id)
-                assert (
-                    rejected.status_code == 404 and rejected.json()["code"] == "RELEASE_NOT_FOUND"
-                )
-        finally:
-            app.state.database = unused
+    decision = database_api.get("/api/v1/decision-view?decision_date=2026-01-31")
+    assert decision.status_code == 200, decision.text
+    assert "actual" not in decision.text
+    assert decision.json()["analysis"]["window"]["delivery_date"] == "2026-02-01"
+    accuracy = database_api.get("/api/v1/accuracy?decision_from=2026-01-01&decision_to=2026-01-31")
+    assert accuracy.status_code == 200, accuracy.text
+    body = accuracy.json()
+    export = database_api.get(body["export_url"])
+    assert export.status_code == 200
+    rows = list(csv.DictReader(io.StringIO(export.text)))
+    paired = [row for row in rows if row["used_in_metrics"] == "true"]
+    assert len(rows) == 1488 and len(paired) == 744
+    assert sum(abs(int(row["error_mw"])) for row in paired) / 744 == pytest.approx(
+        body["analysis"]["metrics"]["mae_mw"]
+    )
+    assert export.headers["x-analysis-context-id"] == body["analysis_context_id"]
+    quality = database_api.get(body["source"]["data_quality_url"])
+    assert quality.status_code == 200
+    assert quality.json()["release_id"] == body["context"]["release_id"]
+    assert len(quality.json()["raw_batches"]) == 10
+    with database.connect() as connection:
+        rejected_id = connection.scalar(
+            text("SELECT id FROM dataset_release WHERE status='rejected' LIMIT 1")
+        )
+    if rejected_id is not None:
+        rejected = database_api.get("/api/v1/data-quality?release_id=" + rejected_id)
+        assert rejected.status_code == 404 and rejected.json()["code"] == "RELEASE_NOT_FOUND"
     with database.connect() as connection:
         after = connection.scalar(select(func.count()).select_from(IngestionRun))
     assert after == before

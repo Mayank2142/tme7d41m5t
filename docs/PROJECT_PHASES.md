@@ -2,7 +2,7 @@
 
 This is the execution sequence for the [implementation plan](../IMPLEMENTATION_PLAN.md). Phases 1–8 were planned against a sixteen-hour total-effort budget, including contingency. Actual cumulative effort has not been fully reconciled; the estimates below do not establish compliance with that limit. Phases 9–11 describe subsequent work before a utility uses the application operationally; estimate and authorize that work separately.
 
-Phases 1–7 are implemented and verified for the evaluation pilot, including later frontend and security enhancements. The [public app](https://tme7d41m5t.vercel.app) passed logged-out analyst, CSV, security and replacement-deployment persistence checks. [Phase 7 status](PHASE_7_STATUS.md), [local readiness](LOCAL_READINESS.md) and [security/scaling](SECURITY_AND_SCALING.md) record the executed evidence. Phase 8 publication, remote CI and video/submission remain outstanding. The sixteen-hour limit is not a fresh budget starting after planning.
+Phases 1–7 are implemented and verified for the evaluation pilot, including later frontend and security enhancements. The [public app](https://tme7d41m5t.vercel.app) passed logged-out analyst, CSV, security and replacement-deployment persistence checks. [Phase 7 status](PHASE_7_STATUS.md), [local readiness](LOCAL_READINESS.md) and [security/scaling](SECURITY_AND_SCALING.md) record the executed evidence. Phase 8 is in progress: the anonymous-name [public repository](https://github.com/Mayank2142/tme7d41m5t) is published and remote CI is being checked. The own-voice video and submission remain outstanding. The sixteen-hour limit is not a fresh budget starting after planning.
 
 ## Phase overview
 
@@ -200,4 +200,4 @@ Confirm the venue/product rules, internal cutoff, delivery boundaries, source co
 
 ## Current position and next action
 
-Phases 1–7 and the later frontend/security enhancements are implemented. The public evaluation pilot is available at [Wind Desk](https://tme7d41m5t.vercel.app); [Phase 7 evidence](PHASE_7_STATUS.md) records its verified deployment. Phase 8 is next: review and publish the anonymous GitHub repository, run remote CI, record/upload the required unlisted video, verify all final links, and complete submission. Client operational use remains subject to Phases 9–11.
+Phases 1–7 and the later frontend/security enhancements are implemented. The public evaluation pilot is available at [Wind Desk](https://tme7d41m5t.vercel.app), with reviewed history published in the [anonymous-name repository](https://github.com/Mayank2142/tme7d41m5t). Phase 8 is in progress: verify remote CI, record/upload the required own-voice unlisted video using the [recording checklist](RECORDING_CHECKLIST.md), verify all final links, and complete submission. Client operational use remains subject to Phases 9–11.

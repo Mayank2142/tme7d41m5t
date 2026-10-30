@@ -1,6 +1,6 @@
 # Customer and technical demonstration
 
-Prepared locally on 30 October 2026, Asia/Calcutta. This is a recording script, not a submitted video. Record the final deployed app after its public URL has been checked. Keep the full recording under ten minutes, with each initial overview under five minutes. Aim for about nine minutes including pauses and transitions.
+Prepared on 30 October 2026, Asia/Calcutta, for the user's own voice recording. This is a recording script, not a submitted video. Use the verified [public app](https://tme7d41m5t.vercel.app) and [repository](https://github.com/Mayank2142/tme7d41m5t). Keep the full recording under ten minutes, with each part under five minutes. Aim for about nine minutes including pauses and transitions. The [recording checklist](RECORDING_CHECKLIST.md) gives exact start links, code tabs, a timing budget and upload checks.
 
 Use a clean browser, 1440-pixel window and readable zoom. Start with January 31, the 09:00 cutoff and the accepted real release. Avoid showing private account pages, terminals containing credentials or Docker's unrelated workloads. Verify the spoken numbers against the displayed selection before recording.
 
@@ -50,15 +50,17 @@ Use a clean browser, 1440-pixel window and readable zoom. Start with January 31,
 
 **7:20–8:20 · Show verification evidence and local startup.**
 
-“The verification record includes 90 backend tests, including five PostgreSQL integration tests, and 43 frontend tests. Use the latest local-readiness record for additional results. A separate service gate independently recalculates metrics from the CSV. The browser gate exercises cutoff changes, keyboard inspection, daily review, exact downloads, reload and narrow layouts.”
+“The latest verification record includes 107 backend tests with no skips against PostgreSQL, and 47 frontend tests. A separate service gate independently recalculates metrics from the CSV. The public app passed a fresh logged-out Chrome journey, cutoff changes, keyboard inspection, daily review, exact downloads, reload and mobile layouts. A replacement Vercel deployment retained the same release and analysis fingerprints.”
 
-“The container runs as a non-root user with a read-only root filesystem, temporary scratch space and dropped capabilities. The one-off initializer imports the real seed. Seed replay and database/application restarts are checked against stable results. The CI workflow uses pinned Actions and image inputs, minimal repository permissions and retained failure evidence. A prepared workflow is distinguished from an actual remote run.”
+“The local container runs as a non-root user with a read-only root filesystem, temporary scratch space and dropped capabilities. The one-off initializer imports the real seed. The public Vercel function builds from source and uses a separate restricted PostgreSQL reader over verified TLS. Two free edge rules reject write requests and private-file probes. The CI workflow uses pinned Actions and image inputs, minimal repository permissions and retained failure evidence. Its published Actions run makes the complete workflow reviewable.”
+
+Before recording the preceding CI sentence, confirm a successful run for the latest public commit in the repository's Actions tab. If it is pending or failed, resolve it first and use the final evidence record.
 
 **8:20–9:00 · Explain review boundaries and next steps.**
 
-“The README provides startup commands, the directory map, source attribution and explicit AI disclosure. Verification scripts and methodology explain how to reproduce the result. Public hosting and the final video links are added only when they exist.”
+“The README provides the live application link, startup commands, directory map, source attribution and explicit AI disclosure. Verification scripts and methodology explain how to reproduce the result. The public repository preserves the reviewed history, and the deployment record identifies the exact source and dataset used by the hosted app.”
 
-“Operational launch still needs client cutoff and domain approval, host-level quotas and trusted proxy identity, identity/access controls, scheduled ingestion, tested recovery, measured performance and support ownership. Those are recorded as later work. The assignment demonstrates a traceable and tested pilot; it does not claim operational acceptance.”
+“Operational launch still needs client cutoff and domain approval, a distributed request quota and trusted proxy identity, client-approved access controls, scheduled ingestion, measured hosted recovery and sustained capacity, and support ownership. Those are recorded as later work. This public historical pilot demonstrates traceable forecasts and reproducible errors; operational acceptance is a separate decision.”
 
 ## Before submission
 

@@ -1,0 +1,56 @@
+{
+  "phase": 8,
+  "verified_date": "2026-10-30",
+  "status": "source_published_ci_verification_in_progress_video_and_submission_pending",
+  "repository_url": "https://github.com/Mayank2142/tme7d41m5t",
+  "repository_name_anonymous": true,
+  "repository_visibility": "public",
+  "default_branch": "main",
+  "public_application": "https://tme7d41m5t.vercel.app",
+  "initial_publication_review": {
+    "passed": true,
+    "reachable_commits": 7,
+    "unique_blobs": 220,
+    "text_blobs": 216,
+    "findings": [],
+    "scope": "Working-tree publication scan plus all reachable history for private paths and recognized credential patterns; public data/image inputs reviewed separately."
+  },
+  "workflow_syntax": "passed_actionlint",
+  "initial_remote_run": {
+    "url": "https://github.com/Mayank2142/tme7d41m5t/actions/runs/41093545827",
+    "result": "failed_2_postgresql_api_tests_105_passed",
+    "cause": "Integration tests changed the database state but retained a reader bound to the default database; local seeded data masked the isolation error.",
+    "correction": "Bind database and DatasetReader to the isolated test engine; deliberately make the unused default engine unreachable."
+  },
+  "remote_ci": {
+    "status": "pending_verification"
+  },
+  "video": {
+    "narration_preference": "user_own_voice",
+    "script": "docs/DEMO_SCRIPT.md",
+    "recording_checklist": "docs/RECORDING_CHECKLIST.md",
+    "target_minutes": 9,
+    "maximum_minutes": 10,
+    "url": null,
+    "recorded": false,
+    "unlisted_upload_verified": false
+  },
+  "submission": {
+    "complete": false,
+    "destination_provided": false,
+    "confirmation": null
+  },
+  "runtime_application_changed_in_phase_8": false,
+  "qualifications": [
+    "Phase 8 is incomplete until the required real video, public playback checks and final submission exist.",
+    "Cumulative effort against the original sixteen-hour limit is not reconciled.",
+    "Public pilot verification does not establish client operational production acceptance."
+  ],
+  "local_isolation_regression": {
+    "passed": true,
+    "initial_public_tables": 0,
+    "tests": 2,
+    "default_app_engine_unreachable": true,
+    "temporary_database_removed": true
+  }
+}
