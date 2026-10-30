@@ -1,0 +1,209 @@
+:root {
+  --motion-ease: cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+.scroll-progress {
+  display: none;
+  position: fixed;
+  inset: 0 0 auto;
+  height: 3px;
+  z-index: 80;
+  pointer-events: none;
+  background: linear-gradient(90deg, #195d57, #6bb7a2, #bca067);
+  transform: scaleX(var(--scroll-progress, 0));
+  transform-origin: left;
+}
+
+.cursor-effect {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  pointer-events: none;
+  overflow: clip;
+  contain: strict;
+  opacity: 0;
+  transition: opacity 220ms ease;
+}
+
+.cursor-effect[data-visible="true"] {
+  opacity: 1;
+}
+
+.cursor-ring,
+.cursor-dot {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 0;
+}
+
+.cursor-ring::after {
+  content: "";
+  display: block;
+  width: 34px;
+  height: 34px;
+  border: 1px solid #287d7080;
+  border-radius: 50%;
+  background: #5eb49b0b;
+  transform: translate(-50%, -50%);
+  transition:
+    width 380ms var(--motion-ease),
+    height 380ms var(--motion-ease),
+    border-color 320ms ease,
+    background 320ms ease;
+}
+
+.cursor-dot::after {
+  content: "";
+  display: block;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: #195d57a6;
+  transform: translate(-50%, -50%);
+}
+
+.cursor-effect[data-interactive="true"] .cursor-ring::after {
+  width: 48px;
+  height: 48px;
+  border-color: #248575a6;
+  background: #5eb49b10;
+}
+
+.cursor-effect[data-pressed="true"] .cursor-ring::after {
+  width: 26px;
+  height: 26px;
+  border-color: #195d57;
+}
+
+@keyframes surface-enter {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes chart-sweep {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+
+@keyframes wind-stroke {
+  from {
+    stroke-dashoffset: 90;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .scroll-progress {
+    display: block;
+    transition: transform 350ms linear;
+  }
+
+  .page-intro {
+    animation: surface-enter 900ms var(--motion-ease) both;
+  }
+
+  button {
+    transition:
+      transform 360ms var(--motion-ease),
+      background 320ms ease,
+      border-color 320ms ease,
+      box-shadow 320ms ease;
+  }
+
+  button:active:not(:disabled) {
+    transform: translateY(1px) scale(0.98);
+  }
+
+  input {
+    transition:
+      border-color 320ms ease,
+      box-shadow 320ms ease;
+  }
+
+  .metric,
+  .method-card {
+    transition:
+      transform 440ms var(--motion-ease),
+      box-shadow 440ms ease,
+      border-color 440ms ease;
+  }
+
+  .view-tabs a {
+    position: relative;
+    transition: color 320ms ease;
+  }
+
+  .view-tabs a::after {
+    content: "";
+    position: absolute;
+    inset: auto 0 -2px;
+    height: 2px;
+    background: #247b6d;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 500ms var(--motion-ease);
+  }
+
+  .view-tabs a[aria-current="page"] {
+    border-bottom-color: transparent;
+  }
+
+  .view-tabs a[aria-current="page"]::after {
+    transform: scaleX(1);
+  }
+
+  .chart-reveal {
+    transform-box: fill-box;
+    transform-origin: left;
+    animation: chart-sweep 1450ms var(--motion-ease) both;
+  }
+
+  .mini-bar {
+    transform-origin: left;
+    animation: chart-sweep 1100ms var(--motion-ease) both;
+  }
+
+  .notice,
+  .feedback,
+  details[open] > :not(summary) {
+    animation: surface-enter 460ms var(--motion-ease) both;
+  }
+}
+
+@media (hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference) {
+  .cursor-effect {
+    display: block;
+  }
+
+  button:hover:not(:disabled) {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 14px #1c514316;
+  }
+
+  .metric:hover,
+  .method-card:hover {
+    transform: translateY(-3px);
+    border-color: #9bc7bc;
+    box-shadow: 0 12px 26px #1c514311;
+  }
+
+  .brand:hover .brand-mark svg path {
+    stroke-dasharray: 90;
+    animation: wind-stroke 1200ms var(--motion-ease) both;
+  }
+}

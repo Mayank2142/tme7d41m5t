@@ -95,6 +95,16 @@ def main():
                 str(before),
             ]
         )
+        run(
+            [
+                sys.executable,
+                "scripts/verify_security.py",
+                "--base-url",
+                base,
+                "--output",
+                str(output / "security-http.json"),
+            ]
+        )
         npm = shutil.which("npm.cmd" if os.name == "nt" else "npm")
         assert npm, "npm is required for the real browser gate"
         browser_env = environment | {

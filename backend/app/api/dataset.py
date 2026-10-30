@@ -11,4 +11,4 @@ def get_dataset_state(request: Request) -> DatasetState:
 
 
 def get_dataset_reader(request: Request) -> DatasetReader:
-    return DatasetReader(request.app.state.database)
+    return request.app.state.dataset_reader

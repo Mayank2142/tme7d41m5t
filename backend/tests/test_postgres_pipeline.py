@@ -23,8 +23,10 @@ from backend.app.domain.analysis import analyze_accuracy, analyze_decision
 from backend.app.ingestion.archive import RawBatch, canonical, read_archive, write_archive
 from backend.app.main import create_app
 from backend.app.persistence.analysis import load_analysis_sources, resolve_release
+from backend.app.persistence.database import create_database_engine
 from backend.app.persistence.migrate import migrate
 from backend.app.persistence.models import Base, ForecastVersion, IngestionRun
+from backend.app.persistence.permissions import configure_reader
 from backend.app.persistence.releases import (
     dataset_state,
     export_archive,
@@ -33,6 +35,57 @@ from backend.app.persistence.releases import (
 )
 
 SEED = Path("data/snapshots/january_2026.json.gz")
+
+
+def test_web_login_is_read_only_even_if_session_read_only_is_disabled(database):
+    role = "winddesk_reader_test_" + uuid4().hex
+    reader_url = database.url.set(username=role, password="test-" + uuid4().hex)
+    with database.connect() as connection:
+        schema = connection.scalar(text("SELECT current_schema()"))
+    reader = None
+    try:
+        configure_reader(database, reader_url.render_as_string(hide_password=False))
+        configure_reader(database, reader_url.render_as_string(hide_password=False))
+        reader = create_engine(
+            reader_url,
+            connect_args={"options": f"-c search_path={schema}"},
+            isolation_level="AUTOCOMMIT",
+            hide_parameters=True,
+        )
+        with reader.connect() as connection:
+            assert connection.scalar(text("SHOW default_transaction_read_only")) == "on"
+            assert connection.scalar(text("SHOW statement_timeout")) == "5s"
+            assert connection.scalar(text("SELECT count(*) FROM forecast_version")) > 0
+            assert connection.scalar(text("SELECT id FROM raw_batch LIMIT 1"))
+            connection.execute(text("SET default_transaction_read_only = off"))
+            for statement in (
+                "UPDATE active_release SET name = name WHERE false",
+                "INSERT INTO active_release SELECT * FROM active_release WHERE false",
+                "DELETE FROM active_release WHERE false",
+                "CREATE TABLE forbidden_table (id integer)",
+                "SELECT payload_gzip FROM raw_batch LIMIT 1",
+                "SELECT * FROM ingestion_run LIMIT 1",
+            ):
+                with pytest.raises(DBAPIError) as denied:
+                    connection.execute(text(statement))
+                assert denied.value.orig.sqlstate == "42501"
+        guarded = create_database_engine(
+            Settings(_env_file=None, database_url=reader_url.render_as_string(hide_password=False)),
+            read_only=True,
+        )
+        try:
+            with guarded.connect() as connection:
+                assert connection.scalar(text("SHOW default_transaction_read_only")) == "on"
+                assert connection.scalar(text("SHOW statement_timeout")) == "5s"
+                assert connection.scalar(text("SHOW lock_timeout")) == "1s"
+        finally:
+            guarded.dispose()
+    finally:
+        if reader:
+            reader.dispose()
+        with database.begin() as connection:
+            connection.execute(text(f'DROP OWNED BY "{role}"'))
+            connection.execute(text(f'DROP ROLE "{role}"'))
 
 
 @pytest.fixture(scope="module")

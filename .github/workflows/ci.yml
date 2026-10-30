@@ -67,9 +67,12 @@ jobs:
       - name: Frontend checks
         run: |
           npm ci --prefix frontend
+          npm audit --prefix frontend --json > output/npm-audit.json
           npm run lint --prefix frontend
           npm run build --prefix frontend
           npm test --prefix frontend -- --reporter=default --reporter=junit --outputFile=../output/vitest.xml
+      - name: Audit locked Python dependencies
+        run: uv audit --frozen --python-version 3.12 --python-platform linux --output-format json > output/python-audit.json
       - name: Wheel resources
         run: |
           uv build --wheel --out-dir output/dist

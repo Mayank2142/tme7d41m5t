@@ -10,13 +10,19 @@ x-application: &application
   cap_drop: [ALL]
   security_opt:
     - no-new-privileges:true
-  environment:
+  environment: &application_environment
     GRID_ENVIRONMENT: development
     GRID_DATABASE_URL: postgresql+psycopg://${POSTGRES_USER:-winddesk}:${POSTGRES_PASSWORD:-winddesk_local}@postgres:5432/${POSTGRES_DB:-winddesk}
     GRID_DEFAULT_CUTOFF_LOCAL: ${GRID_DEFAULT_CUTOFF_LOCAL:-09:00}
     GRID_BUILD_SHA: ${GRID_BUILD_SHA:-local}
     GRID_API_RATE_LIMIT_ENABLED: ${GRID_API_RATE_LIMIT_ENABLED:-true}
     GRID_API_RATE_LIMIT_PER_MINUTE: ${GRID_API_RATE_LIMIT_PER_MINUTE:-120}
+    GRID_API_MAX_INFLIGHT: ${GRID_API_MAX_INFLIGHT:-64}
+    GRID_WEB_WORKERS: ${GRID_WEB_WORKERS:-1}
+    GRID_RESPONSE_CACHE_MB: ${GRID_RESPONSE_CACHE_MB:-32}
+    GRID_SOURCE_CACHE_MB: ${GRID_SOURCE_CACHE_MB:-32}
+    GRID_ALLOWED_HOSTS: '${GRID_ALLOWED_HOSTS:-["localhost","127.0.0.1","testserver"]}'
+    GRID_TRUSTED_PROXY_IPS: '${GRID_TRUSTED_PROXY_IPS:-[]}'
 
 services:
   postgres:
@@ -37,12 +43,18 @@ services:
       retries: 12
   initialize:
     <<: *application
-    command: ["winddesk", "seed"]
+    command: ["winddesk", "seed", "--configure-reader"]
+    environment:
+      <<: *application_environment
+      GRID_READER_DATABASE_URL: postgresql+psycopg://${GRID_READER_USER:-winddesk_reader}:${GRID_READER_PASSWORD:-winddesk_local}@postgres:5432/${POSTGRES_DB:-winddesk}
     depends_on:
       postgres:
         condition: service_healthy
   web:
     <<: *application
+    environment:
+      <<: *application_environment
+      GRID_DATABASE_URL: postgresql+psycopg://${GRID_READER_USER:-winddesk_reader}:${GRID_READER_PASSWORD:-winddesk_local}@postgres:5432/${POSTGRES_DB:-winddesk}
     restart: unless-stopped
     ports:
       - "127.0.0.1:${GRID_HTTP_PORT:-8000}:8000"

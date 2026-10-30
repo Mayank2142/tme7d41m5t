@@ -116,7 +116,6 @@ export function AccuracyView({
       <section className="panel plot-panel" aria-labelledby="comparison-title">
         <div className="panel-heading">
           <div>
-            <p className="eyebrow">SOURCE-TIME COMPARISON</p>
             <h2 id="comparison-title">Forecast and reported wind</h2>
           </div>
           <span className="badge neutral">Hourly forecast · half-hour actual</span>
@@ -154,7 +153,6 @@ export function AccuracyView({
       <section className="panel plot-panel error-plot" aria-labelledby="error-title">
         <div className="panel-heading">
           <div>
-            <p className="eyebrow">DIRECTION MATTERS</p>
             <h2 id="error-title">Signed forecast errors</h2>
           </div>
           <span className="direction-key">
@@ -185,8 +183,7 @@ export function AccuracyView({
         <section className="panel" aria-labelledby="daily-title">
           <div className="panel-heading">
             <div>
-              <p className="eyebrow">DAILY REVIEW</p>
-              <h2 id="daily-title">Find the difficult days</h2>
+              <h2 id="daily-title">Accuracy by decision day</h2>
             </div>
           </div>
           <ScrollRegion label="Daily accuracy" className="daily-table">
@@ -242,8 +239,7 @@ export function AccuracyView({
         <section className="panel" aria-labelledby="misses-title">
           <div className="panel-heading">
             <div>
-              <p className="eyebrow">LARGEST ABSOLUTE MISSES</p>
-              <h2 id="misses-title">Where the forecast moved furthest</h2>
+              <h2 id="misses-title">Largest forecast errors</h2>
             </div>
           </div>
           {misses.length ? (
@@ -291,7 +287,6 @@ export function AccuracyView({
       </div>
       <section className="panel coverage-panel" aria-labelledby="coverage-title">
         <div>
-          <p className="eyebrow">EVERY EXPECTED TARGET COUNTS</p>
           <h2 id="coverage-title">Coverage ledger</h2>
           <p>
             Categories follow forecast-first precedence and sum to {number(coverage.expected)}{" "}

@@ -1,0 +1,18 @@
+# Wind-energy imagery
+
+Two original raster images were generated with the built-in OpenAI `image_gen` tool for this project on 30 October 2026 (Asia/Calcutta). They are illustrative AI-generated landscapes, not Elexon source evidence, photographs of identified sites, or depictions of January 2026 weather. Their origin is documented here and in the root README; the interface uses neutral image descriptions. All forecasts, actuals and metrics continue to come exclusively from the Elexon dataset.
+
+| Asset                                    | Dimensions |  Encoded size | Use                                                          |
+| ---------------------------------------- | ---------- | ------------: | ------------------------------------------------------------ |
+| [offshore-wind.webp](offshore-wind.webp) | 1440 × 960 |  93,834 bytes | Photographic header shared across views; high-priority image |
+| [coastal-wind.webp](coastal-wind.webp)   | 960 × 640  | 114,710 bytes | Lazy-loaded methodology feature                              |
+
+The selected generated PNGs are retained locally in ignored `output/imagegen/`. The project assets above are self-contained WebP files, resized and encoded with the bundled Sharp library (qualities 83 and 81 respectively). No stock-photo hotlinks, tracking services, additional frontend dependency, or runtime image-generation call is used.
+
+## Offshore image prompt
+
+Use case: photorealistic-natural. Create a refined editorial-style panoramic photograph for a British national wind-energy analysis dashboard. Wide 3:2 landscape composition, an offshore wind farm in the North Sea at pale dawn, viewed from a low aerial perspective. Physically plausible white three-bladed wind turbines recede naturally into sea mist across calm muted teal water, soft pearl-grey sky with subtle warm horizon light, authentic sea texture, sophisticated muted sage, deep teal and silver colour palette, realistic proportions and fine architectural detail. Composition: closest turbine toward the right half, distant smaller turbines along the horizon, quieter water and sky on the left for a dark editorial overlay from the website. Natural cinematic photography, restrained contrast, inviting rather than dramatic. No people, no boats close to turbines, no land, no labels, no logos, no text, no charts, no UI, no watermark. This is an illustrative landscape, do not imply a specific named wind farm or actual historical conditions. Deliver one beautiful high-resolution raster photograph.
+
+## Coastal image prompt
+
+Use case: photorealistic-natural. Produce a premium editorial-style landscape photograph for the methodology section of a British wind-energy dashboard. A quiet upland coastal landscape in Great Britain with rolling rich green and sage grassland, a winding narrow pale track and a small group of physically plausible modern white three-bladed wind turbines on the distant ridge, dramatic but soft overcast pearl-grey morning light and layers of misty hills meeting the distant sea. Composition in 3:2 landscape: foreground grass texture on lower third, one elegant larger turbine at upper-right with smaller turbines receding along ridge, ample breathing room, no extreme wide-angle distortion. Natural restrained colour grade, forest green, muted olive, soft silver and warm chalk, realistic proportions, fine texture, calm clean polished photographic feel matching a slate-and-sage web interface. No people, cars, houses, typography, labels, logos, watermark, graphics or UI. Illustrative setting only: do not imply a specific location, measured weather, or actual data. Deliver one detailed high-resolution raster photograph.

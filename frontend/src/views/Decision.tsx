@@ -30,7 +30,6 @@ export function DecisionView({
   return (
     <>
       <div className="selection-summary">
-        <span className="badge good">Historical replay</span>
         <span>
           Decision <strong>{dateLabel(window.decision_date)}</strong> at{" "}
           <strong>{window.cutoff_local} GMT</strong>
@@ -86,91 +85,62 @@ export function DecisionView({
           }
         />
       </div>
-      <div className="decision-grid">
-        <section className="panel plot-panel" aria-labelledby="wind-title">
-          <div className="panel-heading">
-            <div>
-              <p className="eyebrow">NEXT-DAY WIND OUTLOOK</p>
-              <h2 id="wind-title">The forecast available to your desk</h2>
-            </div>
-            <span className="badge neutral">{dateLabel(window.delivery_date)}</span>
+      <section className="panel plot-panel" aria-labelledby="wind-title">
+        <div className="panel-heading">
+          <div>
+            <h2 id="wind-title">Wind generation forecast</h2>
           </div>
-          <Chart
-            key={result.analysis_context_id}
-            title="Day-ahead wind forecast"
-            description="Native hourly forecast targets. Missing or invalid values break the line. Connecting targets does not establish an hourly energy profile."
-            series={[
-              {
-                label: "Eligible wind forecast",
-                color: "#176d68",
-                points: points.map((point) => ({
-                  time: point.target_start_utc,
-                  value: point.forecast.generation_mw,
-                })),
-              },
-            ]}
-            targets={points.map((point) => point.target_start_utc)}
-            inspect={(index) => {
-              const point = points[index];
-              return {
-                title: timeLabel(point.target_start_utc, true),
-                items: [
-                  { label: "Forecast", value: `${number(point.forecast.generation_mw)} MW` },
-                  {
-                    label: "Published",
-                    value: point.forecast.publication_utc
-                      ? `${timeLabel(point.forecast.publication_utc, true)} GMT`
-                      : "No eligible issue",
-                  },
-                  { label: "Age at cutoff", value: ageLabel(point.age_at_cutoff_seconds) },
-                  { label: "Quality", value: reasonLabel(point.forecast.reason) },
-                ],
-              };
-            }}
-          />
-          <p className="panel-footnote">
-            Hourly source targets · Selected independently by publication time · Lines connect
-            reported points; they do not define an energy profile.
-          </p>
-        </section>
-        <aside className="desk-note panel">
-          <span className="note-symbol" aria-hidden="true">
-            ↗
+        </div>
+        <Chart
+          key={result.analysis_context_id}
+          title="Day-ahead wind forecast"
+          description="Native hourly forecast targets. Missing or invalid values break the line. Connecting targets does not establish an hourly energy profile."
+          series={[
+            {
+              label: "Eligible wind forecast",
+              color: "#176d68",
+              points: points.map((point) => ({
+                time: point.target_start_utc,
+                value: point.forecast.generation_mw,
+              })),
+            },
+          ]}
+          targets={points.map((point) => point.target_start_utc)}
+          inspect={(index) => {
+            const point = points[index];
+            return {
+              title: timeLabel(point.target_start_utc, true),
+              items: [
+                { label: "Forecast", value: `${number(point.forecast.generation_mw)} MW` },
+                {
+                  label: "Published",
+                  value: point.forecast.publication_utc
+                    ? `${timeLabel(point.forecast.publication_utc, true)} GMT`
+                    : "No eligible issue",
+                },
+                { label: "Age at cutoff", value: ageLabel(point.age_at_cutoff_seconds) },
+                { label: "Quality", value: reasonLabel(point.forecast.reason) },
+              ],
+            };
+          }}
+        />
+        <p className="panel-footnote">
+          Hourly targets use the latest publication at the cutoff. Lines connect source points; they
+          do not define an hourly energy profile.
+        </p>
+        <div className="forecast-meta">
+          <span>
+            Selected publications: {timeLabel(summary.earliest_publication_utc, true)}
+            {summary.latest_publication_utc !== summary.earliest_publication_utc && (
+              <>–{timeLabel(summary.latest_publication_utc, true)}</>
+            )}{" "}
+            GMT
           </span>
-          <p className="eyebrow">DECISION CONTEXT</p>
-          <h2>Know what was available.</h2>
-          <p>
-            Each target uses its latest source publication at or before{" "}
-            <strong>{window.cutoff_local} GMT</strong>.
-          </p>
-          <dl>
-            <div>
-              <dt>Lowest reported target</dt>
-              <dd>{number(summary.minimum_reported_mw)} MW</dd>
-            </div>
-            <div>
-              <dt>Selected issue range</dt>
-              <dd>
-                {timeLabel(summary.earliest_publication_utc, true)}–
-                {timeLabel(summary.latest_publication_utc, true)} GMT
-              </dd>
-            </div>
-            <div>
-              <dt>Coverage</dt>
-              <dd>
-                {coverage.valid} valid · {coverage.missing + coverage.invalid} gaps
-              </dd>
-            </div>
-          </dl>
-          <p>
-            The desk cutoff is an illustrative assumption. Agree the auction and submission buffer
-            before operational use.
-          </p>
           <RouteLink className="text-link" href={hrefFor("accuracy", filters)} navigate={navigate}>
-            Review January forecast error <span aria-hidden="true">→</span>
+            Review forecast accuracy <span aria-hidden="true">→</span>
           </RouteLink>
-        </aside>
-      </div>
+        </div>
+      </section>
       <details className="panel ledger-panel">
         <summary>
           <span>Forecast publication ledger</span>

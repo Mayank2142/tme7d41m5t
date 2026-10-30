@@ -2,7 +2,7 @@
 
 This is the execution sequence for the [implementation plan](../IMPLEMENTATION_PLAN.md). Phases 1–8 deliver the assignment within a sixteen-hour total-effort budget, including contingency. Phases 9–11 describe subsequent work before a utility uses the application operationally; estimate and authorize that work separately.
 
-The original review and research are available. Phases 1–5 are implemented locally; Phase 6 adds consolidated tests, repeatable browser/service/container gates, runtime security and validated CI configuration. [Phase 6 status](PHASE_6_STATUS.md) distinguishes executed local evidence from pending remote checks. External hosting is Phase 7. Record time already spent; the sixteen-hour limit is not a fresh budget starting after planning.
+The original review and research are available. Phases 1–6 are implemented and verified locally, with subsequent frontend and security enhancements. [Phase 6 status](PHASE_6_STATUS.md), [local readiness](LOCAL_READINESS.md) and [security/scaling](SECURITY_AND_SCALING.md) record the executed evidence. Phase 7 is now in progress: the Vercel account is authenticated and an isolated anonymous project and free London PostgreSQL database have been created. Record time already spent; the sixteen-hour limit is not a fresh budget starting after planning.
 
 ## Phase overview
 
@@ -200,4 +200,4 @@ Confirm the venue/product rules, internal cutoff, delivery boundaries, source co
 
 ## Current position and next action
 
-Phases 1–5 are available locally. Begin Phase 6 with the integrated verification, reproducible Docker/Compose startup, CI, and public-release controls. Reuse the accepted source release and completed browser scenarios. Track the real remaining assignment budget and keep external deployment prerequisites distinct from local implementation evidence.
+Phases 1–6 and the later local frontend/security enhancements are implemented. Complete Phase 7 by importing the accepted release into the new hosted database, configuring a separate web reader and exact hostnames, deploying the latest source to Vercel, then running logged-out HTTPS, browser, export and persistence checks. Phase 8 still requires the public GitHub repository/remote CI and actual video/submission artifacts. Keep local test evidence distinct from a completed hosted release.

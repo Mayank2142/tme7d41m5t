@@ -87,6 +87,22 @@ afterEach(() => {
 });
 
 describe("analyst workflow", () => {
+  it("can compact the photographic header without changing the selected analysis or fetching new data", async () => {
+    mount();
+    await ready();
+    const selected = window.location.href;
+    const requests = fetchMock.mock.calls.length;
+    const compact = screen.getByRole("button", { name: "Compact header" });
+    expect(compact).toHaveAttribute("aria-pressed", "false");
+    expect(screen.queryByText(/AI-generated/i)).not.toBeInTheDocument();
+    fireEvent.click(compact);
+    expect(compact).toHaveAttribute("aria-pressed", "true");
+    expect(window.location.href).toBe(selected);
+    expect(fetchMock.mock.calls.length).toBe(requests);
+    expect(screen.getByRole("button", { name: /Download CSV/ })).toBeEnabled();
+    fireEvent.click(compact);
+    expect(compact).toHaveAttribute("aria-pressed", "false");
+  });
   it("pins the initial release, includes February delivery, and keeps Decision forecast-only", async () => {
     mount();
     await ready();
@@ -119,14 +135,14 @@ describe("analyst workflow", () => {
     fireEvent.change(screen.getByLabelText("Desk cutoff · GMT"), { target: { value: "09:45" } });
     expect(screen.getByText("Unapplied changes")).toBeInTheDocument();
     expect(screen.getByRole("button", { name: /Download CSV/ })).toBeDisabled();
-    expect(screen.getAllByText("09:00 GMT", { selector: "strong" })).toHaveLength(2);
+    expect(screen.getAllByText("09:00 GMT", { selector: "strong" })).toHaveLength(1);
     fireEvent.click(screen.getByRole("button", { name: "Apply selection" }));
     await screen.findByText("Loading the selected analysis…");
     expect(screen.queryByText("24 / 24")).not.toBeInTheDocument();
     expect(screen.queryByRole("button", { name: /Download CSV/ })).not.toBeInTheDocument();
     await act(async () => resolve(apiResponse(later)));
     await ready();
-    expect(screen.getAllByText("09:45 GMT", { selector: "strong" })).toHaveLength(2);
+    expect(screen.getAllByText("09:45 GMT", { selector: "strong" })).toHaveLength(1);
     expect(new URLSearchParams(window.location.search).get("cutoff_local")).toBe("09:45");
     expect(screen.getByRole("button", { name: /Download CSV/ })).toBeEnabled();
   });
@@ -155,6 +171,9 @@ describe("analyst workflow", () => {
     ).toBeInTheDocument();
     expect(screen.getByText(/does not prove January receipt/)).toBeInTheDocument();
     expect(screen.getAllByRole("link", { name: "Open Elexon response ↗" })).toHaveLength(10);
+    expect(
+      screen.getByRole("img", { name: "Wind turbines on green coastal hills" }),
+    ).toHaveAttribute("loading", "lazy");
     expect(screen.queryByRole("button", { name: /Download CSV/ })).not.toBeInTheDocument();
   });
   it("shows an explained failure and retries without losing the URL selection", async () => {
@@ -227,9 +246,9 @@ describe("analyst workflow", () => {
     const older = "b".repeat(64);
     mount(`/decision?decision_date=2026-01-31&cutoff_local=09:00&release_id=${older}`);
     await ready();
-    expect(screen.getByText("A newer active release is available")).toBeInTheDocument();
+    expect(screen.getByText("Newer data available")).toBeInTheDocument();
     expect(new URLSearchParams(window.location.search).get("release_id")).toBe(older);
-    fireEvent.click(screen.getByRole("button", { name: "Use current source release" }));
+    fireEvent.click(screen.getByRole("button", { name: "Use latest data" }));
     await waitFor(() =>
       expect(new URLSearchParams(window.location.search).get("release_id")).toBe(
         configuration.dataset.release_id,

@@ -228,7 +228,8 @@ def test_valid_missing_data_returns_200_nulls_and_reconciled_export(api):
     assert {row["reason"] for row in comparisons} == {"NO_PRE_CUTOFF_PUBLICATION"}
 
 
-def test_invalid_latest_key_and_negative_errors_survive_json_csv_round_trip(api):
+@pytest.mark.parametrize("include_invalid", [True, False])
+def test_invalid_latest_key_and_negative_errors_survive_json_csv_round_trip(api, include_invalid):
     client, reader, _ = api
     target = datetime(2026, 1, 2, tzinfo=UTC)
     publication = datetime(2026, 1, 1, 8, tzinfo=UTC)
@@ -249,20 +250,18 @@ def test_invalid_latest_key_and_negative_errors_survive_json_csv_round_trip(api)
     invalid = fact("WINDFOR", None, publication.replace(minute=30), "invalid")
     actual = fact("FUELHH", 5, target.replace(minute=30), "actual")
     reader.indexes = {
-        "WINDFOR": SourceIndex("WINDFOR", [old, invalid]),
+        "WINDFOR": SourceIndex("WINDFOR", [old, invalid] if include_invalid else [old]),
         "FUELHH": SourceIndex("FUELHH", [actual]),
     }
     body = client.get(ACCURACY).json()
     record = rows(client.get(body["export_url"]))[0]
-    assert (
-        record["evaluation_state"] == "forecast_invalid" and record["reason"] == "NULL_GENERATION"
-    )
-    assert record["forecast_mw"] == record["error_mw"] == ""
-    assert record["forecast_published_at"] == "2026-01-01T08:30:00Z"
-    reader.indexes["WINDFOR"] = SourceIndex("WINDFOR", [old])
-    body = client.get(ACCURACY).json()
-    record = rows(client.get(body["export_url"]))[0]
-    assert record["error_mw"] == "-3" and record["absolute_error_mw"] == "3"
+    if include_invalid:
+        assert record["evaluation_state"] == "forecast_invalid"
+        assert record["reason"] == "NULL_GENERATION"
+        assert record["forecast_mw"] == record["error_mw"] == ""
+        assert record["forecast_published_at"] == "2026-01-01T08:30:00Z"
+    else:
+        assert record["error_mw"] == "-3" and record["absolute_error_mw"] == "3"
 
 
 @pytest.mark.parametrize(
@@ -370,3 +369,39 @@ def test_openapi_separates_decision_and_accuracy_and_declares_csv(api):
         "/AccuracyResponse"
     )
     assert "text/csv" in schema["paths"]["/api/v1/export.csv"]["get"]["responses"]["200"]["content"]
+
+
+def test_cached_json_csv_preserve_context_and_observe_new_active_release(api):
+    client, reader, _ = api
+    first = client.get(DECISION)
+    body = first.json()
+    again = client.get(DECISION)
+    export = client.get(body["export_url"])
+    assert again.content == first.content and export.status_code == 200
+    assert reader.source_calls == [("WINDFOR", RELEASE)]
+    assert export.headers["x-analysis-context-id"] == body["analysis_context_id"]
+    assert (
+        client.get(body["export_url"].replace(body["analysis_context_id"], "0" * 64)).status_code
+        == 409
+    )
+    assert (
+        client.get(DECISION + "&cutoff_local=09:45").json()["analysis_context_id"]
+        != body["analysis_context_id"]
+    )
+    reader.active = OTHER
+    moved = client.get(DECISION).json()
+    assert moved["context"]["release_id"] == OTHER
+    assert moved["analysis_context_id"] != body["analysis_context_id"]
+    # A warm result must never conceal an unavailable/revoked source release.
+    reader.failure = ReleaseNotFound("revoked")
+    assert client.get(DECISION).status_code == 404
+
+
+def test_analysis_is_compressed_without_changing_its_payload(api):
+    client, _, _ = api
+    compressed = client.get(ACCURACY, headers={"Accept-Encoding": "gzip"})
+    plain = client.get(ACCURACY, headers={"Accept-Encoding": "identity"})
+    assert compressed.headers["content-encoding"] == "gzip"
+    assert int(compressed.headers["content-length"]) < len(plain.content) / 2
+    assert compressed.content == plain.content
+    assert "Accept-Encoding" in compressed.headers["vary"]

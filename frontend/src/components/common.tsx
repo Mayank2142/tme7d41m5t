@@ -1,7 +1,9 @@
 import { type AnchorHTMLAttributes, type ReactNode, useEffect, useRef, useState } from "react";
 import { downloadCsv, ServiceError } from "../api/analysis";
 import type { AccuracyResponse, DecisionResponse } from "../api/types";
-import { number, reasonLabel } from "../format";
+import { dateLabel, number, reasonLabel } from "../format";
+import { ReferencePanel } from "./References";
+import { MetricIcon } from "./WindScene";
 
 export function WindMark() {
   return (
@@ -66,6 +68,7 @@ export function Metric({
 }) {
   return (
     <article className={`metric ${tone ?? ""}`}>
+      <MetricIcon label={label} />
       <h2>{label}</h2>
       <div className="metric-value">
         {value}
@@ -139,37 +142,28 @@ export function SourceIds({ ids }: { ids: string[] }) {
   );
 }
 export function AnalysisReference({ result }: { result: DecisionResponse | AccuracyResponse }) {
+  const { decision_from: start, decision_to: end, cutoff_local: cutoff } = result.context;
+  const dates =
+    start === end ? dateLabel(start, true) : `${dateLabel(start)}–${dateLabel(end, true)}`;
   return (
-    <details className="analysis-reference">
-      <summary>
-        Analysis reference <code>{result.analysis_context_id.slice(0, 12)}</code>
-      </summary>
-      <dl>
-        <div>
-          <dt>Context</dt>
-          <dd>
-            <code>{result.analysis_context_id}</code>
-          </dd>
-        </div>
-        <div>
-          <dt>Dataset release</dt>
-          <dd>
-            <code>{result.context.release_id}</code>
-          </dd>
-        </div>
-        <div>
-          <dt>Source parser</dt>
-          <dd>{result.context.source_parser}</dd>
-        </div>
-        <div>
-          <dt>Application build</dt>
-          <dd>{result.context.build_sha}</dd>
-        </div>
-      </dl>
-      <a href={result.source.data_quality_url} target="_blank" rel="noreferrer">
-        Open source quality JSON ↗
-      </a>
-    </details>
+    <ReferencePanel
+      title="About this analysis"
+      description={`${dates} · ${cutoff} GMT · Elexon wind data`}
+      fields={[
+        {
+          label: "Analysis ID",
+          value: result.analysis_context_id,
+          description: "Identifies the dates, cutoff and calculation rules used for this view.",
+        },
+        {
+          label: "Data version",
+          value: result.context.release_id,
+          description: "Shared views and CSV downloads use this same source release.",
+        },
+        { label: "Source parser", value: result.context.source_parser, identifier: false },
+        { label: "Application build", value: result.context.build_sha, identifier: false },
+      ]}
+    />
   );
 }
 export function DownloadButton({

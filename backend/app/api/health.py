@@ -12,7 +12,7 @@ router = APIRouter(prefix="/health", tags=["health"])
 
 
 @router.get("/live")
-def liveness() -> dict[str, str]:
+async def liveness() -> dict[str, str]:
     return {"status": "ok", "service": "wind-desk-api"}
 
 

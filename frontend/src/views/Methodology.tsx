@@ -1,5 +1,7 @@
 import type { QualityResponse } from "../api/types";
 import { ScrollRegion } from "../components/common";
+import { ReferenceDialog, ReferencePanel } from "../components/References";
+import { MetricIcon, WindStory } from "../components/WindScene";
 import { dateLabel, number, timeLabel } from "../format";
 
 export function MethodologyView({ data }: { data: QualityResponse }) {
@@ -18,16 +20,19 @@ export function MethodologyView({ data }: { data: QualityResponse }) {
       </div>
       <div className="metrics-grid">
         <article className="metric">
+          <MetricIcon label="Forecast versions" />
           <h2>Forecast versions</h2>
           <div className="metric-value">{number(quality.forecast_versions)}</div>
           <p>WINDFOR source publications</p>
         </article>
         <article className="metric">
+          <MetricIcon label="Reported actuals" />
           <h2>Reported actuals</h2>
           <div className="metric-value">{number(quality.actual_versions)}</div>
           <p>FUELHH records with fuelType WIND</p>
         </article>
         <article className="metric">
+          <MetricIcon label="Actual source coverage" />
           <h2>Actual source coverage</h2>
           <div className="metric-value">
             {number(quality.valid_actual_half_hours)}
@@ -36,6 +41,7 @@ export function MethodologyView({ data }: { data: QualityResponse }) {
           <p>Expected half-hour observations</p>
         </article>
         <article className="metric">
+          <MetricIcon label="Last source retrieval" />
           <h2>Last source retrieval</h2>
           <div className="metric-value small-value">
             {latestReceipt ? dateLabel(latestReceipt.slice(0, 10), true) : "—"}
@@ -47,65 +53,57 @@ export function MethodologyView({ data }: { data: QualityResponse }) {
           </p>
         </article>
       </div>
+      <WindStory />
       <div className="method-grid">
         <section className="panel method-card">
-          <span className="method-number">01</span>
-          <h2>A decision calendar, in London time</h2>
+          <h2>Decision dates and cutoff</h2>
           <p>
-            Purchase decisions run from 1–31 January 2026. Each concerns the following UK civil day,
-            so the final decision covers 1 February delivery.
+            January purchase decisions cover next-day delivery, from 2 January to 1 February. All
+            times use Europe/London.
           </p>
           <p>
-            The default 09:00 desk cutoff is illustrative. The client must agree its auction,
-            internal cutoff, and submission buffer before operational use.
-          </p>
-        </section>
-        <section className="panel method-card">
-          <span className="method-number">02</span>
-          <h2>The latest eligible key, then its quality</h2>
-          <p>
-            For every native forecast target, select the greatest source publication at or before
-            the cutoff. Targets may use different issue times.
-          </p>
-          <p>
-            A null or conflicting latest key remains an explicit gap. It never silently falls back
-            to an older valid forecast. Publication time establishes historical source availability;
-            October download time does not prove January receipt by a desk.
+            The 09:00 default is illustrative. Agree the actual cutoff and submission buffer before
+            operational use.
           </p>
         </section>
         <section className="panel method-card">
-          <span className="method-number">03</span>
+          <h2>Forecast selection</h2>
+          <p>
+            Each target uses its latest publication at or before the cutoff. A missing or
+            conflicting latest value stays a gap; an older value is never substituted.
+          </p>
+          <p>
+            Publication time determines eligibility. The project's download time does not prove
+            January receipt by a desk.
+          </p>
+        </section>
+        <section className="panel method-card">
           <h2>Matching timestamps, explicit limits</h2>
           <p>
-            WINDFOR targets are hourly. FUELHH WIND actuals are half-hour averages. The primary
-            comparison uses identical source startTime values: 744 expected pairs across the month.
+            Hourly WINDFOR targets are paired with FUELHH WIND actuals at matching timestamps: 744
+            expected pairs across January.
           </p>
           <p>
-            The intervening 744 actual half-hours stay visible and are retained in CSV. No extra
-            forecasts are manufactured. Equal timestamps do not establish identical averaging
-            intervals or a forecast energy profile.
+            All 1,488 actual half-hours remain in CSV. Forecasts are not filled between targets.
+            Matching timestamps do not establish identical averaging intervals or an energy profile.
           </p>
         </section>
         <section className="panel method-card">
-          <span className="method-number">04</span>
-          <h2>Retrospective error with a frozen vintage</h2>
+          <h2>Historical actuals</h2>
           <p>
-            Accuracy uses the latest actual publication within the selected release, validated after
-            key selection. Reported outturn may include estimates and is not certified final
-            settlement truth.
+            Accuracy uses the latest actual publication in the selected data version. Reported
+            outturn may include estimates rather than final settlement values.
           </p>
           <p>
-            Decision replay contains eligible forecasts. Retrospective actuals and errors belong to
-            the Accuracy view. A refreshed release cannot rewrite a previously pinned chart or
-            download.
+            Actuals appear only in Accuracy. Saved views and downloads keep their selected data
+            version when a newer release becomes available.
           </p>
         </section>
       </div>
       <section className="panel formula-panel">
         <div className="panel-heading">
           <div>
-            <p className="eyebrow">METRICS V1 · ALL VALUES IN MW</p>
-            <h2>One sign convention, four descriptive measures</h2>
+            <h2>Accuracy measures · MW</h2>
           </div>
         </div>
         <p className="equation">
@@ -136,7 +134,7 @@ export function MethodologyView({ data }: { data: QualityResponse }) {
         </p>
       </section>
       <section className="panel method-card limitation">
-        <h2>What this pilot can support</h2>
+        <h2>Scope</h2>
         <p>
           Inspect the wind outlook available to the desk and quantify historical forecast error. The
           source covers national wind visible to the system operator. Utility demand, existing
@@ -147,8 +145,7 @@ export function MethodologyView({ data }: { data: QualityResponse }) {
       <section className="panel" aria-labelledby="provenance-title">
         <div className="panel-heading">
           <div>
-            <p className="eyebrow">SOURCE PROVENANCE</p>
-            <h2 id="provenance-title">Original responses, retained and fingerprinted</h2>
+            <h2 id="provenance-title">Source responses</h2>
           </div>
           <span className="badge neutral">{raw_batches.length} request windows</span>
         </div>
@@ -168,11 +165,11 @@ export function MethodologyView({ data }: { data: QualityResponse }) {
                 <th scope="col">Dataset</th>
                 <th scope="col">Received GMT</th>
                 <th scope="col">Original source query</th>
-                <th scope="col">SHA-256 & batch reference</th>
+                <th scope="col">Reference</th>
               </tr>
             </thead>
             <tbody>
-              {raw_batches.map((batch) => (
+              {raw_batches.map((batch, index) => (
                 <tr key={batch.id}>
                   <th scope="row">{batch.dataset}</th>
                   <td>{timeLabel(batch.received_at, true)}</td>
@@ -182,13 +179,28 @@ export function MethodologyView({ data }: { data: QualityResponse }) {
                     </a>
                   </td>
                   <td>
-                    <details className="source-ids">
-                      <summary>{batch.payload_sha256.slice(0, 12)}…</summary>
-                      <span>Response digest</span>
-                      <code>{batch.payload_sha256}</code>
-                      <span>Batch ID</span>
-                      <code>{batch.id}</code>
-                    </details>
+                    <div className="source-reference">
+                      <span>Response {String(index + 1).padStart(2, "0")}</span>
+                      <ReferenceDialog
+                        title={`${batch.dataset} response ${String(index + 1).padStart(2, "0")}`}
+                        description={`Elexon source response · retrieved ${timeLabel(batch.received_at, true)} GMT`}
+                        triggerLabel="View details"
+                        triggerName={`View references for ${batch.dataset} response ${index + 1}`}
+                        fields={[
+                          {
+                            label: "Response checksum",
+                            value: batch.payload_sha256,
+                            description: "SHA-256 fingerprint of the original downloaded response.",
+                          },
+                          {
+                            label: "Batch reference",
+                            value: batch.id,
+                            description:
+                              "Identifies this source response in the stored data release.",
+                          },
+                        ]}
+                      />
+                    </div>
                   </td>
                 </tr>
               ))}
@@ -241,49 +253,23 @@ export function MethodologyView({ data }: { data: QualityResponse }) {
           </table>
         </ScrollRegion>
       </details>
-      <details className="analysis-reference">
-        <summary>Release and calculation policies</summary>
-        <dl>
-          <div>
-            <dt>Release</dt>
-            <dd>
-              <code>{data.release_id}</code>
-            </dd>
-          </div>
-          <div>
-            <dt>Parser</dt>
-            <dd>{quality.parser_version}</dd>
-          </div>
-          <div>
-            <dt>Validation</dt>
-            <dd>{quality.validation_version}</dd>
-          </div>
-          <div>
-            <dt>Acceptance</dt>
-            <dd>{quality.acceptance_policy}</dd>
-          </div>
-          <div>
-            <dt>Comparison</dt>
-            <dd>source_timestamp_v1</dd>
-          </div>
-          <div>
-            <dt>Selection</dt>
-            <dd>latest_source_key_v1</dd>
-          </div>
-          <div>
-            <dt>Actual vintage</dt>
-            <dd>latest_publication_in_release_v1</dd>
-          </div>
-          <div>
-            <dt>Normalized versions fingerprint</dt>
-            <dd>
-              <code>
-                {quality.normalized_versions_sha256 ?? "Not recorded in this legacy release"}
-              </code>
-            </dd>
-          </div>
-        </dl>
-      </details>
+      <ReferencePanel
+        title="Data and calculation references"
+        description="Source version, validation checks and calculation rules for this release."
+        fields={[
+          { label: "Data version", value: data.release_id },
+          { label: "Source parser", value: quality.parser_version, identifier: false },
+          { label: "Validation", value: quality.validation_version, identifier: false },
+          { label: "Acceptance", value: quality.acceptance_policy, identifier: false },
+          { label: "Comparison", value: "source_timestamp_v1", identifier: false },
+          { label: "Selection", value: "latest_source_key_v1", identifier: false },
+          { label: "Actual vintage", value: "latest_publication_in_release_v1", identifier: false },
+          {
+            label: "Normalized data fingerprint",
+            value: quality.normalized_versions_sha256 ?? "Not recorded in this legacy release",
+          },
+        ]}
+      />
     </>
   );
 }

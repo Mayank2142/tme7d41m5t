@@ -1,6 +1,8 @@
 # Read API and CSV Contract
 
-Implemented in Phase 4. Start the seeded local service and open [interactive API documentation](http://127.0.0.1:8000/api/docs). The machine-readable contract is available at `/api/openapi.json`. All application reads use stored Elexon data; ordinary requests do not trigger downloads or ingestion.
+Implemented in Phase 4. Start the seeded local service and open [interactive API documentation](http://127.0.0.1:8000/api/docs). The machine-readable contract is available at `/api/openapi.json`. Documentation endpoints default off in production. All application reads use stored Elexon data; ordinary requests do not trigger downloads or ingestion.
+
+The public read API has per-process rate/admission limits and request-size/host checks. Rejected traffic receives safe JSON errors; 429 and overload 503 include `Retry-After`. Immutable analysis serialization is cached internally while responses retain `Cache-Control: no-store`. Accepted release lookup and export context checks remain live on cache hits. See [security and scaling](SECURITY_AND_SCALING.md) for limits and the required hosting controls.
 
 ## Routes and filters
 

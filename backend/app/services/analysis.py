@@ -51,8 +51,10 @@ def decision_response(
     cutoff: time,
     release_id: str | None,
     build_sha: str,
+    *,
+    resolved_release: dict | None = None,
 ) -> DecisionResponse:
-    release = reader.release(release_id)
+    release = resolved_release or reader.release(release_id)
     pinned_id = release["id"]
     # Do not even load actuals for a decision replay.
     result = analyze_decision(reader.forecasts(pinned_id), day, cutoff)
@@ -81,8 +83,10 @@ def accuracy_response(
     cutoff: time,
     release_id: str | None,
     build_sha: str,
+    *,
+    resolved_release: dict | None = None,
 ) -> AccuracyResponse:
-    release = reader.release(release_id)
+    release = resolved_release or reader.release(release_id)
     pinned_id = release["id"]
     result = analyze_accuracy(
         reader.forecasts(pinned_id), reader.actuals(pinned_id), start, end, cutoff

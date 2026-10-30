@@ -122,6 +122,17 @@ export function Chart({ title, description, series, targets, signed = false, ins
           <desc id={`${id}-desc`}>
             {description} Use the target slider below or the data table for exact values.
           </desc>
+          <defs>
+            <clipPath id={`${id}-reveal`}>
+              <rect
+                className="chart-reveal"
+                x={left - 6}
+                y={top - 6}
+                width={right - left + 12}
+                height={bottom - top + 12}
+              />
+            </clipPath>
+          </defs>
           {[0, 1, 2, 3, 4].map((tick) => {
             const value = min + ((max - min) * tick) / 4;
             return (
@@ -148,35 +159,37 @@ export function Chart({ title, description, series, targets, signed = false, ins
             );
           })}
           {signed && <line x1={left} x2={right} y1={y(0)} y2={y(0)} className="zero-line" />}
-          {series.map((item) =>
-            signed ? (
-              <g key={item.label}>
-                {item.points.map((point) =>
-                  point.value === null ? null : (
-                    <line
-                      key={point.time}
-                      x1={x(Date.parse(point.time))}
-                      x2={x(Date.parse(point.time))}
-                      y1={y(0)}
-                      y2={y(point.value)}
-                      stroke={point.value >= 0 ? "#b85f43" : "#1a8277"}
-                      strokeWidth={Math.max(1.4, ((right - left) / targets.length) * 0.55)}
-                    />
-                  ),
-                )}
-              </g>
-            ) : (
-              <path
-                key={item.label}
-                d={linePath(item.points, x, y)}
-                fill="none"
-                stroke={item.color}
-                strokeWidth={2}
-                strokeDasharray={item.dashed ? "5 4" : undefined}
-                vectorEffect="non-scaling-stroke"
-              />
-            ),
-          )}
+          <g clipPath={`url(#${id}-reveal)`}>
+            {series.map((item) =>
+              signed ? (
+                <g key={item.label}>
+                  {item.points.map((point) =>
+                    point.value === null ? null : (
+                      <line
+                        key={point.time}
+                        x1={x(Date.parse(point.time))}
+                        x2={x(Date.parse(point.time))}
+                        y1={y(0)}
+                        y2={y(point.value)}
+                        stroke={point.value >= 0 ? "#b85f43" : "#1a8277"}
+                        strokeWidth={Math.max(1.4, ((right - left) / targets.length) * 0.55)}
+                      />
+                    ),
+                  )}
+                </g>
+              ) : (
+                <path
+                  key={item.label}
+                  d={linePath(item.points, x, y)}
+                  fill="none"
+                  stroke={item.color}
+                  strokeWidth={2}
+                  strokeDasharray={item.dashed ? "5 4" : undefined}
+                  vectorEffect="non-scaling-stroke"
+                />
+              ),
+            )}
+          </g>
           <line x1={selectedX} x2={selectedX} y1={top} y2={bottom} className="selection-line" />
           {!signed &&
             series.map((item) => {

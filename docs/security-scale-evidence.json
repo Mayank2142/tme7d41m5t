@@ -1,0 +1,215 @@
+{
+  "recorded_at_utc": "2026-10-29T21:21:21.067801+00:00",
+  "scope": "Public, read-only Elexon pilot; local verification only",
+  "build_marker": "security-scale-local",
+  "main_image_id": "sha256:a12883d3a76d1c347e5b98e776a3b7fb400664a316a8c28da1af34a823d6753d",
+  "runtime_source_fingerprint_sha256": "7944a66ceaaea2a33a85b718564b34b3b94876e5e4d5156e4a395a3008544fd0",
+  "backend": {
+    "tests": 102,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0
+  },
+  "backend_real_postgresql_tests": 6,
+  "frontend": {
+    "tests": 43,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0
+  },
+  "post_static_containment_regressions": {
+    "security_and_foundation": 18,
+    "api_and_cache": 33
+  },
+  "load_runs": {
+    "baseline": {
+      "recorded_at": "2026-10-29T20:52:57.386680+00:00",
+      "build_sha": "frontend-source-label-local",
+      "base_url": "http://127.0.0.1:8000",
+      "release_id": "f61cecb1c14d91cfc32f10c74a9945fd2cf7f1851abd8ca6b0eb3f3e8975b052",
+      "users": 10,
+      "requests": 40,
+      "statuses": {
+        "200": 40
+      },
+      "elapsed_seconds": 13.85,
+      "requests_per_second": 2.89,
+      "latency_ms": {
+        "p50": 3263.66,
+        "p95": 4237.2,
+        "p99": 4600.23
+      },
+      "all_successful_payloads_identical": true,
+      "note": "Warm immutable monthly accuracy, loopback, HTTP connections per request; excludes internet latency, CDN/WAF, cold starts and multi-instance quotas."
+    },
+    "updated": {
+      "recorded_at": "2026-10-29T20:59:44.225038+00:00",
+      "build_sha": "security-scale-local",
+      "base_url": "http://127.0.0.1:8000",
+      "release_id": "f61cecb1c14d91cfc32f10c74a9945fd2cf7f1851abd8ca6b0eb3f3e8975b052",
+      "users": 10,
+      "requests": 40,
+      "statuses": {
+        "200": 40
+      },
+      "elapsed_seconds": 0.397,
+      "requests_per_second": 100.84,
+      "latency_ms": {
+        "p50": 85.04,
+        "p95": 113.78,
+        "p99": 125.83
+      },
+      "all_successful_payloads_identical": true,
+      "note": "Warm immutable monthly accuracy, loopback, HTTP connections per request; excludes internet latency, CDN/WAF, cold starts and multi-instance quotas."
+    },
+    "fifty_clients": {
+      "recorded_at": "2026-10-29T21:07:22.540346+00:00",
+      "build_sha": "security-scale-local",
+      "base_url": "http://127.0.0.1:18004",
+      "release_id": "f61cecb1c14d91cfc32f10c74a9945fd2cf7f1851abd8ca6b0eb3f3e8975b052",
+      "users": 50,
+      "requests": 200,
+      "statuses": {
+        "200": 200
+      },
+      "elapsed_seconds": 1.86,
+      "requests_per_second": 107.53,
+      "latency_ms": {
+        "p50": 452.88,
+        "p95": 493.35,
+        "p99": 537.86
+      },
+      "all_successful_payloads_identical": true,
+      "note": "Warm immutable monthly accuracy, loopback, HTTP connections per request; excludes internet latency, CDN/WAF, cold starts and multi-instance quotas."
+    }
+  },
+  "fifty_client_test_only_quota_per_minute": 10000,
+  "running_app_database_and_limits": {
+    "role": "winddesk_reader",
+    "privileged": false,
+    "can_write": false,
+    "can_read_raw_payload": false,
+    "can_read_ingestion": false,
+    "read_only": "on",
+    "statement_timeout": "5s",
+    "normal_api_quota": 120,
+    "api_max_inflight": 64,
+    "trusted_proxy_ips": []
+  },
+  "live_forwarding_header_quota_check": {
+    "test_only_quota": 2,
+    "forwarded_headers_statuses": [
+      200,
+      200,
+      429
+    ],
+    "liveness_exempt": true,
+    "normal_app_quota_changed": false
+  },
+  "http_security": {
+    "base_url": "http://127.0.0.1:8000",
+    "checks": [
+      {
+        "check": "untrusted host",
+        "status": 400
+      },
+      {
+        "check": "cross-site browser fetch",
+        "status": 403
+      },
+      {
+        "check": "oversized URI",
+        "status": 414
+      },
+      {
+        "check": "unwanted request body",
+        "status": 413
+      },
+      {
+        "check": "write method",
+        "status": 405
+      },
+      {
+        "check": "private environment file",
+        "status": 404
+      },
+      {
+        "check": "source map",
+        "status": 404
+      },
+      {
+        "check": "path traversal",
+        "status": 404
+      },
+      {
+        "check": "SQL injection",
+        "status": 422
+      },
+      {
+        "check": "script injection",
+        "status": 422
+      }
+    ],
+    "passed": 10
+  },
+  "python_advisory_scan": {
+    "audited_packages": 40,
+    "vulnerabilities": 0,
+    "adverse_statuses": 0
+  },
+  "npm_advisory_scan": {
+    "vulnerabilities": {
+      "info": 0,
+      "low": 0,
+      "moderate": 0,
+      "high": 0,
+      "critical": 0,
+      "total": 0
+    },
+    "dependencies": {
+      "prod": 8,
+      "dev": 159,
+      "optional": 57,
+      "peer": 11,
+      "peerOptional": 0,
+      "total": 166
+    }
+  },
+  "browser": {
+    "passed": true,
+    "viewports": [
+      1440,
+      390,
+      320
+    ],
+    "console_errors": [],
+    "checks": [
+      "cutoff draft/apply and source eligibility",
+      "forecast-only decision requests",
+      "keyboard chart inspection",
+      "exact browser CSV bytes",
+      "four API-derived metrics",
+      "daily drill-down",
+      "pinned provenance and reload",
+      "narrow layout and keyboard table focus"
+    ]
+  },
+  "final_container_gate": {
+    "project": "winddesk-ci-security-final",
+    "release_id": "f61cecb1c14d91cfc32f10c74a9945fd2cf7f1851abd8ca6b0eb3f3e8975b052",
+    "build_sha": "security-scale-local",
+    "image_id": "sha256:bfdef155fe13e6085315869fe4cd2ecabec69864809bc6a7053dba872730e52c",
+    "non_root": true,
+    "read_only_root": true,
+    "capabilities_dropped": true,
+    "seed_replay": "passed",
+    "database_and_web_restart": "passed",
+    "stable_fingerprint": "01628358d852c16abbfb1bdf18482beed381fe54368b96a7de4670a009738df6"
+  },
+  "not_verified": [
+    "public hosting deployment",
+    "hosting WAF and shared quotas",
+    "internet sustained-load capacity",
+    "independent penetration test"
+  ]
+}

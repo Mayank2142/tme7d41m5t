@@ -1,6 +1,9 @@
 """Validate deployment configuration without exposing database credentials."""
 
+import os
+import re
 from datetime import time
+from ipaddress import ip_network
 from pathlib import Path
 from typing import Literal
 
@@ -31,6 +34,28 @@ class Settings(BaseSettings):
     build_sha: str = Field(default="local", min_length=1, max_length=64)
     api_rate_limit_enabled: bool = True
     api_rate_limit_per_minute: int = Field(default=120, ge=1, le=10_000)
+    api_max_inflight: int = Field(default=64, ge=1, le=128)
+    response_cache_mb: int = Field(default=32, ge=1, le=128)
+    source_cache_mb: int = Field(default=32, ge=1, le=128)
+    allowed_hosts: list[str] = ["localhost", "127.0.0.1", "testserver"]
+    enable_api_docs: bool | None = None
+    reader_database_url: SecretStr | None = None
+    web_workers: int = Field(default=1, ge=1, le=8)
+    trusted_proxy_ips: list[str] = Field(default_factory=list, max_length=32)
+
+    @field_validator("trusted_proxy_ips")
+    @classmethod
+    def validate_proxy_ips(cls, values: list[str]) -> list[str]:
+        for value in values:
+            try:
+                network = ip_network(value, strict=False)
+                if network.prefixlen == 0:
+                    raise ValueError("Universal proxy trust is not allowed")
+            except ValueError as exc:
+                raise ValueError(
+                    "Trusted proxies must be explicit IP addresses or CIDR networks"
+                ) from exc
+        return values
 
     @field_validator("database_url")
     @classmethod
@@ -50,11 +75,48 @@ class Settings(BaseSettings):
             raise ValueError("Cutoff must be a local HH:MM value without seconds or an offset")
         return value
 
+    @field_validator("allowed_hosts")
+    @classmethod
+    def validate_hosts(cls, value: list[str]) -> list[str]:
+        if not value or any(
+            not re.fullmatch(r"[a-zA-Z0-9](?:[a-zA-Z0-9.-]{0,251}[a-zA-Z0-9])?", host)
+            or ".." in host
+            for host in value
+        ):
+            raise ValueError("Allowed hosts must be explicit hostnames without ports or wildcards")
+        return [host.lower() for host in value]
+
     @model_validator(mode="after")
     def validate_production_credentials(self) -> "Settings":
-        if (
-            self.environment == "production"
-            and self.database_url.get_secret_value() == DEVELOPMENT_DATABASE_URL
-        ):
-            raise ValueError("Production requires an explicit GRID_DATABASE_URL")
+        if self.environment == "production":
+            parsed = make_url(self.database_url.get_secret_value())
+            if (
+                not parsed.password
+                or len(parsed.password) < 16
+                or parsed.password == "winddesk_local"
+            ):
+                raise ValueError(
+                    "Production requires separate database credentials (16+ characters)"
+                )
+            if "allowed_hosts" not in self.model_fields_set:
+                raise ValueError("Production requires explicit GRID_ALLOWED_HOSTS")
+            if parsed.host not in {"localhost", "127.0.0.1"} and parsed.query.get(
+                "sslmode"
+            ) not in {"verify-full", "verify-ca"}:
+                raise ValueError("Production database connections require verified TLS")
+            if not self.api_rate_limit_enabled:
+                raise ValueError("Production request rate limiting must remain enabled")
+            # The platform supplies these server-side values. Never derive host
+            # permission from request headers, forwarding headers, or URL input.
+            if os.environ.get("VERCEL") == "1":
+                deployment_hosts = [
+                    os.environ[name]
+                    for name in ("VERCEL_URL", "VERCEL_BRANCH_URL", "VERCEL_PROJECT_PRODUCTION_URL")
+                    if os.environ.get(name)
+                ]
+                self.allowed_hosts = (
+                    list(dict.fromkeys(self.allowed_hosts + self.validate_hosts(deployment_hosts)))
+                    if deployment_hosts
+                    else self.allowed_hosts
+                )
         return self

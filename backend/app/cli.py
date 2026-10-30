@@ -20,6 +20,7 @@ from backend.app.ingestion.validation import inspect_batches, release_identity
 from backend.app.persistence.analysis import load_analysis_sources
 from backend.app.persistence.database import create_database_engine, database_available
 from backend.app.persistence.migrate import migrate
+from backend.app.persistence.permissions import configure_reader
 from backend.app.persistence.releases import dataset_state, export_archive, import_archive
 
 DEFAULT_ARCHIVE = Path("data/snapshots/january_2026.json.gz")
@@ -78,6 +79,7 @@ def _run() -> None:
             command.add_argument("--refresh", action="store_true")
         if name in {"seed", "backfill"}:
             command.add_argument("--allow-partial", action="store_true")
+            command.add_argument("--configure-reader", action="store_true")
         if name in {"validate", "seed", "backfill"}:
             command.add_argument("--report", type=Path)
     export = commands.add_parser(
@@ -95,7 +97,9 @@ def _run() -> None:
     )
     args = parser.parse_args()
     if args.command == "serve":
-        Settings()  # Validate configuration before launching the server.
+        settings = Settings()
+        if args.reload and settings.web_workers > 1:
+            parser.error("Reload mode requires GRID_WEB_WORKERS=1")
         logging.basicConfig(level=logging.INFO, format="%(message)s")
         uvicorn.run(
             "backend.app.main:create_app",
@@ -103,6 +107,12 @@ def _run() -> None:
             host=args.host,
             port=args.port,
             reload=args.reload,
+            workers=settings.web_workers,
+            proxy_headers=bool(settings.trusted_proxy_ips),
+            forwarded_allow_ips=",".join(settings.trusted_proxy_ips),
+            server_header=False,
+            timeout_keep_alive=5,
+            timeout_graceful_shutdown=20,
         )
     elif args.command in {"fetch", "validate"}:
         if args.command == "fetch":
@@ -137,6 +147,11 @@ def _run() -> None:
                 if args.command == "backfill":
                     download_january(args.archive, refresh=args.refresh)
                 result = import_archive(engine, args.archive, allow_partial=args.allow_partial)
+                if args.configure_reader:
+                    reader_url = Settings().reader_database_url
+                    if reader_url is None:
+                        raise ValueError("Set GRID_READER_DATABASE_URL to provision the web login")
+                    configure_reader(engine, reader_url.get_secret_value())
                 if args.report:
                     manifest(args.archive, args.report, allow_partial=args.allow_partial)
                 print(

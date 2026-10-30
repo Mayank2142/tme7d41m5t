@@ -3,6 +3,8 @@ import { type FormEvent, type ReactNode, useEffect, useState } from "react";
 import { loadAccuracy, loadDecision, loadQuality } from "./api/analysis";
 import { type Configuration, loadConfiguration } from "./api/client";
 import { DownloadButton, ErrorNotice, Loading, RouteLink, WindMark } from "./components/common";
+import { MotionEffects, MotionRegion } from "./components/Motion";
+import { ViewIcon, WindScene } from "./components/WindScene";
 import {
   CUTOFF,
   type Filters,
@@ -17,20 +19,6 @@ import { AccuracyView } from "./views/Accuracy";
 import { DecisionView } from "./views/Decision";
 import { MethodologyView } from "./views/Methodology";
 
-const TITLES = {
-  decision: [
-    "Wind outlook at the cutoff",
-    "Replay a January purchase decision with the source forecasts available to the desk.",
-  ],
-  accuracy: [
-    "Understand the forecast error",
-    "Review the original outlook against reported wind, with a clear denominator and an explicit method.",
-  ],
-  methodology: [
-    "Data & methodology",
-    "Inspect the source vintage, selection rules, coverage, and limits behind every result.",
-  ],
-};
 function Shell({
   children,
   configuration,
@@ -40,6 +28,7 @@ function Shell({
 }) {
   return (
     <div className="app-shell">
+      <MotionEffects />
       <a className="skip-link" href="#main-content">
         Skip to main content
       </a>
@@ -48,22 +37,22 @@ function Shell({
           <span className="brand-mark">
             <WindMark />
           </span>
-          <span>
-            Wind Desk<span className="brand-caption">GB WIND DECISION SUPPORT</span>
+          <span className="brand-name">
+            Wind Desk<small>Wind intelligence</small>
           </span>
         </a>
         <div className="header-context">
-          <span className="pilot-label">JANUARY 2026 PILOT</span>
-          <span>National wind · Great Britain</span>
+          <span className="header-period">January 2026</span>
+          <span className="header-market">
+            <span className="header-market-dot" />
+            GB national wind
+          </span>
         </div>
       </header>
       <main id="main-content" tabIndex={-1}>
         {children}
       </main>
       <footer>
-        <span>
-          Wind Desk <span aria-hidden="true">/</span> Independent implementation
-        </span>
         <span>
           {configuration?.data_attribution ?? "Data source: Elexon"}{" "}
           {configuration && (
@@ -259,11 +248,9 @@ function Workbench({
     const current = await checkRelease();
     if (current?.dataset.release_id) {
       navigate(hrefFor(view, { ...filters, release: current.dataset.release_id }));
-      setReleaseMessage("Using the current accepted release.");
+      setReleaseMessage("Using the latest available data.");
     } else if (current)
-      setReleaseMessage(
-        "No current accepted release is available. The existing selection remains pinned.",
-      );
+      setReleaseMessage("Source data is unavailable. Your current selection is unchanged.");
   }
   async function copyLink() {
     try {
@@ -275,27 +262,16 @@ function Workbench({
   }
   return (
     <Shell configuration={configuration}>
-      <div className="page-intro">
-        <div>
-          <p className="eyebrow">DAY-AHEAD PROCUREMENT / HISTORICAL WORKSPACE</p>
-          <h1 id="page-title" tabIndex={-1}>
-            {TITLES[view][0]}
-          </h1>
-          <p className="intro-copy">{TITLES[view][1]}</p>
-        </div>
-        <span className="replay-tag">Elexon source data</span>
-      </div>
+      <WindScene view={view} />
       <nav className="view-tabs" aria-label="Workspace views">
-        {(["decision", "accuracy", "methodology"] as const).map((item, index) => (
+        {(["decision", "accuracy", "methodology"] as const).map((item) => (
           <RouteLink
             key={item}
             navigate={navigate}
             href={hrefFor(item, filters)}
             aria-current={view === item ? "page" : undefined}
           >
-            <span className="tab-number" aria-hidden="true">
-              0{index + 1}
-            </span>
+            <ViewIcon view={item} />
             {item === "decision"
               ? "Decision outlook"
               : item === "accuracy"
@@ -304,29 +280,26 @@ function Workbench({
           </RouteLink>
         ))}
       </nav>
-      <div className="release-strip">
-        <span>
-          <i className="inline-dot good" />
-          {filters.release ? (
-            <>
-              Pinned release <code title={filters.release}>{filters.release.slice(0, 12)}</code>
-            </>
-          ) : (
-            "Awaiting a source release"
-          )}
+      <div className="source-status">
+        <span className="source-label">
+          <svg viewBox="0 0 20 20" fill="none" aria-hidden="true">
+            <ellipse cx="10" cy="4" rx="6" ry="2" />
+            <path d="M4 4v6c0 1.1 2.7 2 6 2s6-.9 6-2V4M4 10v6c0 1.1 2.7 2 6 2s6-.9 6-2v-6" />
+          </svg>
+          Elexon wind data
         </span>
-        <div>
+        <div className="source-actions">
           {configuration.dataset.release_id &&
             configuration.dataset.release_id !== filters.release && (
-              <span className="new-release">A newer active release is available</span>
+              <span className="source-update-note">Newer data available</span>
             )}
           <button
             type="button"
-            className="text-button"
+            className="source-update"
             onClick={refreshRelease}
             disabled={checkingRelease || dirty}
           >
-            {checkingRelease ? "Checking release…" : "Use current source release"}
+            {checkingRelease ? "Updating…" : "Use latest data"}
           </button>
         </div>
       </div>
@@ -339,7 +312,7 @@ function Workbench({
         <ErrorNotice
           error={configurationError}
           retry={refreshRelease}
-          title="Could not check the current source release"
+          title="Could not update source data"
         />
       )}
       {noRelease ? (
@@ -413,13 +386,7 @@ function Workbench({
               {query.data && (
                 <>
                   <div className="result-toolbar">
-                    <span>
-                      {query.isFetching
-                        ? "Refreshing selected analysis…"
-                        : view === "methodology"
-                          ? "Source provenance & calculation rules"
-                          : "All results use the applied selection"}
-                    </span>
+                    {query.isFetching && <span role="status">Refreshing selected analysis…</span>}
                     <div>
                       <button
                         type="button"
@@ -450,7 +417,8 @@ function Workbench({
                       {shareState}
                     </p>
                   )}
-                  <div
+                  <MotionRegion
+                    key={result?.analysis_context_id ?? quality.data?.release_id ?? view}
                     aria-busy={query.isFetching}
                     className={query.isError ? "last-result" : undefined}
                   >
@@ -473,7 +441,7 @@ function Workbench({
                     {view === "methodology" && quality.data && (
                       <MethodologyView data={quality.data} />
                     )}
-                  </div>
+                  </MotionRegion>
                 </>
               )}
             </>
@@ -510,7 +478,6 @@ export default function App() {
     <Shell>
       <div className="page-intro">
         <div>
-          <p className="eyebrow">JANUARY 2026 / HISTORICAL WORKSPACE</p>
           <h1>Wind forecast workbench</h1>
           <p className="intro-copy">Preparing the source release and analysis policies.</p>
         </div>

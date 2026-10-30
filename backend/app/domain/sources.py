@@ -115,6 +115,8 @@ class SourceIndex:
             by_target[row.target_start_utc].append(row)
         self._by_target = {target: tuple(rows) for target, rows in by_target.items()}
         self.dataset = dataset
+        # Conservative accounting, not a measurement of total Python process RSS.
+        self.cache_weight = 1024 * sum(map(len, self._by_target.values())) + 1024
 
     def select(self, target: datetime, cutoff: datetime | None = None) -> SourceSelection:
         if target.utcoffset() is None:

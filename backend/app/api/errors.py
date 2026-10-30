@@ -35,7 +35,10 @@ def _error(request: Request, status: int, code: str, message: str, errors=()) ->
 def install_error_handlers(app: FastAPI) -> None:
     @app.exception_handler(ApiProblem)
     async def api_problem(request: Request, exc: ApiProblem):
-        return _error(request, exc.status, exc.code, exc.message)
+        response = _error(request, exc.status, exc.code, exc.message)
+        if exc.code == "SERVER_BUSY":
+            response.headers["Retry-After"] = "1"
+        return response
 
     @app.exception_handler(RequestValidationError)
     async def invalid_filters(request: Request, exc: RequestValidationError):

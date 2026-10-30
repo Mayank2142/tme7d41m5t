@@ -28,9 +28,10 @@ Start PostgreSQL and install the locked Python environment:
 docker compose up -d postgres
 uv sync --frozen
 uv run winddesk check-db
-uv run winddesk seed
-uv run winddesk serve --reload
+uv run winddesk seed --configure-reader
 ```
+
+For native serving, switch the web process to the reader login before starting it. In PowerShell, run `$env:GRID_DATABASE_URL = 'postgresql+psycopg://winddesk_reader:winddesk_local@127.0.0.1:5432/winddesk'`, then `uv run winddesk serve --reload`. In bash, use `export GRID_DATABASE_URL='postgresql+psycopg://winddesk_reader:winddesk_local@127.0.0.1:5432/winddesk'`. Keep operator credentials in a separate terminal for later migrations/imports. Docker Compose provisions and separates these logins automatically. All example passwords are development values.
 
 In another terminal:
 
@@ -74,8 +75,8 @@ The default archive is `data/snapshots/january_2026.json.gz`. `seed` reads the b
 - `GET /api/v1/export.csv`: requires a `mode` and matching analysis filters; follow the analysis response's `export_url` for the same release and guarded context.
 - `GET /health/live`: process liveness, independent of PostgreSQL.
 - `GET /health/ready`: database plus accepted-data readiness, with an explicit failure code if either is missing.
-- `GET /api/docs`: generated API documentation.
-- `GET /api/openapi.json`: machine-readable API contract.
+- `GET /api/docs`: generated API documentation (local development; disabled by default in production).
+- `GET /api/openapi.json`: machine-readable API contract (same documentation setting).
 
 After startup, open [the workbench](http://127.0.0.1:8000/) or [local API docs](http://127.0.0.1:8000/api/docs). The default Decision view covers January 31 with February 1 delivery. Analysis dates are January purchase decisions, cutoff is local `HH:MM`, and the supported comparison is `source_timestamp_v1`. Invalid/ambiguous filters return typed errors; valid missing data returns nulls and coverage. Decision JSON and CSV contain no actuals. Accuracy CSV preserves all 1,488 half-hour targets, marking the 744 native comparison targets and valid metric contributions explicitly. See the [API/export contract](docs/API.md) for context hashing, CSV columns, and errors.
 
@@ -104,6 +105,14 @@ The subsequent [local-readiness verification](docs/LOCAL_READINESS.md) repeated 
 
 The [verification guide](docs/VERIFICATION.md) includes the running-service, browser, packaging, publication-input and isolated-container commands. The [CI workflow](.github/workflows/ci.yml) runs quality checks before image, seed, browser and restart gates, without live Elexon calls. Its remote execution requires the later public repository. The local request quota is a per-process backstop; shared host quotas and trusted proxy identity must be verified during deployment.
 
+## Concurrency and security
+
+The public dashboard remains read-only. Bounded per-process caches share immutable source indexes and serialized JSON/CSV across requests, with one calculation per concurrent cache key. Rate limits, admission limits, database statement timeouts, explicit host validation, request-size limits, restrictive browser headers and static-file allowlisting reduce common attack paths and resource exhaustion. Docker serves with a separate database login that cannot modify the dataset or select raw response payloads/ingestion records. Production configuration requires explicit hosts, separate database credentials and verified remote PostgreSQL TLS; API documentation defaults off. CI audits both dependency lockfiles.
+
+See [security, measured load results and deployment controls](docs/SECURITY_AND_SCALING.md). Per-instance caching and quotas require a hosting WAF and aggregate connection budget when scaling across instances. Internet deployment, firewall configuration and penetration testing remain separate release work; no claim of immunity from attacks is made.
+
+The hardening verification passed 102 backend and 43 frontend tests, with no skips in the PostgreSQL-enabled backend run. The local 50-client burst completed 200 requests successfully at about 493 ms p95. The production dependency scans reported zero known advisories at the time of the check. See [the dated evidence](docs/security-scale-evidence.json) for the workload, limits and final container checks.
+
 ## Source and analysis policy
 
 Only Elexon WINDFOR and FUELHH WIND records are allowed. January means purchase decision dates, so delivery runs from 2 January through 1 February. The default 09:00 Europe/London cutoff is an illustrative desk assumption. The primary comparison matches source target timestamps; it does not invent half-hour forecasts or assume a full-hour forecast energy profile. The portal describes reported outturn, which may include estimates, rather than final settlement truth.
@@ -126,6 +135,7 @@ The real raw-response archive and manifest are bundled under `data/snapshots`. T
 | `frontend/src/` | React workbench, shared URL state, typed/validated API clients, formatting, and responsive styles |
 | `frontend/src/views/` | Decision, retrospective Accuracy, and Data & Methodology views |
 | `frontend/src/components/` | Native SVG charts, accessible tables/controls, downloads, loading and error UI |
+| `frontend/src/assets/` | Optimized illustrative wind-energy images, generation prompts and provenance |
 | `frontend/src/test/` | Attributed frozen API fixtures for offline contract/workflow tests |
 | `frontend/scripts/browser-smoke.mjs` | Repeatable real-browser journey and exact-download gate |
 | `scripts/` | Running-service, container, wheel and publication checks; prepared local PostgreSQL helper |
@@ -146,6 +156,7 @@ The real raw-response archive and manifest are bundled under `data/snapshots`. T
 | `docs/PHASE_6_STATUS.md` | Integrated verification evidence, container checks and remote CI status |
 | `docs/VERIFICATION.md` | Reproduction commands, release gates and security boundaries |
 | `docs/LOCAL_READINESS.md` | Verified local handoff, Docker repair, startup and remaining external actions |
+| `docs/SECURITY_AND_SCALING.md` | Implemented protections, measured concurrency, reproduction and hosting controls |
 | `docs/local-readiness-evidence.json` | Committed-checkout, test, recovery and Desktop-restart evidence |
 | `docs/DEMO_SCRIPT.md` | Customer/technical recording script and video checks |
 | `docs/WORKBENCH.md` | Analyst controls, interpretation, sharing, refresh, and downloads |
@@ -154,8 +165,8 @@ See the [implementation plan](IMPLEMENTATION_PLAN.md) and [phase breakdown](docs
 
 ## Selected hosting
 
-The user has a Vercel account. The prepared route builds React, bundles its compiled files, and serves them through the same FastAPI application from `app.py`. This avoids relying on an unverified multi-service beta. See [Vercel setup](docs/VERCEL_SETUP.md). Authentication, an external PostgreSQL database, budget/plan eligibility, and an actual preview deployment remain to be verified. Docker remains the local reproducible runtime.
+The user has a Vercel account. The prepared route builds React, bundles its compiled files, and serves them through the same FastAPI application from `app.py`. This avoids relying on an unverified multi-service beta. See [Vercel setup](docs/VERCEL_SETUP.md). Vercel account authentication, an external PostgreSQL database, budget/plan eligibility, and an actual preview deployment remain to be verified. The dashboard itself is public and read-only by user choice. Docker remains the local reproducible runtime.
 
 ## AI assistance
 
-OpenAI Codex assisted with requirements analysis, public Elexon API research, implementation planning, scaffolding, code, and verification. The implementation record states which checks were executed and which remain outstanding. AI assistance does not replace source validation, review, or production acceptance.
+OpenAI Codex assisted with requirements analysis, public Elexon API research, implementation planning, scaffolding, code, and verification. The built-in OpenAI image-generation tool produced the two illustrative wind-energy landscapes; [image provenance/prompts](frontend/src/assets/README.md) document their origin. The implementation record states which checks were executed and which remain outstanding. AI assistance does not replace source validation, review, or production acceptance.

@@ -27,10 +27,15 @@ Choose the repository root as the Vercel project root and FastAPI as the framewo
 Required external secret:
 
 ```text
-GRID_DATABASE_URL=postgresql+psycopg://USER:PASSWORD@HOST/DATABASE?sslmode=require
+GRID_DATABASE_URL=postgresql+psycopg://READER:replace-with-random-password@HOST/DATABASE?sslmode=verify-full&sslrootcert=system
+GRID_ALLOWED_HOSTS=["assignment-example.vercel.app"]
 ```
 
-This is a placeholder, not a working credential. Encode special characters in URL components. `vercel.json` sets the production environment, frontend directory, and a per-instance pool size of one with no overflow. Connection limits still depend on the database tier and the platform's instance concurrency; validate them before operational use.
+These are placeholders. Use the actual project alias and preview hostname(s); wildcards are rejected. Use a separate reader login with a random password of at least 16 characters. Configure the provider's certificate trust; `sslrootcert=system` requires compatible libpq and a provider certificate trusted by the runtime. Use a supplied CA bundle where required. Encode special characters in URL components. `vercel.json` sets the production environment, frontend directory, and a per-instance pool size of one with no overflow. Connection limits still depend on the database tier and the platform's instance concurrency; validate them before operational use.
+
+Apply migrations and seed through a separate operator job, then grant only the permissions listed in `backend/app/persistence/permissions.py` to the web login. For a dedicated PostgreSQL database where the operator may manage roles, `winddesk seed --configure-reader` uses `GRID_READER_DATABASE_URL` to provision that login. Managed services may require their role-management console instead. Do not place the operator's connection secret in the web function environment.
+
+Production API docs are disabled by default. The selected dashboard is public and read-only. Configure and verify Vercel WAF request limits/bot controls for both preview and production, checking plan availability and cost first. The process-local quota is not shared across functions. Establish an aggregate database pool/instance budget and alert on latency, 429/503 rates and connection exhaustion. See [security and scaling](SECURITY_AND_SCALING.md). These hosting controls have not been configured or exercised locally.
 
 Optional non-secret configuration includes `GRID_DEFAULT_CUTOFF_LOCAL=09:00` and a deployment commit in `GRID_BUILD_SHA`. The runtime reads `PORT` for local/container serving; Vercel imports `app` directly rather than executing that command.
 

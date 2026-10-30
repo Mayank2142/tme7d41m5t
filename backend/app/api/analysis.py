@@ -16,10 +16,11 @@ from backend.app.contracts import AccuracyResponse, DecisionResponse, ErrorRespo
 from backend.app.domain.calendar import parse_cutoff
 from backend.app.errors import ApiProblem
 from backend.app.persistence.reader import DatasetReader
-from backend.app.services.analysis import accuracy_response, decision_response
-from backend.app.services.csv_export import render_csv
+from backend.app.services.cached_analysis import AnalysisPayload, cached_analysis
 
-ERROR_RESPONSES = {status: {"model": ErrorResponse} for status in (404, 409, 422, 500, 503)}
+ERROR_RESPONSES = {
+    status: {"model": ErrorResponse} for status in (400, 403, 404, 409, 422, 429, 500, 503)
+}
 router = APIRouter(
     prefix="/api/v1",
     tags=["analysis"],
@@ -37,55 +38,60 @@ def _cutoff(request: Request, supplied: str | None):
     )
 
 
-def _headers(result) -> dict[str, str]:
-    return {
-        "X-Analysis-Context-ID": result.analysis_context_id,
-        "X-Dataset-Release": result.context.release_id,
-    }
+def _record_context(request: Request, result: AnalysisPayload) -> None:
+    request.state.analysis_context_id = result.context_id
+    request.state.release_id = result.release_id
 
 
-def _record_context(request: Request, result) -> None:
-    request.state.analysis_context_id = result.analysis_context_id
-    request.state.release_id = result.context.release_id
+def _analysis(request, reader, mode, start, end, cutoff, release_id):
+    result = cached_analysis(
+        request.app.state.response_cache,
+        reader,
+        mode,
+        start,
+        end,
+        cutoff,
+        release_id,
+        request.app.state.settings.build_sha,
+    )
+    _record_context(request, result)
+    return result
 
 
 @router.get("/decision-view", response_model=DecisionResponse)
 def decision_view(
     request: Request,
-    response: Response,
     filters: Annotated[DecisionFilters, Query()],
     reader: Reader,
-) -> DecisionResponse:
-    result = decision_response(
+) -> Response:
+    result = _analysis(
+        request,
         reader,
+        "decision",
+        filters.decision_date,
         filters.decision_date,
         _cutoff(request, filters.cutoff_local),
         filters.release_id,
-        request.app.state.settings.build_sha,
     )
-    _record_context(request, result)
-    response.headers.update(_headers(result))
-    return result
+    return Response(result.json, media_type="application/json", headers=result.headers)
 
 
 @router.get("/accuracy", response_model=AccuracyResponse)
 def accuracy(
     request: Request,
-    response: Response,
     filters: Annotated[AccuracyFilters, Query()],
     reader: Reader,
-) -> AccuracyResponse:
-    result = accuracy_response(
+) -> Response:
+    result = _analysis(
+        request,
         reader,
+        "accuracy",
         filters.decision_from,
         filters.decision_to,
         _cutoff(request, filters.cutoff_local),
         filters.release_id,
-        request.app.state.settings.build_sha,
     )
-    _record_context(request, result)
-    response.headers.update(_headers(result))
-    return result
+    return Response(result.json, media_type="application/json", headers=result.headers)
 
 
 @router.get(
@@ -99,28 +105,22 @@ def export_csv(
     reader: Reader,
 ) -> Response:
     cutoff = _cutoff(request, filters.cutoff_local)
-    build = request.app.state.settings.build_sha
     if filters.mode == "decision":
-        result = decision_response(reader, filters.decision_date, cutoff, filters.release_id, build)
+        start = end = filters.decision_date
     else:
-        result = accuracy_response(
-            reader, filters.decision_from, filters.decision_to, cutoff, filters.release_id, build
-        )
-    _record_context(request, result)
+        start, end = filters.decision_from, filters.decision_to
+    result = _analysis(request, reader, filters.mode, start, end, cutoff, filters.release_id)
     if filters.expected_context_id and not compare_digest(
-        filters.expected_context_id, result.analysis_context_id
+        filters.expected_context_id, result.context_id
     ):
         raise ApiProblem(
             409,
             "ANALYSIS_CONTEXT_MISMATCH",
             "The analysis context changed. Refresh the analysis before downloading.",
         )
-    filename = (
-        f"winddesk-{result.context.mode}-{result.context.decision_from.isoformat()}-"
-        f"{result.context.decision_to.isoformat()}-{result.analysis_context_id[:12]}.csv"
-    )
     return Response(
-        content=render_csv(result),
+        content=result.csv,
         media_type="text/csv",
-        headers=_headers(result) | {"Content-Disposition": f'attachment; filename="{filename}"'},
+        headers=result.headers
+        | {"Content-Disposition": f'attachment; filename="{result.filename}"'},
     )
