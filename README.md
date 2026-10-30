@@ -1,10 +1,10 @@
 # Wind Desk
 
-Historical GB wind forecast decision support for January 2026. React and TypeScript frontend, Python FastAPI backend, PostgreSQL, Docker for reproducible local execution, and a prepared Vercel deployment entry point.
+Historical GB wind forecast decision support for January 2026. React and TypeScript frontend, Python FastAPI backend, PostgreSQL, Docker for reproducible local execution, and a verified Vercel deployment.
 
-**Current implementation: Phase 6 integrated verification.** Decision, Accuracy, and Data & Methodology use the real PostgreSQL release through typed read APIs. Inspect eligible forecasts, publication age, retrospective metrics, coverage, and provenance; share the pinned selection or download matching CSV. The seed contains 19,856 forecast versions and 1,488 WIND actuals. At 09:00, all 744 expected targets pair, with MAE 2,022.47 MW. Repeatable service/browser checks, security backstops, pinned image inputs and CI are now included. See [verification commands](docs/VERIFICATION.md), [Phase 6 evidence](docs/PHASE_6_STATUS.md), and the [workbench guide](docs/WORKBENCH.md).
+**Live application: [Wind Desk](https://tme7d41m5t.vercel.app). Phase 7 is complete for the public evaluation pilot.** Decision, Accuracy, and Data & Methodology use the accepted Elexon release in a separate managed PostgreSQL database. Inspect eligible forecasts, publication age, retrospective metrics, coverage, and provenance; share the pinned selection or download matching CSV. The seed contains 19,856 forecast versions and 1,488 WIND actuals. At 09:00, all 744 expected targets pair, with MAE 2,022.47 MW. See [deployment evidence](docs/PHASE_7_STATUS.md), [verification commands](docs/VERIFICATION.md), and the [workbench guide](docs/WORKBENCH.md).
 
-Public application and demonstration links will be added after deployment and video recording. Neither has been published yet.
+The public GitHub repository, its first remote CI run, and the required unlisted demonstration video remain Phase 8 deliverables. No video has been published or assignment submitted yet.
 
 The [local handoff](docs/LOCAL_READINESS.md) covers the Docker Desktop repair, standard startup helper, committed-checkout verification and remaining external release work. The [demo script](docs/DEMO_SCRIPT.md) prepares the customer and technical recording.
 
@@ -99,17 +99,17 @@ $env:GRID_TEST_DATABASE_URL = 'postgresql+psycopg://winddesk:winddesk_local@127.
 uv run pytest
 ```
 
-Without this variable, PostgreSQL integration checks are explicitly skipped. Phase 6 passed **90 backend tests with no skips**, including five real PostgreSQL integration tests, and **43 frontend tests**, lint, type checking and the production build. Independent HTTP checks and the real Chrome journey verify cutoff selection, metrics, provenance, guarded downloads and narrow layouts. Frontend tests use attributed frozen fixtures. See [Phase 6 status](docs/PHASE_6_STATUS.md) for actual execution evidence and outstanding remote checks.
+Without this variable, PostgreSQL integration checks are explicitly skipped. The latest Phase 7 run passed **107 backend tests with no skips** against local PostgreSQL. The enhanced frontend passed **47 tests**, lint, type checking and the production build. The deployed application passed independent public API/CSV checks and a fresh logged-out Chrome journey at desktop and narrow widths. A replacement deployment retained the same dataset, analysis and export fingerprints. Frontend tests use attributed frozen fixtures. [Phase 7 status](docs/PHASE_7_STATUS.md) records the current evidence; [Phase 6 status](docs/PHASE_6_STATUS.md) retains the earlier baseline.
 
 The subsequent [local-readiness verification](docs/LOCAL_READINESS.md) repeated all 90 backend and 43 frontend tests from a real committed clone, using Docker PostgreSQL and Node 24. It also verified the complete container runner, the standard local helper, database dump/restore into a separate database, and Docker Desktop restart persistence. A clean-checkout pytest temporary-directory bug was found and fixed. The locked Python production dependency audit reported no known advisories across 31 packages; the fresh npm install also reported zero known vulnerabilities.
 
-The [verification guide](docs/VERIFICATION.md) includes the running-service, browser, packaging, publication-input and isolated-container commands. The [CI workflow](.github/workflows/ci.yml) runs quality checks before image, seed, browser and restart gates, without live Elexon calls. Its remote execution requires the later public repository. The local request quota is a per-process backstop; shared host quotas and trusted proxy identity must be verified during deployment.
+The [verification guide](docs/VERIFICATION.md) includes the running-service, browser, packaging, publication-input and isolated-container commands. The [CI workflow](.github/workflows/ci.yml) runs quality checks before image, seed, browser and restart gates, without live Elexon calls. Its remote execution requires the later public repository. The request quota is a per-process backstop; a distributed request limit and verified hosting proxy identity remain operational scaling work.
 
 ## Concurrency and security
 
 The public dashboard remains read-only. Bounded per-process caches share immutable source indexes and serialized JSON/CSV across requests, with one calculation per concurrent cache key. Rate limits, admission limits, database statement timeouts, explicit host validation, request-size limits, restrictive browser headers and static-file allowlisting reduce common attack paths and resource exhaustion. Docker serves with a separate database login that cannot modify the dataset or select raw response payloads/ingestion records. Production configuration requires explicit hosts, separate database credentials and verified remote PostgreSQL TLS; API documentation defaults off. CI audits both dependency lockfiles.
 
-See [security, measured load results and deployment controls](docs/SECURITY_AND_SCALING.md). Per-instance caching and quotas require a hosting WAF and aggregate connection budget when scaling across instances. Internet deployment, firewall configuration and penetration testing remain separate release work; no claim of immunity from attacks is made.
+See [security, measured load results and deployment controls](docs/SECURITY_AND_SCALING.md). The public deployment has HTTPS, automatic DDoS mitigation and two verified free edge deny rules. The web function has only the restricted reader credential, verified PostgreSQL TLS and a one-connection pool; the reader role is capped at 20 connections. Distributed request limits, measured sustained cloud capacity, recovery objectives and independent penetration testing remain operational work. See [hosting controls and limits](docs/PHASE_7_STATUS.md).
 
 The hardening verification passed 102 backend and 43 frontend tests, with no skips in the PostgreSQL-enabled backend run. The local 50-client burst completed 200 requests successfully at about 493 ms p95. The production dependency scans reported zero known advisories at the time of the check. See [the dated evidence](docs/security-scale-evidence.json) for the workload, limits and final container checks.
 
@@ -154,6 +154,8 @@ The real raw-response archive and manifest are bundled under `data/snapshots`. T
 | `docs/PHASE_4_STATUS.md` | API/export verification, live results, and next-phase boundaries |
 | `docs/PHASE_5_STATUS.md` | Frontend tests, real-browser verification, download proof, and remaining release checks |
 | `docs/PHASE_6_STATUS.md` | Integrated verification evidence, container checks and remote CI status |
+| `docs/PHASE_7_STATUS.md`, `docs/phase-7-evidence.json` | Actual public deployment, logged-out verification, persistence and hosting limits |
+| `docs/VERCEL_SETUP.md` | Deployed architecture, secret configuration, redeployment and recovery procedure |
 | `docs/VERIFICATION.md` | Reproduction commands, release gates and security boundaries |
 | `docs/LOCAL_READINESS.md` | Verified local handoff, Docker repair, startup and remaining external actions |
 | `docs/SECURITY_AND_SCALING.md` | Implemented protections, measured concurrency, reproduction and hosting controls |
@@ -165,7 +167,7 @@ See the [implementation plan](IMPLEMENTATION_PLAN.md) and [phase breakdown](docs
 
 ## Selected hosting
 
-The user has a Vercel account. The prepared route builds React, bundles its compiled files, and serves them through the same FastAPI application from `app.py`. This avoids relying on an unverified multi-service beta. See [Vercel setup](docs/VERCEL_SETUP.md). Vercel account authentication, an external PostgreSQL database, budget/plan eligibility, and an actual preview deployment remain to be verified. The dashboard itself is public and read-only by user choice. Docker remains the local reproducible runtime.
+The public evaluation app runs on Vercel Hobby, with an isolated Neon Free PostgreSQL database in London and the function region configured as `lhr1`. React's compiled assets and the API are served by the same FastAPI application from `app.py`. The canonical URL is public and read-only; existing protection on generated deployment URLs is retained. No paid upgrade was enabled. Free allowances and cold starts apply, and commercial operation requires a separate plan/operational review. See [Vercel setup](docs/VERCEL_SETUP.md) and [the verified release](docs/PHASE_7_STATUS.md). Docker remains the local reproducible runtime.
 
 ## AI assistance
 

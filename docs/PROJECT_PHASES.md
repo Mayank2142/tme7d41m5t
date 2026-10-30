@@ -1,8 +1,8 @@
 # Project Phases and Completion Gates
 
-This is the execution sequence for the [implementation plan](../IMPLEMENTATION_PLAN.md). Phases 1–8 deliver the assignment within a sixteen-hour total-effort budget, including contingency. Phases 9–11 describe subsequent work before a utility uses the application operationally; estimate and authorize that work separately.
+This is the execution sequence for the [implementation plan](../IMPLEMENTATION_PLAN.md). Phases 1–8 were planned against a sixteen-hour total-effort budget, including contingency. Actual cumulative effort has not been fully reconciled; the estimates below do not establish compliance with that limit. Phases 9–11 describe subsequent work before a utility uses the application operationally; estimate and authorize that work separately.
 
-The original review and research are available. Phases 1–6 are implemented and verified locally, with subsequent frontend and security enhancements. [Phase 6 status](PHASE_6_STATUS.md), [local readiness](LOCAL_READINESS.md) and [security/scaling](SECURITY_AND_SCALING.md) record the executed evidence. Phase 7 is now in progress: the Vercel account is authenticated and an isolated anonymous project and free London PostgreSQL database have been created. Record time already spent; the sixteen-hour limit is not a fresh budget starting after planning.
+Phases 1–7 are implemented and verified for the evaluation pilot, including later frontend and security enhancements. The [public app](https://tme7d41m5t.vercel.app) passed logged-out analyst, CSV, security and replacement-deployment persistence checks. [Phase 7 status](PHASE_7_STATUS.md), [local readiness](LOCAL_READINESS.md) and [security/scaling](SECURITY_AND_SCALING.md) record the executed evidence. Phase 8 publication, remote CI and video/submission remain outstanding. The sixteen-hour limit is not a fresh budget starting after planning.
 
 ## Phase overview
 
@@ -142,13 +142,13 @@ Tasks:
 - Configure secrets, managed PostgreSQL, migrations, and the accepted January release.
 - Verify HTTPS, readiness, frontend assets, date/cutoff interaction, accuracy, and CSV.
 - Restart the hosted service and confirm release identity and results persist.
-- Record the URL, commit, image digest, dataset release, and smoke-test result.
+- Record the URL, deployed source commit, platform deployment ID, dataset release, and smoke-test result. Record the image digest when the host uses our Docker image; Vercel builds this application from source.
 
 **Deliverables:** public application and deployment verification record.
 
 **Completion gate:** a logged-out user can complete the analyst journey and the hosted application retains its data across restart. The rollback path and operating-cost owner are documented.
 
-**Dependency:** Phase 6, with hosting feasibility resolved in Phase 1. **Backlog mapping:** P0-12.
+**Dependency:** Phase 6, with hosting feasibility resolved in Phase 1. **Backlog mapping:** P0-12. **Current status:** complete for the public evaluation pilot. Vercel and a separate free London PostgreSQL database are configured; a fresh logged-out browser and public HTTP/export checks passed. Replacement deployment retained the exact accepted release and result fingerprints. Free edge rules, cost ownership, recovery procedure and operational limits are recorded in [Phase 7 status](PHASE_7_STATUS.md).
 
 ## Phase 8 Documentation demonstration and submission
 
@@ -200,4 +200,4 @@ Confirm the venue/product rules, internal cutoff, delivery boundaries, source co
 
 ## Current position and next action
 
-Phases 1–6 and the later local frontend/security enhancements are implemented. Complete Phase 7 by importing the accepted release into the new hosted database, configuring a separate web reader and exact hostnames, deploying the latest source to Vercel, then running logged-out HTTPS, browser, export and persistence checks. Phase 8 still requires the public GitHub repository/remote CI and actual video/submission artifacts. Keep local test evidence distinct from a completed hosted release.
+Phases 1–7 and the later frontend/security enhancements are implemented. The public evaluation pilot is available at [Wind Desk](https://tme7d41m5t.vercel.app); [Phase 7 evidence](PHASE_7_STATUS.md) records its verified deployment. Phase 8 is next: review and publish the anonymous GitHub repository, run remote CI, record/upload the required unlisted video, verify all final links, and complete submission. Client operational use remains subject to Phases 9–11.

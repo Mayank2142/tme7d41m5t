@@ -63,7 +63,9 @@ Users behind one office NAT, or behind a proxy whose identity has not been verif
 
 ## Required hosting controls
 
-Application hardening is implemented and locally tested. The following controls require the actual hosting account/infrastructure and are **not configured by this local change**:
+Application hardening is implemented and tested. [Phase 7](PHASE_7_STATUS.md) subsequently verified public HTTPS/HSTS, automatic DDoS mitigation, two free edge deny rules, exact/platform-derived hostnames, disabled public API docs, a separate restricted reader and certificate-verified database TLS. The production reader has a 20-connection role cap and each function a one-connection pool. These are evaluation-pilot controls; no sustained cloud capacity or operational acceptance is claimed.
+
+The following list remains the operational checklist. Phase 7 did not enable priced WAF rate limiting/OWASP rulesets, establish a distributed request quota or trusted end-user proxy identity, or perform a managed-database recovery drill:
 
 1. Serve the public domain through HTTPS and the hosting firewall/WAF. Add managed attack/bot rules, shared request limits, URL/header/body limits, upstream timeouts and appropriate cost/spend alerts. Check the account's plan and pricing before enabling billable features. Use edge rules for volumetric attacks and slow clients; process-local quotas do not provide distributed DDoS protection.
 2. Set the exact production and preview hostnames in `GRID_ALLOWED_HOSTS`. Keep docs disabled unless deliberately needed. Verify proxy identity with a real request through the hosting ingress; never accept an arbitrary client's `X-Forwarded-For` as identity.

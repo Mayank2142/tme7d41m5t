@@ -1,0 +1,225 @@
+{
+  "phase": 7,
+  "status": "public_evaluation_pilot_deployed_and_verified",
+  "public_url": "https://tme7d41m5t.vercel.app",
+  "project_name": "tme7d41m5t",
+  "source_commit": "77f0793b4d7bdc4cf95e3c8363d1d13f82567363",
+  "hosting": {
+    "plan": "Vercel Hobby",
+    "configured_function_region": "lhr1",
+    "deployment_id": "dpl_EvnyCowK33mWGvhGMVpRBQFczRfZ",
+    "state": "READY",
+    "first_verified_deployment_id": "dpl_Hjq9YsYYzNmwPvZjJhrUiWKqupus",
+    "replacement_of_same_source_verified": true,
+    "docker_image_used_by_host": false,
+    "canonical_url_public": true,
+    "generated_deployment_url_protection_retained": true,
+    "paid_upgrade_enabled": false
+  },
+  "dataset": {
+    "release_id": "f61cecb1c14d91cfc32f10c74a9945fd2cf7f1851abd8ca6b0eb3f3e8975b052",
+    "parser": "elexon_streams_v2",
+    "schema_revision": "0002_freeze_release_versions",
+    "forecast_versions": 19856,
+    "actuals": 1488,
+    "paired_native_targets": 744,
+    "comparison_policy": "source_timestamp_v1",
+    "cutoff_0900_metrics_mw": {
+      "mae": 2022.470430107527,
+      "rmse": 2497.407157584179,
+      "bias": 1745.9381720430108,
+      "p90_absolute_error": 4154.4
+    }
+  },
+  "database": {
+    "resource_name": "tme7d41m5t-db",
+    "plan": "Free",
+    "region": "London (lhr1)",
+    "runtime_role": "winddesk_reader",
+    "reader_can_write": false,
+    "reader_can_read_raw_payload": false,
+    "reader_connection_cap": 20,
+    "function_pool_size": 1,
+    "function_pool_overflow": 0,
+    "tls": "verify-full; system trust maps to certifi CA roots",
+    "endpoint_type": "direct; verified session options",
+    "operator_secret_in_web_project": false,
+    "migration_seed_run_separately": true,
+    "paid_upgrade_enabled": false
+  },
+  "backend_suite": {
+    "tests": 107,
+    "errors": 0,
+    "failures": 0,
+    "skipped": 0
+  },
+  "frontend_suite": {
+    "tests": 47,
+    "failures": 0,
+    "source": "unchanged frontend; prior photographic enhancement verification documented in WORKBENCH.md",
+    "actual_host_build": "passed",
+    "junit_tests": 47
+  },
+  "public_service": {
+    "before_and_after_checks": [
+      "readiness, accepted seed and safe response headers",
+      "January boundaries, cutoff publication eligibility and forecast-only CSV",
+      "1,488 CSV rows per cutoff and four independently recomputed metrics",
+      "pinned raw-response provenance",
+      "safe validation, stale-download guard and read-only public routes",
+      "real built assets, CSP and cache boundaries"
+    ],
+    "stable_fingerprint_before": "5ba13edaa4203eabb00cb6cb6e820420baf95f701eb0879c6fceecb22d3cebc9",
+    "stable_fingerprint_after": "5ba13edaa4203eabb00cb6cb6e820420baf95f701eb0879c6fceecb22d3cebc9",
+    "login_or_bypass_token_used": false
+  },
+  "browser": {
+    "passed": true,
+    "base_url": "https://tme7d41m5t.vercel.app/",
+    "release_id": "f61cecb1c14d91cfc32f10c74a9945fd2cf7f1851abd8ca6b0eb3f3e8975b052",
+    "downloads": [
+      {
+        "filename": "winddesk-decision-2026-01-31-2026-01-31-6ff371aba6d3.csv",
+        "bytes": 17524,
+        "sha256": "26f6d87118ddf87940dddd0bb0adf29de12971adc9549c53c239b05b5973ceb2",
+        "context_id": "6ff371aba6d33dc84c1fe1b2a53b5f67f267f131a43cfb6a98079bb1f52656ac"
+      },
+      {
+        "filename": "winddesk-accuracy-2026-01-01-2026-01-31-719332eb5dd9.csv",
+        "bytes": 1272473,
+        "sha256": "28d906c23461cff6b597a517c28fc7a2985e6848a14729a48e4af45738ce0f90",
+        "context_id": "719332eb5dd97ba248e8cd65f5ab84c6b41611e9b241ab6bcc46315be7867d7b"
+      }
+    ],
+    "console_errors": [],
+    "viewports": [
+      1440,
+      390,
+      320
+    ],
+    "checks": [
+      "cutoff draft/apply and source eligibility",
+      "forecast-only decision requests",
+      "self-hosted wind imagery loads and compact header preserves the analysis",
+      "keyboard chart inspection",
+      "exact browser CSV bytes",
+      "four API-derived metrics",
+      "daily drill-down",
+      "pinned provenance and reload",
+      "compact reference dialogs, exact IDs, copy controls, modal focus and Escape",
+      "reference dialogs fit 390/320-pixel screens",
+      "reduced motion disables photographic reveal and scroll decoration",
+      "narrow layout and keyboard table focus"
+    ]
+  },
+  "hosted_security": {
+    "url": "https://tme7d41m5t.vercel.app",
+    "passed": true,
+    "checks": [
+      "/api/docs denied",
+      "/api/openapi.json denied",
+      "/assets/index.js.map denied",
+      "/.env denied at edge: 403",
+      "/.git/config denied at edge: 403",
+      "/.cache/private denied at edge: 403",
+      "/.tools/private denied at edge: 403",
+      "POST denied at edge: 403",
+      "PUT denied at edge: 403",
+      "PATCH denied at edge: 403",
+      "DELETE denied at edge: 403",
+      "cross-site fetch denied",
+      "no permissive CORS",
+      "HTTPS and HSTS",
+      "compiled assets load with immutable caching",
+      "no database credentials in HTML/JS/CSS",
+      "untrusted Host blocked by ingress/application: 404"
+    ],
+    "authentication_or_bypass_used": false
+  },
+  "firewall": {
+    "enabled": true,
+    "automatic_mitigations": "Active",
+    "active_custom_rules": 2,
+    "rules": [
+      {
+        "name": "Read-only public portal",
+        "action": "deny",
+        "methods": [
+          "POST",
+          "PUT",
+          "PATCH",
+          "DELETE",
+          "TRACE",
+          "CONNECT"
+        ],
+        "remotely_tested_methods": [
+          "POST",
+          "PUT",
+          "PATCH",
+          "DELETE"
+        ]
+      },
+      {
+        "name": "Block private-file probes",
+        "action": "deny",
+        "path_prefixes": [
+          "/.env",
+          "/.git",
+          "/.cache",
+          "/.tools"
+        ]
+      }
+    ],
+    "scope": "this project only",
+    "pricing": "free custom rules",
+    "attack_mode": false,
+    "bot_protection": false,
+    "owasp_ruleset": false,
+    "priced_rate_limiting": false,
+    "distributed_application_quota_verified": false
+  },
+  "production_python_audit": {
+    "audited_packages": 41,
+    "vulnerabilities": 0,
+    "adverse_statuses": 0
+  },
+  "remaining": [
+    "Phase 8: public anonymous GitHub repository and first remote CI run",
+    "Phase 8: unlisted customer/technical video and final submission",
+    "Operational rollout: sustained cloud capacity, trusted proxy identity/shared quota, owned monitoring and recovery, client acceptance",
+    "Cumulative sixteen-hour assignment effort reconciliation"
+  ],
+  "qualifications": [
+    "Application replacement persistence is not a managed-database restart or restore test.",
+    "No hosted load benchmark, uptime SLA, absolute security guarantee or commercial production acceptance is asserted.",
+    "Free plan limits and cold starts apply; account owner retains usage, incident and lifecycle responsibility."
+  ],
+  "verified_date": "2026-10-30",
+  "secret_hygiene": {
+    "exact_new_credentials_absent_from_publishable_files": true,
+    "temporary_provisioning_secret_files_removed": [
+      ".cache/phase7-env-GRID_DATABASE_URL.json",
+      ".cache/phase7-neon.env",
+      ".cache/phase7-runtime-env.json",
+      ".cache/phase7-secrets.json",
+      ".cache/phase7-single-env.json",
+      ".env.local"
+    ],
+    "official_cli_auth_retained_in_ignored_local_configuration": true
+  },
+  "local_refresh": {
+    "same_source_commit_as_host": true,
+    "docker_helper_start": "passed",
+    "database_volume_preserved": true,
+    "ready_accepted_release_matches": true,
+    "service_gate": "passed",
+    "service_checks": [
+      "readiness, accepted seed and safe response headers",
+      "January boundaries, cutoff publication eligibility and forecast-only CSV",
+      "1,488 CSV rows per cutoff and four independently recomputed metrics",
+      "pinned raw-response provenance",
+      "safe validation, stale-download guard and read-only public routes",
+      "real built assets, CSP and cache boundaries"
+    ]
+  }
+}
