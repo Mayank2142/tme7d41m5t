@@ -2,7 +2,7 @@
 
 This is the execution sequence for the [implementation plan](../IMPLEMENTATION_PLAN.md). Phases 1–8 were planned against a sixteen-hour total-effort budget, including contingency. Actual cumulative effort has not been fully reconciled; the estimates below do not establish compliance with that limit. Phases 9–11 describe subsequent work before a utility uses the application operationally; estimate and authorize that work separately.
 
-Phases 1–7 are implemented and verified for the evaluation pilot, including later frontend and security enhancements. The [public app](https://tme7d41m5t.vercel.app) passed logged-out analyst, CSV, security and replacement-deployment persistence checks. [Phase 7 status](PHASE_7_STATUS.md), [local readiness](LOCAL_READINESS.md) and [security/scaling](SECURITY_AND_SCALING.md) record the executed evidence. Phase 8 has published the anonymous-name [public repository](https://github.com/Mayank2142/tme7d41m5t) and passed full Linux quality/container CI; [Phase 8 evidence](PHASE_8_STATUS.md) records the result. The own-voice video and submission remain outstanding. The sixteen-hour limit is not a fresh budget starting after planning.
+Phases 1–7 are implemented and verified for the evaluation pilot, including later frontend and security enhancements. The [public app](https://tme7d41m5t.vercel.app) passed logged-out analyst, CSV, security and replacement-deployment persistence checks. [Phase 7 status](PHASE_7_STATUS.md), [local readiness](LOCAL_READINESS.md) and [security/scaling](SECURITY_AND_SCALING.md) record the executed evidence. Phase 8 has published the anonymous-name [public repository](https://github.com/Mayank2142/tme7d41m5t), passed full Linux quality/container CI and produced the AI-narrated video. The supplied [YouTube watch link](https://youtu.be/iET5el4IjjI) is in README; [Phase 8 evidence](PHASE_8_STATUS.md) tracks outstanding playback/visibility verification and submission. The sixteen-hour limit is not a fresh budget starting after planning.
 
 ## Phase overview
 
@@ -168,7 +168,7 @@ Tasks:
 
 **Dependency:** Phase 7 for final verification and recording. Draft notes and the script should be written throughout earlier phases. **Backlog mapping:** P0-13 through P0-15.
 
-**Current status:** public repository, reviewed history, README/review materials and full remote CI are verified. The user chose to record their own voice; the nine-minute script/checklist is ready. Recording, unlisted upload, final playback/link checks and company submission remain pending. See [Phase 8 status](PHASE_8_STATUS.md).
+**Current status:** public repository, reviewed history, README/review materials, full remote CI and the rendered 9:40 AI-narrated video are complete. The user supplied [the YouTube watch link](https://youtu.be/iET5el4IjjI), now included in README. Final playback/visibility verification and company submission remain pending. See [Phase 8 status](PHASE_8_STATUS.md).
 
 ## Phase 9 Operational data reliability
 
@@ -202,4 +202,4 @@ Confirm the venue/product rules, internal cutoff, delivery boundaries, source co
 
 ## Current position and next action
 
-Phases 1–7 and the later frontend/security enhancements are implemented. The public evaluation pilot is available at [Wind Desk](https://tme7d41m5t.vercel.app), with reviewed history in the [anonymous-name repository](https://github.com/Mayank2142/tme7d41m5t) and full remote CI verified. Complete Phase 8 by recording/uploading the required own-voice unlisted video using the [recording checklist](RECORDING_CHECKLIST.md), verifying final playback/links and submitting through the company's specified channel. Client operational use remains subject to Phases 9–11.
+Phases 1–7 and the later frontend/security enhancements are implemented. The public evaluation pilot is available at [Wind Desk](https://tme7d41m5t.vercel.app), with reviewed history in the [anonymous-name repository](https://github.com/Mayank2142/tme7d41m5t) and full remote CI verified. The rendered AI-narrated video has a supplied [YouTube watch link](https://youtu.be/iET5el4IjjI). Complete Phase 8 by confirming Unlisted visibility, verifying final playback/links and submitting through the company's specified channel. Client operational use remains subject to Phases 9–11.

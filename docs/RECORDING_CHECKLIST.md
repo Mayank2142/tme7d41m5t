@@ -1,6 +1,6 @@
 # Record and publish the required demonstration
 
-This is the earlier own-voice recording option. On 31 October 2026, the user requested AI narration instead; the complete rendered MP4 and its verification are documented in the [video production record](VIDEO_PRODUCTION.md). A YouTube watch URL still requires upload and playback verification. This checklist remains available for an optional personal re-recording.
+This is the earlier own-voice recording option. On 31 October 2026, the user requested AI narration instead; the complete rendered MP4 and its verification are documented in the [video production record](VIDEO_PRODUCTION.md). The user supplied [the YouTube watch link](https://youtu.be/iET5el4IjjI) on 1 November; playback and Unlisted visibility verification remain pending. This checklist remains available for an optional personal re-recording.
 
 ## Prepare once
 

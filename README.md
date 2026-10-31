@@ -12,7 +12,7 @@ Inspect the forecast available at a decision cutoff. Quantify its historical err
 ![PostgreSQL 17](https://img.shields.io/badge/PostgreSQL-17-264f45?logo=postgresql&logoColor=white)
 ![Docker](https://img.shields.io/badge/Docker-Compose-264f45?logo=docker&logoColor=white)
 
-**[Open live application](https://tme7d41m5t.vercel.app)** · **[Quick start](#quick-start)** · **[Architecture](#architecture)** · **[Verification](#verification)** · **[Demo video](#demo-video)**
+**[Open live application](https://tme7d41m5t.vercel.app)** · **[Watch demo video](https://youtu.be/iET5el4IjjI)** · **[Quick start](#quick-start)** · **[Architecture](#architecture)** · **[Verification](#verification)**
 
 </div>
 
@@ -323,11 +323,13 @@ Secrets, assignment DOCX files, local environments, generated media/output, cach
 
 ## Demo video
 
-![Wind Desk product demo and technical review](docs/images/video-thumbnail.jpg)
+[![Watch the Wind Desk product demo and technical review](docs/images/video-thumbnail.jpg)](https://youtu.be/iET5el4IjjI)
+
+**[Watch the customer pilot and technical review on YouTube](https://youtu.be/iET5el4IjjI).**
 
 The complete **9:40 Full HD video** has been rendered locally with AI-generated Indian English narration, real application demonstrations, architecture/code explanations, synchronized subtitles, quiet music and chapter markers. [Production record, storyboard and verification](docs/VIDEO_PRODUCTION.md) document the result.
 
-**Unlisted YouTube watch link: pending upload and playback verification.** The rendered MP4 is retained in the producing workspace under `output/video/wind-desk-demo.mp4`; large generated media is excluded from Git. The assignment has not been submitted. Cumulative actual effort against the original sixteen-hour limit has not been fully reconciled.
+The rendered MP4 is retained in the producing workspace under `output/video/wind-desk-demo.mp4`; large generated media is excluded from Git. The [publication record](docs/PHASE_8_STATUS.md) tracks final playback/visibility verification and submission. Cumulative actual effort against the original sixteen-hour limit has not been fully reconciled.
 
 ## Data attribution and AI assistance
 

@@ -1,6 +1,6 @@
 {
   "verified_date": "2026-10-31",
-  "status": "rendered_local_mp4_verified_youtube_upload_pending",
+  "status": "rendered_local_mp4_verified_youtube_link_recorded_playback_verification_pending",
   "repository": "https://github.com/Mayank2142/tme7d41m5t",
   "public_app": "https://tme7d41m5t.vercel.app",
   "reviewed_runtime_source": "2e47480d22660ad6ca32581b48dc182a9c6d5388",
@@ -68,12 +68,14 @@
   },
   "soundtrack": "Original synthesized ambient chord score; no sampled or stock recording",
   "ci_observed": "https://github.com/Mayank2142/tme7d41m5t/actions/runs/41134705128",
-  "youtube_watch_url": null,
+  "youtube_watch_url": "https://youtu.be/iET5el4IjjI",
   "youtube_upload_verified": false,
   "submission_completed": false,
   "limitations": [
     "Visual review uses selected extracted frames and captured UI state, not a human watch-through of all ten minutes.",
-    "No YouTube upload or watch URL has been created.",
+    "The user supplied the YouTube watch URL; logged-out playback and Unlisted visibility have not been independently verified.",
     "Application performance evidence is a short local burst, not a hosted capacity guarantee."
-  ]
+  ],
+  "youtube_link_recorded": true,
+  "youtube_link_added_date": "2026-11-01"
 }

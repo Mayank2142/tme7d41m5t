@@ -2,7 +2,7 @@
 
 Verified 31 October 2026. The complete **9:40.5, 1920 × 1080, 30 fps MP4** has been rendered locally with AI-generated Indian English narration, burned-in subtitles, a separate English SRT file, background music and chapter markers. The final video is an actual rendered artifact; the materials here document it.
 
-**YouTube upload and logged-out playback verification remain pending. No watch URL or completed submission is claimed.** The user's later request for AI narration supersedes the earlier own-voice recording preference.
+**[Watch the demo on YouTube](https://youtu.be/iET5el4IjjI).** The user supplied this watch link on 1 November 2026. Logged-out playback and Unlisted visibility still require verification before submission; no completed submission is claimed. The user's later request for AI narration supersedes the earlier own-voice recording preference.
 
 ![Wind Desk video thumbnail](images/video-thumbnail.jpg)
 
@@ -26,7 +26,7 @@ MP4 size: **24,952,358 bytes**. SHA-256:
 dbb67bd74d333009f4d3d0dcfc57cbbd7043e663268c1cd4f131fb1fa6e20e1c
 ```
 
-The [voiceover/storyboard](video/VOICEOVER.md) follows the final edit. The [machine evidence](video-production-evidence.json) records the checks and exact source identities. The MP4 must be transferred separately or uploaded before a public playback link can be added to README.
+The [voiceover/storyboard](video/VOICEOVER.md) follows the final edit. The [machine evidence](video-production-evidence.json) records the checks and exact source identities. The supplied [YouTube watch link](https://youtu.be/iET5el4IjjI) is included in README; the original MP4 remains outside Git.
 
 ## Content and timing
 
@@ -100,4 +100,4 @@ Technology logos come from the [Devicon project](https://github.com/devicons/dev
 - 20 final-file frames were extracted for visual review, including actual results and both source/context dialogs. Technical values were compared with captured UI state and source evidence.
 - This is automated media verification plus selected-frame visual review, not an independent human listen-through or watch-through of the entire video. The original assignment effort limit has not been reconciled.
 
-Before assignment submission, upload the MP4 as **Unlisted**, supply the thumbnail/SRT, verify playback, audio and duration in a logged-out browser, then add the actual watch URL to README and Phase 8 status. The earlier [own-voice script](DEMO_SCRIPT.md) and [recording checklist](RECORDING_CHECKLIST.md) remain an optional alternative.
+Before assignment submission, confirm that the [YouTube video](https://youtu.be/iET5el4IjjI) is **Unlisted** and verify playback, audio and duration in a logged-out browser. The watch URL is recorded in README and Phase 8 status. The earlier [own-voice script](DEMO_SCRIPT.md) and [recording checklist](RECORDING_CHECKLIST.md) remain an optional alternative.

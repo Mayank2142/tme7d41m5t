@@ -1,7 +1,7 @@
 {
   "phase": 8,
   "verified_date": "2026-10-31",
-  "status": "public_source_remote_ci_and_local_ai_video_verified_youtube_and_submission_pending",
+  "status": "public_source_remote_ci_and_video_complete_youtube_link_recorded_playback_and_submission_pending",
   "repository_url": "https://github.com/Mayank2142/tme7d41m5t",
   "repository_name_anonymous": true,
   "repository_visibility": "public",
@@ -171,13 +171,16 @@
     "recording_checklist": "docs/RECORDING_CHECKLIST.md",
     "target_minutes": 10,
     "maximum_minutes": 10,
-    "url": null,
+    "url": "https://youtu.be/iET5el4IjjI",
     "recorded": true,
     "unlisted_upload_verified": false,
     "rendered": true,
     "local_artifact": "output/video/wind-desk-demo.mp4",
     "production_evidence": "docs/video-production-evidence.json",
-    "duration_seconds": 580.5
+    "duration_seconds": 580.5,
+    "youtube_link_recorded": true,
+    "youtube_link_added_date": "2026-11-01",
+    "verification_note": "Watch URL supplied by the user; logged-out playback and Unlisted visibility have not been independently verified."
   },
   "submission": {
     "complete": false,

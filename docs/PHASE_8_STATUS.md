@@ -1,6 +1,6 @@
 # Phase 8 publication and submission status
 
-Updated 31 October 2026. **Public source, full remote CI and the locally rendered AI-narrated MP4 are complete; unlisted YouTube upload/playback and final submission remain pending.** The [video production record](VIDEO_PRODUCTION.md) documents the 9:40 Full HD artifact, captions, thumbnail, source review and media checks. The user's later AI-voice request supersedes the earlier own-voice preference. This record does not mark the whole assignment complete.
+Updated 1 November 2026. **Public source, full remote CI and the locally rendered AI-narrated MP4 are complete; the supplied [YouTube watch link](https://youtu.be/iET5el4IjjI) is recorded in README.** Logged-out playback, Unlisted visibility verification and final submission remain pending. The [video production record](VIDEO_PRODUCTION.md) documents the 9:40 Full HD artifact, captions, thumbnail, source review and media checks. The user's later AI-voice request supersedes the earlier own-voice preference. This record does not mark the whole assignment complete.
 
 | Deliverable | Actual status |
 | --- | --- |
@@ -10,7 +10,7 @@ Updated 31 October 2026. **Public source, full remote CI and the locally rendere
 | README | Startup, directory map, real app/source links, methodology and explicit AI disclosure included |
 | Technical review | [Architecture/code map](ARCHITECTURE.md) and existing API/methodology/security/deployment evidence |
 | Recording materials | Updated [spoken script](DEMO_SCRIPT.md) and [nine-minute recording checklist](RECORDING_CHECKLIST.md) |
-| Required video | Complete local 9:40 Full HD AI-narrated MP4; unlisted upload and logged-out playback remain pending |
+| Required video | Complete local 9:40 Full HD AI-narrated MP4; [YouTube link](https://youtu.be/iET5el4IjjI) supplied on 1 November; logged-out playback and Unlisted visibility verification remain pending |
 | Company submission | Pending video and final link checks; no submission destination or confirmation has been supplied |
 
 ## Publication review
@@ -45,6 +45,6 @@ The CI image ID is `sha256:838ba99cf94b4c403d1baae495c5f0dc7e01d3e2d72292fffb825
 
 Use the recording checklist to demonstrate the customer workflow for about 4½ minutes, then architecture, code and verification for about 4½ minutes. Keep each part below five minutes and the whole video at or below ten. The figures in the script require the applied 09:45 cutoff and full January range; daily drill-down changes the metrics.
 
-Upload the rendered MP4, or an optional replacement personal recording, as **Unlisted** on YouTube and verify playback/audio/duration in a logged-out browser. Add the actual watch URL to README and this record. No placeholder URL, script or screenshot counts as the required video. Then recheck all public links and the latest CI result before submitting through the company's specified channel. Do not submit without the video.
+The user supplied [the YouTube watch URL](https://youtu.be/iET5el4IjjI) on 1 November 2026; it is now linked from README and this record. Confirm **Unlisted** visibility and verify playback/audio/duration in a logged-out browser. Then recheck all public links and the latest CI result before submitting through the company's specified channel. No completed company submission is claimed.
 
 Cumulative assignment effort has not been reconciled against the sixteen-hour limit. Client operational reliance remains subject to Phases 9–11, separately from this assignment's submission gate.
